@@ -39,35 +39,36 @@
 
 :root {
   --radius: 0.875rem;
-  --background: oklch(0.99 0.005 220);
-  --foreground: oklch(0.18 0.04 240);
+  --background: oklch(0.99 0.005 240);
+  --foreground: oklch(0.18 0.05 245);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.18 0.04 240);
+  --card-foreground: oklch(0.18 0.05 245);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.18 0.04 240);
-  --primary: oklch(0.42 0.15 245);
-  --primary-foreground: oklch(0.99 0.005 220);
-  --secondary: oklch(0.96 0.015 230);
-  --secondary-foreground: oklch(0.22 0.06 245);
-  --muted: oklch(0.96 0.012 230);
-  --muted-foreground: oklch(0.48 0.03 240);
-  --accent: oklch(0.78 0.16 200);
-  --accent-foreground: oklch(0.18 0.06 245);
+  --popover-foreground: oklch(0.18 0.05 245);
+  --primary: oklch(0.44 0.12 245);
+  --primary-foreground: oklch(0.99 0.005 240);
+  --secondary: oklch(0.96 0.012 240);
+  --secondary-foreground: oklch(0.22 0.07 245);
+  --muted: oklch(0.96 0.012 240);
+  --muted-foreground: oklch(0.46 0.03 245);
+  --accent: oklch(0.64 0.22 28);
+  --accent-foreground: oklch(0.99 0.005 240);
   --destructive: oklch(0.6 0.22 25);
   --destructive-foreground: oklch(0.99 0 0);
-  --border: oklch(0.92 0.012 230);
-  --input: oklch(0.92 0.012 230);
-  --ring: oklch(0.55 0.16 230);
-  --brand: oklch(0.32 0.14 250);
+  --border: oklch(0.92 0.012 240);
+  --input: oklch(0.92 0.012 240);
+  --ring: oklch(0.44 0.12 245);
+  --brand: oklch(0.44 0.12 245);
   --brand-foreground: oklch(0.99 0 0);
-  --cyan: oklch(0.78 0.16 210);
-  --electric: oklch(0.72 0.2 235);
+  --cyan: oklch(0.55 0.13 235);
+  --electric: oklch(0.64 0.22 28);
 
-  --gradient-hero: linear-gradient(135deg, oklch(0.22 0.12 250) 0%, oklch(0.32 0.16 235) 50%, oklch(0.55 0.18 210) 100%);
-  --gradient-brand: linear-gradient(135deg, oklch(0.42 0.18 250), oklch(0.65 0.18 215));
-  --gradient-glow: radial-gradient(circle at 30% 20%, oklch(0.78 0.16 210 / 0.35), transparent 60%);
-  --shadow-glow: 0 20px 60px -15px oklch(0.42 0.18 245 / 0.45);
-  --shadow-soft: 0 10px 40px -20px oklch(0.22 0.1 240 / 0.25);
+  --gradient-hero: linear-gradient(135deg, oklch(0.22 0.09 245) 0%, oklch(0.34 0.12 245) 55%, oklch(0.44 0.12 245) 100%);
+  --gradient-brand: linear-gradient(135deg, oklch(0.44 0.12 245) 0%, oklch(0.55 0.14 240) 100%);
+  --gradient-accent: linear-gradient(135deg, oklch(0.64 0.22 28), oklch(0.7 0.2 35));
+  --gradient-glow: radial-gradient(circle at 30% 20%, oklch(0.64 0.22 28 / 0.25), transparent 60%);
+  --shadow-glow: 0 20px 60px -15px oklch(0.44 0.12 245 / 0.4);
+  --shadow-soft: 0 10px 40px -20px oklch(0.22 0.07 245 / 0.25);
 }
 
 .dark {

@@ -52,7 +52,7 @@ function Home() {
               <span className="h-2 w-2 rounded-full bg-accent animate-pulse" />
               Now serving global beverage brands
             </div>
-            <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.05] mb-6">
+            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.05] tracking-tight mb-6">
               Myanmar's Next Generation{" "}
               <span className="bg-gradient-to-r from-accent to-cyan-200 bg-clip-text text-transparent">OEM Beverage</span>{" "}
               Partner

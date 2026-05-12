@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { Menu, X, ChevronDown, Droplets } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
+import logo from "@/assets/quantum-leap-logo.png";
 
 const services = [
   { to: "/services/production-capabilities", label: "Production Capabilities" },
@@ -18,13 +19,11 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 lg:px-8">
-        <Link to="/" className="flex items-center gap-2 group">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-brand shadow-glow">
-            <Droplets className="h-5 w-5 text-white" />
-          </div>
+        <Link to="/" className="flex items-center gap-3 group">
+          <img src={logo} alt="Quantum Leap" className="h-11 w-11 object-contain" />
           <div className="leading-tight">
             <div className="font-display text-base font-bold tracking-tight">Quantum Leap</div>
-            <div className="text-[10px] uppercase tracking-widest text-muted-foreground">Beverage Mfg.</div>
+            <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">Beverage Mfg.</div>
           </div>
         </Link>
 

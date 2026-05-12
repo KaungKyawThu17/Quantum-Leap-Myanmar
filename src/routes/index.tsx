@@ -46,7 +46,7 @@ function Home() {
           className="absolute inset-0 opacity-30 mix-blend-luminosity"
           style={{ backgroundImage: `url(${heroImg})`, backgroundSize: "cover", backgroundPosition: "center" }}
         />
-        <div className="relative mx-auto max-w-7xl px-4 lg:px-8 pt-24 pb-32 lg:pt-36 lg:pb-44">
+        <div className="relative mx-auto max-w-7xl px-4 lg:px-8 pt-16 pb-24 md:pt-20 md:pb-28 lg:pt-24 lg:pb-32">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs font-medium uppercase tracking-widest mb-6">
               <span className="h-2 w-2 rounded-full bg-accent animate-pulse" />

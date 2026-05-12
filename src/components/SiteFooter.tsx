@@ -1,15 +1,14 @@
 import { Link } from "@tanstack/react-router";
-import { Droplets, MapPin, Phone, Mail } from "lucide-react";
+import { MapPin, Phone, Mail } from "lucide-react";
+import logo from "@/assets/quantum-leap-logo.png";
 
 export function SiteFooter() {
   return (
     <footer className="relative bg-foreground text-background mt-24">
       <div className="mx-auto max-w-7xl px-4 lg:px-8 py-16 grid gap-12 md:grid-cols-2 lg:grid-cols-4">
         <div>
-          <div className="flex items-center gap-2 mb-4">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-brand">
-              <Droplets className="h-5 w-5 text-white" />
-            </div>
+          <div className="flex items-center gap-3 mb-4">
+            <img src={logo} alt="Quantum Leap" className="h-11 w-11 object-contain bg-white rounded-lg p-1" />
             <div className="font-display text-lg font-bold">Quantum Leap</div>
           </div>
           <p className="text-sm text-background/70 leading-relaxed">

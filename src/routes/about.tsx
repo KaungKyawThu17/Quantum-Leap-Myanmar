@@ -61,15 +61,29 @@ function About() {
         </div>
       </section>
 
-      <section className="py-20 mx-auto max-w-5xl px-4 lg:px-8">
+      <section className="py-20 mx-auto max-w-7xl px-4 lg:px-8">
         <div className="text-xs uppercase tracking-widest text-primary font-semibold mb-3 text-center">Message from the Board</div>
         <h2 className="font-display text-3xl md:text-4xl font-bold text-center mb-10">A welcome from our Board of Directors</h2>
-        <div className="relative rounded-3xl bg-gradient-brand text-white p-10 md:p-14 shadow-glow">
-          <Quote className="h-12 w-12 text-white/40 mb-6" />
-          <div className="space-y-5 text-white/90 leading-relaxed">
-            <p>At Quantum Leap Co. Ltd, we are driven by a strong commitment to quality, innovation, and long-term sustainable growth. We strive to produce high-quality beverages that meet international standards while serving the evolving needs of consumers across diverse markets.</p>
-            <p>Our vision extends beyond manufacturing. We aim to build trusted brands, develop meaningful partnerships, and create long-term value through continuous investment in modern technology, operational excellence, product development, and human capital.</p>
-            <p>We firmly believe that sustainable success is built upon integrity, innovation, and strong relationships with our customers, employees, suppliers, and business partners. Together with our management team and employees, we will continue working passionately to deliver products that consumers can enjoy with confidence.</p>
+        <div className="grid lg:grid-cols-[1fr_auto] gap-10 items-center rounded-3xl bg-gradient-brand text-white p-10 md:p-14 shadow-glow">
+          <div>
+            <Quote className="h-12 w-12 text-white/40 mb-6" />
+            <div className="space-y-5 text-white/90 leading-relaxed">
+              <p>At Quantum Leap Co. Ltd, we are driven by a strong commitment to quality, innovation, and long-term sustainable growth. We strive to produce high-quality beverages that meet international standards while serving the evolving needs of consumers across diverse markets.</p>
+              <p>Our vision extends beyond manufacturing. We aim to build trusted brands, develop meaningful partnerships, and create long-term value through continuous investment in modern technology, operational excellence, product development, and human capital.</p>
+              <p>We firmly believe that sustainable success is built upon integrity, innovation, and strong relationships with our customers, employees, suppliers, and business partners. Together with our management team and employees, we will continue working passionately to deliver products that consumers can enjoy with confidence.</p>
+            </div>
+          </div>
+          <div className="flex flex-col items-center lg:items-start">
+            <img
+              src={boardDirectorImg}
+              alt="Ko Alvin Aung Zin, Managing Director"
+              className="w-64 md:w-72 lg:w-80 aspect-[4/5] object-cover rounded-2xl shadow-soft border-4 border-white/20"
+              loading="lazy"
+            />
+            <div className="mt-4 text-center lg:text-left">
+              <div className="font-display text-lg font-bold">Ko Alvin Aung Zin</div>
+              <div className="text-sm text-white/70">Managing Director</div>
+            </div>
           </div>
         </div>
       </section>

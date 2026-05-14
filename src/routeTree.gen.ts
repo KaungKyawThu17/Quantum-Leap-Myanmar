@@ -15,6 +15,7 @@ import { Route as FaqRouteImport } from './routes/faq'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ServicesIndexRouteImport } from './routes/services.index'
 import { Route as ServicesProductionCapabilitiesRouteImport } from './routes/services.production-capabilities'
 import { Route as ServicesProductDevelopmentRouteImport } from './routes/services.product-development'
 import { Route as ServicesOemManufacturingRouteImport } from './routes/services.oem-manufacturing'
@@ -51,6 +52,11 @@ const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesIndexRoute = ServicesIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ServicesRoute,
 } as any)
 const ServicesProductionCapabilitiesRoute =
   ServicesProductionCapabilitiesRouteImport.update({
@@ -100,6 +106,7 @@ export interface FileRoutesByFullPath {
   '/services/oem-manufacturing': typeof ServicesOemManufacturingRoute
   '/services/product-development': typeof ServicesProductDevelopmentRoute
   '/services/production-capabilities': typeof ServicesProductionCapabilitiesRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -107,13 +114,13 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
   '/products': typeof ProductsRoute
-  '/services': typeof ServicesRouteWithChildren
   '/services/certifications': typeof ServicesCertificationsRoute
   '/services/factory-facilities': typeof ServicesFactoryFacilitiesRoute
   '/services/odm-solutions': typeof ServicesOdmSolutionsRoute
   '/services/oem-manufacturing': typeof ServicesOemManufacturingRoute
   '/services/product-development': typeof ServicesProductDevelopmentRoute
   '/services/production-capabilities': typeof ServicesProductionCapabilitiesRoute
+  '/services': typeof ServicesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -129,6 +136,7 @@ export interface FileRoutesById {
   '/services/oem-manufacturing': typeof ServicesOemManufacturingRoute
   '/services/product-development': typeof ServicesProductDevelopmentRoute
   '/services/production-capabilities': typeof ServicesProductionCapabilitiesRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -145,6 +153,7 @@ export interface FileRouteTypes {
     | '/services/oem-manufacturing'
     | '/services/product-development'
     | '/services/production-capabilities'
+    | '/services/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -152,13 +161,13 @@ export interface FileRouteTypes {
     | '/contact'
     | '/faq'
     | '/products'
-    | '/services'
     | '/services/certifications'
     | '/services/factory-facilities'
     | '/services/odm-solutions'
     | '/services/oem-manufacturing'
     | '/services/product-development'
     | '/services/production-capabilities'
+    | '/services'
   id:
     | '__root__'
     | '/'
@@ -173,6 +182,7 @@ export interface FileRouteTypes {
     | '/services/oem-manufacturing'
     | '/services/product-development'
     | '/services/production-capabilities'
+    | '/services/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -228,6 +238,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services/': {
+      id: '/services/'
+      path: '/'
+      fullPath: '/services/'
+      preLoaderRoute: typeof ServicesIndexRouteImport
+      parentRoute: typeof ServicesRoute
+    }
     '/services/production-capabilities': {
       id: '/services/production-capabilities'
       path: '/production-capabilities'
@@ -280,6 +297,7 @@ interface ServicesRouteChildren {
   ServicesOemManufacturingRoute: typeof ServicesOemManufacturingRoute
   ServicesProductDevelopmentRoute: typeof ServicesProductDevelopmentRoute
   ServicesProductionCapabilitiesRoute: typeof ServicesProductionCapabilitiesRoute
+  ServicesIndexRoute: typeof ServicesIndexRoute
 }
 
 const ServicesRouteChildren: ServicesRouteChildren = {
@@ -289,6 +307,7 @@ const ServicesRouteChildren: ServicesRouteChildren = {
   ServicesOemManufacturingRoute: ServicesOemManufacturingRoute,
   ServicesProductDevelopmentRoute: ServicesProductDevelopmentRoute,
   ServicesProductionCapabilitiesRoute: ServicesProductionCapabilitiesRoute,
+  ServicesIndexRoute: ServicesIndexRoute,
 }
 
 const ServicesRouteWithChildren = ServicesRoute._addFileChildren(

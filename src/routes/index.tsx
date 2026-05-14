@@ -41,18 +41,20 @@ function Home() {
   return (
     <Layout>
       {/* HERO */}
-      <section className="relative overflow-hidden bg-gradient-hero text-white">
+      <section className="relative overflow-hidden bg-foreground text-white">
         <video
-          className="absolute inset-0 h-full w-full object-cover opacity-40"
-          src={heroVideo}
+          className="absolute inset-0 h-full w-full object-cover"
           poster={heroImg}
           autoPlay
           muted
           loop
           playsInline
-        />
-        <div className="absolute inset-0 bg-gradient-hero opacity-70" />
-        <div className="absolute inset-0 bg-gradient-glow opacity-80" />
+          preload="auto"
+        >
+          <source src={heroVideo} type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-br from-foreground/80 via-foreground/60 to-primary/60" />
+        <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-transparent to-transparent" />
         <div className="relative mx-auto max-w-7xl px-4 lg:px-8 pt-16 pb-24 md:pt-20 md:pb-28 lg:pt-24 lg:pb-32">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs font-medium uppercase tracking-widest mb-6">

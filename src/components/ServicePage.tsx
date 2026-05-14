@@ -81,6 +81,7 @@ export function ServicePage({
           </Link>
         </div>
       </section>
+      <CertificatesSlider />
     </Layout>
   );
 }

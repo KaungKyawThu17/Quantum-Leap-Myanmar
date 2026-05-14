@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
+import { CertificatesSlider } from "@/components/CertificatesSlider";
 import { PageHero } from "@/components/PageHero";
 import { Factory, Beaker, Building2, BadgeCheck, Boxes, Lightbulb, ArrowRight } from "lucide-react";
 
@@ -46,6 +47,7 @@ function Services() {
           ))}
         </div>
       </section>
+      <CertificatesSlider />
     </Layout>
   );
 }

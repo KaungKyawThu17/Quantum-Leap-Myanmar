@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
 import { PageHero } from "@/components/PageHero";
 import { ArrowRight, ArrowLeft, ChevronRight } from "lucide-react";
+import { CertificatesSlider } from "@/components/CertificatesSlider";
 
 export function ServicePage({
   eyebrow, title, subtitle, intro, introHeadline, introBody, sections,

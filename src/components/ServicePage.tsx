@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
 import { PageHero } from "@/components/PageHero";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowLeft, ChevronRight } from "lucide-react";
 
 export function ServicePage({
   eyebrow, title, subtitle, intro, introHeadline, introBody, sections,
@@ -18,6 +18,13 @@ export function ServicePage({
     <Layout>
       <PageHero eyebrow={eyebrow} title={title} subtitle={subtitle} />
       <section className="py-20 mx-auto max-w-5xl px-4 lg:px-8">
+        <nav aria-label="Breadcrumb" className="mb-8 flex items-center gap-2 text-sm text-muted-foreground">
+          <Link to="/services" className="hover:text-primary transition-colors inline-flex items-center gap-1.5">
+            <ArrowLeft className="h-4 w-4" /> All Services
+          </Link>
+          <ChevronRight className="h-4 w-4" />
+          <span className="text-foreground font-medium">{title}</span>
+        </nav>
         {(introHeadline || introBody) && (
           <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-start mb-14">
             {introHeadline && (

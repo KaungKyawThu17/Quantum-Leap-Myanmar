@@ -7,7 +7,7 @@ const services = [
   { to: "/services/production-capabilities", label: "Production Capabilities" },
   { to: "/services/product-development", label: "Product Development" },
   { to: "/services/factory-facilities", label: "Factory & Facilities" },
-  { to: "/services/certifications", label: "Certifications" },
+  
   { to: "/services/oem-manufacturing", label: "OEM Manufacturing" },
   { to: "/services/odm-solutions", label: "ODM Solutions" },
 ] as const;

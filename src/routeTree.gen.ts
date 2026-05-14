@@ -21,7 +21,6 @@ import { Route as ServicesProductDevelopmentRouteImport } from './routes/service
 import { Route as ServicesOemManufacturingRouteImport } from './routes/services.oem-manufacturing'
 import { Route as ServicesOdmSolutionsRouteImport } from './routes/services.odm-solutions'
 import { Route as ServicesFactoryFacilitiesRouteImport } from './routes/services.factory-facilities'
-import { Route as ServicesCertificationsRouteImport } from './routes/services.certifications'
 
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
@@ -87,11 +86,6 @@ const ServicesFactoryFacilitiesRoute =
     path: '/factory-facilities',
     getParentRoute: () => ServicesRoute,
   } as any)
-const ServicesCertificationsRoute = ServicesCertificationsRouteImport.update({
-  id: '/certifications',
-  path: '/certifications',
-  getParentRoute: () => ServicesRoute,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -100,7 +94,6 @@ export interface FileRoutesByFullPath {
   '/faq': typeof FaqRoute
   '/products': typeof ProductsRoute
   '/services': typeof ServicesRouteWithChildren
-  '/services/certifications': typeof ServicesCertificationsRoute
   '/services/factory-facilities': typeof ServicesFactoryFacilitiesRoute
   '/services/odm-solutions': typeof ServicesOdmSolutionsRoute
   '/services/oem-manufacturing': typeof ServicesOemManufacturingRoute
@@ -114,7 +107,6 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
   '/products': typeof ProductsRoute
-  '/services/certifications': typeof ServicesCertificationsRoute
   '/services/factory-facilities': typeof ServicesFactoryFacilitiesRoute
   '/services/odm-solutions': typeof ServicesOdmSolutionsRoute
   '/services/oem-manufacturing': typeof ServicesOemManufacturingRoute
@@ -130,7 +122,6 @@ export interface FileRoutesById {
   '/faq': typeof FaqRoute
   '/products': typeof ProductsRoute
   '/services': typeof ServicesRouteWithChildren
-  '/services/certifications': typeof ServicesCertificationsRoute
   '/services/factory-facilities': typeof ServicesFactoryFacilitiesRoute
   '/services/odm-solutions': typeof ServicesOdmSolutionsRoute
   '/services/oem-manufacturing': typeof ServicesOemManufacturingRoute
@@ -147,7 +138,6 @@ export interface FileRouteTypes {
     | '/faq'
     | '/products'
     | '/services'
-    | '/services/certifications'
     | '/services/factory-facilities'
     | '/services/odm-solutions'
     | '/services/oem-manufacturing'
@@ -161,7 +151,6 @@ export interface FileRouteTypes {
     | '/contact'
     | '/faq'
     | '/products'
-    | '/services/certifications'
     | '/services/factory-facilities'
     | '/services/odm-solutions'
     | '/services/oem-manufacturing'
@@ -176,7 +165,6 @@ export interface FileRouteTypes {
     | '/faq'
     | '/products'
     | '/services'
-    | '/services/certifications'
     | '/services/factory-facilities'
     | '/services/odm-solutions'
     | '/services/oem-manufacturing'
@@ -280,18 +268,10 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesFactoryFacilitiesRouteImport
       parentRoute: typeof ServicesRoute
     }
-    '/services/certifications': {
-      id: '/services/certifications'
-      path: '/certifications'
-      fullPath: '/services/certifications'
-      preLoaderRoute: typeof ServicesCertificationsRouteImport
-      parentRoute: typeof ServicesRoute
-    }
   }
 }
 
 interface ServicesRouteChildren {
-  ServicesCertificationsRoute: typeof ServicesCertificationsRoute
   ServicesFactoryFacilitiesRoute: typeof ServicesFactoryFacilitiesRoute
   ServicesOdmSolutionsRoute: typeof ServicesOdmSolutionsRoute
   ServicesOemManufacturingRoute: typeof ServicesOemManufacturingRoute
@@ -301,7 +281,6 @@ interface ServicesRouteChildren {
 }
 
 const ServicesRouteChildren: ServicesRouteChildren = {
-  ServicesCertificationsRoute: ServicesCertificationsRoute,
   ServicesFactoryFacilitiesRoute: ServicesFactoryFacilitiesRoute,
   ServicesOdmSolutionsRoute: ServicesOdmSolutionsRoute,
   ServicesOemManufacturingRoute: ServicesOemManufacturingRoute,

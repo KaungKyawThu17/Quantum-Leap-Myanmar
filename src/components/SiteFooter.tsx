@@ -32,7 +32,7 @@ export function SiteFooter() {
             <li><Link to="/services/oem-manufacturing" className="text-background/80 hover:text-accent transition">OEM Manufacturing</Link></li>
             <li><Link to="/services/odm-solutions" className="text-background/80 hover:text-accent transition">ODM Solutions</Link></li>
             <li><Link to="/services/production-capabilities" className="text-background/80 hover:text-accent transition">Production</Link></li>
-            <li><Link to="/services/certifications" className="text-background/80 hover:text-accent transition">Certifications</Link></li>
+            
           </ul>
         </div>
 

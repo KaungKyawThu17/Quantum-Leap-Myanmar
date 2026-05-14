@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
 import { CertificatesSlider } from "@/components/CertificatesSlider";
 import { PageHero } from "@/components/PageHero";
-import { Factory, Beaker, Building2, BadgeCheck, Boxes, Lightbulb, ArrowRight } from "lucide-react";
+import { Factory, Beaker, Building2, Boxes, Lightbulb, ArrowRight } from "lucide-react";
 
 export const Route = createFileRoute("/services/")({
   head: () => ({
@@ -18,7 +18,7 @@ const services = [
   { icon: Factory, to: "/services/production-capabilities", title: "Production Capabilities", desc: "PET bottling, dual lines, standing pouches, and UHT — at scale." },
   { icon: Beaker, to: "/services/product-development", title: "Product Development", desc: "Packaging, formats, and quality assurance from idea to shelf." },
   { icon: Building2, to: "/services/factory-facilities", title: "Factory & Facilities", desc: "Inside our 10-acre integrated manufacturing campus." },
-  { icon: BadgeCheck, to: "/services/certifications", title: "Certifications", desc: "FDA, Halal, ISO 22000, HACCP, GMP & GHP compliant." },
+  
   { icon: Boxes, to: "/services/oem-manufacturing", title: "OEM Manufacturing", desc: "Production from your existing formula and brand." },
   { icon: Lightbulb, to: "/services/odm-solutions", title: "ODM Solutions", desc: "Develop a new beverage from concept to market-ready product." },
 ];

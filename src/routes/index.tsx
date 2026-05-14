@@ -79,28 +79,10 @@ function Home() {
           </div>
         </div>
 
-        {/* Stats strip */}
-        <div className="relative">
-          <div className="mx-auto max-w-7xl px-4 lg:px-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-px rounded-2xl glass overflow-hidden -mb-16 bg-white/5">
-              {[
-                ["10", "Acre Campus"],
-                ["24K", "Bottles / Hour"],
-                ["8+", "Product Lines"],
-                ["100%", "FDA & Halal"],
-              ].map(([num, label]) => (
-                <div key={label} className="bg-foreground/40 backdrop-blur p-6 text-center">
-                  <div className="font-display text-3xl md:text-4xl font-bold text-white">{num}</div>
-                  <div className="text-xs uppercase tracking-widest text-white/60 mt-1">{label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
       </section>
 
       {/* INTRO */}
-      <section className="pt-32 pb-20 mx-auto max-w-7xl px-4 lg:px-8">
+      <section className="pt-20 pb-20 mx-auto max-w-7xl px-4 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
             <div className="text-xs uppercase tracking-widest text-primary font-semibold mb-3">Who We Are</div>

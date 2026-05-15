@@ -46,7 +46,7 @@ function Services() {
       <PageHero
         eyebrow="Our Services"
         title="OEM and ODM beverage manufacturing — end to end."
-        subtitle="Quantum Leap supports beverage brands from product concept to full-scale production with reliable, scalable, and quality-assured solutions."
+        subtitle="Quantum Leap provides complete OEM and ODM beverage manufacturing solutions designed to support beverage brands from product concept to full-scale production."
       />
       <section className="py-20 mx-auto max-w-7xl px-4 lg:px-8 space-y-6">
         <div className="grid md:grid-cols-2 gap-6">

@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
+import { CertificatesSlider } from "@/components/CertificatesSlider";
 import {
   ArrowRight, MessagesSquare, FlaskConical, TestTube2, Package,
   Calculator, BadgeCheck, Factory, Truck,
@@ -171,6 +172,8 @@ function OemManufacturing() {
           </div>
         </div>
       </section>
+
+      <CertificatesSlider />
     </Layout>
   );
 }

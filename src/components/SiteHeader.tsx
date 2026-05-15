@@ -51,21 +51,8 @@ export function SiteHeader() {
       {open && (
         <div className="md:hidden border-t border-border bg-background">
           <div className="flex flex-col p-4 gap-1">
-            {[["/", "Home"], ["/about", "About"], ["/products", "Products"]].map(([to, label]) => (
+            {[["/", "Home"], ["/about", "About"], ["/products", "Products"], ["/services", "Services"], ["/faq", "FAQ"], ["/contact", "Contact"]].map(([to, label]) => (
               <Link key={to} to={to} onClick={() => setOpen(false)} activeOptions={{ exact: to === "/" }} activeProps={{ className: "bg-primary/10 text-primary" }} className="px-3 py-2 rounded-md text-sm font-medium hover:bg-muted">{label}</Link>
-            ))}
-            <button onClick={() => setMobileServices(!mobileServices)} className="flex items-center justify-between px-3 py-2 rounded-md text-sm font-medium hover:bg-muted">
-              Services <ChevronDown className={`h-4 w-4 transition ${mobileServices ? "rotate-180" : ""}`} />
-            </button>
-            {mobileServices && (
-              <div className="ml-3 border-l border-border pl-3 flex flex-col gap-1">
-                {services.map((s) => (
-                  <Link key={s.to} to={s.to} onClick={() => setOpen(false)} activeProps={{ className: "text-primary" }} className="px-3 py-2 rounded-md text-sm text-muted-foreground hover:bg-muted">{s.label}</Link>
-                ))}
-              </div>
-            )}
-            {[["/faq", "FAQ"], ["/contact", "Contact"]].map(([to, label]) => (
-              <Link key={to} to={to} onClick={() => setOpen(false)} activeProps={{ className: "bg-primary/10 text-primary" }} className="px-3 py-2 rounded-md text-sm font-medium hover:bg-muted">{label}</Link>
             ))}
           </div>
         </div>

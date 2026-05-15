@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
 import { CertificatesSlider } from "@/components/CertificatesSlider";
 import {
-  ArrowRight, Droplets, Layers, PackageOpen, Thermometer, Sparkles, Gauge, Clock, Factory,
+  ArrowLeft, ArrowRight, Droplets, Layers, PackageOpen, Thermometer, Sparkles, Gauge, Clock, Factory,
 } from "lucide-react";
 
 export const Route = createFileRoute("/services/production-capabilities")({
@@ -83,6 +83,10 @@ function ProductionCapabilities() {
         </div>
         <div className="absolute right-0 top-0 bottom-0 w-1/3 bg-white/5 skew-x-[-12deg] translate-x-20" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 lg:px-8 py-20 w-full">
+          <Link to="/services" className="group inline-flex items-center gap-2 text-sm font-semibold text-white/80 hover:text-white mb-4 transition">
+            <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-transform" />
+            All Services
+          </Link>
           <nav className="flex items-center gap-2 text-xs uppercase tracking-widest font-semibold text-white/70 mb-6">
             <Link to="/services" className="hover:text-white transition">Services</Link>
             <span>/</span>

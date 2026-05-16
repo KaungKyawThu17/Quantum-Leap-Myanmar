@@ -6,6 +6,13 @@ import {
   Calculator, BadgeCheck, Factory, Truck,
 } from "lucide-react";
 import clientMeetingImg from "@/assets/client-meeting.webp";
+import researchFormulaImg from "@/assets/oem-research-formula.webp";
+import productTestingImg from "@/assets/oem-product-testing.webp";
+import packagingBottleImg from "@/assets/oem-packaging-bottle.webp";
+import costingQuotationImg from "@/assets/oem-costing-quotation.webp";
+import regulatoryImg from "@/assets/oem-regulatory.webp";
+import massProductionImg from "@/assets/oem-mass-production.webp";
+import packagingDeliveryImg from "@/assets/oem-packaging-delivery.webp";
 
 export const Route = createFileRoute("/services/oem-manufacturing")({
   head: () => ({ meta: [
@@ -17,13 +24,13 @@ export const Route = createFileRoute("/services/oem-manufacturing")({
 
 const steps = [
   { icon: MessagesSquare, title: "Consultation & Requirement Discussion", body: "Understanding the client's product concept, target market, packaging needs, and production requirements.", image: clientMeetingImg },
-  { icon: FlaskConical,   title: "Research & Formula Development",        body: "Developing customized beverage formulas and product samples based on the client's preferences." },
-  { icon: TestTube2,      title: "Sampling & Product Testing",            body: "Conducting taste tests, quality checks, and product stability evaluations before approval." },
-  { icon: Package,        title: "Packaging & Bottle Development",        body: "Designing or developing PET bottles, labels, caps, and carton packaging solutions." },
-  { icon: Calculator,     title: "Costing & Quotation",                   body: "Preparing production costing, MOQ, timeline, and commercial proposal for client approval." },
-  { icon: BadgeCheck,     title: "Regulatory & Certification Support",    body: "Supporting product registration, FDA compliance, Halal certification, and documentation processes." },
-  { icon: Factory,        title: "Mass Production",                       body: "Executing large-scale production with controlled manufacturing and quality assurance procedures." },
-  { icon: Truck,          title: "Packaging & Delivery",                  body: "Packing finished products and arranging delivery or export shipment to the client." },
+  { icon: FlaskConical,   title: "Research & Formula Development",        body: "Developing customized beverage formulas and product samples based on the client's preferences.", image: researchFormulaImg },
+  { icon: TestTube2,      title: "Sampling & Product Testing",            body: "Conducting taste tests, quality checks, and product stability evaluations before approval.", image: productTestingImg },
+  { icon: Package,        title: "Packaging & Bottle Development",        body: "Designing or developing PET bottles, labels, caps, and carton packaging solutions.", image: packagingBottleImg },
+  { icon: Calculator,     title: "Costing & Quotation",                   body: "Preparing production costing, MOQ, timeline, and commercial proposal for client approval.", image: costingQuotationImg },
+  { icon: BadgeCheck,     title: "Regulatory & Certification Support",    body: "Supporting product registration, FDA compliance, Halal certification, and documentation processes.", image: regulatoryImg },
+  { icon: Factory,        title: "Mass Production",                       body: "Executing large-scale production with controlled manufacturing and quality assurance procedures.", image: massProductionImg },
+  { icon: Truck,          title: "Packaging & Delivery",                  body: "Packing finished products and arranging delivery or export shipment to the client.", image: packagingDeliveryImg },
 ];
 
 function OemManufacturing() {

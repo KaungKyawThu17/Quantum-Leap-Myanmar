@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
 import { PageHero } from "@/components/PageHero";
-import { Milk, Factory } from "lucide-react";
+import { Milk } from "lucide-react";
 import plasticCapImg from "@/assets/pkg-plastic-cap.webp";
 import petBottleImg from "@/assets/pkg-pet-bottle.webp";
 import petPreformImg from "@/assets/pkg-pet-preform.webp";
@@ -28,8 +28,7 @@ const products = [
 ];
 
 const upcoming = [
-  { icon: Milk, name: "UHT Products", desc: "Future expansion into UHT soy milk, dairy beverages, tea beverages, and long-life juice products." },
-  { icon: Factory, name: "CSD & Canning", desc: "High-speed carbonated soft drink and canning systems for large-scale beverage production." },
+  { icon: Milk, name: "Dairy Products", desc: "Soy milk and dairy products." },
 ];
 
 const packagingProducts = [
@@ -63,7 +62,7 @@ function Products() {
             <div className="inline-flex items-center gap-2 rounded-full bg-accent/20 text-primary px-4 py-1.5 text-xs uppercase tracking-widest font-semibold">Coming Soon</div>
             <h2 className="font-display text-3xl md:text-4xl font-bold mt-4">Upcoming categories</h2>
           </div>
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div className="grid gap-6 max-w-xl mx-auto">
             {upcoming.map(({ icon: Icon, name, desc }) => (
               <div key={name} className="rounded-3xl bg-card border-2 border-dashed border-primary/30 p-10">
                 <Icon className="h-10 w-10 text-primary mb-5" />

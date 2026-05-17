@@ -35,11 +35,13 @@ const packagingProducts = [
   {
     icon: Circle,
     title: "Plastic Cap",
+    image: plasticCapImg,
     items: ["Beverage bottle caps", "Closure solutions for PET bottles"],
   },
   {
     icon: Package,
     title: "PET Bottle",
+    image: petBottleImg,
     items: ["Hot-fill bottles", "Carbonated drink bottles", "Customized PET packaging"],
   },
   {
@@ -50,11 +52,13 @@ const packagingProducts = [
   {
     icon: Circle,
     title: "Aluminum Cap",
+    image: aluminumCapImg,
     items: ["Aluminum beverage closures", "Tamper-evident caps"],
   },
   {
     icon: Tag,
     title: "Label",
+    image: labelImg,
     items: ["Shrink sleeve labels", "Beverage packaging labels"],
   },
   {

@@ -6,7 +6,7 @@ import factoryImg from "@/assets/factory-aerial.jpg";
 import splashImg from "@/assets/product-splash.jpg";
 import {
   Factory, Beaker, ShieldCheck, Gauge, Boxes, Award,
-  Milk, ArrowRight, CheckCircle2
+  Milk, ArrowRight, CheckCircle2, Heart, Leaf, Globe, Lightbulb
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({

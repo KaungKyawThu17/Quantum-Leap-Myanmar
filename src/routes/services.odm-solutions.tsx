@@ -10,6 +10,8 @@ import brandSelectImg from "@/assets/odm-brand-select.webp";
 import sampleConfirmImg from "@/assets/odm-sample-confirm.webp";
 import massProductionImg from "@/assets/odm-mass-production.webp";
 import deliveryImg from "@/assets/odm-delivery.webp";
+import costingImg from "@/assets/odm-costing.webp";
+import regulatoryImg from "@/assets/odm-regulatory.webp";
 
 export const Route = createFileRoute("/services/odm-solutions")({
   head: () => ({ meta: [
@@ -23,8 +25,8 @@ const steps = [
   { icon: Sparkles,    title: "Product Selection",              body: "Choosing from the factory's existing beverage formulas and product categories.", image: productSelectionImg },
   { icon: Package,     title: "Packaging & Branding Selection", body: "Selecting bottle types, packaging options, and customizing labels with the client's brand identity.", image: brandSelectImg },
   { icon: CheckCircle2,title: "Sample Confirmation",            body: "Reviewing and approving product samples, packaging, and final artwork before production.", image: sampleConfirmImg },
-  { icon: Calculator,  title: "Costing & Production Planning",  body: "Confirming pricing, MOQ, lead time, and production schedule." },
-  { icon: BadgeCheck,  title: "Regulatory Documentation",       body: "Preparing necessary certifications and product compliance documents for distribution." },
+  { icon: Calculator,  title: "Costing & Production Planning",  body: "Confirming pricing, MOQ, lead time, and production schedule.", image: costingImg },
+  { icon: BadgeCheck,  title: "Regulatory Documentation",       body: "Preparing necessary certifications and product compliance documents for distribution.", image: regulatoryImg },
   { icon: Factory,     title: "Mass Production",                body: "Producing the selected beverage products using existing manufacturing systems and formulas.", image: massProductionImg },
   { icon: Truck,       title: "Delivery & Distribution",        body: "Delivering completed products to warehouses, distributors, or export channels.", image: deliveryImg },
 ];

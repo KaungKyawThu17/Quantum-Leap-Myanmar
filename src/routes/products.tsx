@@ -1,9 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
 import { PageHero } from "@/components/PageHero";
-import { Zap, Droplets, Citrus, Leaf, Coffee, Milk, Sparkles, Factory, Circle, Package, Box, Tag, Layers } from "lucide-react";
+import { Milk, Factory } from "lucide-react";
 import plasticCapImg from "@/assets/pkg-plastic-cap.webp";
 import petBottleImg from "@/assets/pkg-pet-bottle.webp";
+import petPreformImg from "@/assets/pkg-pet-preform.webp";
 import aluminumCapImg from "@/assets/pkg-aluminum-cap.webp";
 import labelImg from "@/assets/pkg-label.jpeg";
 

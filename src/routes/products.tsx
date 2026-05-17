@@ -27,6 +27,49 @@ const upcoming = [
   { icon: Factory, name: "CSD & Canning", desc: "High-speed carbonated soft drink and canning systems for large-scale beverage production." },
 ];
 
+const packagingProducts = [
+  {
+    icon: Circle,
+    title: "Plastic Cap",
+    items: ["Beverage bottle caps", "Closure solutions for PET bottles"],
+  },
+  {
+    icon: Package,
+    title: "PET Bottle",
+    items: ["Hot-fill bottles", "Carbonated drink bottles", "Customized PET packaging"],
+  },
+  {
+    icon: Box,
+    title: "PET Preform",
+    items: ["PET preforms for bottle manufacturing", "Crystallized & non-crystallized preforms", "CSD (carbonated soft drink) preforms"],
+  },
+  {
+    icon: Circle,
+    title: "Metal Lug Cap",
+    items: ["Twist-off metal caps", "Food jar closures"],
+  },
+  {
+    icon: Circle,
+    title: "Aluminum Cap",
+    items: ["Aluminum beverage closures", "Tamper-evident caps"],
+  },
+  {
+    icon: Tag,
+    title: "Label",
+    items: ["Shrink sleeve labels", "Beverage packaging labels"],
+  },
+  {
+    icon: Lightbulb,
+    title: "Innovative Products",
+    items: ["Sustainable packaging", "Specialized packaging solutions"],
+  },
+  {
+    icon: Layers,
+    title: "New packaging technologies",
+    items: ["Customized Services", "OEM packaging development"],
+  },
+];
+
 function Products() {
   return (
     <Layout>

@@ -9,6 +9,11 @@ import petBottleImg from "@/assets/pkg-pet-bottle.webp";
 import petPreformImg from "@/assets/pkg-pet-preform.webp";
 import aluminumCapImg from "@/assets/pkg-aluminum-cap.webp";
 import labelImg from "@/assets/pkg-label.jpeg";
+import bevElectrolyteImg from "@/assets/bev-electrolyte.webp";
+import bevSoftDrinkImg from "@/assets/bev-soft-drink.webp";
+import bevFlavoredImg from "@/assets/bev-flavored.webp";
+import bevTeaImg from "@/assets/bev-tea.webp";
+import bevDairyImg from "@/assets/bev-dairy.webp";
 import {
   Factory, Beaker, ShieldCheck, Gauge, Boxes, Award,
   Milk, ArrowRight, CheckCircle2, Heart, Leaf, Globe, Lightbulb
@@ -43,11 +48,11 @@ const packagingProducts = [
 ];
 
 const beverageProducts = [
-  "Energy Drinks / Electrolyte Beverages",
-  "Soft Drinks / Carbonated Beverages",
-  "Fruit Juices / Flavored Drinks",
-  "Tea & Functional Beverages",
-  "Dairy & Soy Milk (Coming in 2026)",
+  { name: "Energy Drinks / Electrolyte Beverages", image: bevElectrolyteImg },
+  { name: "Soft Drinks / Carbonated Beverages", image: bevSoftDrinkImg },
+  { name: "Fruit Juices / Flavored Drinks", image: bevFlavoredImg },
+  { name: "Tea & Functional Beverages", image: bevTeaImg },
+  { name: "Dairy & Soy Milk (Coming in 2026)", image: bevDairyImg },
 ];
 
 const coreValues = [
@@ -205,10 +210,15 @@ function Home() {
         <div>
           <h3 className="font-display text-2xl font-bold mb-6">Beverage OEM Products</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {beverageProducts.map((name) => (
-              <div key={name} className="group rounded-2xl border border-border bg-card p-6 flex items-center gap-3 hover:border-primary/40 hover:shadow-glow transition">
-                <span className="mt-0.5 h-2 w-2 rounded-full bg-accent shrink-0" />
-                <span className="font-display text-base font-semibold">{name}</span>
+            {beverageProducts.map(({ name, image }) => (
+              <div key={name} className="group rounded-2xl border border-border bg-card overflow-hidden hover:border-primary/40 hover:shadow-glow transition">
+                <div className="relative h-48 w-full overflow-hidden bg-muted">
+                  <img src={image} alt={name} className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                </div>
+                <div className="p-5 flex items-center gap-3">
+                  <span className="h-2 w-2 rounded-full bg-accent shrink-0" />
+                  <span className="font-display text-base font-semibold">{name}</span>
+                </div>
               </div>
             ))}
           </div>

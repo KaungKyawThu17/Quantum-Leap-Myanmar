@@ -106,6 +106,31 @@ function Products() {
           </div>
         </div>
       </section>
+
+      <section className="py-20 mx-auto max-w-7xl px-4 lg:px-8">
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-2 rounded-full bg-accent/20 text-primary px-4 py-1.5 text-xs uppercase tracking-widest font-semibold">Packaging</div>
+          <h2 className="font-display text-3xl md:text-4xl font-bold mt-4">Packaging Products</h2>
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {packagingProducts.map(({ icon: Icon, title, items }) => (
+            <article key={title} className="group rounded-3xl border border-border bg-card p-8 hover:border-primary/40 hover:shadow-glow transition">
+              <div className="h-14 w-14 rounded-2xl bg-gradient-brand flex items-center justify-center mb-6 group-hover:scale-110 transition">
+                <Icon className="h-7 w-7 text-white" />
+              </div>
+              <h3 className="font-display text-2xl font-bold mb-4">{title}</h3>
+              <ul className="space-y-2">
+                {items.map((item) => (
+                  <li key={item} className="text-muted-foreground leading-relaxed flex items-start gap-2">
+                    <span className="mt-2 h-1.5 w-1.5 rounded-full bg-primary shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+      </section>
     </Layout>
   );
 }

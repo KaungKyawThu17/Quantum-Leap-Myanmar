@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
 import { PageHero } from "@/components/PageHero";
-import { Zap, Droplets, Citrus, Leaf, Coffee, Milk, Sparkles, Factory, Circle, Bottle, Box, Tag, Lightbulb, FlaskConical } from "lucide-react";
+import { Zap, Droplets, Citrus, Leaf, Coffee, Milk, Sparkles, Factory, Circle, Package, Box, Tag, Lightbulb, FlaskConical, Layers } from "lucide-react";
 
 export const Route = createFileRoute("/products")({
   head: () => ({

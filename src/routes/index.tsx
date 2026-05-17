@@ -45,6 +45,29 @@ const beverageProducts = [
   "Dairy & Soy Milk (Coming in 2026)",
 ];
 
+const coreValues = [
+  {
+    icon: Heart,
+    title: "Employee Well-Being",
+    desc: "We value our people as the driving force behind our success. Quantum Leap promotes a positive workplace culture that prioritizes safety, respect, teamwork, and professional growth.",
+  },
+  {
+    icon: Leaf,
+    title: "Environmental Responsibility",
+    desc: "Sustainability is integrated into our operations. We continuously improve our manufacturing processes to reduce environmental impact through efficient resource management and responsible packaging solutions.",
+  },
+  {
+    icon: Globe,
+    title: "Community & Social Responsibility",
+    desc: "Quantum Leap believes in building meaningful contributions to society by maintaining ethical business practices, supporting local communities, and creating trusted partnerships with customers and stakeholders.",
+  },
+  {
+    icon: Lightbulb,
+    title: "Innovation & Packaging Development",
+    desc: "With advanced manufacturing capabilities, Quantum Leap develops customized PET bottles, closures, and packaging solutions designed to support diverse beverage categories and evolving consumer demands.",
+  },
+];
+
 function Home() {
   return (
     <Layout>

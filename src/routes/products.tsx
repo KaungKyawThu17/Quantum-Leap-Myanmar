@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
 import { PageHero } from "@/components/PageHero";
-import { Zap, Droplets, Citrus, Leaf, Coffee, Milk, Sparkles, Factory, Circle, Package, Box, Tag, Lightbulb, Layers } from "lucide-react";
+import { Zap, Droplets, Citrus, Leaf, Coffee, Milk, Sparkles, Factory, Circle, Package, Box, Tag, Layers } from "lucide-react";
 
 export const Route = createFileRoute("/products")({
   head: () => ({
@@ -59,14 +59,9 @@ const packagingProducts = [
     items: ["Shrink sleeve labels", "Beverage packaging labels"],
   },
   {
-    icon: Lightbulb,
-    title: "Innovative Products",
-    items: ["Sustainable packaging", "Specialized packaging solutions"],
-  },
-  {
     icon: Layers,
-    title: "New packaging technologies",
-    items: ["Customized Services", "OEM packaging development"],
+    title: "Customized Services",
+    items: ["OEM packaging development", "Custom bottle and cap design"],
   },
 ];
 

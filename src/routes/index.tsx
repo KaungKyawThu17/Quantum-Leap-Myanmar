@@ -34,12 +34,12 @@ const highlights = [
 ];
 
 const packagingProducts = [
-  "Plastic Cap",
-  "PET Bottle",
-  "PET Preform",
-  "Aluminum Cap",
-  "Label",
-  "Customized Services",
+  { name: "Plastic Cap", image: plasticCapImg },
+  { name: "PET Bottle", image: petBottleImg },
+  { name: "PET Preform", image: petPreformImg },
+  { name: "Aluminum Cap", image: aluminumCapImg },
+  { name: "Label", image: labelImg },
+  { name: "Customized Services", image: undefined },
 ];
 
 const beverageProducts = [

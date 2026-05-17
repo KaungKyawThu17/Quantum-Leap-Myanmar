@@ -59,14 +59,9 @@ const packagingProducts = [
     items: ["Shrink sleeve labels", "Beverage packaging labels"],
   },
   {
-    icon: Lightbulb,
-    title: "Innovative Products",
-    items: ["Sustainable packaging", "Specialized packaging solutions"],
-  },
-  {
     icon: Layers,
-    title: "New packaging technologies",
-    items: ["Customized Services", "OEM packaging development"],
+    title: "Customized Services",
+    items: ["OEM packaging development", "Custom bottle and cap design"],
   },
 ];
 

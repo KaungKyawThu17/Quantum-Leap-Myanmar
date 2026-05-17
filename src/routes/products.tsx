@@ -45,11 +45,6 @@ const packagingProducts = [
   },
   {
     icon: Circle,
-    title: "Metal Lug Cap",
-    items: ["Twist-off metal caps", "Food jar closures"],
-  },
-  {
-    icon: Circle,
     title: "Aluminum Cap",
     items: ["Aluminum beverage closures", "Tamper-evident caps"],
   },

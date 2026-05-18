@@ -113,17 +113,63 @@ function Home() {
               Quantum Leap is a Myanmar-based OEM beverage manufacturer specializing in PET bottling,
               beverage formulation, and scalable production solutions for local and international brands.
             </p>
-            <div className="flex flex-wrap gap-4">
-              <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-white text-foreground px-7 py-3.5 font-semibold shadow-glow hover:scale-105 transition">
-                Start Your Brand <ArrowRight className="h-4 w-4" />
+            <div className="flex flex-wrap gap-3">
+              <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-accent text-foreground px-7 py-3.5 font-semibold shadow-glow hover:scale-105 transition">
+                Request a Quote <ArrowRight className="h-4 w-4" />
               </Link>
-              <Link to="/services/oem-manufacturing" className="inline-flex items-center gap-2 rounded-full glass px-7 py-3.5 font-semibold text-white hover:bg-white/15 transition">
-                Explore Services
+              <Link to="/products" className="inline-flex items-center gap-2 rounded-full border border-white/30 px-7 py-3.5 font-semibold text-white hover:bg-white/10 transition">
+                Explore Products
               </Link>
+            </div>
+            <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-white/80">
+              <span className="inline-flex items-center gap-1.5"><ShieldCheck className="h-4 w-4 text-accent" /> FDA & Halal Certified</span>
+              <span className="inline-flex items-center gap-1.5"><Gauge className="h-4 w-4 text-accent" /> 24,000 BPH Capacity</span>
+              <span className="inline-flex items-center gap-1.5"><Factory className="h-4 w-4 text-accent" /> 10-Acre Facility</span>
             </div>
           </div>
         </div>
 
+      </section>
+
+      {/* STATS STRIP */}
+      <section className="border-y border-border bg-card">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8 py-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          {[
+            { value: "10", suffix: "acre", label: "Integrated facility" },
+            { value: "24K", suffix: "BPH", label: "Production capacity" },
+            { value: "5+", suffix: "brands", label: "Produced for partners" },
+            { value: "3", suffix: "certs", label: "FDA · Halal · ISO" },
+          ].map((s) => (
+            <div key={s.label} className="flex flex-col items-center">
+              <div className="font-display text-3xl md:text-4xl font-bold text-foreground">
+                {s.value}<span className="text-primary text-lg ml-1">{s.suffix}</span>
+              </div>
+              <div className="text-xs md:text-sm text-muted-foreground mt-1 uppercase tracking-wider">{s.label}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* BRANDS STRIP */}
+      <section className="py-10 bg-muted/40">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
+          <div className="text-center text-xs uppercase tracking-widest text-muted-foreground font-semibold mb-5">
+            Trusted by leading beverage brands
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4 font-display text-lg md:text-xl font-bold text-foreground/60">
+            <span className="hover:text-foreground transition">Pokka Orange</span>
+            <span className="opacity-40">·</span>
+            <span className="hover:text-foreground transition">Sponsor Energy</span>
+            <span className="opacity-40">·</span>
+            <span className="hover:text-foreground transition">7go</span>
+            <span className="opacity-40">·</span>
+            <span className="hover:text-foreground transition">Spider</span>
+            <span className="opacity-40">·</span>
+            <span className="hover:text-foreground transition">ISO Plus</span>
+            <span className="opacity-40">·</span>
+            <span className="hover:text-foreground transition">Burma Club</span>
+          </div>
+        </div>
       </section>
 
       {/* INTRO */}
@@ -268,6 +314,29 @@ function Home() {
           <Link to="/products" className="inline-flex items-center gap-2 rounded-full bg-foreground text-background px-7 py-3.5 font-semibold hover:bg-primary transition">
             View all products <ArrowRight className="h-4 w-4" />
           </Link>
+        </div>
+      </section>
+
+      {/* HOW WE WORK */}
+      <section className="py-24 mx-auto max-w-7xl px-4 lg:px-8">
+        <div className="text-center max-w-2xl mx-auto mb-14">
+          <div className="text-xs uppercase tracking-widest text-primary font-semibold mb-3">How We Work</div>
+          <h2 className="font-display text-3xl md:text-4xl font-bold">From idea to finished bottle in 4 steps</h2>
+          <p className="text-muted-foreground mt-4">A streamlined OEM process designed to get your beverage to market faster.</p>
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+          {[
+            { n: "01", title: "Inquiry & Brief", desc: "Share your concept, volume needs, and target market. We respond within 48 hours." },
+            { n: "02", title: "Formulation & Sampling", desc: "Our R&D team develops your formula, packaging, and provides samples for approval." },
+            { n: "03", title: "Production", desc: "Scaled manufacturing on certified PET lines with full QA at every stage." },
+            { n: "04", title: "Delivery", desc: "Packaged, labelled, and ready for local distribution or export channels." },
+          ].map((s) => (
+            <div key={s.n} className="group relative rounded-2xl border border-border bg-card p-7 hover:shadow-glow hover:border-primary/30 transition-all">
+              <div className="font-display text-5xl font-bold text-primary/15 group-hover:text-primary/30 transition">{s.n}</div>
+              <h3 className="font-display text-lg font-bold mt-3 mb-2">{s.title}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+            </div>
+          ))}
         </div>
       </section>
 

@@ -14,6 +14,7 @@ import bevSoftDrinkImg from "@/assets/bev-soft-drink.webp";
 import bevFlavoredImg from "@/assets/bev-flavored.webp";
 import bevTeaImg from "@/assets/bev-tea.webp";
 import bevDairyImg from "@/assets/bev-dairy.webp";
+import welcomeImg from "@/assets/welcome.webp";
 import { useState, useRef, useEffect } from "react";
 import {
   Factory, Beaker, ShieldCheck, Gauge, Boxes, Award,
@@ -434,20 +435,26 @@ function Home() {
       {/* WHY US + CTA */}
       <section className="relative overflow-hidden">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
-          <div className="relative rounded-3xl bg-gradient-hero overflow-hidden p-10 md:p-16 text-white">
+          <div className="relative rounded-3xl bg-gradient-hero overflow-hidden text-white">
             <div className="absolute inset-0 bg-gradient-glow opacity-60" />
-            <img src={splashImg} alt="" className="absolute right-0 top-1/2 -translate-y-1/2 h-[120%] opacity-50 hidden md:block" loading="lazy" />
-            <div className="relative max-w-2xl">
-              <Award className="h-10 w-10 text-accent mb-6" />
-              <h2 className="font-display text-3xl md:text-5xl font-bold mb-5 leading-tight">
-                Start your beverage brand with Quantum Leap.
-              </h2>
-              <p className="text-white/80 text-lg mb-8 leading-relaxed">
-                Contact our OEM team today to discuss your beverage manufacturing requirements — we'll guide you from formula to finished product.
-              </p>
-              <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-white text-foreground px-7 py-3.5 font-semibold shadow-glow hover:scale-105 transition">
-                Talk to our team <ArrowRight className="h-4 w-4" />
-              </Link>
+            <img src={splashImg} alt="" className="absolute right-0 top-1/2 -translate-y-1/2 h-[120%] opacity-20 hidden md:block" loading="lazy" />
+            <div className="grid md:grid-cols-2 items-stretch relative z-10">
+              <div className="relative h-72 md:h-auto md:min-h-[400px] overflow-hidden order-last md:order-first">
+                <img src={welcomeImg} alt="Quantum Leap team welcome" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+                <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-l from-primary/70 via-primary/20 to-transparent md:from-transparent md:via-primary/10 md:to-primary/40" />
+              </div>
+              <div className="p-10 md:p-14">
+                <Award className="h-10 w-10 text-accent mb-6" />
+                <h2 className="font-display text-3xl md:text-5xl font-bold mb-5 leading-tight">
+                  Start your beverage brand with Quantum Leap.
+                </h2>
+                <p className="text-white/80 text-lg mb-8 leading-relaxed">
+                  Contact our OEM team today to discuss your beverage manufacturing requirements — we'll guide you from formula to finished product.
+                </p>
+                <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-white text-foreground px-7 py-3.5 font-semibold shadow-glow hover:scale-105 transition">
+                  Talk to our team <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
             </div>
           </div>
         </div>

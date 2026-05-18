@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
+import welcomeImg from "@/assets/welcome.webp";
 import { CertificatesSlider } from "@/components/CertificatesSlider";
 import {
   ArrowLeft, ArrowRight, Package, Container, Clock,
@@ -250,10 +251,14 @@ function OemManufacturing() {
       {/* CTA */}
       <section className="py-16 md:py-20 px-4 lg:px-8">
         <div className="max-w-5xl mx-auto">
-          <div className="relative bg-gradient-hero rounded-3xl overflow-hidden p-10 md:p-16 text-center text-white shadow-glow">
+          <div className="relative bg-gradient-hero rounded-3xl overflow-hidden text-white shadow-glow">
             <div className="absolute inset-0 bg-gradient-glow opacity-60" />
-            <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -mr-32 -mt-32" />
-            <div className="relative z-10">
+            <div className="grid md:grid-cols-2 items-stretch relative z-10">
+              <div className="relative h-64 md:h-auto md:min-h-[360px] overflow-hidden">
+                <img src={welcomeImg} alt="Quantum Leap team welcome" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+                <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-primary/70 via-primary/20 to-transparent md:from-transparent md:via-primary/10 md:to-primary/40" />
+              </div>
+              <div className="p-10 md:p-14 text-center md:text-left">
               <h3 className="font-display text-3xl md:text-4xl font-bold mb-4">Ready to discuss your project?</h3>
               <p className="text-white/80 mb-10 text-lg max-w-xl mx-auto">Our team will guide you from initial enquiry to scaled production.</p>
               <Link
@@ -263,6 +268,7 @@ function OemManufacturing() {
                 Contact our team
                 <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Link>
+              </div>
             </div>
           </div>
         </div>

@@ -17,7 +17,7 @@ import bevDairyImg from "@/assets/bev-dairy.webp";
 import { useState } from "react";
 import {
   Factory, Beaker, ShieldCheck, Gauge, Boxes, Award,
-  Milk, ArrowRight, CheckCircle2, Heart, Leaf, Globe, Lightbulb, Package, GlassWater
+  Milk, ArrowRight, CheckCircle2, Heart, Leaf, Globe, Lightbulb, Package, GlassWater, Sparkles
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({

@@ -7,7 +7,7 @@ import { useState } from "react";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact Us — Quantum Leap" },
+      { title: "Contact Us — QUANTUM LEAP" },
       { name: "description", content: "Get in touch with our OEM beverage manufacturing team in Yangon, Myanmar." },
     ],
   }),
@@ -22,7 +22,7 @@ function Contact() {
 
       <section className="py-20 mx-auto max-w-7xl px-4 lg:px-8 grid lg:grid-cols-5 gap-12">
         <div className="lg:col-span-2 space-y-6">
-          <ContactCard icon={Building2} title="Quantum Leap Beverage Mfg." lines={["A next-generation OEM & ODM beverage manufacturer based in Yangon."]} />
+          <ContactCard icon={Building2} title="QUANTUM LEAP Beverage Mfg." lines={["A next-generation OEM & ODM beverage manufacturer based in Yangon."]} />
           <ContactCard icon={MapPin} title="Visit our factory" lines={["No.351–352, No.3 High Road,", "R-11 Mingalardon Garden City,", "Yangon Industrial Zone (3),", "Mingalardon Township, Yangon, Myanmar"]} />
           <ContactCard icon={Phone} title="Call us" lines={["+95 95001439", "+95 9972115209"]} />
           <ContactCard icon={Mail} title="Email" lines={["info@quantumleap.com.mm"]} />

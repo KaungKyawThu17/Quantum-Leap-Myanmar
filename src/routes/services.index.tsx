@@ -7,7 +7,7 @@ import { Factory, Beaker, Building2, Boxes, Lightbulb, ArrowRight } from "lucide
 export const Route = createFileRoute("/services/")({
   head: () => ({
     meta: [
-      { title: "Services — Quantum Leap" },
+      { title: "Services — QUANTUM LEAP" },
       { name: "description", content: "Complete OEM and ODM beverage manufacturing services from product concept to full-scale production." },
     ],
   }),
@@ -46,7 +46,7 @@ function Services() {
       <PageHero
         eyebrow="Our Services"
         title="OEM and ODM beverage manufacturing — end to end."
-        subtitle="Quantum Leap provides complete OEM and ODM beverage manufacturing solutions designed to support beverage brands from product concept to full-scale production."
+        subtitle="QUANTUM LEAP provides complete OEM and ODM beverage manufacturing solutions designed to support beverage brands from product concept to full-scale production."
       />
       <section className="py-20 mx-auto max-w-7xl px-4 lg:px-8 space-y-6">
         <div className="grid md:grid-cols-2 gap-6">

@@ -9,7 +9,7 @@ import {
 
 export const Route = createFileRoute("/services/factory-facilities")({
   head: () => ({ meta: [
-    { title: "Factory & Facilities — Quantum Leap" },
+    { title: "Factory & Facilities — QUANTUM LEAP" },
     { name: "description", content: "10-acre campus with advanced production equipment, utilities, cold storage and warehousing." },
   ]}),
   component: FactoryFacilities,
@@ -202,7 +202,7 @@ function FactoryFacilities() {
           <div className="relative bg-gradient-hero rounded-3xl overflow-hidden text-white shadow-glow">
             <div className="absolute inset-0 bg-gradient-glow opacity-60" />
             <div className="relative z-10 min-h-[380px] md:min-h-[440px] flex items-center">
-              <img src={welcomeImg} alt="Quantum Leap team welcome" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+              <img src={welcomeImg} alt="QUANTUM LEAP team welcome" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/40" />
               <div className="absolute inset-0 bg-gradient-glow opacity-60" />
               <div className="relative w-full p-10 md:p-16 text-center md:text-left max-w-2xl">

@@ -16,7 +16,7 @@ import regulatoryImg from "@/assets/odm-regulatory.webp";
 
 export const Route = createFileRoute("/services/odm-solutions")({
   head: () => ({ meta: [
-    { title: "ODM Solutions — Quantum Leap" },
+    { title: "ODM Solutions — QUANTUM LEAP" },
     { name: "description", content: "From product idea to market-ready beverage. Formula, packaging design, and quality control." },
   ]}),
   component: OdmSolutions,
@@ -74,7 +74,7 @@ function OdmSolutions() {
               Our ODM Beverage Solution is suitable for brands that want to create a new beverage product but need support with product direction, packaging format, production feasibility, and manufacturing planning.
             </p>
             <p>
-              Quantum Leap can work together with brand partners to develop a practical beverage concept that fits market needs, factory capability, packaging requirements, and commercial production planning.
+              QUANTUM LEAP can work together with brand partners to develop a practical beverage concept that fits market needs, factory capability, packaging requirements, and commercial production planning.
             </p>
           </div>
         </div>
@@ -172,7 +172,7 @@ function OdmSolutions() {
           <div className="relative bg-gradient-hero rounded-3xl overflow-hidden text-white shadow-glow">
             <div className="absolute inset-0 bg-gradient-glow opacity-60" />
             <div className="relative z-10 min-h-[380px] md:min-h-[440px] flex items-center">
-              <img src={welcomeImg} alt="Quantum Leap team welcome" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+              <img src={welcomeImg} alt="QUANTUM LEAP team welcome" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/40" />
               <div className="absolute inset-0 bg-gradient-glow opacity-60" />
               <div className="relative w-full p-10 md:p-16 text-center md:text-left max-w-2xl">

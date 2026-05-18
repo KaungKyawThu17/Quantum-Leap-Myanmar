@@ -8,8 +8,8 @@ import { Target, Eye, Quote } from "lucide-react";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Us — Quantum Leap Beverage Manufacturing" },
-      { name: "description", content: "Quantum Leap is a next-generation OEM & ODM beverage manufacturer in Myanmar, formerly Kaung Htet Myanmar Manufacturing." },
+      { title: "About Us — QUANTUM LEAP Beverage Manufacturing" },
+      { name: "description", content: "QUANTUM LEAP is a next-generation OEM & ODM beverage manufacturer in Myanmar, formerly Kaung Htet Myanmar Manufacturing." },
     ],
   }),
   component: About,
@@ -27,7 +27,7 @@ function About() {
       <PageHero
         eyebrow="About Us"
         title="Building Myanmar's premier beverage manufacturing platform."
-        subtitle="From Kaung Htet Myanmar Manufacturing to Quantum Leap — a new chapter of scale, technology, and global ambition."
+        subtitle="From Kaung Htet Myanmar Manufacturing to QUANTUM LEAP — a new chapter of scale, technology, and global ambition."
       />
 
       <section className="py-20 mx-auto max-w-7xl px-4 lg:px-8">
@@ -37,10 +37,10 @@ function About() {
             <div className="text-xs uppercase tracking-widest text-primary font-semibold mb-3">Company Overview</div>
             <h2 className="font-display text-3xl md:text-4xl font-bold mb-5 leading-tight">A next-generation beverage manufacturer.</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Quantum Leap is focused on OEM and ODM beverage production. Formerly operating as Kaung Htet Myanmar Manufacturing, the facility previously produced recognized beverage brands such as <strong>Pokka Orange</strong> and <strong>Sponsor Energy</strong>.
+              QUANTUM LEAP is focused on OEM and ODM beverage production. Formerly operating as Kaung Htet Myanmar Manufacturing, the facility previously produced recognized beverage brands such as <strong>Pokka Orange</strong> and <strong>Sponsor Energy</strong>.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Following acquisition in 2025, Quantum Leap has expanded operations to support products including <strong>7go, Spider, ISO Plus,</strong> and <strong>Burma Club Whisky</strong>.
+              Following acquisition in 2025, QUANTUM LEAP has expanded operations to support products including <strong>7go, Spider, ISO Plus,</strong> and <strong>Burma Club Whisky</strong>.
             </p>
           </div>
         </div>
@@ -69,7 +69,7 @@ function About() {
             <Quote className="h-12 w-12 text-white/40 mb-6" />
             <div className="space-y-5 text-white/90 leading-relaxed">
               <p>Welcome to our OEM Beverage company.</p>
-              <p>At Quantum Leap Co. Ltd, we are driven by a strong commitment to quality, innovation, and long-term sustainable growth. We strive to produce high-quality beverages that meet international standards while serving the evolving needs of consumers across diverse markets.</p>
+              <p>At QUANTUM LEAP Co. Ltd, we are driven by a strong commitment to quality, innovation, and long-term sustainable growth. We strive to produce high-quality beverages that meet international standards while serving the evolving needs of consumers across diverse markets.</p>
               <p>Our vision extends beyond manufacturing. We aim to build trusted brands, develop meaningful partnerships, and create long-term value through continuous investment in modern technology, operational excellence, product development, and human capital. We are committed to becoming a respected and forward-thinking beverage manufacturer in the industry.</p>
               <p>We firmly believe that sustainable success is built upon integrity, innovation, and strong relationships with our customers, employees, suppliers, and business partners. The trust and support we receive from all stakeholders continue to inspire us to improve and grow every day.</p>
               <p>As we move forward, we remain dedicated to maintaining the highest standards of product safety, quality assurance, and responsible business practices. Together with our management team and employees, we will continue working passionately to deliver products that consumers can enjoy with confidence.</p>

@@ -7,7 +7,7 @@ import { useState } from "react";
 export const Route = createFileRoute("/faq")({
   head: () => ({
     meta: [
-      { title: "FAQ — Quantum Leap" },
+      { title: "FAQ — QUANTUM LEAP" },
       { name: "description", content: "Common questions about our OEM and ODM beverage manufacturing services." },
     ],
   }),
@@ -15,10 +15,10 @@ export const Route = createFileRoute("/faq")({
 });
 
 const faqs = [
-  { q: "What beverage categories can Quantum Leap manufacture?", a: "We manufacture energy drinks, juices, flavored beverages, electrolyte drinks, soft drinks, and upcoming UHT, CSD and Canning products." },
+  { q: "What beverage categories can QUANTUM LEAP manufacture?", a: "We manufacture energy drinks, juices, flavored beverages, electrolyte drinks, soft drinks, and upcoming UHT, CSD and Canning products." },
   { q: "Do you provide OEM and ODM beverage services?", a: "Yes. We provide both OEM and ODM beverage manufacturing solutions tailored to client requirements." },
   { q: "What packaging formats are available?", a: "PET bottles, standing pouches, and future glass bottle packaging options are available." },
-  { q: "Can Quantum Leap support export production?", a: "Yes. Our facility is designed to support scalable production for both local and international markets." },
+  { q: "Can QUANTUM LEAP support export production?", a: "Yes. Our facility is designed to support scalable production for both local and international markets." },
 ];
 
 function FAQ() {

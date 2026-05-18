@@ -438,12 +438,11 @@ function Home() {
           <div className="relative rounded-3xl bg-gradient-hero overflow-hidden text-white">
             <div className="absolute inset-0 bg-gradient-glow opacity-60" />
             <img src={splashImg} alt="" className="absolute right-0 top-1/2 -translate-y-1/2 h-[120%] opacity-20 hidden md:block" loading="lazy" />
-            <div className="grid md:grid-cols-2 items-stretch relative z-10">
-              <div className="relative h-72 md:h-auto md:min-h-[400px] overflow-hidden order-last md:order-first">
-                <img src={welcomeImg} alt="Quantum Leap team welcome" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
-                <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-l from-primary/70 via-primary/20 to-transparent md:from-transparent md:via-primary/10 md:to-primary/40" />
-              </div>
-              <div className="p-10 md:p-14">
+            <div className="relative z-10 min-h-[440px] md:min-h-[520px] flex items-center">
+              <img src={welcomeImg} alt="Quantum Leap team welcome" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/40" />
+              <div className="absolute inset-0 bg-gradient-glow opacity-60" />
+              <div className="relative w-full p-10 md:p-16 max-w-2xl">
                 <Award className="h-10 w-10 text-accent mb-6" />
                 <h2 className="font-display text-3xl md:text-5xl font-bold mb-5 leading-tight">
                   Start your beverage brand with Quantum Leap.

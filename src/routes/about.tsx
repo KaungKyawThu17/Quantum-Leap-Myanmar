@@ -68,9 +68,12 @@ function About() {
           <div>
             <Quote className="h-12 w-12 text-white/40 mb-6" />
             <div className="space-y-5 text-white/90 leading-relaxed">
+              <p>Welcome to our OEM Beverage company.</p>
               <p>At Quantum Leap Co. Ltd, we are driven by a strong commitment to quality, innovation, and long-term sustainable growth. We strive to produce high-quality beverages that meet international standards while serving the evolving needs of consumers across diverse markets.</p>
-              <p>Our vision extends beyond manufacturing. We aim to build trusted brands, develop meaningful partnerships, and create long-term value through continuous investment in modern technology, operational excellence, product development, and human capital.</p>
-              <p>We firmly believe that sustainable success is built upon integrity, innovation, and strong relationships with our customers, employees, suppliers, and business partners. Together with our management team and employees, we will continue working passionately to deliver products that consumers can enjoy with confidence.</p>
+              <p>Our vision extends beyond manufacturing. We aim to build trusted brands, develop meaningful partnerships, and create long-term value through continuous investment in modern technology, operational excellence, product development, and human capital. We are committed to becoming a respected and forward-thinking beverage manufacturer in the industry.</p>
+              <p>We firmly believe that sustainable success is built upon integrity, innovation, and strong relationships with our customers, employees, suppliers, and business partners. The trust and support we receive from all stakeholders continue to inspire us to improve and grow every day.</p>
+              <p>As we move forward, we remain dedicated to maintaining the highest standards of product safety, quality assurance, and responsible business practices. Together with our management team and employees, we will continue working passionately to deliver products that consumers can enjoy with confidence.</p>
+              <p>We sincerely thank all our customers, partners, and stakeholders for being part of our journey and look forward to achieving greater success together.</p>
             </div>
           </div>
           <div className="flex flex-col items-center md:items-start">

@@ -228,8 +228,11 @@ function OemManufacturing() {
                     <Clock className="h-3.5 w-3.5" /> Coming Soon
                   </div>
                   <h2 className="font-display text-3xl md:text-5xl font-extrabold text-foreground mb-4">Can Manufacturing</h2>
-                  <p className="text-muted-foreground text-lg leading-relaxed max-w-xl mx-auto mb-8">
-                    We're expanding our beverage manufacturing capabilities with a dedicated can production line. Get in touch to discuss your upcoming canned beverage projects and be among the first to launch with us.
+                  <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl mx-auto mb-6">
+                    Quantum Leap is currently expanding its manufacturing capabilities with a future can production line designed to support both carbonated and non-carbonated beverages.
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-8">
+                    The upcoming can manufacturing facility will focus on high-speed production efficiency, product quality consistency, and sustainable aluminum packaging solutions for evolving beverage market demands.
                   </p>
                   <Link
                     to="/contact"

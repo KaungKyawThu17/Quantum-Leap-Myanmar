@@ -207,6 +207,32 @@ function OemManufacturing() {
               })}
             </div>
           </div>
+            </>
+          ) : (
+            <div className="max-w-3xl mx-auto">
+              <div className="relative rounded-3xl border border-border bg-card p-10 md:p-16 text-center overflow-hidden shadow-sm">
+                <div className="absolute inset-0 bg-gradient-glow opacity-30 pointer-events-none" />
+                <div className="relative">
+                  <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-brand text-white shadow-glow">
+                    <Container className="h-8 w-8" />
+                  </div>
+                  <div className="inline-flex items-center gap-2 rounded-full bg-accent/15 text-accent px-3 py-1 text-xs font-bold uppercase tracking-widest mb-4">
+                    <Clock className="h-3.5 w-3.5" /> Coming Soon
+                  </div>
+                  <h2 className="font-display text-3xl md:text-5xl font-extrabold text-foreground mb-4">Can Manufacturing</h2>
+                  <p className="text-muted-foreground text-lg leading-relaxed max-w-xl mx-auto mb-8">
+                    We're expanding our beverage manufacturing capabilities with a dedicated can production line. Get in touch to discuss your upcoming canned beverage projects and be among the first to launch with us.
+                  </p>
+                  <Link
+                    to="/contact"
+                    className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-6 py-3 font-semibold hover:scale-105 transition"
+                  >
+                    Register your interest <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </section>
 

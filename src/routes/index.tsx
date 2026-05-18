@@ -137,6 +137,11 @@ function ProductCard({ product }: { product: Product }) {
             <Package className="h-10 w-10" />
           </div>
         )}
+        {badge && (
+          <span className="absolute top-3 left-3 rounded-full bg-accent text-foreground text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 shadow-sm">
+            {badge}
+          </span>
+        )}
       </div>
       <div className="p-4">
         <h3 className="font-display text-base md:text-lg font-bold">{name}</h3>

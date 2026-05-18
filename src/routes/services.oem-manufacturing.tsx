@@ -35,6 +35,7 @@ const steps = [
 ];
 
 function OemManufacturing() {
+  const [tab, setTab] = useState<"pet" | "can">("pet");
   return (
     <Layout>
       {/* HERO */}

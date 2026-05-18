@@ -326,8 +326,8 @@ function Home() {
         {/* Cards: horizontal snap-carousel on mobile, grid w/ spotlight on desktop */}
         <div className="relative animate-fade-in" key={category}>
           <div className="flex md:grid md:grid-cols-3 gap-4 overflow-x-auto md:overflow-visible snap-x snap-mandatory -mx-4 px-4 md:mx-0 md:px-0 pb-4 md:pb-0 scrollbar-hide">
-            {(category === "packaging" ? packagingProducts : beverageProducts).map((p, idx) => (
-              <ProductCard key={p.name} product={p} featured={idx === 0} />
+            {(category === "packaging" ? packagingProducts : beverageProducts).map((p) => (
+              <ProductCard key={p.name} product={p} />
             ))}
           </div>
         </div>

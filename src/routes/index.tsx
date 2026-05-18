@@ -17,7 +17,7 @@ import bevDairyImg from "@/assets/bev-dairy.webp";
 import { useState } from "react";
 import {
   Factory, Beaker, ShieldCheck, Gauge, Boxes, Award,
-  Milk, ArrowRight, CheckCircle2, Heart, Leaf, Globe, Lightbulb, Package, GlassWater
+  Milk, ArrowRight, CheckCircle2, Heart, Leaf, Globe, Lightbulb, Package, GlassWater, Sparkles
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -39,21 +39,30 @@ const highlights = [
   { icon: Beaker, title: "Flexible Formats", desc: "Multiple packaging sizes and types" },
 ];
 
-const packagingProducts = [
-  { name: "Plastic Cap", image: plasticCapImg },
-  { name: "PET Bottle", image: petBottleImg },
-  { name: "PET Preform", image: petPreformImg },
-  { name: "Aluminum Cap", image: aluminumCapImg },
-  { name: "Label", image: labelImg },
-  { name: "Customized Services", image: undefined },
+type Product = {
+  name: string;
+  image?: string;
+  chip?: string;
+  desc?: string;
+  badge?: string;
+  cta?: boolean;
+};
+
+const packagingProducts: Product[] = [
+  { name: "PET Bottle", image: petBottleImg, chip: "PET · Multi-size", desc: "Lightweight, food-grade bottles in 250ml–1.5L formats.", badge: "Popular" },
+  { name: "Plastic Cap", image: plasticCapImg, chip: "HDPE · Tamper-evident", desc: "Tamper-evident closures engineered for high-speed lines." },
+  { name: "PET Preform", image: petPreformImg, chip: "Preform · Custom weight", desc: "Bottle-grade preforms ready for in-house blow molding." },
+  { name: "Aluminum Cap", image: aluminumCapImg, chip: "Aluminum · Premium", desc: "Premium aluminum closures for glass and PET formats." },
+  { name: "Label", image: labelImg, chip: "Shrink · BOPP", desc: "Shrink-sleeve and BOPP labels with full-color print." },
+  { name: "Customized Services", chip: "Bespoke", desc: "Need something custom? Let's design bottles, caps and labels to your brand spec.", cta: true },
 ];
 
-const beverageProducts = [
-  { name: "Energy Drinks / Electrolyte Beverages", image: bevElectrolyteImg },
-  { name: "Soft Drinks / Carbonated Beverages", image: bevSoftDrinkImg },
-  { name: "Fruit Juices / Flavored Drinks", image: bevFlavoredImg },
-  { name: "Tea & Functional Beverages", image: bevTeaImg },
-  { name: "Dairy & Soy Milk (Coming in 2026)", image: bevDairyImg },
+const beverageProducts: Product[] = [
+  { name: "Energy & Electrolyte", image: bevElectrolyteImg, chip: "Functional", desc: "Performance drinks with electrolyte and vitamin blends.", badge: "Popular" },
+  { name: "Soft & Carbonated", image: bevSoftDrinkImg, chip: "CSD", desc: "Classic and craft carbonated soft drinks." },
+  { name: "Juice & Flavored", image: bevFlavoredImg, chip: "Still", desc: "Fruit juices and flavored still beverages." },
+  { name: "Tea & Functional", image: bevTeaImg, chip: "RTD Tea", desc: "Ready-to-drink teas and functional infusions." },
+  { name: "Dairy & Soy Milk", image: bevDairyImg, chip: "UHT", desc: "UHT-processed dairy and plant-based milks.", badge: "Coming 2026" },
 ];
 
 const coreValues = [
@@ -78,6 +87,89 @@ const coreValues = [
     desc: "With advanced manufacturing capabilities, Quantum Leap develops customized PET bottles, closures, and packaging solutions designed to support diverse beverage categories and evolving consumer demands.",
   },
 ];
+
+function ProductCard({ product, featured }: { product: Product; featured?: boolean }) {
+  const [loaded, setLoaded] = useState(false);
+  const { name, image, chip, desc, badge, cta } = product;
+
+  return (
+    <Link
+      to="/products"
+      className={`group relative shrink-0 snap-start w-[78%] sm:w-[55%] md:w-auto rounded-2xl border border-border bg-card overflow-hidden hover:border-primary/40 hover:shadow-glow transition-all ${
+        featured ? "md:col-span-2 md:row-span-1" : ""
+      }`}
+    >
+      <div className={`relative w-full overflow-hidden bg-muted ${featured ? "aspect-[16/10] md:aspect-[16/9]" : "aspect-[4/5] md:aspect-[4/5]"}`}>
+        {/* Skeleton */}
+        {!loaded && !cta && image && (
+          <div className="absolute inset-0 animate-pulse bg-gradient-to-br from-muted to-muted/40" />
+        )}
+
+        {cta ? (
+          <div className="absolute inset-0 bg-gradient-brand flex flex-col items-center justify-center text-white text-center px-6">
+            <Sparkles className="h-10 w-10 mb-3 opacity-90" />
+            <div className="font-display text-lg font-bold mb-1">Need something custom?</div>
+            <p className="text-sm text-white/85 leading-snug max-w-[14rem]">Bespoke bottles, caps & labels engineered to your brand.</p>
+          </div>
+        ) : image ? (
+          <img
+            src={image}
+            alt={name}
+            loading="lazy"
+            decoding="async"
+            onLoad={() => setLoaded(true)}
+            className={`h-full w-full object-cover transition-all duration-700 group-hover:scale-105 ${loaded ? "opacity-100" : "opacity-0"}`}
+          />
+        ) : (
+          <div className="h-full w-full flex items-center justify-center bg-gradient-brand text-white">
+            <Package className="h-10 w-10" />
+          </div>
+        )}
+
+        {/* Top badges */}
+        <div className="absolute top-3 left-3 right-3 flex items-start justify-between gap-2 pointer-events-none">
+          {chip && (
+            <span className="rounded-full bg-white/90 backdrop-blur text-foreground text-[10px] font-semibold uppercase tracking-wider px-2.5 py-1 shadow-sm">
+              {chip}
+            </span>
+          )}
+          {badge && (
+            <span className={`rounded-full text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 shadow-sm ${
+              badge.toLowerCase().includes("coming") ? "bg-accent text-foreground" : "bg-primary text-white"
+            }`}>
+              {badge}
+            </span>
+          )}
+        </div>
+
+        {/* Bottom info */}
+        {!cta && (
+          <>
+            <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/85 via-black/45 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+              <div className="flex items-center justify-between gap-2 mb-1">
+                <h3 className="font-display text-base md:text-lg font-bold leading-tight">{name}</h3>
+                <ArrowRight className="h-4 w-4 shrink-0 opacity-70 group-hover:opacity-100 group-hover:translate-x-0.5 transition" />
+              </div>
+              {desc && (
+                <p className="text-[11px] md:text-xs text-white/80 leading-snug max-h-0 opacity-0 group-hover:max-h-20 group-hover:opacity-100 transition-all duration-300 overflow-hidden">
+                  {desc}
+                </p>
+              )}
+            </div>
+          </>
+        )}
+        {cta && (
+          <div className="absolute bottom-4 left-0 right-0 flex justify-center">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-white text-foreground text-xs font-semibold px-3.5 py-1.5">
+              Let's talk <ArrowRight className="h-3.5 w-3.5" />
+            </span>
+          </div>
+        )}
+      </div>
+    </Link>
+  );
+}
 
 function Home() {
   const [category, setCategory] = useState<"packaging" | "beverage">("packaging");
@@ -227,7 +319,7 @@ function Home() {
 
       {/* PRODUCT CATEGORIES */}
       <section className="py-24 mx-auto max-w-7xl px-4 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-10">
+        <div className="grid lg:grid-cols-2 gap-12 items-end mb-10">
           <div>
             <div className="text-xs uppercase tracking-widest text-primary font-semibold mb-3">Product Categories</div>
             <h2 className="font-display text-3xl md:text-5xl font-bold leading-tight">Packaging and beverages under one roof.</h2>
@@ -237,82 +329,53 @@ function Home() {
           </p>
         </div>
 
-        {/* Tabs */}
-        <div className="grid grid-cols-2 sm:flex sm:w-fit sm:mx-auto gap-1.5 p-1.5 mb-8 rounded-2xl sm:rounded-full bg-muted/60">
-          <button
-            onClick={() => setCategory("packaging")}
-            className={`inline-flex items-center justify-center gap-2 rounded-xl sm:rounded-full px-4 sm:px-5 py-2.5 text-sm font-semibold transition ${
-              category === "packaging" ? "bg-foreground text-background shadow-soft" : "text-muted-foreground hover:text-foreground"
-            }`}
-          >
-            <Package className="h-4 w-4" />
-            <span>Packaging</span>
-            <span className={`text-xs rounded-full px-1.5 py-0.5 ${category === "packaging" ? "bg-background/15" : "bg-foreground/10"}`}>
-              {packagingProducts.length}
-            </span>
-          </button>
-          <button
-            onClick={() => setCategory("beverage")}
-            className={`inline-flex items-center justify-center gap-2 rounded-xl sm:rounded-full px-4 sm:px-5 py-2.5 text-sm font-semibold transition ${
-              category === "beverage" ? "bg-foreground text-background shadow-soft" : "text-muted-foreground hover:text-foreground"
-            }`}
-          >
-            <GlassWater className="h-4 w-4" />
-            <span>Beverages</span>
-            <span className={`text-xs rounded-full px-1.5 py-0.5 ${category === "beverage" ? "bg-background/15" : "bg-foreground/10"}`}>
-              {beverageProducts.length}
-            </span>
-          </button>
+        {/* Sticky segmented control */}
+        <div className="sticky top-16 z-20 -mx-4 px-4 lg:mx-0 lg:px-0 py-3 mb-6 bg-background/85 backdrop-blur-md">
+          <div className="mx-auto w-full sm:w-fit grid grid-cols-2 gap-1.5 p-1.5 rounded-2xl sm:rounded-full bg-muted/60 border border-border">
+            {([
+              { key: "packaging", label: "Packaging", sub: "Caps · Bottles · Labels", icon: Package, count: packagingProducts.length },
+              { key: "beverage", label: "Beverages", sub: "Energy · Soft · Tea · Dairy", icon: GlassWater, count: beverageProducts.length },
+            ] as const).map(({ key, label, sub, icon: Icon, count }) => {
+              const active = category === key;
+              return (
+                <button
+                  key={key}
+                  onClick={() => setCategory(key)}
+                  className={`relative flex items-center justify-center gap-2.5 rounded-xl sm:rounded-full px-4 sm:px-6 py-2.5 text-left transition ${
+                    active ? "bg-foreground text-background shadow-soft" : "text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  <Icon className="h-4 w-4 shrink-0" />
+                  <div className="flex flex-col leading-tight">
+                    <span className="text-sm font-semibold inline-flex items-center gap-1.5">
+                      {label}
+                      <span className={`text-[10px] rounded-full px-1.5 py-0.5 font-bold ${active ? "bg-background/20 text-background" : "bg-foreground/15 text-foreground"}`}>
+                        {count}
+                      </span>
+                    </span>
+                    <span className={`text-[10px] hidden sm:block ${active ? "text-background/70" : "text-muted-foreground/80"}`}>{sub}</span>
+                  </div>
+                </button>
+              );
+            })}
+          </div>
         </div>
 
-        <div className="relative">
-          <div className={category === "packaging" ? "grid grid-cols-2 md:grid-cols-3 gap-4" : "hidden"}>
-            {packagingProducts.map(({ name, image }) => (
-              <Link
-                key={name}
-                to="/products"
-                className="group relative rounded-2xl border border-border bg-card overflow-hidden hover:border-primary/40 hover:shadow-glow transition"
-              >
-                <div className="relative h-44 w-full overflow-hidden bg-muted">
-                  {image ? (
-                    <img src={image} alt={name} loading="lazy" decoding="async" className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                  ) : (
-                    <div className="h-full w-full flex items-center justify-center bg-gradient-brand text-white">
-                      <Package className="h-10 w-10" />
-                    </div>
-                  )}
-                  <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/70 to-transparent" />
-                  <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-white">
-                    <span className="font-display text-sm md:text-base font-semibold">{name}</span>
-                    <ArrowRight className="h-4 w-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition" />
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-          <div className={category === "beverage" ? "grid grid-cols-2 md:grid-cols-3 gap-4" : "hidden"}>
-            {beverageProducts.map(({ name, image }) => (
-              <Link
-                key={name}
-                to="/products"
-                className="group relative rounded-2xl border border-border bg-card overflow-hidden hover:border-primary/40 hover:shadow-glow transition"
-              >
-                <div className="relative h-44 w-full overflow-hidden bg-muted">
-                  <img src={image} alt={name} loading="lazy" decoding="async" className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                  <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                  <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-white gap-2">
-                    <span className="font-display text-sm md:text-base font-semibold leading-tight">{name}</span>
-                    <ArrowRight className="h-4 w-4 shrink-0 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition" />
-                  </div>
-                </div>
-              </Link>
+        {/* Cards: horizontal snap-carousel on mobile, grid w/ spotlight on desktop */}
+        <div className="relative animate-fade-in" key={category}>
+          <div className="flex md:grid md:grid-cols-3 gap-4 overflow-x-auto md:overflow-visible snap-x snap-mandatory -mx-4 px-4 md:mx-0 md:px-0 pb-4 md:pb-0 scrollbar-hide">
+            {(category === "packaging" ? packagingProducts : beverageProducts).map((p, idx) => (
+              <ProductCard key={p.name} product={p} featured={idx === 0} />
             ))}
           </div>
         </div>
 
-        <div className="text-center mt-10">
+        <div className="text-center mt-10 flex flex-wrap items-center justify-center gap-3">
           <Link to="/products" className="inline-flex items-center gap-2 rounded-full bg-foreground text-background px-7 py-3.5 font-semibold hover:bg-primary transition">
             View all products <ArrowRight className="h-4 w-4" />
+          </Link>
+          <Link to="/contact" className="inline-flex items-center gap-2 rounded-full border border-border px-7 py-3.5 font-semibold text-foreground hover:bg-muted/60 transition">
+            Request a sample
           </Link>
         </div>
       </section>

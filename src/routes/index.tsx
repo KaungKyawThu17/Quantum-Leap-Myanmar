@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
 import heroImg from "@/assets/hero-factory.jpg";
 import heroVideo from "@/assets/hero-video.mp4";
-import factoryImg from "@/assets/factory-aerial.jpg";
+import factoryImg from "@/assets/warehouse.webp";
 import splashImg from "@/assets/product-splash.jpg";
 import plasticCapImg from "@/assets/pkg-plastic-cap.webp";
 import petBottleImg from "@/assets/pkg-pet-bottle.webp";

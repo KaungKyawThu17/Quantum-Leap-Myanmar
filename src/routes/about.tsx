@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
 import { PageHero } from "@/components/PageHero";
-import factoryImg from "@/assets/factory-aerial.jpg";
-import boardDirectorImg from "@/assets/board-director.jpg";
+import factoryImg from "@/assets/warehouse.webp";
+import boardDirectorImg from "@/assets/alvin.webp";
 import { Target, Eye, Quote } from "lucide-react";
 
 export const Route = createFileRoute("/about")({

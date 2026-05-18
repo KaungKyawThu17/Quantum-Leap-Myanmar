@@ -8,7 +8,7 @@ import {
 
 export const Route = createFileRoute("/services/product-development")({
   head: () => ({ meta: [
-    { title: "Product Development — Quantum Leap" },
+    { title: "Product Development — QUANTUM LEAP" },
     { name: "description", content: "Packaging solutions, formats, quality assurance, and export support for your beverage brand." },
   ]}),
   component: ProductDevelopment,
@@ -85,7 +85,7 @@ function ProductDevelopment() {
           </div>
           <div className="lg:col-span-7 space-y-6 text-muted-foreground text-lg leading-relaxed">
             <p>
-              Quantum Leap supports your brand from initial packaging concept to finished, export-ready product — combining flexible formats with rigorous quality assurance and global distribution support.
+              QUANTUM LEAP supports your brand from initial packaging concept to finished, export-ready product — combining flexible formats with rigorous quality assurance and global distribution support.
             </p>
             <p>
               Whether you launch with PET bottles, standing pouches, or aseptic cartons, our team helps you select the right format, size, and certification path for your market.
@@ -179,7 +179,7 @@ function ProductDevelopment() {
           <div className="relative bg-gradient-hero rounded-3xl overflow-hidden text-white shadow-glow">
             <div className="absolute inset-0 bg-gradient-glow opacity-60" />
             <div className="relative z-10 min-h-[380px] md:min-h-[440px] flex items-center">
-              <img src={welcomeImg} alt="Quantum Leap team welcome" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+              <img src={welcomeImg} alt="QUANTUM LEAP team welcome" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/40" />
               <div className="absolute inset-0 bg-gradient-glow opacity-60" />
               <div className="relative w-full p-10 md:p-16 text-center md:text-left max-w-2xl">

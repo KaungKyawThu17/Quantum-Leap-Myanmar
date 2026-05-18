@@ -8,8 +8,8 @@ export function SiteFooter() {
       <div className="mx-auto max-w-7xl px-4 lg:px-8 py-16 grid gap-12 md:grid-cols-2 lg:grid-cols-4">
         <div>
           <div className="flex items-center gap-3 mb-4">
-            <img src={logo} alt="Quantum Leap" className="h-11 w-11 object-contain bg-white rounded-lg p-1" />
-            <div className="font-display text-lg font-bold">Quantum Leap</div>
+            <img src={logo} alt="QUANTUM LEAP" className="h-11 w-11 object-contain bg-white rounded-lg p-1" />
+            <div className="font-display text-lg font-bold">QUANTUM LEAP</div>
           </div>
           <p className="text-sm text-background/70 leading-relaxed">
             Myanmar's next generation OEM beverage manufacturing partner.
@@ -46,7 +46,7 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="border-t border-background/10 py-6 text-center text-xs text-background/50">
-        © {new Date().getFullYear()} Quantum Leap Beverage Manufacturing Co. Ltd. All rights reserved.
+        © {new Date().getFullYear()} QUANTUM LEAP Beverage Manufacturing Co. Ltd. All rights reserved.
       </div>
     </footer>
   );

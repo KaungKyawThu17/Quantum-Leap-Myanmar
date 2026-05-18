@@ -24,7 +24,7 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Quantum Leap — Myanmar's Next Generation OEM Beverage Partner" },
+      { title: "QUANTUM LEAP — Myanmar's Next Generation OEM Beverage Partner" },
       { name: "description", content: "OEM & ODM beverage manufacturing in Myanmar. PET bottling up to 24,000 BPH, FDA & Halal certified, scalable production for local and international brands." },
     ],
   }),
@@ -68,7 +68,7 @@ const coreValues = [
   {
     icon: Heart,
     title: "Employee Well-Being",
-    desc: "We value our people as the driving force behind our success. Quantum Leap promotes a positive workplace culture that prioritizes safety, respect, teamwork, and professional growth.",
+    desc: "We value our people as the driving force behind our success. QUANTUM LEAP promotes a positive workplace culture that prioritizes safety, respect, teamwork, and professional growth.",
   },
   {
     icon: Leaf,
@@ -78,12 +78,12 @@ const coreValues = [
   {
     icon: Globe,
     title: "Community & Social Responsibility",
-    desc: "Quantum Leap believes in building meaningful contributions to society by maintaining ethical business practices, supporting local communities, and creating trusted partnerships with customers and stakeholders.",
+    desc: "QUANTUM LEAP believes in building meaningful contributions to society by maintaining ethical business practices, supporting local communities, and creating trusted partnerships with customers and stakeholders.",
   },
   {
     icon: Lightbulb,
     title: "Innovation & Packaging Development",
-    desc: "With advanced manufacturing capabilities, Quantum Leap develops customized PET bottles, closures, and packaging solutions designed to support diverse beverage categories and evolving consumer demands.",
+    desc: "With advanced manufacturing capabilities, QUANTUM LEAP develops customized PET bottles, closures, and packaging solutions designed to support diverse beverage categories and evolving consumer demands.",
   },
 ];
 
@@ -182,7 +182,7 @@ function Home() {
               Partner
             </h1>
             <p className="text-lg md:text-xl text-white/80 max-w-2xl leading-relaxed mb-10">
-              Quantum Leap is a Myanmar-based OEM beverage manufacturer specializing in PET bottling,
+              QUANTUM LEAP is a Myanmar-based OEM beverage manufacturer specializing in PET bottling,
               beverage formulation, and scalable production solutions for local and international brands.
             </p>
             <div className="flex flex-wrap gap-3">
@@ -253,7 +253,7 @@ function Home() {
               An <span className="text-gradient">integrated facility</span> built for the world's beverage brands.
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-              Located on a 10-acre industrial campus in Yangon Industrial Park, Quantum Leap operates a fully integrated OEM beverage manufacturing facility. Our factory combines modern production technology, experienced operational management, and scalable infrastructure to deliver high-quality beverages across multiple categories.
+              Located on a 10-acre industrial campus in Yangon Industrial Park, QUANTUM LEAP operates a fully integrated OEM beverage manufacturing facility. Our factory combines modern production technology, experienced operational management, and scalable infrastructure to deliver high-quality beverages across multiple categories.
             </p>
             <ul className="space-y-2 mb-8">
               {["Modern, automated production technology", "Experienced beverage operations team", "Scalable infrastructure for any brand size"].map((t) => (
@@ -267,7 +267,7 @@ function Home() {
             </Link>
           </div>
           <div className="relative">
-            <img src={factoryImg} alt="Quantum Leap factory" className="rounded-3xl shadow-soft w-full" loading="lazy" width={1600} height={1000} />
+            <img src={factoryImg} alt="QUANTUM LEAP factory" className="rounded-3xl shadow-soft w-full" loading="lazy" width={1600} height={1000} />
             <div className="absolute -bottom-6 -left-6 bg-card rounded-2xl p-5 shadow-glow border border-border max-w-xs hidden md:block">
               <div className="text-xs uppercase tracking-widest text-muted-foreground">Yangon Industrial Park</div>
               <div className="font-display font-bold text-lg mt-1">10-Acre Campus</div>
@@ -413,7 +413,7 @@ function Home() {
               Myanmar's premier <span className="text-gradient">OEM partner</span>.
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              Quantum Leap is strategically positioned to become Myanmar's premier OEM beverage manufacturing partner. Our modernized facility, scalable production systems, and investment in advanced manufacturing technologies allow us to support both emerging and established beverage brands with efficiency, consistency, and reliability.
+              QUANTUM LEAP is strategically positioned to become Myanmar's premier OEM beverage manufacturing partner. Our modernized facility, scalable production systems, and investment in advanced manufacturing technologies allow us to support both emerging and established beverage brands with efficiency, consistency, and reliability.
             </p>
           </div>
           <div className="rounded-3xl bg-gradient-hero p-10 md:p-14 text-white relative overflow-hidden">
@@ -439,13 +439,13 @@ function Home() {
             <div className="absolute inset-0 bg-gradient-glow opacity-60" />
             <img src={splashImg} alt="" className="absolute right-0 top-1/2 -translate-y-1/2 h-[120%] opacity-20 hidden md:block" loading="lazy" />
             <div className="relative z-10 min-h-[440px] md:min-h-[520px] flex items-center">
-              <img src={welcomeImg} alt="Quantum Leap team welcome" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+              <img src={welcomeImg} alt="QUANTUM LEAP team welcome" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/40" />
               <div className="absolute inset-0 bg-gradient-glow opacity-60" />
               <div className="relative w-full p-10 md:p-16 max-w-2xl">
                 <Award className="h-10 w-10 text-accent mb-6" />
                 <h2 className="font-display text-3xl md:text-5xl font-bold mb-5 leading-tight">
-                  Start your beverage brand with Quantum Leap.
+                  Start your beverage brand with QUANTUM LEAP.
                 </h2>
                 <p className="text-white/80 text-lg mb-8 leading-relaxed">
                   Contact our OEM team today to discuss your beverage manufacturing requirements — we'll guide you from formula to finished product.

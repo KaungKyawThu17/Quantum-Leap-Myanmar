@@ -21,7 +21,7 @@ import step12 from "@/assets/oem-step-12-distribution.webp";
 
 export const Route = createFileRoute("/services/oem-manufacturing")({
   head: () => ({ meta: [
-    { title: "OEM Manufacturing — Quantum Leap" },
+    { title: "OEM Manufacturing — QUANTUM LEAP" },
     { name: "description", content: "Reliable beverage production for brands with their own formula. PET manufacturing from consultation to delivery." },
   ]}),
   component: OemManufacturing,
@@ -35,11 +35,11 @@ const steps: { title: string; body: string; image?: string }[] = [
   { title: "Raw Material Inspection", image: step05, body: "All raw materials, ingredients, packaging materials, and PET components undergo strict inspection procedures before entering the production process to maintain food safety and manufacturing consistency." },
   { title: "Beverage Mixing & Formulation", image: step06, body: "Sugar dissolving, powder blending, syrup preparation, and beverage formulation are controlled through standardized processing systems to ensure flavor consistency and product quality." },
   { title: "UHT Sterilization & Processing", image: step07, body: "Ultra-High Temperature (UHT) sterilization systems help ensure product safety, extended shelf life, and manufacturing stability while maintaining beverage taste and quality standards." },
-  { title: "Filling & Capping", image: step08, body: "Quantum Leap utilizes integrated filling and capping systems designed for efficient and hygienic beverage production. Our automated systems support scalable production capacity with reduced operational contamination risks." },
+  { title: "Filling & Capping", image: step08, body: "QUANTUM LEAP utilizes integrated filling and capping systems designed for efficient and hygienic beverage production. Our automated systems support scalable production capacity with reduced operational contamination risks." },
   { title: "Labeling & Packaging", image: step09, body: "High-speed labeling systems apply customized labels and branding materials to finished products. Packaging options include shrink wrapping, carton packing, tray packing, and palletizing solutions." },
   { title: "Quality Control & Inspection", image: step10, body: "Strict quality control procedures are implemented throughout every production stage. Automated inspection systems and quality assurance teams monitor bottle integrity, filling accuracy, labeling quality, and packaging consistency." },
   { title: "Storage & Warehouse Management", image: step11, body: "Finished products are stored in controlled warehouse environments designed to support inventory management, product safety, and efficient distribution planning." },
-  { title: "Logistics & Distribution Support", image: step12, body: "Quantum Leap supports local and export distribution requirements with scalable production planning and coordinated logistics support for OEM partners." },
+  { title: "Logistics & Distribution Support", image: step12, body: "QUANTUM LEAP supports local and export distribution requirements with scalable production planning and coordinated logistics support for OEM partners." },
 ];
 
 function OemManufacturing() {
@@ -82,10 +82,10 @@ function OemManufacturing() {
           </div>
           <div className="lg:col-span-7 space-y-6 text-muted-foreground text-lg leading-relaxed">
             <p>
-              Quantum Leap provides integrated PET bottle manufacturing and beverage packaging solutions designed to support OEM and private label beverage brands. Our production systems support customized PET bottle development, high-speed bottling operations, labeling, and secondary packaging solutions to meet diverse market and product requirements.
+              QUANTUM LEAP provides integrated PET bottle manufacturing and beverage packaging solutions designed to support OEM and private label beverage brands. Our production systems support customized PET bottle development, high-speed bottling operations, labeling, and secondary packaging solutions to meet diverse market and product requirements.
             </p>
             <p>
-              From bottle design and beverage formulation to filling and final packaging, Quantum Leap delivers scalable and efficient manufacturing services supported by advanced production technology and quality-focused operations.
+              From bottle design and beverage formulation to filling and final packaging, QUANTUM LEAP delivers scalable and efficient manufacturing services supported by advanced production technology and quality-focused operations.
             </p>
           </div>
         </div>
@@ -230,7 +230,7 @@ function OemManufacturing() {
                   </div>
                   <h2 className="font-display text-3xl md:text-5xl font-extrabold text-foreground mb-4">Can Manufacturing</h2>
                   <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl mx-auto mb-6">
-                    Quantum Leap is currently expanding its manufacturing capabilities with a future can production line designed to support both carbonated and non-carbonated beverages.
+                    QUANTUM LEAP is currently expanding its manufacturing capabilities with a future can production line designed to support both carbonated and non-carbonated beverages.
                   </p>
                   <p className="text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-8">
                     The upcoming can manufacturing facility will focus on high-speed production efficiency, product quality consistency, and sustainable aluminum packaging solutions for evolving beverage market demands.
@@ -254,7 +254,7 @@ function OemManufacturing() {
           <div className="relative bg-gradient-hero rounded-3xl overflow-hidden text-white shadow-glow">
             <div className="absolute inset-0 bg-gradient-glow opacity-60" />
             <div className="relative z-10 min-h-[380px] md:min-h-[440px] flex items-center">
-              <img src={welcomeImg} alt="Quantum Leap team welcome" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+              <img src={welcomeImg} alt="QUANTUM LEAP team welcome" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/40" />
               <div className="absolute inset-0 bg-gradient-glow opacity-60" />
               <div className="relative w-full p-10 md:p-16 text-center md:text-left max-w-2xl">

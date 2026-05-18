@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
+import welcomeImg from "@/assets/welcome.webp";
 import { PageHero } from "@/components/PageHero";
 import { ArrowRight, Palette } from "lucide-react";
 import plasticCapImg from "@/assets/pkg-plastic-cap.webp";

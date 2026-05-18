@@ -43,6 +43,7 @@ type Product = {
   name: string;
   image?: string;
   cta?: boolean;
+  badge?: string;
 };
 
 const packagingProducts: Product[] = [

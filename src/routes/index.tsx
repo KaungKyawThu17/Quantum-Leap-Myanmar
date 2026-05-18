@@ -42,27 +42,24 @@ const highlights = [
 type Product = {
   name: string;
   image?: string;
-  chip?: string;
-  desc?: string;
-  badge?: string;
   cta?: boolean;
 };
 
 const packagingProducts: Product[] = [
-  { name: "PET Bottle", image: petBottleImg, chip: "PET · Multi-size", desc: "Lightweight, food-grade bottles in 250ml–1.5L formats.", badge: "Popular" },
-  { name: "Plastic Cap", image: plasticCapImg, chip: "HDPE · Tamper-evident", desc: "Tamper-evident closures engineered for high-speed lines." },
-  { name: "PET Preform", image: petPreformImg, chip: "Preform · Custom weight", desc: "Bottle-grade preforms ready for in-house blow molding." },
-  { name: "Aluminum Cap", image: aluminumCapImg, chip: "Aluminum · Premium", desc: "Premium aluminum closures for glass and PET formats." },
-  { name: "Label", image: labelImg, chip: "Shrink · BOPP", desc: "Shrink-sleeve and BOPP labels with full-color print." },
-  { name: "Customized Services", chip: "Bespoke", desc: "Need something custom? Let's design bottles, caps and labels to your brand spec.", cta: true },
+  { name: "PET Bottle", image: petBottleImg },
+  { name: "Plastic Cap", image: plasticCapImg },
+  { name: "PET Preform", image: petPreformImg },
+  { name: "Aluminum Cap", image: aluminumCapImg },
+  { name: "Label", image: labelImg },
+  { name: "Customized Services", cta: true },
 ];
 
 const beverageProducts: Product[] = [
-  { name: "Energy & Electrolyte", image: bevElectrolyteImg, chip: "Functional", desc: "Performance drinks with electrolyte and vitamin blends.", badge: "Popular" },
-  { name: "Soft & Carbonated", image: bevSoftDrinkImg, chip: "CSD", desc: "Classic and craft carbonated soft drinks." },
-  { name: "Juice & Flavored", image: bevFlavoredImg, chip: "Still", desc: "Fruit juices and flavored still beverages." },
-  { name: "Tea & Functional", image: bevTeaImg, chip: "RTD Tea", desc: "Ready-to-drink teas and functional infusions." },
-  { name: "Dairy & Soy Milk", image: bevDairyImg, chip: "UHT", desc: "UHT-processed dairy and plant-based milks.", badge: "Coming 2026" },
+  { name: "Energy & Electrolyte", image: bevElectrolyteImg },
+  { name: "Soft & Carbonated", image: bevSoftDrinkImg },
+  { name: "Juice & Flavored", image: bevFlavoredImg },
+  { name: "Tea & Functional", image: bevTeaImg },
+  { name: "Dairy & Soy Milk", image: bevDairyImg },
 ];
 
 const coreValues = [
@@ -88,84 +85,49 @@ const coreValues = [
   },
 ];
 
-function ProductCard({ product, featured }: { product: Product; featured?: boolean }) {
-  const [loaded, setLoaded] = useState(false);
-  const { name, image, chip, desc, badge, cta } = product;
+function ProductCard({ product }: { product: Product }) {
+  const { name, image, cta } = product;
+
+  if (cta) {
+    return (
+      <Link
+        to="/contact"
+        className="group shrink-0 snap-start w-[78%] sm:w-[55%] md:w-auto rounded-2xl border border-border bg-card overflow-hidden hover:border-primary/40 hover:shadow-glow transition-all"
+      >
+        <div className="relative w-full aspect-[4/5] md:aspect-[4/5] overflow-hidden bg-gradient-brand flex flex-col items-center justify-center text-white text-center px-6">
+          <Sparkles className="h-10 w-10 mb-3 opacity-90" />
+          <div className="font-display text-lg font-bold mb-1">Need something custom?</div>
+          <p className="text-sm text-white/85 leading-snug max-w-[14rem] mb-4">Bespoke bottles, caps & labels engineered to your brand.</p>
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-white text-foreground text-xs font-semibold px-3.5 py-1.5">
+            Let's talk <ArrowRight className="h-3.5 w-3.5" />
+          </span>
+        </div>
+      </Link>
+    );
+  }
 
   return (
     <Link
       to="/products"
-      className={`group relative shrink-0 snap-start w-[78%] sm:w-[55%] md:w-auto rounded-2xl border border-border bg-card overflow-hidden hover:border-primary/40 hover:shadow-glow transition-all ${
-        featured ? "md:col-span-2 md:row-span-1" : ""
-      }`}
+      className="group shrink-0 snap-start w-[78%] sm:w-[55%] md:w-auto rounded-2xl border border-border bg-card overflow-hidden hover:border-primary/40 hover:shadow-glow transition-all"
     >
-      <div className={`relative w-full overflow-hidden bg-muted ${featured ? "aspect-[16/10] md:aspect-[16/9]" : "aspect-[4/5] md:aspect-[4/5]"}`}>
-        {/* Skeleton */}
-        {!loaded && !cta && image && (
-          <div className="absolute inset-0 animate-pulse bg-gradient-to-br from-muted to-muted/40" />
-        )}
-
-        {cta ? (
-          <div className="absolute inset-0 bg-gradient-brand flex flex-col items-center justify-center text-white text-center px-6">
-            <Sparkles className="h-10 w-10 mb-3 opacity-90" />
-            <div className="font-display text-lg font-bold mb-1">Need something custom?</div>
-            <p className="text-sm text-white/85 leading-snug max-w-[14rem]">Bespoke bottles, caps & labels engineered to your brand.</p>
-          </div>
-        ) : image ? (
+      <div className="relative w-full aspect-[4/5] md:aspect-[4/5] overflow-hidden bg-muted">
+        {image ? (
           <img
             src={image}
             alt={name}
             loading="lazy"
             decoding="async"
-            onLoad={() => setLoaded(true)}
-            className={`h-full w-full object-cover transition-all duration-700 group-hover:scale-105 ${loaded ? "opacity-100" : "opacity-0"}`}
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
         ) : (
           <div className="h-full w-full flex items-center justify-center bg-gradient-brand text-white">
             <Package className="h-10 w-10" />
           </div>
         )}
-
-        {/* Top badges */}
-        <div className="absolute top-3 left-3 right-3 flex items-start justify-between gap-2 pointer-events-none">
-          {chip && (
-            <span className="rounded-full bg-white/90 backdrop-blur text-foreground text-[10px] font-semibold uppercase tracking-wider px-2.5 py-1 shadow-sm">
-              {chip}
-            </span>
-          )}
-          {badge && (
-            <span className={`rounded-full text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 shadow-sm ${
-              badge.toLowerCase().includes("coming") ? "bg-accent text-foreground" : "bg-primary text-white"
-            }`}>
-              {badge}
-            </span>
-          )}
-        </div>
-
-        {/* Bottom info */}
-        {!cta && (
-          <>
-            <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/85 via-black/45 to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
-              <div className="flex items-center justify-between gap-2 mb-1">
-                <h3 className="font-display text-base md:text-lg font-bold leading-tight">{name}</h3>
-                <ArrowRight className="h-4 w-4 shrink-0 opacity-70 group-hover:opacity-100 group-hover:translate-x-0.5 transition" />
-              </div>
-              {desc && (
-                <p className="text-[11px] md:text-xs text-white/80 leading-snug max-h-0 opacity-0 group-hover:max-h-20 group-hover:opacity-100 transition-all duration-300 overflow-hidden">
-                  {desc}
-                </p>
-              )}
-            </div>
-          </>
-        )}
-        {cta && (
-          <div className="absolute bottom-4 left-0 right-0 flex justify-center">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-white text-foreground text-xs font-semibold px-3.5 py-1.5">
-              Let's talk <ArrowRight className="h-3.5 w-3.5" />
-            </span>
-          </div>
-        )}
+      </div>
+      <div className="p-4">
+        <h3 className="font-display text-base md:text-lg font-bold">{name}</h3>
       </div>
     </Link>
   );
@@ -364,8 +326,8 @@ function Home() {
         {/* Cards: horizontal snap-carousel on mobile, grid w/ spotlight on desktop */}
         <div className="relative animate-fade-in" key={category}>
           <div className="flex md:grid md:grid-cols-3 gap-4 overflow-x-auto md:overflow-visible snap-x snap-mandatory -mx-4 px-4 md:mx-0 md:px-0 pb-4 md:pb-0 scrollbar-hide">
-            {(category === "packaging" ? packagingProducts : beverageProducts).map((p, idx) => (
-              <ProductCard key={p.name} product={p} featured={idx === 0} />
+            {(category === "packaging" ? packagingProducts : beverageProducts).map((p) => (
+              <ProductCard key={p.name} product={p} />
             ))}
           </div>
         </div>

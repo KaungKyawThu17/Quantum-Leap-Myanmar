@@ -7,6 +7,10 @@ import petBottleImg from "@/assets/pkg-pet-bottle.webp";
 import petPreformImg from "@/assets/pkg-pet-preform.webp";
 import aluminumCapImg from "@/assets/pkg-aluminum-cap.webp";
 import labelImg from "@/assets/pkg-label.jpeg";
+import prodElectrolyteImg from "@/assets/prod-electrolyte.webp";
+import prodFlavoredImg from "@/assets/prod-flavored.webp";
+import prodSoftDrinkImg from "@/assets/prod-soft-drink.webp";
+import prodTeaImg from "@/assets/prod-tea.webp";
 
 export const Route = createFileRoute("/products")({
   head: () => ({
@@ -19,12 +23,12 @@ export const Route = createFileRoute("/products")({
 });
 
 const products = [
-  { name: "Energy Drinks", desc: "Manufacturing solutions for high-performance energy beverages with customizable formulations, flavors, and packaging formats." },
-  { name: "Soft Drinks", desc: "Carbonated and non-carbonated beverage production tailored for local and export market requirements." },
-  { name: "Fruit Juices", desc: "Production of fruit juice beverages including orange, pineapple, cantaloupe, lychee, and customized formulations." },
-  { name: "Electrolyte Beverages", desc: "Functional hydration beverages manufactured with consistent quality and advanced processing systems." },
-  { name: "Flavored Drinks", desc: "Innovative flavored beverages with nata de coco and fruit-based variations designed for evolving consumer preferences." },
-  { name: "Tea & Functional", desc: "Tea-based and functional beverages for everyday wellness and performance." },
+  { name: "Energy Drinks", image: undefined, desc: "Manufacturing solutions for high-performance energy beverages with customizable formulations, flavors, and packaging formats." },
+  { name: "Soft Drinks", image: prodSoftDrinkImg, desc: "Carbonated and non-carbonated beverage production tailored for local and export market requirements." },
+  { name: "Fruit Juices", image: undefined, desc: "Production of fruit juice beverages including orange, pineapple, cantaloupe, lychee, and customized formulations." },
+  { name: "Electrolyte Beverages", image: prodElectrolyteImg, desc: "Functional hydration beverages manufactured with consistent quality and advanced processing systems." },
+  { name: "Flavored Drinks", image: prodFlavoredImg, desc: "Innovative flavored beverages with nata de coco and fruit-based variations designed for evolving consumer preferences." },
+  { name: "Tea & Functional", image: prodTeaImg, desc: "Tea-based and functional beverages for everyday wellness and performance." },
 ];
 
 const upcoming = [
@@ -47,10 +51,17 @@ function Products() {
 
       <section className="py-20 mx-auto max-w-7xl px-4 lg:px-8">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {products.map(({ name, desc }) => (
-            <article key={name} className="group rounded-3xl border border-border bg-card p-8 hover:border-primary/40 hover:shadow-glow transition">
-              <h3 className="font-display text-2xl font-bold mb-3">{name}</h3>
-              <p className="text-muted-foreground leading-relaxed">{desc}</p>
+          {products.map(({ name, desc, image }) => (
+            <article key={name} className="group rounded-3xl border border-border bg-card overflow-hidden hover:border-primary/40 hover:shadow-glow transition">
+              {image && (
+                <div className="relative h-48 w-full overflow-hidden bg-muted">
+                  <img src={image} alt={name} className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                </div>
+              )}
+              <div className="p-8">
+                <h3 className="font-display text-2xl font-bold mb-3">{name}</h3>
+                <p className="text-muted-foreground leading-relaxed">{desc}</p>
+              </div>
             </article>
           ))}
         </div>

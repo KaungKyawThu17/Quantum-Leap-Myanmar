@@ -215,8 +215,8 @@ function Home() {
           </button>
         </div>
 
-        {category === "packaging" ? (
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="relative">
+          <div className={category === "packaging" ? "grid grid-cols-2 md:grid-cols-3 gap-4" : "hidden"}>
             {packagingProducts.map(({ name, image }) => (
               <Link
                 key={name}
@@ -225,7 +225,7 @@ function Home() {
               >
                 <div className="relative h-44 w-full overflow-hidden bg-muted">
                   {image ? (
-                    <img src={image} alt={name} loading="lazy" className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <img src={image} alt={name} loading="lazy" decoding="async" className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   ) : (
                     <div className="h-full w-full flex items-center justify-center bg-gradient-brand text-white">
                       <Package className="h-10 w-10" />
@@ -240,8 +240,7 @@ function Home() {
               </Link>
             ))}
           </div>
-        ) : (
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div className={category === "beverage" ? "grid grid-cols-2 md:grid-cols-3 gap-4" : "hidden"}>
             {beverageProducts.map(({ name, image }) => (
               <Link
                 key={name}
@@ -249,7 +248,7 @@ function Home() {
                 className="group relative rounded-2xl border border-border bg-card overflow-hidden hover:border-primary/40 hover:shadow-glow transition"
               >
                 <div className="relative h-44 w-full overflow-hidden bg-muted">
-                  <img src={image} alt={name} loading="lazy" className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <img src={image} alt={name} loading="lazy" decoding="async" className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                   <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-white gap-2">
                     <span className="font-display text-sm md:text-base font-semibold leading-tight">{name}</span>
@@ -259,7 +258,7 @@ function Home() {
               </Link>
             ))}
           </div>
-        )}
+        </div>
 
         <div className="text-center mt-10">
           <Link to="/products" className="inline-flex items-center gap-2 rounded-full bg-foreground text-background px-7 py-3.5 font-semibold hover:bg-primary transition">

@@ -1,9 +1,10 @@
+import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
 import { CertificatesSlider } from "@/components/CertificatesSlider";
 import {
   ArrowLeft, ArrowRight, MessagesSquare, FlaskConical, TestTube2, Package,
-  Calculator, BadgeCheck, Factory, Truck,
+  Calculator, BadgeCheck, Factory, Truck, Container, Clock,
 } from "lucide-react";
 import clientMeetingImg from "@/assets/client-meeting.webp";
 import researchFormulaImg from "@/assets/oem-research-formula.webp";
@@ -34,6 +35,7 @@ const steps = [
 ];
 
 function OemManufacturing() {
+  const [tab, setTab] = useState<"pet" | "can">("pet");
   return (
     <Layout>
       {/* HERO */}
@@ -66,24 +68,59 @@ function OemManufacturing() {
         <div className="grid lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-5">
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground leading-tight">
-              Reliable production for your beverage brand
+              Your Trusted OEM Partner for Ready to Drink Beverages
             </h2>
             <div className="w-20 h-1.5 bg-accent mt-6 rounded-full" />
           </div>
           <div className="lg:col-span-7 space-y-6 text-muted-foreground text-lg leading-relaxed">
             <p>
-              Our OEM Beverage Manufacturing service is designed for brands that already have their own product formula, brand concept, or packaging direction. Quantum Leap supports the manufacturing process by producing beverages according to agreed product specifications, quality standards, and production requirements.
+              Quantum Leap provides integrated PET bottle manufacturing and beverage packaging solutions designed to support OEM and private label beverage brands. Our production systems support customized PET bottle development, high-speed bottling operations, labeling, and secondary packaging solutions to meet diverse market and product requirements.
             </p>
             <p>
-              We help brand owners focus on sales, marketing, and distribution while our factory team handles professional beverage production with rigorous quality control measures.
+              From bottle design and beverage formulation to filling and final packaging, Quantum Leap delivers scalable and efficient manufacturing services supported by advanced production technology and quality-focused operations.
             </p>
           </div>
         </div>
       </section>
 
-      {/* S-CURVE JOURNEY */}
+      {/* MANUFACTURING TABS */}
       <section className="py-20 md:py-28 bg-muted/40 relative overflow-hidden">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
+          {/* Tab switcher */}
+          <div className="flex justify-center mb-12 md:mb-16">
+            <div role="tablist" className="inline-flex items-center gap-1 rounded-full border border-border bg-card p-1.5 shadow-sm">
+              <button
+                role="tab"
+                aria-selected={tab === "pet"}
+                onClick={() => setTab("pet")}
+                className={`inline-flex items-center gap-2 rounded-full px-5 md:px-7 py-2.5 text-sm md:text-base font-semibold transition ${
+                  tab === "pet"
+                    ? "bg-gradient-brand text-white shadow-glow"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                <Package className="h-4 w-4" />
+                PET Manufacturing
+              </button>
+              <button
+                role="tab"
+                aria-selected={tab === "can"}
+                onClick={() => setTab("can")}
+                className={`inline-flex items-center gap-2 rounded-full px-5 md:px-7 py-2.5 text-sm md:text-base font-semibold transition ${
+                  tab === "can"
+                    ? "bg-gradient-brand text-white shadow-glow"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                <Container className="h-4 w-4" />
+                Can Manufacturing
+                <span className={`ml-1 rounded-full px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider ${tab === "can" ? "bg-white/20 text-white" : "bg-accent/15 text-accent"}`}>Soon</span>
+              </button>
+            </div>
+          </div>
+
+          {tab === "pet" ? (
+            <>
           <div className="text-center mb-16 md:mb-20">
             <div className="text-xs uppercase tracking-widest text-accent font-semibold mb-3">PET Manufacturing</div>
             <h2 className="font-display text-3xl md:text-5xl font-extrabold text-foreground">Our 8-Step Process</h2>
@@ -170,6 +207,32 @@ function OemManufacturing() {
               })}
             </div>
           </div>
+            </>
+          ) : (
+            <div className="max-w-3xl mx-auto">
+              <div className="relative rounded-3xl border border-border bg-card p-10 md:p-16 text-center overflow-hidden shadow-sm">
+                <div className="absolute inset-0 bg-gradient-glow opacity-30 pointer-events-none" />
+                <div className="relative">
+                  <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-brand text-white shadow-glow">
+                    <Container className="h-8 w-8" />
+                  </div>
+                  <div className="inline-flex items-center gap-2 rounded-full bg-accent/15 text-accent px-3 py-1 text-xs font-bold uppercase tracking-widest mb-4">
+                    <Clock className="h-3.5 w-3.5" /> Coming Soon
+                  </div>
+                  <h2 className="font-display text-3xl md:text-5xl font-extrabold text-foreground mb-4">Can Manufacturing</h2>
+                  <p className="text-muted-foreground text-lg leading-relaxed max-w-xl mx-auto mb-8">
+                    We're expanding our beverage manufacturing capabilities with a dedicated can production line. Get in touch to discuss your upcoming canned beverage projects and be among the first to launch with us.
+                  </p>
+                  <Link
+                    to="/contact"
+                    className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-6 py-3 font-semibold hover:scale-105 transition"
+                  >
+                    Register your interest <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </section>
 

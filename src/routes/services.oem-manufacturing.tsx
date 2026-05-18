@@ -67,16 +67,16 @@ function OemManufacturing() {
         <div className="grid lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-5">
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground leading-tight">
-              Reliable production for your beverage brand
+              Your Trusted OEM Partner for Ready to Drink Beverages
             </h2>
             <div className="w-20 h-1.5 bg-accent mt-6 rounded-full" />
           </div>
           <div className="lg:col-span-7 space-y-6 text-muted-foreground text-lg leading-relaxed">
             <p>
-              Our OEM Beverage Manufacturing service is designed for brands that already have their own product formula, brand concept, or packaging direction. Quantum Leap supports the manufacturing process by producing beverages according to agreed product specifications, quality standards, and production requirements.
+              Quantum Leap provides integrated PET bottle manufacturing and beverage packaging solutions designed to support OEM and private label beverage brands. Our production systems support customized PET bottle development, high-speed bottling operations, labeling, and secondary packaging solutions to meet diverse market and product requirements.
             </p>
             <p>
-              We help brand owners focus on sales, marketing, and distribution while our factory team handles professional beverage production with rigorous quality control measures.
+              From bottle design and beverage formulation to filling and final packaging, Quantum Leap delivers scalable and efficient manufacturing services supported by advanced production technology and quality-focused operations.
             </p>
           </div>
         </div>

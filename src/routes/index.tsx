@@ -42,27 +42,24 @@ const highlights = [
 type Product = {
   name: string;
   image?: string;
-  chip?: string;
-  desc?: string;
-  badge?: string;
   cta?: boolean;
 };
 
 const packagingProducts: Product[] = [
-  { name: "PET Bottle", image: petBottleImg, chip: "PET · Multi-size", desc: "Lightweight, food-grade bottles in 250ml–1.5L formats.", badge: "Popular" },
-  { name: "Plastic Cap", image: plasticCapImg, chip: "HDPE · Tamper-evident", desc: "Tamper-evident closures engineered for high-speed lines." },
-  { name: "PET Preform", image: petPreformImg, chip: "Preform · Custom weight", desc: "Bottle-grade preforms ready for in-house blow molding." },
-  { name: "Aluminum Cap", image: aluminumCapImg, chip: "Aluminum · Premium", desc: "Premium aluminum closures for glass and PET formats." },
-  { name: "Label", image: labelImg, chip: "Shrink · BOPP", desc: "Shrink-sleeve and BOPP labels with full-color print." },
-  { name: "Customized Services", chip: "Bespoke", desc: "Need something custom? Let's design bottles, caps and labels to your brand spec.", cta: true },
+  { name: "PET Bottle", image: petBottleImg },
+  { name: "Plastic Cap", image: plasticCapImg },
+  { name: "PET Preform", image: petPreformImg },
+  { name: "Aluminum Cap", image: aluminumCapImg },
+  { name: "Label", image: labelImg },
+  { name: "Customized Services", cta: true },
 ];
 
 const beverageProducts: Product[] = [
-  { name: "Energy & Electrolyte", image: bevElectrolyteImg, chip: "Functional", desc: "Performance drinks with electrolyte and vitamin blends.", badge: "Popular" },
-  { name: "Soft & Carbonated", image: bevSoftDrinkImg, chip: "CSD", desc: "Classic and craft carbonated soft drinks." },
-  { name: "Juice & Flavored", image: bevFlavoredImg, chip: "Still", desc: "Fruit juices and flavored still beverages." },
-  { name: "Tea & Functional", image: bevTeaImg, chip: "RTD Tea", desc: "Ready-to-drink teas and functional infusions." },
-  { name: "Dairy & Soy Milk", image: bevDairyImg, chip: "UHT", desc: "UHT-processed dairy and plant-based milks.", badge: "Coming 2026" },
+  { name: "Energy & Electrolyte", image: bevElectrolyteImg },
+  { name: "Soft & Carbonated", image: bevSoftDrinkImg },
+  { name: "Juice & Flavored", image: bevFlavoredImg },
+  { name: "Tea & Functional", image: bevTeaImg },
+  { name: "Dairy & Soy Milk", image: bevDairyImg },
 ];
 
 const coreValues = [

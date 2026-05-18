@@ -60,7 +60,7 @@ const beverageProducts: Product[] = [
   { name: "Soft & Carbonated", image: bevSoftDrinkImg },
   { name: "Juice & Flavored", image: bevFlavoredImg },
   { name: "Tea & Functional", image: bevTeaImg },
-  { name: "Dairy & Soy Milk", image: bevDairyImg },
+  { name: "Dairy & Soy Milk", image: bevDairyImg, badge: "Coming Soon" },
 ];
 
 const coreValues = [

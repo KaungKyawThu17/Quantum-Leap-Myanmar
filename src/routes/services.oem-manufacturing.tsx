@@ -15,6 +15,8 @@ import step07 from "@/assets/oem-step-07-uht.webp";
 import step08 from "@/assets/oem-step-08-filling.webp";
 import step09 from "@/assets/oem-step-09-labelling.webp";
 import step10 from "@/assets/oem-step-10-quality.webp";
+import step11 from "@/assets/oem-step-11-storage.webp";
+import step12 from "@/assets/oem-step-12-distribution.webp";
 
 export const Route = createFileRoute("/services/oem-manufacturing")({
   head: () => ({ meta: [
@@ -35,8 +37,8 @@ const steps: { title: string; body: string; image?: string }[] = [
   { title: "Filling & Capping", image: step08, body: "Quantum Leap utilizes integrated filling and capping systems designed for efficient and hygienic beverage production. Our automated systems support scalable production capacity with reduced operational contamination risks." },
   { title: "Labeling & Packaging", image: step09, body: "High-speed labeling systems apply customized labels and branding materials to finished products. Packaging options include shrink wrapping, carton packing, tray packing, and palletizing solutions." },
   { title: "Quality Control & Inspection", image: step10, body: "Strict quality control procedures are implemented throughout every production stage. Automated inspection systems and quality assurance teams monitor bottle integrity, filling accuracy, labeling quality, and packaging consistency." },
-  { title: "Storage & Warehouse Management", body: "Finished products are stored in controlled warehouse environments designed to support inventory management, product safety, and efficient distribution planning." },
-  { title: "Logistics & Distribution Support", body: "Quantum Leap supports local and export distribution requirements with scalable production planning and coordinated logistics support for OEM partners." },
+  { title: "Storage & Warehouse Management", image: step11, body: "Finished products are stored in controlled warehouse environments designed to support inventory management, product safety, and efficient distribution planning." },
+  { title: "Logistics & Distribution Support", image: step12, body: "Quantum Leap supports local and export distribution requirements with scalable production planning and coordinated logistics support for OEM partners." },
 ];
 
 function OemManufacturing() {

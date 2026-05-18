@@ -52,6 +52,10 @@ function Products() {
       <PageHero eyebrow="Products" title="A complete beverage portfolio." subtitle="From energy and hydration to UHT and canning — the categories we manufacture today, and what's next." />
 
       <section className="py-20 mx-auto max-w-7xl px-4 lg:px-8">
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-2 rounded-full bg-accent/20 text-primary px-4 py-1.5 text-xs uppercase tracking-widest font-semibold">Beverages</div>
+          <h2 className="font-display text-3xl md:text-4xl font-bold mt-4">Beverage Products</h2>
+        </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {products.map(({ name, desc, image }) => (
             <article key={name} className="group rounded-3xl border border-border bg-card overflow-hidden hover:border-primary/40 hover:shadow-glow transition">

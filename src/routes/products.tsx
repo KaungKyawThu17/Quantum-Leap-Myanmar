@@ -139,10 +139,14 @@ function Products() {
       {/* CTA */}
       <section className="py-16 md:py-20 px-4 lg:px-8">
         <div className="max-w-5xl mx-auto">
-          <div className="relative bg-gradient-hero rounded-3xl overflow-hidden p-10 md:p-16 text-center text-white shadow-glow">
+          <div className="relative bg-gradient-hero rounded-3xl overflow-hidden text-white shadow-glow">
             <div className="absolute inset-0 bg-gradient-glow opacity-60" />
-            <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -mr-32 -mt-32" />
-            <div className="relative z-10">
+            <div className="grid md:grid-cols-2 items-center relative z-10">
+              <div className="relative aspect-[4/3] md:aspect-auto md:h-full md:min-h-[340px] overflow-hidden">
+                <img src={welcomeImg} alt="Quantum Leap team welcome" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+                <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-[oklch(0.22_0.09_245)]/80 via-[oklch(0.22_0.09_245)]/30 to-transparent md:from-transparent md:via-[oklch(0.22_0.09_245)]/40 md:to-[oklch(0.22_0.09_245)]" />
+              </div>
+              <div className="p-10 md:p-14 text-center md:text-left">
               <h3 className="font-display text-3xl md:text-4xl font-bold mb-4">Interested in our products?</h3>
               <p className="text-white/80 mb-10 text-lg max-w-xl mx-auto">Our team will help you find the right beverage or packaging solution for your brand.</p>
               <Link
@@ -152,6 +156,7 @@ function Products() {
                 Contact us
                 <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Link>
+              </div>
             </div>
           </div>
         </div>

@@ -126,7 +126,7 @@ function OemManufacturing() {
             {/* S-curve SVG path (desktop) */}
             <svg
               className="hidden md:block absolute inset-0 w-full h-full pointer-events-none"
-              viewBox="0 0 1000 1800"
+              viewBox="0 0 1000 2600"
               preserveAspectRatio="none"
               aria-hidden="true"
             >
@@ -142,7 +142,9 @@ function OemManufacturing() {
                    C 200 540, 200 740, 500 840
                    C 800 940, 800 1140, 500 1240
                    C 200 1340, 200 1540, 500 1640
-                   L 500 1760"
+                   C 800 1740, 800 1940, 500 2040
+                   C 200 2140, 200 2340, 500 2440
+                   L 500 2560"
                 fill="none"
                 stroke="url(#oemPath)"
                 strokeWidth="3"

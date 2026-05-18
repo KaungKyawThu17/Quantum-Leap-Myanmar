@@ -54,7 +54,7 @@ function Products() {
       <section className="py-20 mx-auto max-w-7xl px-4 lg:px-8">
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 rounded-full bg-accent/20 text-primary px-4 py-1.5 text-xs uppercase tracking-widest font-semibold">Beverages</div>
-          <h2 className="font-display text-3xl md:text-4xl font-bold mt-4">Beverage Products</h2>
+          <h2 className="font-display text-3xl md:text-4xl font-bold mt-4">Beverage OEM Products</h2>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {products.map(({ name, desc, image }) => (

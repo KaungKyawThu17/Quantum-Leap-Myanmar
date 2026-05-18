@@ -86,7 +86,7 @@ function Home() {
       {/* HERO */}
       <section className="relative overflow-hidden bg-foreground text-white">
         <video
-          className="absolute inset-0 h-full w-full object-contain md:object-cover bg-foreground"
+          className="absolute inset-0 h-full w-full object-cover bg-foreground"
           poster={heroImg}
           autoPlay
           muted

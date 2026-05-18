@@ -14,9 +14,10 @@ import bevSoftDrinkImg from "@/assets/bev-soft-drink.webp";
 import bevFlavoredImg from "@/assets/bev-flavored.webp";
 import bevTeaImg from "@/assets/bev-tea.webp";
 import bevDairyImg from "@/assets/bev-dairy.webp";
+import { useState } from "react";
 import {
   Factory, Beaker, ShieldCheck, Gauge, Boxes, Award,
-  Milk, ArrowRight, CheckCircle2, Heart, Leaf, Globe, Lightbulb
+  Milk, ArrowRight, CheckCircle2, Heart, Leaf, Globe, Lightbulb, Package, GlassWater
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -79,6 +80,7 @@ const coreValues = [
 ];
 
 function Home() {
+  const [category, setCategory] = useState<"packaging" | "beverage">("packaging");
   return (
     <Layout>
       {/* HERO */}
@@ -179,7 +181,7 @@ function Home() {
 
       {/* PRODUCT CATEGORIES */}
       <section className="py-24 mx-auto max-w-7xl px-4 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-10">
           <div>
             <div className="text-xs uppercase tracking-widest text-primary font-semibold mb-3">Product Categories</div>
             <h2 className="font-display text-3xl md:text-5xl font-bold leading-tight">Packaging and beverages under one roof.</h2>
@@ -189,40 +191,75 @@ function Home() {
           </p>
         </div>
 
-        <div className="mb-16">
-          <h3 className="font-display text-2xl font-bold mb-6">Packaging Products</h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {packagingProducts.map(({ name, image }) => (
-              <div key={name} className="group rounded-2xl border border-border bg-card overflow-hidden hover:border-primary/40 hover:shadow-glow transition">
-                {image && (
-                  <div className="relative h-36 w-full overflow-hidden bg-muted">
-                    <img src={image} alt={name} className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                  </div>
-                )}
-                <div className="p-5">
-                  <span className="font-display text-base font-semibold">{name}</span>
-                </div>
-              </div>
-            ))}
-          </div>
+        {/* Tabs */}
+        <div className="flex flex-wrap items-center gap-2 mb-8 p-1.5 rounded-full bg-muted/60 w-fit mx-auto">
+          <button
+            onClick={() => setCategory("packaging")}
+            className={`inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition ${
+              category === "packaging" ? "bg-foreground text-background shadow-soft" : "text-muted-foreground hover:text-foreground"
+            }`}
+          >
+            <Package className="h-4 w-4" />
+            Packaging
+            <span className="text-xs opacity-70">· {packagingProducts.length}</span>
+          </button>
+          <button
+            onClick={() => setCategory("beverage")}
+            className={`inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition ${
+              category === "beverage" ? "bg-foreground text-background shadow-soft" : "text-muted-foreground hover:text-foreground"
+            }`}
+          >
+            <GlassWater className="h-4 w-4" />
+            Beverage OEM
+            <span className="text-xs opacity-70">· {beverageProducts.length}</span>
+          </button>
         </div>
 
-        <div>
-          <h3 className="font-display text-2xl font-bold mb-6">Beverage OEM Products</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {beverageProducts.map(({ name, image }) => (
-              <div key={name} className="group rounded-2xl border border-border bg-card overflow-hidden hover:border-primary/40 hover:shadow-glow transition">
-                <div className="relative h-48 w-full overflow-hidden bg-muted">
-                  <img src={image} alt={name} className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+        {category === "packaging" ? (
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {packagingProducts.map(({ name, image }) => (
+              <Link
+                key={name}
+                to="/products"
+                className="group relative rounded-2xl border border-border bg-card overflow-hidden hover:border-primary/40 hover:shadow-glow transition"
+              >
+                <div className="relative h-44 w-full overflow-hidden bg-muted">
+                  {image ? (
+                    <img src={image} alt={name} loading="lazy" className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  ) : (
+                    <div className="h-full w-full flex items-center justify-center bg-gradient-brand text-white">
+                      <Package className="h-10 w-10" />
+                    </div>
+                  )}
+                  <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/70 to-transparent" />
+                  <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-white">
+                    <span className="font-display text-sm md:text-base font-semibold">{name}</span>
+                    <ArrowRight className="h-4 w-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition" />
+                  </div>
                 </div>
-                <div className="p-5 flex items-center gap-3">
-                  <span className="h-2 w-2 rounded-full bg-accent shrink-0" />
-                  <span className="font-display text-base font-semibold">{name}</span>
-                </div>
-              </div>
+              </Link>
             ))}
           </div>
-        </div>
+        ) : (
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {beverageProducts.map(({ name, image }) => (
+              <Link
+                key={name}
+                to="/products"
+                className="group relative rounded-2xl border border-border bg-card overflow-hidden hover:border-primary/40 hover:shadow-glow transition"
+              >
+                <div className="relative h-44 w-full overflow-hidden bg-muted">
+                  <img src={image} alt={name} loading="lazy" className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                  <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-white gap-2">
+                    <span className="font-display text-sm md:text-base font-semibold leading-tight">{name}</span>
+                    <ArrowRight className="h-4 w-4 shrink-0 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition" />
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        )}
 
         <div className="text-center mt-10">
           <Link to="/products" className="inline-flex items-center gap-2 rounded-full bg-foreground text-background px-7 py-3.5 font-semibold hover:bg-primary transition">

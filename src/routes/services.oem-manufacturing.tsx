@@ -253,12 +253,11 @@ function OemManufacturing() {
         <div className="max-w-5xl mx-auto">
           <div className="relative bg-gradient-hero rounded-3xl overflow-hidden text-white shadow-glow">
             <div className="absolute inset-0 bg-gradient-glow opacity-60" />
-            <div className="grid md:grid-cols-2 items-stretch relative z-10">
-              <div className="relative h-64 md:h-auto md:min-h-[360px] overflow-hidden">
-                <img src={welcomeImg} alt="Quantum Leap team welcome" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
-                <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-primary/70 via-primary/20 to-transparent md:from-transparent md:via-primary/10 md:to-primary/40" />
-              </div>
-              <div className="p-10 md:p-14 text-center md:text-left">
+            <div className="relative z-10 min-h-[380px] md:min-h-[440px] flex items-center">
+              <img src={welcomeImg} alt="Quantum Leap team welcome" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/40" />
+              <div className="absolute inset-0 bg-gradient-glow opacity-60" />
+              <div className="relative w-full p-10 md:p-16 text-center md:text-left max-w-2xl">
               <h3 className="font-display text-3xl md:text-4xl font-bold mb-4">Ready to discuss your project?</h3>
               <p className="text-white/80 mb-10 text-lg max-w-xl mx-auto">Our team will guide you from initial enquiry to scaled production.</p>
               <Link

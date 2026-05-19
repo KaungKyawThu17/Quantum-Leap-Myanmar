@@ -300,7 +300,7 @@ function Home() {
         </div>
 
         {/* Sticky segmented control */}
-        <div className="sticky top-24 md:top-28 z-20 -mx-4 px-4 lg:mx-0 lg:px-0 py-3 mb-6 bg-background/85 backdrop-blur-md">
+        <div className="sticky top-16 z-20 -mx-4 px-4 lg:mx-0 lg:px-0 py-3 mb-6 bg-background/85 backdrop-blur-md">
           <div className="mx-auto w-full sm:w-fit grid grid-cols-2 gap-1.5 p-1.5 rounded-2xl sm:rounded-full bg-muted/60 border border-border">
             {([
               { key: "packaging", label: "Packaging", sub: "Caps · Bottles · Labels", icon: Package, count: packagingProducts.length },

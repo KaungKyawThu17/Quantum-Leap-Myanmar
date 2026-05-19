@@ -2,6 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
 import { CertificatesSlider } from "@/components/CertificatesSlider";
 import { PageHero } from "@/components/PageHero";
+import heroImg from "@/assets/hero-factory.jpg";
+import heroVideo from "@/assets/hero-video-cropped.mp4";
 import { Factory, Beaker, Building2, Boxes, Lightbulb, ArrowRight } from "lucide-react";
 
 export const Route = createFileRoute("/services/")({
@@ -47,6 +49,8 @@ function Services() {
         eyebrow="Our Services"
         title="OEM and ODM beverage manufacturing — end to end."
         subtitle="QUANTUM LEAP provides complete OEM and ODM beverage manufacturing solutions designed to support beverage brands from product concept to full-scale production."
+        videoSrc={heroVideo}
+        posterSrc={heroImg}
       />
       <section className="py-20 mx-auto max-w-7xl px-4 lg:px-8 space-y-6">
         <div className="grid md:grid-cols-2 gap-6">

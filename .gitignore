@@ -30,3 +30,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+.vercel
+
+# Lovable/GitHub sync cannot accept files over 100 MB.
+quantum-leap.mp4

@@ -48,7 +48,6 @@ function Services() {
         eyebrow="Our Services"
         title="OEM and ODM beverage manufacturing — end to end."
         subtitle="QUANTUM LEAP provides complete OEM and ODM beverage manufacturing solutions designed to support beverage brands from product concept to full-scale production."
-        videoSrc={heroVideo}
         posterSrc={heroImg}
       />
       <section className="py-20 mx-auto max-w-7xl px-4 lg:px-8 space-y-6">

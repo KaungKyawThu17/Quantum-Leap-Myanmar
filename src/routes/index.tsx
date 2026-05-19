@@ -360,30 +360,6 @@ function Home() {
         </div>
       </section>
 
-      {/* HOW WE WORK */}
-      <section className="py-24 mx-auto max-w-7xl px-4 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-14">
-          <div className="text-xs uppercase tracking-widest text-primary font-semibold mb-3">How We Work</div>
-          <h2 className="font-display text-3xl md:text-4xl font-bold">From idea to finished bottle in 4 steps</h2>
-          <p className="text-muted-foreground mt-4">A streamlined OEM process designed to get your beverage to market faster.</p>
-        </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-          {[
-            { n: "01", title: "Inquiry & Brief", desc: "Share your concept, volume needs, and target market. We respond within 48 hours." },
-            { n: "02", title: "Formulation & Sampling", desc: "Our R&D team develops your formula, packaging, and provides samples for approval." },
-            { n: "03", title: "Production", desc: "Scaled manufacturing on certified PET lines with full QA at every stage." },
-            { n: "04", title: "Delivery", desc: "Packaged, labelled, and ready for local distribution or export channels." },
-          ].map((s) => (
-            <div key={s.n} className="group relative rounded-2xl border border-border bg-card p-7 hover:shadow-glow hover:border-primary/30 transition-all">
-              <div className="font-display text-5xl font-bold text-primary/15 group-hover:text-primary/30 transition">{s.n}</div>
-              <h3 className="font-display text-lg font-bold mt-3 mb-2">{s.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* CORE VALUES */}
       <section className="py-20 bg-muted/40">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-14">

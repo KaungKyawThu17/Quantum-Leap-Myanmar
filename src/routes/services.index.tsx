@@ -3,7 +3,6 @@ import { Layout } from "@/components/Layout";
 import { CertificatesSlider } from "@/components/CertificatesSlider";
 import { PageHero } from "@/components/PageHero";
 import heroImg from "@/assets/hero-factory.jpg";
-import heroVideo from "@/assets/hero-video-cropped.mp4";
 import { Factory, Beaker, Building2, Boxes, Lightbulb, ArrowRight } from "lucide-react";
 
 export const Route = createFileRoute("/services/")({

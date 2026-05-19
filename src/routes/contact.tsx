@@ -64,6 +64,21 @@ function Contact() {
           )}
         </form>
       </section>
+
+      <section className="pb-20 mx-auto max-w-7xl px-4 lg:px-8">
+        <div className="rounded-3xl overflow-hidden border border-border shadow-soft">
+          <iframe
+            title="QUANTUM LEAP factory location"
+            src="https://www.google.com/maps?q=Quantum+Leap+Co.,+Ltd.,+No.351/352+11th+Road,+Yangon+11021&output=embed"
+            width="100%"
+            height="450"
+            style={{ border: 0 }}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            allowFullScreen
+          />
+        </div>
+      </section>
     </Layout>
   );
 }

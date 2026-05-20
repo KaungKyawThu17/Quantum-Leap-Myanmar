@@ -3,6 +3,7 @@ import { Layout } from "@/components/Layout";
 import { PageHero } from "@/components/PageHero";
 import { MapPin, Phone, Mail, Building2 } from "lucide-react";
 import { useState } from "react";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -16,49 +17,63 @@ export const Route = createFileRoute("/contact")({
 
 function Contact() {
   const [sent, setSent] = useState(false);
+  const { t } = useLanguage();
   return (
     <Layout>
-      <PageHero eyebrow="Contact" title="Let's build your next beverage brand." subtitle="For OEM beverage partnerships and manufacturing enquiries, contact our business development team." />
+      <PageHero
+        eyebrow={t("contact.hero.eyebrow")}
+        title={t("contact.hero.title")}
+        subtitle={t("contact.hero.subtitle")}
+      />
 
       <section className="py-20 mx-auto max-w-7xl px-4 lg:px-8 grid lg:grid-cols-5 gap-12">
         <div className="lg:col-span-2 space-y-6">
-          <ContactCard icon={Building2} title="QUANTUM LEAP Beverage Mfg." lines={["A next-generation OEM & ODM beverage manufacturer based in Yangon."]} />
-          <ContactCard icon={MapPin} title="Visit our factory" lines={["No.351–352, No.3 High Road,", "R-11 Mingalardon Garden City,", "Yangon Industrial Zone (3),", "Mingalardon Township, Yangon, Myanmar"]} />
-          <ContactCard icon={Phone} title="Call us" lines={["0942458350", "09424548351"]} />
-          <ContactCard icon={Mail} title="Email" lines={["info@quantumleap.com.mm"]} />
+          <ContactCard icon={Building2} title={t("contact.card.company.title")} lines={[t("contact.card.company.line1")]} />
+          <ContactCard
+            icon={MapPin}
+            title={t("contact.card.visit.title")}
+            lines={[
+              t("contact.card.visit.line1"),
+              t("contact.card.visit.line2"),
+              t("contact.card.visit.line3"),
+              t("contact.card.visit.line4"),
+            ]}
+          />
+          <ContactCard icon={Phone} title={t("contact.card.call.title")} lines={["0942458350", "09424548351"]} />
+          <ContactCard icon={Mail} title={t("contact.card.email.title")} lines={["info@quantumleap.com.mm"]} />
         </div>
 
         <form
           onSubmit={(e) => { e.preventDefault(); setSent(true); }}
           className="lg:col-span-3 rounded-3xl border border-border bg-card p-8 md:p-10 shadow-soft"
         >
-          <h2 className="font-display text-2xl font-bold mb-1">Send us a message</h2>
-          <p className="text-muted-foreground text-sm mb-6">We typically respond within 1 business day.</p>
+          <h2 className="font-display text-2xl font-bold mb-1">{t("contact.form.title")}</h2>
+          <p className="text-muted-foreground text-sm mb-6">{t("contact.form.subtitle")}</p>
           {sent ? (
             <div className="rounded-2xl bg-accent/20 text-foreground p-6 text-center">
-              Thank you — your message has been received. Our team will be in touch shortly.
+              {t("contact.form.thanks")}
             </div>
           ) : (
             <div className="grid gap-4">
               <div className="grid md:grid-cols-2 gap-4">
-                <Field label="Name"><input required className="w-full rounded-xl border border-input bg-background px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring" /></Field>
-                <Field label="Company"><input className="w-full rounded-xl border border-input bg-background px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring" /></Field>
+                <Field label={t("contact.form.name")}><input required className="w-full rounded-xl border border-input bg-background px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring" /></Field>
+                <Field label={t("contact.form.company")}><input className="w-full rounded-xl border border-input bg-background px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring" /></Field>
               </div>
               <div className="grid md:grid-cols-2 gap-4">
-                <Field label="Email"><input type="email" required className="w-full rounded-xl border border-input bg-background px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring" /></Field>
-                <Field label="Phone"><input className="w-full rounded-xl border border-input bg-background px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring" /></Field>
+                <Field label={t("contact.form.email")}><input type="email" required className="w-full rounded-xl border border-input bg-background px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring" /></Field>
+                <Field label={t("contact.form.phone")}><input className="w-full rounded-xl border border-input bg-background px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring" /></Field>
               </div>
-              <Field label="Service interest">
+              <Field label={t("contact.form.service")}>
                 <select className="w-full rounded-xl border border-input bg-background px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring">
-                  <option>OEM Manufacturing</option>
-                  <option>ODM Solutions</option>
-                  <option>Production Capabilities</option>
-                  <option>Other</option>
+                  <option>{t("contact.service.oem")}</option>
+                  <option>{t("contact.service.odm")}</option>
+                  <option>{t("contact.service.production")}</option>
+                  <option>{t("contact.service.other")}</option>
                 </select>
               </Field>
-              <Field label="Message"><textarea rows={5} required className="w-full rounded-xl border border-input bg-background px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring resize-none" /></Field>
+              <Field label={t("contact.form.message")}><textarea rows={5} required className="w-full rounded-xl border border-input bg-background px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring resize-none" /></Field>
               <button type="submit" className="mt-2 rounded-full bg-gradient-brand text-white px-7 py-3.5 font-semibold shadow-glow hover:scale-[1.02] transition">
-                Send Message
+                {t("contact.form.submit")}
               </button>
             </div>
           )}
@@ -68,7 +83,7 @@ function Contact() {
       <section className="pb-20 mx-auto max-w-7xl px-4 lg:px-8">
         <div className="rounded-3xl overflow-hidden border border-border shadow-soft">
           <iframe
-            title="QUANTUM LEAP factory location"
+            title={t("contact.map.title")}
             src="https://www.google.com/maps?q=Quantum+Leap+Co.,+Ltd.,+No.351/352+11th+Road,+Yangon+11021&output=embed"
             width="100%"
             height="450"

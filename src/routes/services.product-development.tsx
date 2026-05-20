@@ -78,16 +78,16 @@ function ProductDevelopment() {
         <div className="grid lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-5">
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground leading-tight">
-              Packaging, formats, and quality — all under one roof.
+              Formulation, packaging, and quality — all under one roof.
             </h2>
             <div className="w-20 h-1.5 bg-accent mt-6 rounded-full" />
           </div>
           <div className="lg:col-span-7 space-y-6 text-muted-foreground text-lg leading-relaxed">
             <p>
-              QUANTUM LEAP supports your brand from initial packaging concept to finished, export-ready product — combining flexible formats with rigorous quality assurance and global distribution support.
+              QUANTUM LEAP supports your brand from initial formulation concept to finished, shelf-ready product — combining custom recipes with flexible packaging and rigorous quality assurance.
             </p>
             <p>
-              Whether you launch with PET bottles, standing pouches, or aseptic cartons, our team helps you select the right format, size, and certification path for your market.
+              Whether you launch with PET bottles or aseptic cartons, our team helps you develop the right formulation, select the right format, and secure the certifications your market demands.
             </p>
           </div>
         </div>

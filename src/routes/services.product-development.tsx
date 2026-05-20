@@ -98,7 +98,7 @@ function ProductDevelopment() {
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <div className="text-center mb-14 md:mb-16">
             <div className="text-xs uppercase tracking-widest text-accent font-semibold mb-3">Three Pillars</div>
-            <h2 className="font-display text-3xl md:text-5xl font-extrabold text-foreground">Built for shelf, scale, and export</h2>
+            <h2 className="font-display text-3xl md:text-5xl font-extrabold text-foreground">Built for formulation, packaging, and quality</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-6 md:gap-8">
             {pillars.map((p) => {

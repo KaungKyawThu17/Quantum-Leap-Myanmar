@@ -177,7 +177,7 @@ function Home() {
             </p>
             <div className="flex flex-wrap gap-3">
               <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-accent text-foreground px-7 py-3.5 font-semibold shadow-glow hover:scale-105 transition">
-                Request a Quote <ArrowRight className="h-4 w-4" />
+                Request a Quotation <ArrowRight className="h-4 w-4" />
               </Link>
               <Link to="/services" className="inline-flex items-center gap-2 rounded-full border border-white/30 px-7 py-3.5 font-semibold text-white hover:bg-white/10 transition">
                 Explore Services
@@ -345,7 +345,7 @@ function Home() {
             View all products <ArrowRight className="h-4 w-4" />
           </Link>
           <Link to="/contact" className="inline-flex items-center gap-2 rounded-full border border-border px-7 py-3.5 font-semibold text-foreground hover:bg-muted/60 transition">
-            Request a sample
+            Request a quotation
           </Link>
         </div>
       </section>

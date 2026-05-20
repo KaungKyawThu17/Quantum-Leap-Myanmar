@@ -54,7 +54,7 @@ export function SiteHeader() {
           to="/contact"
           className="hidden md:inline-flex items-center justify-center rounded-full bg-accent px-4 py-2 text-[13px] font-semibold text-accent-foreground shadow-soft hover:brightness-110 transition"
         >
-          Get a Quote
+          Get a Quotation
         </Link>
 
         <button onClick={() => setOpen(!open)} className="md:hidden p-2" aria-label="Menu">

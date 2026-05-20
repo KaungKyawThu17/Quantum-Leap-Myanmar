@@ -24,7 +24,7 @@ function Contact() {
         <div className="lg:col-span-2 space-y-6">
           <ContactCard icon={Building2} title="QUANTUM LEAP Beverage Mfg." lines={["A next-generation OEM & ODM beverage manufacturer based in Yangon."]} />
           <ContactCard icon={MapPin} title="Visit our factory" lines={["No.351–352, No.3 High Road,", "R-11 Mingalardon Garden City,", "Yangon Industrial Zone (3),", "Mingalardon Township, Yangon, Myanmar"]} />
-          <ContactCard icon={Phone} title="Call us" lines={["+95 95001439", "+95 9972115209"]} />
+          <ContactCard icon={Phone} title="Call us" lines={["0942458350", "09424548351"]} />
           <ContactCard icon={Mail} title="Email" lines={["info@quantumleap.com.mm"]} />
         </div>
 

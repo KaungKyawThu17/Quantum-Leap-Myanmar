@@ -57,10 +57,10 @@ export function SiteHeader() {
             <button
               type="button"
               onClick={() => setServicesOpen((v) => !v)}
-              className="relative inline-flex items-center gap-1 px-3 py-2 text-sm font-medium text-foreground/75 hover:text-foreground rounded-md transition-colors"
+              className="relative inline-flex items-center gap-1 px-3 py-2 text-[15px] font-medium text-foreground/75 hover:text-foreground rounded-md transition-colors"
             >
               Services
-              <ChevronDown className={`h-3.5 w-3.5 transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
+              <ChevronDown className={`h-4 w-4 transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
             </button>
             {servicesOpen && (
               <div
@@ -75,7 +75,7 @@ export function SiteHeader() {
                       to={s.to}
                       onClick={() => setServicesOpen(false)}
                       activeProps={{ className: "bg-primary/10 text-primary" }}
-                      className="block px-3 py-2 text-sm rounded-md text-foreground/80 hover:bg-muted hover:text-foreground transition"
+                      className="block px-3 py-2 text-[15px] rounded-md text-foreground/80 hover:bg-muted hover:text-foreground transition"
                     >
                       {s.label}
                     </Link>
@@ -89,11 +89,11 @@ export function SiteHeader() {
           <NavLink to="/contact">Contact</NavLink>
         </nav>
 
-        <div className="hidden md:flex items-center gap-2">
+        <div className="hidden md:flex items-center gap-3">
           <LanguageToggle />
           <Link
             to="/contact"
-            className="inline-flex items-center justify-center rounded-full bg-accent px-4 py-2 text-[13px] font-semibold text-accent-foreground shadow-soft hover:brightness-110 transition"
+            className="inline-flex items-center justify-center rounded-full bg-accent px-5 py-2.5 text-[15px] font-semibold text-accent-foreground shadow-soft hover:brightness-110 transition"
           >
             Get a Quotation
           </Link>
@@ -169,7 +169,7 @@ function NavLink({ to, children }: { to: string; children: React.ReactNode }) {
       to={to}
       activeOptions={{ exact: to === "/" }}
       activeProps={{ className: "!text-primary after:scale-x-100" }}
-      className="relative px-3 py-2 text-sm font-medium text-foreground/75 hover:text-foreground rounded-md transition-colors after:absolute after:left-3 after:right-3 after:-bottom-0.5 after:h-[2px] after:bg-accent after:rounded-full after:scale-x-0 after:origin-left after:transition-transform hover:after:scale-x-100"
+      className="relative px-3 py-2 text-[15px] font-medium text-foreground/75 hover:text-foreground rounded-md transition-colors after:absolute after:left-3 after:right-3 after:-bottom-0.5 after:h-[2px] after:bg-accent after:rounded-full after:scale-x-0 after:origin-left after:transition-transform hover:after:scale-x-100"
     >
       {children}
     </Link>

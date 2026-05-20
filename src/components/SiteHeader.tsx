@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState, useEffect, useRef } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, Globe } from "lucide-react";
+import { useLanguage } from "@/i18n/LanguageContext";
 import logo from "@/assets/quantum-leap-logo.png";
 
 const serviceLinks = [
@@ -106,12 +107,15 @@ export function SiteHeader() {
           <NavLink to="/contact">Contact</NavLink>
         </nav>
 
-        <Link
-          to="/contact"
-          className="hidden md:inline-flex items-center justify-center rounded-full bg-accent px-4 py-2 text-[13px] font-semibold text-accent-foreground shadow-soft hover:brightness-110 transition"
-        >
-          Get a Quotation
-        </Link>
+        <div className="hidden md:flex items-center gap-2">
+          <LanguageToggle />
+          <Link
+            to="/contact"
+            className="inline-flex items-center justify-center rounded-full bg-accent px-4 py-2 text-[13px] font-semibold text-accent-foreground shadow-soft hover:brightness-110 transition"
+          >
+            Get a Quotation
+          </Link>
+        </div>
 
         <button onClick={() => setOpen(!open)} className="md:hidden p-2" aria-label="Menu">
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -144,10 +148,36 @@ export function SiteHeader() {
 
             <Link to="/faq" onClick={() => setOpen(false)} activeProps={{ className: "bg-primary/10 text-primary" }} className="px-3 py-2 rounded-md text-sm font-medium hover:bg-muted">FAQ</Link>
             <Link to="/contact" onClick={() => setOpen(false)} activeProps={{ className: "bg-primary/10 text-primary" }} className="px-3 py-2 rounded-md text-sm font-medium hover:bg-muted">Contact</Link>
+            <div className="px-3 py-2"><LanguageToggle /></div>
           </div>
         </div>
       )}
     </header>
+  );
+}
+
+function LanguageToggle() {
+  const { lang, setLang } = useLanguage();
+  return (
+    <div className="inline-flex items-center rounded-full border border-border bg-background/60 p-0.5 text-xs font-semibold">
+      <Globe className="h-3.5 w-3.5 mx-1.5 text-muted-foreground" />
+      <button
+        type="button"
+        onClick={() => setLang("en")}
+        className={`px-2.5 py-1 rounded-full transition ${lang === "en" ? "bg-primary text-primary-foreground" : "text-foreground/70 hover:text-foreground"}`}
+        aria-pressed={lang === "en"}
+      >
+        EN
+      </button>
+      <button
+        type="button"
+        onClick={() => setLang("my")}
+        className={`px-2.5 py-1 rounded-full transition ${lang === "my" ? "bg-primary text-primary-foreground" : "text-foreground/70 hover:text-foreground"}`}
+        aria-pressed={lang === "my"}
+      >
+        မြန်မာ
+      </button>
+    </div>
   );
 }
 

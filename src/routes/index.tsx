@@ -179,8 +179,8 @@ function Home() {
               <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-accent text-foreground px-7 py-3.5 font-semibold shadow-glow hover:scale-105 transition">
                 Request a Quotation <ArrowRight className="h-4 w-4" />
               </Link>
-              <Link to="/products" className="inline-flex items-center gap-2 rounded-full border border-white/30 px-7 py-3.5 font-semibold text-white hover:bg-white/10 transition">
-                Explore Products
+              <Link to="/services" className="inline-flex items-center gap-2 rounded-full border border-white/30 px-7 py-3.5 font-semibold text-white hover:bg-white/10 transition">
+                Explore Services
               </Link>
             </div>
             <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-white/80">

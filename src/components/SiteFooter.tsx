@@ -27,11 +27,13 @@ export function SiteFooter() {
         </div>
 
         <div>
-          <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-background/60">Company</h4>
+          <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-background/60">Services</h4>
           <ul className="space-y-2 text-sm">
-            <li><Link to="/about" className="text-background/80 hover:text-accent transition">About Us</Link></li>
-            <li><Link to="/products" className="text-background/80 hover:text-accent transition">Products</Link></li>
-            <li><Link to="/contact" className="text-background/80 hover:text-accent transition">Contact</Link></li>
+            <li><Link to="/services/oem-manufacturing" className="text-background/80 hover:text-accent transition">OEM Manufacturing</Link></li>
+            <li><Link to="/services/odm-solutions" className="text-background/80 hover:text-accent transition">ODM Solutions</Link></li>
+            <li><Link to="/services/production-capabilities" className="text-background/80 hover:text-accent transition">Production Capabilities</Link></li>
+            <li><Link to="/services/product-development" className="text-background/80 hover:text-accent transition">Product Development</Link></li>
+            <li><Link to="/services/factory-facilities" className="text-background/80 hover:text-accent transition">Factory & Facilities</Link></li>
           </ul>
         </div>
 

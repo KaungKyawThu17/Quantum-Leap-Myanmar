@@ -68,7 +68,7 @@ function ProductDevelopment() {
             Product <span className="bg-gradient-to-r from-accent to-cyan-200 bg-clip-text text-transparent">Development</span>
           </h1>
           <p className="mt-6 text-lg md:text-xl text-white/80 max-w-2xl leading-relaxed">
-            From packaging design to export-ready quality assurance — built for brands that want to ship fast and scale globally.
+            From custom formulation to packaging-ready quality assurance — built for brands that want to innovate fast and scale with confidence.
           </p>
         </div>
       </section>

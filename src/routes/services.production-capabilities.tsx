@@ -3,7 +3,7 @@ import { Layout } from "@/components/Layout";
 import welcomeImg from "@/assets/welcome.webp";
 import { CertificatesSlider } from "@/components/CertificatesSlider";
 import {
-  ArrowLeft, ArrowRight, Droplets, Layers, PackageOpen, Thermometer, Sparkles, Gauge, Clock, Factory,
+  ArrowLeft, ArrowRight, Droplets, Layers, PackageOpen, Thermometer, Sparkles, Package, Gauge, Clock, Factory,
 } from "lucide-react";
 
 export const Route = createFileRoute("/services/production-capabilities")({

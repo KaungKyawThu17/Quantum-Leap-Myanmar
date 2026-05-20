@@ -37,7 +37,7 @@ export function SiteHeader() {
             className="object-contain h-20 w-20 md:h-28 md:w-28 drop-shadow-sm transition-transform group-hover:scale-105"
           />
           <div className="leading-tight">
-            <div className="font-display font-bold tracking-tight text-base md:text-lg">
+            <div className="font-display font-bold tracking-tight text-lg md:text-xl">
               QUANTUM LEAP
             </div>
             <div className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground">Beverage Mfg.</div>

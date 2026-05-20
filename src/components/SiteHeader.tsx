@@ -14,17 +14,9 @@ const serviceLinks = [
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   const openMenu = () => {
     if (closeTimer.current) clearTimeout(closeTimer.current);
@@ -36,26 +28,16 @@ export function SiteHeader() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/60 bg-background/85 backdrop-blur-xl">
-      <div
-        className={`mx-auto flex max-w-7xl items-center justify-between px-4 md:px-6 lg:px-8 transition-all duration-300 ${
-          scrolled ? "h-16" : "h-24 md:h-32"
-        }`}
-      >
-        <Link to="/" className="flex items-center gap-3 group">
+    <header className="sticky top-0 z-50 w-full border-b border-border/60 bg-background/90 backdrop-blur-xl shadow-soft">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 md:px-6 lg:px-8 h-24 md:h-32">
+        <Link to="/" className="flex items-center gap-3 group shrink-0">
           <img
             src={logo}
             alt="QUANTUM LEAP"
-            className={`object-contain transition-all duration-300 ${
-              scrolled ? "h-12 w-12" : "h-20 w-20 md:h-28 md:w-28"
-            }`}
+            className="object-contain h-20 w-20 md:h-28 md:w-28 drop-shadow-sm transition-transform group-hover:scale-105"
           />
           <div className="leading-tight">
-            <div
-              className={`font-display font-bold tracking-tight transition-all duration-300 ${
-                scrolled ? "text-base" : "text-lg md:text-xl"
-              }`}
-            >
+            <div className="font-display font-bold tracking-tight text-lg md:text-xl">
               QUANTUM LEAP
             </div>
             <div className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground">Beverage Mfg.</div>

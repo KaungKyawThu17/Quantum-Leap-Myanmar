@@ -57,7 +57,7 @@ export function SiteHeader() {
             <button
               type="button"
               onClick={() => setServicesOpen((v) => !v)}
-              className="relative inline-flex items-center gap-1 px-3 py-2 text-[13px] font-medium text-foreground/75 hover:text-foreground rounded-md transition-colors"
+              className="relative inline-flex items-center gap-1 px-3 py-2 text-sm font-medium text-foreground/75 hover:text-foreground rounded-md transition-colors"
             >
               Services
               <ChevronDown className={`h-3.5 w-3.5 transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
@@ -169,7 +169,7 @@ function NavLink({ to, children }: { to: string; children: React.ReactNode }) {
       to={to}
       activeOptions={{ exact: to === "/" }}
       activeProps={{ className: "!text-primary after:scale-x-100" }}
-      className="relative px-3 py-2 text-[13px] font-medium text-foreground/75 hover:text-foreground rounded-md transition-colors after:absolute after:left-3 after:right-3 after:-bottom-0.5 after:h-[2px] after:bg-accent after:rounded-full after:scale-x-0 after:origin-left after:transition-transform hover:after:scale-x-100"
+      className="relative px-3 py-2 text-sm font-medium text-foreground/75 hover:text-foreground rounded-md transition-colors after:absolute after:left-3 after:right-3 after:-bottom-0.5 after:h-[2px] after:bg-accent after:rounded-full after:scale-x-0 after:origin-left after:transition-transform hover:after:scale-x-100"
     >
       {children}
     </Link>

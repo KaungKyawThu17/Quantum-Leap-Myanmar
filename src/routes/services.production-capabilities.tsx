@@ -73,7 +73,7 @@ const lines = [
     unit: "planning phase",
     body: "Future aluminum canning line to complement our bottling and pouch capabilities for complete packaging flexibility.",
     highlights: ["Aluminum cans", "Multi-format", "Complete range"],
-    status: "soon",
+    status: "future",
   },
 ];
 

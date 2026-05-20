@@ -47,32 +47,32 @@ const IndexRoute = IndexRouteImport.update({
 } as any)
 const ServicesProductionCapabilitiesRoute =
   ServicesProductionCapabilitiesRouteImport.update({
-    id: '/production-capabilities',
-    path: '/production-capabilities',
-    getParentRoute: () => ServicesRoute,
+    id: '/services/production-capabilities',
+    path: '/services/production-capabilities',
+    getParentRoute: () => rootRouteImport,
   } as any)
 const ServicesProductDevelopmentRoute =
   ServicesProductDevelopmentRouteImport.update({
-    id: '/product-development',
-    path: '/product-development',
-    getParentRoute: () => ServicesRoute,
+    id: '/services/product-development',
+    path: '/services/product-development',
+    getParentRoute: () => rootRouteImport,
   } as any)
 const ServicesOemManufacturingRoute =
   ServicesOemManufacturingRouteImport.update({
-    id: '/oem-manufacturing',
-    path: '/oem-manufacturing',
-    getParentRoute: () => ServicesRoute,
+    id: '/services/oem-manufacturing',
+    path: '/services/oem-manufacturing',
+    getParentRoute: () => rootRouteImport,
   } as any)
 const ServicesOdmSolutionsRoute = ServicesOdmSolutionsRouteImport.update({
-  id: '/odm-solutions',
-  path: '/odm-solutions',
-  getParentRoute: () => ServicesRoute,
+  id: '/services/odm-solutions',
+  path: '/services/odm-solutions',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesFactoryFacilitiesRoute =
   ServicesFactoryFacilitiesRouteImport.update({
-    id: '/factory-facilities',
-    path: '/factory-facilities',
-    getParentRoute: () => ServicesRoute,
+    id: '/services/factory-facilities',
+    path: '/services/factory-facilities',
+    getParentRoute: () => rootRouteImport,
   } as any)
 
 export interface FileRoutesByFullPath {
@@ -157,6 +157,11 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   FaqRoute: typeof FaqRoute
   ProductsRoute: typeof ProductsRoute
+  ServicesFactoryFacilitiesRoute: typeof ServicesFactoryFacilitiesRoute
+  ServicesOdmSolutionsRoute: typeof ServicesOdmSolutionsRoute
+  ServicesOemManufacturingRoute: typeof ServicesOemManufacturingRoute
+  ServicesProductDevelopmentRoute: typeof ServicesProductDevelopmentRoute
+  ServicesProductionCapabilitiesRoute: typeof ServicesProductionCapabilitiesRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -198,38 +203,38 @@ declare module '@tanstack/react-router' {
     }
     '/services/production-capabilities': {
       id: '/services/production-capabilities'
-      path: '/production-capabilities'
+      path: '/services/production-capabilities'
       fullPath: '/services/production-capabilities'
       preLoaderRoute: typeof ServicesProductionCapabilitiesRouteImport
-      parentRoute: typeof ServicesRoute
+      parentRoute: typeof rootRouteImport
     }
     '/services/product-development': {
       id: '/services/product-development'
-      path: '/product-development'
+      path: '/services/product-development'
       fullPath: '/services/product-development'
       preLoaderRoute: typeof ServicesProductDevelopmentRouteImport
-      parentRoute: typeof ServicesRoute
+      parentRoute: typeof rootRouteImport
     }
     '/services/oem-manufacturing': {
       id: '/services/oem-manufacturing'
-      path: '/oem-manufacturing'
+      path: '/services/oem-manufacturing'
       fullPath: '/services/oem-manufacturing'
       preLoaderRoute: typeof ServicesOemManufacturingRouteImport
-      parentRoute: typeof ServicesRoute
+      parentRoute: typeof rootRouteImport
     }
     '/services/odm-solutions': {
       id: '/services/odm-solutions'
-      path: '/odm-solutions'
+      path: '/services/odm-solutions'
       fullPath: '/services/odm-solutions'
       preLoaderRoute: typeof ServicesOdmSolutionsRouteImport
-      parentRoute: typeof ServicesRoute
+      parentRoute: typeof rootRouteImport
     }
     '/services/factory-facilities': {
       id: '/services/factory-facilities'
-      path: '/factory-facilities'
+      path: '/services/factory-facilities'
       fullPath: '/services/factory-facilities'
       preLoaderRoute: typeof ServicesFactoryFacilitiesRouteImport
-      parentRoute: typeof ServicesRoute
+      parentRoute: typeof rootRouteImport
     }
   }
 }
@@ -240,17 +245,12 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   FaqRoute: FaqRoute,
   ProductsRoute: ProductsRoute,
+  ServicesFactoryFacilitiesRoute: ServicesFactoryFacilitiesRoute,
+  ServicesOdmSolutionsRoute: ServicesOdmSolutionsRoute,
+  ServicesOemManufacturingRoute: ServicesOemManufacturingRoute,
+  ServicesProductDevelopmentRoute: ServicesProductDevelopmentRoute,
+  ServicesProductionCapabilitiesRoute: ServicesProductionCapabilitiesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

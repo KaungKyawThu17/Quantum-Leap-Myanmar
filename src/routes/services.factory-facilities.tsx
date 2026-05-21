@@ -169,7 +169,7 @@ function FactoryFacilities() {
       {/* WAREHOUSE — feature row */}
       <section className="py-20 md:py-24 mx-auto max-w-7xl px-4 lg:px-8">
         <div className="relative grid lg:grid-cols-2 gap-10 items-center bg-card border border-border rounded-3xl p-8 md:p-12 overflow-hidden">
-          <div className="absolute -top-20 -right-20 h-64 w-64 rounded-full bg-accent/10 blur-3xl" />
+          
           <div className="relative">
             <div className="text-[10px] font-bold uppercase tracking-widest text-accent mb-3">04 — Storage</div>
             <h3 className="font-display text-3xl md:text-4xl font-extrabold text-foreground mb-4">Warehouse Facilities</h3>

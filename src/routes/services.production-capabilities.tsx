@@ -90,7 +90,6 @@ function ProductionCapabilities() {
       {/* HERO */}
       <section className="relative min-h-[480px] flex items-center bg-gradient-hero text-white overflow-hidden">
         <img src={heroBg} alt="" aria-hidden className="absolute inset-0 h-full w-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-br from-foreground/45 via-foreground/30 to-primary/40" />
         <div className="absolute inset-0 opacity-30">
           <div className="absolute -right-20 -top-20 w-96 h-96 rounded-full blur-3xl bg-accent/40" />
           <div className="absolute right-1/4 bottom-0 w-64 h-64 rounded-full blur-3xl bg-primary/40" />

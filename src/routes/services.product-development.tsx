@@ -105,7 +105,7 @@ function ProductDevelopment() {
               const Icon = p.icon;
               return (
                 <div key={p.title} className="group relative bg-card rounded-3xl border border-border p-7 md:p-8 transition-all hover:-translate-y-1 hover:shadow-glow hover:border-primary/40 overflow-hidden">
-                  <div className="absolute -top-16 -right-16 h-40 w-40 rounded-full bg-accent/10 blur-3xl group-hover:bg-accent/20 transition" />
+                  
                   <div className="relative">
                     <div className="inline-flex items-center justify-center h-14 w-14 rounded-2xl bg-gradient-brand text-white mb-5 group-hover:scale-110 transition-transform">
                       <Icon className="h-7 w-7" />

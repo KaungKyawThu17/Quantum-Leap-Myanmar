@@ -169,8 +169,6 @@ function ProductionCapabilities() {
                   key={line.name}
                   className={`group relative bg-card rounded-3xl border border-border p-7 md:p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-glow hover:border-primary/40 overflow-hidden ${i === 0 ? "lg:col-span-2" : ""}`}
                 >
-                  {/* corner glow */}
-                  <div className="absolute -top-16 -right-16 h-40 w-40 rounded-full bg-accent/10 blur-3xl group-hover:bg-accent/20 transition" />
 
                   <div className="relative flex items-start justify-between mb-6">
                     <div className={`inline-flex items-center justify-center h-14 w-14 rounded-2xl ${isSoon ? "bg-accent/10 text-accent" : isFuture ? "bg-muted text-muted-foreground" : "bg-gradient-brand text-white"} group-hover:scale-110 transition-transform`}>

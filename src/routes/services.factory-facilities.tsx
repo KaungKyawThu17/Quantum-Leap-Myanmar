@@ -1,11 +1,16 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import { Layout } from "@/components/Layout";
 import welcomeImg from "@/assets/welcome.webp";
+import factoryHero1 from "@/assets/factory-hero-1.webp";
+import factoryHero2 from "@/assets/factory-hero-2.webp";
+import factoryHero3 from "@/assets/factory-hero-3.webp";
 import { CertificatesSlider } from "@/components/CertificatesSlider";
 import {
   ArrowLeft, ArrowRight, Wind, Droplets, Tag, PackageOpen, Snowflake, Zap,
   Fuel, Gauge, Warehouse, Building2, MapPin, Ruler, Recycle,
 } from "lucide-react";
+
 
 export const Route = createFileRoute("/services/factory-facilities")({
   head: () => ({ meta: [
@@ -59,15 +64,25 @@ const groups = [
 ];
 
 function FactoryFacilities() {
+  const heroSlides = [factoryHero1, factoryHero2, factoryHero3];
+  const [slide, setSlide] = useState(0);
+  useEffect(() => {
+    const id = setInterval(() => setSlide((s) => (s + 1) % heroSlides.length), 5000);
+    return () => clearInterval(id);
+  }, []);
   return (
     <Layout>
       {/* HERO */}
-      <section className="relative min-h-[480px] flex items-center bg-gradient-hero text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute -right-20 -top-20 w-96 h-96 rounded-full blur-3xl bg-accent/40" />
-          <div className="absolute right-1/4 bottom-0 w-64 h-64 rounded-full blur-3xl bg-primary/40" />
-        </div>
-        <div className="absolute right-0 top-0 bottom-0 w-1/3 bg-white/5 skew-x-[-12deg] translate-x-20" />
+      <section className="relative min-h-[480px] flex items-center text-white overflow-hidden">
+        {heroSlides.map((src, i) => (
+          <img
+            key={src}
+            src={src}
+            alt=""
+            className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${i === slide ? "opacity-100" : "opacity-0"}`}
+          />
+        ))}
+
         <div className="relative z-10 mx-auto max-w-7xl px-4 lg:px-8 py-20 w-full">
           <nav className="flex items-center gap-2 text-xs uppercase tracking-widest font-semibold text-white/70 mb-6">
             <Link to="/" className="group inline-flex items-center gap-1.5 hover:text-white transition">

@@ -21,7 +21,7 @@ export function PageHero({
           muted
           loop
           playsInline
-          preload="auto"
+          preload="metadata"
         >
           <source src={videoSrc} type="video/mp4" />
         </video>

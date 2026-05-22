@@ -27,6 +27,9 @@ export const Route = createFileRoute("/")({
       { title: "QUANTUM LEAP — Myanmar's Next Generation OEM Beverage Partner" },
       { name: "description", content: "OEM & ODM beverage manufacturing in Myanmar. PET bottling up to 24,000 BPH, FDA & Halal certified, scalable production for local and international brands." },
     ],
+    links: [
+      { rel: "preload", as: "image", href: heroImg },
+    ],
   }),
   component: Home,
 });
@@ -86,6 +89,21 @@ const coreValues = [
     desc: "With advanced manufacturing capabilities, QUANTUM LEAP develops customized PET bottles, closures, and packaging solutions designed to support diverse beverage categories and evolving consumer demands.",
   },
 ];
+
+const preloadedProductImages = new Set<string>();
+
+function preloadProductImages(products: Product[]) {
+  if (typeof window === "undefined") return;
+
+  for (const { image } of products) {
+    if (!image || preloadedProductImages.has(image)) continue;
+
+    preloadedProductImages.add(image);
+    const img = new Image();
+    img.decoding = "async";
+    img.src = image;
+  }
+}
 
 function ProductCard({ product }: { product: Product }) {
   const { name, image, cta, badge } = product;
@@ -154,7 +172,7 @@ function Home() {
           muted
           loop
           playsInline
-          preload="auto"
+          preload="metadata"
         >
           <source src={heroVideo} type="video/mp4" />
         </video>
@@ -307,10 +325,16 @@ function Home() {
               { key: "beverage", label: "Beverages", sub: "Energy · Soft · Tea · Dairy", icon: GlassWater, count: beverageProducts.length },
             ] as const).map(({ key, label, sub, icon: Icon, count }) => {
               const active = category === key;
+              const products = key === "packaging" ? packagingProducts : beverageProducts;
               return (
                 <button
                   key={key}
-                  onClick={() => setCategory(key)}
+                  onPointerEnter={() => preloadProductImages(products)}
+                  onFocus={() => preloadProductImages(products)}
+                  onClick={() => {
+                    preloadProductImages(products);
+                    setCategory(key);
+                  }}
                   className={`relative flex items-center justify-center gap-2.5 rounded-xl sm:rounded-full px-4 sm:px-6 py-2.5 text-left transition ${
                     active ? "bg-foreground text-background shadow-soft" : "text-muted-foreground hover:text-foreground"
                   }`}

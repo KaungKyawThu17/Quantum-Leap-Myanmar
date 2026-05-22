@@ -84,14 +84,6 @@ function FactoryFacilities() {
         ))}
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 lg:px-8 py-20 w-full">
-          <nav className="flex items-center gap-2 text-xs uppercase tracking-widest font-semibold text-white/70 mb-6">
-            <Link to="/" className="group inline-flex items-center gap-1.5 hover:text-white transition">
-              <ArrowLeft className="h-3.5 w-3.5 group-hover:-translate-x-1 transition-transform" />
-              All Services
-            </Link>
-            <span>/</span>
-            <span className="text-accent">Facilities</span>
-          </nav>
           <h1 className="font-display text-5xl md:text-7xl font-extrabold leading-[1.05] max-w-3xl">
             Factory <span className="bg-gradient-to-r from-accent to-cyan-200 bg-clip-text text-transparent">& Facilities</span>
           </h1>

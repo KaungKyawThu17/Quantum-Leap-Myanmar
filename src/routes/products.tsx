@@ -53,7 +53,15 @@ function Products() {
     <Layout>
       <PageHero eyebrow="Products" title="A complete beverage portfolio." subtitle="From energy and hydration to UHT and canning — the categories we manufacture today, and what's next." />
 
-      <section className="py-20 mx-auto max-w-7xl px-4 lg:px-8">
+      <nav className="sticky top-24 md:top-32 z-40 border-y border-border bg-background/85 backdrop-blur-xl">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8 flex items-center justify-center gap-2 py-3">
+          <a href="#beverages" className="px-4 py-2 rounded-full text-sm font-semibold text-foreground/80 hover:bg-muted hover:text-foreground transition">Beverages</a>
+          <a href="#packaging" className="px-4 py-2 rounded-full text-sm font-semibold text-foreground/80 hover:bg-muted hover:text-foreground transition">Packaging</a>
+        </div>
+      </nav>
+
+      <section id="beverages" className="py-20 mx-auto max-w-7xl px-4 lg:px-8 scroll-mt-44 md:scroll-mt-52">
+
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 rounded-full bg-accent/20 text-primary px-4 py-1.5 text-xs uppercase tracking-widest font-semibold">Beverages</div>
           <h2 className="font-display text-3xl md:text-4xl font-bold mt-4">Beverage OEM Products</h2>

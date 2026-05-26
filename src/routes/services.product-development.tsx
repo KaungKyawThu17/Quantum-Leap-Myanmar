@@ -49,7 +49,7 @@ const formats = [
   { type: "PET", size: "250 ml" },
   { type: "PET", size: "320 ml" },
   { type: "PET", size: "500 ml" },
-  { type: "TBA", size: "125 ml / 200 ml" },
+  { type: "TBA", size: "Multiple sizes" },
 ];
 
 const pillars = [

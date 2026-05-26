@@ -13,7 +13,7 @@ export const translations = {
     "contact.hero.subtitle":
       "For OEM and ODM beverage partnerships and manufacturing enquiries, contact our business development team.",
 
-    "contact.card.company.title": "QUANTUM LEAP Beverage Mfg.",
+    "contact.card.company.title": "QUANTUM LEAP Co., Ltd.",
     "contact.card.company.line1":
       "A next-generation OEM & ODM beverage manufacturer based in Yangon.",
 

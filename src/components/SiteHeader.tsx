@@ -6,7 +6,7 @@ import logo from "@/assets/quantum-leap-logo.png";
 
 const headerCopy = {
   en: {
-    tagline: "Beverage Mfg.",
+    tagline: "Co., Ltd.",
     home: "Home",
     about: "About",
     products: "Products",
@@ -23,7 +23,7 @@ const headerCopy = {
     ],
   },
   my: {
-    tagline: "အဖျော်ယမကာ ထုတ်လုပ်ရေး",
+    tagline: "Co., Ltd.",
     home: "ပင်မ",
     about: "အကြောင်း",
     products: "ထုတ်ကုန်",

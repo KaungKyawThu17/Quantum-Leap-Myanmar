@@ -63,7 +63,17 @@ const aboutCopy = {
     boardEyebrow: "Message from the Board",
     boardTitle: "A welcome from our Board of Directors",
     boardBody:
-      "At QUANTUM LEAP Co. Ltd, we are driven by a strong commitment to quality, innovation, and long-term sustainable growth. We strive to produce high-quality beverages that meet international standards while serving the evolving needs of consumers across diverse markets. Through continued investment in modern technology, operational excellence, and human capital, we will stand as a trusted partner. We sincerely thank everyone who is part of our journey and look forward to achieving greater success together.",
+      `Welcome to our OEM Beverage company.
+
+At Quantum Leap Co. Ltd, we are driven by a strong commitment to quality, innovation, and long-term sustainable growth. We strive to produce high-quality beverages that meet international standards while serving the evolving needs of consumers across diverse markets.
+
+Our vision extends beyond manufacturing. We aim to build trusted brands, develop meaningful partnerships, and create long-term value through continuous investment in modern technology, operational excellence, product development, and human capital. We are committed to becoming a respected and forward-thinking beverage manufacturer in the industry.
+
+We firmly believe that sustainable success is built upon integrity, innovation, and strong relationships with our customers, employees, suppliers, and business partners. The trust and support we receive from all stakeholders continue to inspire us to improve and grow every day.
+
+As we move forward, we remain dedicated to maintaining the highest standards of product safety, quality assurance, and responsible business practices. Together with our management team and employees, we will continue working passionately to deliver products that consumers can enjoy with confidence.
+
+We sincerely thank all our customers, partners, and stakeholders for being part of our journey and look forward to achieving greater success together.`,
     directorAlt: "Ko Alvin Aung Zin, Managing Director",
     leadershipEyebrow: "Leadership",
     leadershipTitle: "Meet our key management team",

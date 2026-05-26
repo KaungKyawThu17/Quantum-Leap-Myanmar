@@ -16,6 +16,7 @@ import bevTeaImg from "@/assets/optimized/prod-tea-card.jpg";
 import bevDairyImg from "@/assets/optimized/prod-dairy-card.jpg";
 import welcomeImg from "@/assets/optimized/welcome-feature.jpg";
 import sevenGoLogo from "@/assets/7go.webp";
+import isoPlusLogo from "@/assets/ISO PLUS.webp";
 import burmaClubLogo from "@/assets/burmaclub.webp";
 import pumaLogo from "@/assets/puma.webp";
 import { useEffect, useState } from "react";
@@ -93,6 +94,7 @@ const productCardSizes = [
 
 const trustedBrandLogos = [
   { name: "7go", image: { src: sevenGoLogo, width: 225, height: 225 } },
+  { name: "ISO Plus", image: { src: isoPlusLogo, width: 1600, height: 1049 } },
   { name: "Burma Club", image: { src: burmaClubLogo, width: 2484, height: 1758 } },
   { name: "Puma", image: { src: pumaLogo, width: 6240, height: 4415 } },
 ] as const;

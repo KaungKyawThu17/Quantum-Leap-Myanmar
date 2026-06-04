@@ -4,50 +4,13 @@ import { Menu, X, ChevronDown, Globe } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import logo from "@/assets/quantum-leap-logo.png";
 
-const headerCopy = {
-  en: {
-    tagline: "Co., Ltd.",
-    home: "Home",
-    about: "About",
-    products: "Products",
-    services: "Services",
-    contact: "Contact",
-    quote: "Get a Quotation",
-    openMenu: "Open menu",
-    closeMenu: "Close menu",
-    serviceLinks: [
-      { to: "/services/oem-manufacturing", label: "OEM and ODM Manufacturing" },
-      { to: "/services/production-capabilities", label: "Production Capabilities" },
-      { to: "/services/product-development", label: "Product Development" },
-      { to: "/services/factory-facilities", label: "Factory & Facilities" },
-    ],
-  },
-  my: {
-    tagline: "Co., Ltd.",
-    home: "ပင်မ",
-    about: "အကြောင်း",
-    products: "ထုတ်ကုန်",
-    services: "ဝန်ဆောင်မှု",
-    contact: "ဆက်သွယ်ရန်",
-    quote: "ဈေးနှုန်းမေးရန်",
-    openMenu: "မီနူးဖွင့်ရန်",
-    closeMenu: "မီနူးပိတ်ရန်",
-    serviceLinks: [
-      { to: "/services/oem-manufacturing", label: "OEM နှင့် ODM ထုတ်လုပ်မှု" },
-      { to: "/services/production-capabilities", label: "ထုတ်လုပ်မှု စွမ်းဆောင်ရည်များ" },
-      { to: "/services/product-development", label: "ထုတ်ကုန် ဖွံ့ဖြိုးတိုးတက်မှု" },
-      { to: "/services/factory-facilities", label: "စက်ရုံနှင့် အခြေခံအဆောက်အအုံများ" },
-    ],
-  },
-} as const;
-
 const DESKTOP_SERVICES_MENU_ID = "desktop-services-menu";
 const MOBILE_MENU_ID = "mobile-menu";
 const MOBILE_SERVICES_MENU_ID = "mobile-services-menu";
 
 export function SiteHeader() {
-  const { lang } = useLanguage();
-  const copy = headerCopy[lang];
+  const { content } = useLanguage();
+  const copy = content.common.header;
   const [open, setOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
@@ -127,7 +90,7 @@ export function SiteHeader() {
             )}
           </div>
 
-          <NavLink to="/faq">FAQ</NavLink>
+          <NavLink to="/faq">{copy.faq}</NavLink>
           <NavLink to="/contact">{copy.contact}</NavLink>
         </nav>
 
@@ -225,7 +188,7 @@ export function SiteHeader() {
               activeProps={{ className: "bg-primary/10 text-primary" }}
               className="focus-ring flex min-h-11 items-center px-3 py-2 rounded-md text-sm font-medium hover:bg-muted"
             >
-              FAQ
+              {copy.faq}
             </Link>
             <Link
               to="/contact"
@@ -255,7 +218,9 @@ function LanguageToggle() {
         type="button"
         onClick={() => setLang("en")}
         className={`focus-ring inline-flex min-h-11 min-w-11 items-center justify-center rounded-full px-2.5 py-1 transition-colors duration-200 ${
-          lang === "en" ? "bg-primary text-primary-foreground" : "text-foreground/70 hover:text-foreground"
+          lang === "en"
+            ? "bg-primary text-primary-foreground"
+            : "text-foreground/70 hover:text-foreground"
         }`}
         aria-pressed={lang === "en"}
       >
@@ -265,7 +230,9 @@ function LanguageToggle() {
         type="button"
         onClick={() => setLang("my")}
         className={`focus-ring inline-flex min-h-11 items-center justify-center rounded-full px-2.5 py-1 transition-colors duration-200 ${
-          lang === "my" ? "bg-primary text-primary-foreground" : "text-foreground/70 hover:text-foreground"
+          lang === "my"
+            ? "bg-primary text-primary-foreground"
+            : "text-foreground/70 hover:text-foreground"
         }`}
         aria-pressed={lang === "my"}
       >

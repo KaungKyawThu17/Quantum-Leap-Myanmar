@@ -6,41 +6,9 @@ import logo from "@/assets/quantum-leap-logo.png";
 const footerLinkClass =
   "focus-ring -mx-2 inline-flex min-h-11 items-center rounded-md px-2 text-background/80 hover:text-accent transition-colors duration-200";
 
-const footerCopy = {
-  en: {
-    tagline: "Myanmar's next generation OEM beverage manufacturing partner.",
-    explore: "Explore",
-    about: "About Us",
-    products: "Products",
-    contact: "Contact",
-    services: "Services",
-    oem: "OEM and ODM Manufacturing",
-    production: "Production Capabilities",
-    development: "Product Development",
-    facilities: "Factory & Facilities",
-    address: "No.351-352, No.3 High Road, R-11 Mingalardon Garden City, Yangon, Myanmar",
-    rights: "All rights reserved.",
-  },
-  my: {
-    tagline: "မြန်မာနိုင်ငံ၏ မျိုးဆက်သစ် OEM အဖျော်ယမကာ ထုတ်လုပ်မှု မိတ်ဖက်။",
-    explore: "စူးစမ်းရန်",
-    about: "ကျွန်ုပ်တို့အကြောင်း",
-    products: "ထုတ်ကုန်များ",
-    contact: "ဆက်သွယ်ရန်",
-    services: "ဝန်ဆောင်မှုများ",
-    oem: "OEM နှင့် ODM ထုတ်လုပ်မှု",
-    production: "ထုတ်လုပ်မှု စွမ်းဆောင်ရည်များ",
-    development: "ထုတ်ကုန် ဖွံ့ဖြိုးတိုးတက်မှု",
-    facilities: "စက်ရုံနှင့် အခြေခံအဆောက်အအုံများ",
-    address:
-      "အမှတ် ၃၅၁-၃၅၂၊ အမှတ် (၃) လမ်းမကြီး၊ R-11 မင်္ဂလာဒုံ ဂါးဒင်းစီးတီး၊ ရန်ကုန်။",
-    rights: "မူပိုင်ခွင့်များ ထိန်းသိမ်းထားပါသည်။",
-  },
-} as const;
-
 export function SiteFooter() {
-  const { lang } = useLanguage();
-  const copy = footerCopy[lang];
+  const { content } = useLanguage();
+  const copy = content.common.footer;
 
   return (
     <footer className="relative bg-foreground text-background mt-24">
@@ -74,7 +42,7 @@ export function SiteFooter() {
             </li>
             <li>
               <Link to="/faq" className={footerLinkClass}>
-                FAQ
+                {copy.faq}
               </Link>
             </li>
             <li>

@@ -6,7 +6,6 @@ import heroBg from "@/assets/pc-hero.webp";
 import { CertificatesSlider } from "@/components/CertificatesSlider";
 import { useLanguage } from "@/i18n/LanguageContext";
 import {
-  ArrowLeft,
   ArrowRight,
   Droplets,
   Layers,
@@ -33,190 +32,29 @@ export const Route = createFileRoute("/services/production-capabilities")({
   component: ProductionCapabilities,
 });
 
-const lines = [
-  {
-    icon: Droplets,
-    name: "PET ပုလင်းသွတ်လိုင်း",
-    tag: "မြန်နှုန်းမြင့်",
-    capacity: "၄၀၀",
-    unit: "ပုလင်း / မိနစ်",
-    body: "Ultraclean Hot-Fill နည်းပညာဖြင့် တစ်မိနစ်လျှင် ပုလင်း ၄၀၀ ထုတ်လုပ်နိုင်သော အရှိန်မြင့် စနစ်။",
-    highlights: ["Ultraclean Hot-Fill", "အလိုအလျောက် QA", "အဆင့်မြင့်"],
-    status: "active",
-  },
-  {
-    icon: Layers,
-    name: "နှစ်မျိုးသုံး PET ပုလင်းသွတ်လိုင်း",
-    tag: "ပြောင်းလွယ်ပြင်လွယ်",
-    capacity: "၅,၀၀၀",
-    unit: "ပုလင်း / နာရီ",
-    body: "PET နှင့် ဖန်ပုလင်း နှစ်မျိုးလုံးအတွက် တစ်နာရီလျှင် ပုလင်း ၅,၀၀၀ ထုတ်လုပ်နိုင်သော ပုလင်းသွတ်စနစ်။",
-    highlights: ["PET + ဖန်ပုလင်း", "အမြန်ပြောင်းနိုင်မှု", "ရေရှည်တည်တံ့မှု"],
-    status: "active",
-  },
-  {
-    icon: PackageOpen,
-    name: "အိတ်သွတ်လိုင်း (Standing Pouch)",
-    tag: "စုံလင်သော",
-    capacity: "၁၀,၀၀၀",
-    unit: "အိတ် / နာရီ",
-    body: "တစ်နာရီလျှင် အိတ် ၇,၀၀၀ မှ ၁၀,၀၀၀ ကြား ထုတ်လုပ်နိုင်သော လိုက်လျောညီထွေရှိသည့် ထုပ်ပိုးမှုလိုင်း။",
-    highlights: ["လိုက်လျောညီထွေ ထုပ်ပိုးမှု", "ပုံစံမျိုးစုံ", "ထုတ်လုပ်မှုမြင့်"],
-    status: "active",
-  },
-  {
-    icon: Thermometer,
-    name: "UHT ထုတ်လုပ်မှုလိုင်း",
-    tag: "အဆင့်မြင့်",
-    capacity: "၇,၀၀၀",
-    unit: "pack / နာရီ",
-    body: "နို့ထွက်ပစ္စည်းနှင့် အခြားအဖျော်ရည်များအတွက် အဆင့်မြင့် UHT စနစ်။",
-    highlights: ["သက်တမ်းရှည်", "Aseptic process", "နို့ထွက် + အပင်အခြေခံ"],
-    status: "active",
-  },
-  {
-    icon: Sparkles,
-    name: "CSD",
-    tag: "မကြာမီလာမည်",
-    capacity: "မကြာမီ",
-    unit: "တိုးချဲ့မှုအဆင့်",
-    body: "အကြီးစား အဖျော်ယမကာထုတ်လုပ်မှုအတွက် မြန်နှုန်းမြင့် ကာဗွန်နိတ်အချိုရည် စနစ်များသို့ တိုးချဲ့နေပါသည်။",
-    highlights: ["ကာဗွန်နိတ်", "အရသာမျိုးစုံ", "မြန်နှုန်းမြင့်"],
-    status: "soon",
-  },
-  {
-    icon: Package,
-    name: "ဘူးထုတ်လုပ်မှုလိုင်း",
-    tag: "အနာဂတ်အစီအစဉ်",
-    capacity: "အနာဂတ်",
-    unit: "စီမံကိန်းအဆင့်",
-    body: "ပုလင်းနှင့်အိတ်ထုပ်ပိုးမှုစွမ်းရည်များကို ဖြည့်စွက်ရန် အနာဂတ် အလူမီနီယမ်ဘူး ထုတ်လုပ်မှုလိုင်း။",
-    highlights: ["အလူမီနီယမ်ဘူး", "ပုံစံမျိုးစုံ", "အပြည့်အစုံ"],
-    status: "future",
-  },
-];
-
-const stats = [
-  { icon: Gauge, value: "၂၄,၀၀၀", label: "အများဆုံး ပုလင်း / နာရီ", suffix: "BPH" },
-  { icon: Factory, value: "၆", label: "ထုတ်လုပ်မှုလိုင်းများ", suffix: "Lines" },
-  { icon: Clock, value: "၂၄/၇", label: "လုပ်ငန်းလည်ပတ်နိုင်စွမ်း", suffix: "Uptime" },
-];
-
-const englishLines = [
-  {
-    icon: Droplets,
-    name: "PET Bottling Line",
-    tag: "High-Speed",
-    capacity: "400",
-    unit: "bottles / minute",
-    body: "High-speed PET bottling system with Ultraclean Hot-Fill technology for premium beverage filling.",
-    highlights: ["Ultraclean Hot-Fill", "Automated QA", "Premium grade"],
-    status: "active",
-  },
-  {
-    icon: Layers,
-    name: "Dual PET Bottling Line",
-    tag: "Flexible",
-    capacity: "5,000",
-    unit: "bottles / hour",
-    body: "Dual-purpose bottling system supporting both PET and recyclable glass packaging formats.",
-    highlights: ["PET + Glass", "Quick changeover", "Sustainable"],
-    status: "active",
-  },
-  {
-    icon: PackageOpen,
-    name: "Standing Pouch Line",
-    tag: "Versatile",
-    capacity: "10,000",
-    unit: "pouches / hour",
-    body: "Flexible packaging production line capable of filling 7,000 to 10,000 pouches per hour.",
-    highlights: ["Flexible packaging", "Multi-format", "High output"],
-    status: "active",
-  },
-  {
-    icon: Thermometer,
-    name: "UHT Production Line",
-    tag: "Advanced",
-    capacity: "7,000",
-    unit: "packs / hour",
-    body: "Advanced UHT beverage processing engineered for dairy and plant-based beverage products.",
-    highlights: ["Long shelf life", "Aseptic process", "Dairy + plant"],
-    status: "active",
-  },
-  {
-    icon: Sparkles,
-    name: "CSD",
-    tag: "Coming Soon",
-    capacity: "Soon",
-    unit: "expansion phase",
-    body: "Expansion into high-speed carbonated soft drink systems for large-scale beverage production.",
-    highlights: ["Carbonation", "Multiple flavors", "High-speed"],
-    status: "soon",
-  },
-  {
-    icon: Package,
-    name: "Canning Line",
-    tag: "Future Plan",
-    capacity: "Future",
-    unit: "planning phase",
-    body: "Future aluminum canning line to complement our bottling and pouch capabilities for complete packaging flexibility.",
-    highlights: ["Aluminum cans", "Multi-format", "Complete range"],
-    status: "future",
-  },
-];
-
-const englishStats = [
-  { icon: Gauge, value: "24,000", label: "Max bottles per hour", suffix: "BPH" },
-  { icon: Factory, value: "6", label: "Production lines", suffix: "Lines" },
-  { icon: Clock, value: "24/7", label: "Operational capacity", suffix: "Uptime" },
-];
-
-const productionCopy = {
-  en: {
-    eyebrow: "Production Capabilities",
-    title: "Production",
-    highlight: "Capabilities",
-    subtitle:
-      "Multiple high-throughput lines built for flexibility and scale — engineered to support your brand at every volume.",
-    introTitle: "Built for flexibility. Engineered for scale.",
-    intro1:
-      "QUANTUM LEAP operates a diverse portfolio of production lines designed to support beverage brands across formats, volumes, and product categories — from PET bottling to UHT processing.",
-    intro2:
-      "Our infrastructure is continuously expanding to meet the growing demand for sustainable, high-volume beverage manufacturing.",
-    linesEyebrow: "Our Production Lines",
-    linesTitle: "Capabilities at a glance",
-    ctaTitle: "Need a production partner that scales with you?",
-    ctaBody:
-      "From small batch trials to full-volume export production — we've built the lines for it.",
-    ctaButton: "Talk to our production team",
-  },
-  my: {
-    eyebrow: "ထုတ်လုပ်မှု စွမ်းဆောင်ရည်များ",
-    title: "ထုတ်လုပ်မှု",
-    highlight: "စွမ်းဆောင်ရည်များ",
-    subtitle:
-      "ပြောင်းလွယ်ပြင်လွယ်နှင့် စကေးချဲ့နိုင်မှုအတွက် တည်ဆောက်ထားသော မြန်နှုန်းမြင့် ထုတ်လုပ်မှုလိုင်းများ။",
-    introTitle: "ပြောင်းလွယ်ပြင်လွယ်ရှိပြီး စကေးချဲ့နိုင်ရန် တည်ဆောက်ထားပါသည်။",
-    intro1:
-      "Quantum Leap သည် ထုတ်ကုန်အကြံဉာဏ်မှသည် အလုံးစုံ ထုတ်လုပ်မှုအထိ အပြည့်အဝ OEM နှင့် ODM အဖျော်ယမကာ ထုတ်လုပ်မှု ဖြေရှင်းချက်များကို ပေးဆောင်ပါသည်။",
-    intro2:
-      "PET ပုလင်းသွတ်ခြင်းမှ UHT စနစ်အထိ အမျိုးအစား၊ ပမာဏနှင့် ထုပ်ပိုးမှုပုံစံအလိုက် အဖျော်ယမကာအမှတ်တံဆိပ်များကို ပံ့ပိုးနိုင်ရန် ထုတ်လုပ်မှုစနစ်များကို အဆက်မပြတ် တိုးချဲ့နေပါသည်။",
-    linesEyebrow: "ကျွန်ုပ်တို့၏ ထုတ်လုပ်မှုလိုင်းများ",
-    linesTitle: "စွမ်းဆောင်ရည်များ အကျဉ်းချုပ်",
-    ctaTitle: "သင့်အမှတ်တံဆိပ်နှင့်အတူ စကေးချဲ့နိုင်သော ထုတ်လုပ်မှုမိတ်ဖက် လိုအပ်ပါသလား?",
-    ctaBody:
-      "စမ်းသပ်ထုတ်လုပ်မှုမှ အပြည့်အဝ ပြည်ပပို့ကုန် ထုတ်လုပ်မှုအထိ ပံ့ပိုးနိုင်သော လိုင်းများကို တည်ဆောက်ထားပါသည်။",
-    ctaButton: "ထုတ်လုပ်မှုအဖွဲ့နှင့် ဆွေးနွေးရန်",
-  },
-} as const;
-
 const heroSlides = [{ src: heroBg, width: 1562, height: 878 }];
 
+const productionStatIcons = [Gauge, Factory, Clock] as const;
+const productionLineIcons = [
+  Droplets,
+  Layers,
+  PackageOpen,
+  Thermometer,
+  Sparkles,
+  Package,
+] as const;
+
 function ProductionCapabilities() {
-  const { lang } = useLanguage();
-  const copy = productionCopy[lang];
-  const localizedLines = lang === "en" ? englishLines : lines;
-  const localizedStats = lang === "en" ? englishStats : stats;
+  const { content } = useLanguage();
+  const copy = content.services.production;
+  const localizedStats = copy.stats.map((stat, index) => ({
+    ...stat,
+    icon: productionStatIcons[index],
+  }));
+  const localizedLines = copy.lines.map((line, index) => ({
+    ...line,
+    icon: productionLineIcons[index],
+  }));
 
   return (
     <Layout>

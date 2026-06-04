@@ -16,41 +16,15 @@ import fire from "@/assets/certificates/fire-safety.png";
 import exporter from "@/assets/certificates/exporter-importer.png";
 import electrical from "@/assets/certificates/electrical-inspection.png";
 
-const certificates = [
-  { src: fda, label: "FDA ထုတ်လုပ်ခွင့် လိုင်စင်" },
-  { src: iso, label: "ISO 22000:2018 အစားအသောက် ဘေးကင်းရေး စီမံခန့်ခွဲမှု" },
-  { src: halal, label: "ဟလာလ် လက်မှတ်" },
-  { src: fire, label: "မီးဘေးလုံခြုံရေး လက်မှတ်" },
-  { src: exporter, label: "ပို့ကုန်သွင်းကုန် မှတ်ပုံတင်" },
-  { src: electrical, label: "စက်ပိုင်းနှင့် လျှပ်စစ်ပိုင်း စစ်ဆေးမှု" },
-];
-
-const englishCertificates = [
-  { src: fda, label: "FDA Food Manufacturing Recommendation" },
-  { src: iso, label: "ISO 22000:2018 Food Safety Management" },
-  { src: halal, label: "Halal Certification" },
-  { src: fire, label: "Fire Safety Certification" },
-  { src: exporter, label: "Exporter / Importer Registration" },
-  { src: electrical, label: "Mechanical & Electrical Inspection" },
-];
-
-const certificateCopy = {
-  en: {
-    eyebrow: "Certifications",
-    title: "Trusted, certified, and compliant",
-    aria: "Certifications carousel",
-  },
-  my: {
-    eyebrow: "အသိအမှတ်ပြု လက်မှတ်များ",
-    title: "ယုံကြည်စိတ်ချရသော လုပ်ငန်းစဉ်များနှင့် အသိအမှတ်ပြု စံနှုန်းများ",
-    aria: "အသိအမှတ်ပြု လက်မှတ်များ",
-  },
-} as const;
+const certificateImages = [fda, iso, halal, fire, exporter, electrical] as const;
 
 export function CertificatesSlider() {
-  const { lang } = useLanguage();
-  const copy = certificateCopy[lang];
-  const localizedCertificates = lang === "en" ? englishCertificates : certificates;
+  const { content } = useLanguage();
+  const copy = content.common.certificates;
+  const localizedCertificates = copy.items.map((label, index) => ({
+    label,
+    src: certificateImages[index],
+  }));
   const prefersReducedMotion = useReducedMotion();
   const autoplay = useRef(Autoplay({ delay: 3500, stopOnInteraction: true }));
   const autoplayStoppedByUser = useRef(false);

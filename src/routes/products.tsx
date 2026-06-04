@@ -24,8 +24,7 @@ export const Route = createFileRoute("/products")({
       { title: "Products — QUANTUM LEAP" },
       {
         name: "description",
-        content:
-          "Packaging products and OEM beverage manufacturing services from QUANTUM LEAP.",
+        content: "Packaging products and OEM beverage manufacturing services from QUANTUM LEAP.",
       },
     ],
   }),
@@ -54,346 +53,27 @@ type ProductCardData = {
 const gridImageSizes =
   "(min-width: 1280px) 405px, (min-width: 1024px) calc((100vw - 8rem) / 3), (min-width: 768px) calc((100vw - 5rem) / 2), calc(100vw - 2rem)";
 
-const categoryLabels: Record<"en" | "my", Record<ProductCategory, string>> = {
-  en: { beverage: "Beverage", packaging: "Packaging" },
-  my: { beverage: "အဖျော်ယမကာ", packaging: "ထုပ်ပိုးမှု" },
-};
-
-const beverageProducts: ProductCardData[] = [
-  {
-    name: "အားဖြည့်အချိုရည်များ",
-    category: "beverage",
-    image: { src: prodEnergyImg, width: 960, height: 480 },
-    desc: "စိတ်ကြိုက်ဖော်စပ်ထားသော ဖော်မြူလာများ၊ အရသာများနှင့် ထုပ်ပိုးမှုပုံစံများဖြင့် စွမ်းဆောင်ရည်မြင့် အားဖြည့်အချိုရည် ထုတ်လုပ်မှု ဖြေရှင်းချက်များ။",
-    specs: ["ဖော်မြူလာ ပံ့ပိုးမှု", "PET ပုလင်းသွတ်ခြင်း", "ပမာဏအလိုက် ဈေးနှုန်း"],
-    inquiryLabel: "ဈေးနှုန်း မေးမြန်းရန်",
-  },
-  {
-    name: "အချိုရည်များ",
-    category: "beverage",
-    image: { src: prodSoftDrinkImg, width: 960, height: 640 },
-    desc: "ပြည်တွင်းနှင့် ပြည်ပပို့ကုန် ဈေးကွက် လိုအပ်ချက်များအတွက် ကိုက်ညီသော ကာဗွန်နိတ်ပါဝင်သော သို့မဟုတ် မပါဝင်သော အချိုရည် ထုတ်လုပ်မှု။",
-    specs: ["ကာဗွန်နိတ်ပါ/မပါ", "ထုပ်ပိုးမှုပြန်လည်သုံးသပ်မှု", "လိုင်းအစီအစဉ်"],
-    inquiryLabel: "အချိုရည်ဆိုင်ရာ ဆွေးနွေးရန်",
-  },
-  {
-    name: "သစ်သီးဖျော်ရည်များ",
-    category: "beverage",
-    image: { src: prodFruitJuiceImg, width: 960, height: 538 },
-    desc: "လိမ္မော်၊ နာနတ်၊ သခွားမွှေး၊ လိုက်ချီးနှင့် စိတ်ကြိုက်ဖော်စပ်ထားသော သစ်သီးဖျော်ရည်များ ထုတ်လုပ်ခြင်း။",
-    specs: ["သစ်သီးရောစပ်မှု", "တံဆိပ်ပံ့ပိုးမှု", "သက်တမ်းစစ်ဆေးမှု"],
-    inquiryLabel: "ဖျော်ရည်ဆိုင်ရာ မေးမြန်းရန်",
-  },
-  {
-    name: "ဓာတ်ဆားရည်များ",
-    category: "beverage",
-    image: { src: prodElectrolyteImg, width: 960, height: 479 },
-    desc: "အဆင့်မြင့် ထုတ်လုပ်မှု စနစ်များဖြင့် အရည်အသွေး တသမတ်တည်းရှိသော ကျန်းမာရေးနှင့်ညီညွတ်သည့် ဓာတ်ဆားဖြည့်အချိုရည်များ။",
-    specs: ["ဓာတ်ဆားဖော်မြူလာ", "PET ပုံစံများ", "Batch အစီအစဉ်"],
-    inquiryLabel: "ဓာတ်ဆားရည် စီစဉ်ရန်",
-  },
-  {
-    name: "အရသာပါဝင်သော အချိုရည်များ",
-    category: "beverage",
-    image: { src: prodFlavoredImg, width: 960, height: 479 },
-    desc: "Nata de coco (အုန်းဂျယ်လီ) နှင့် သစ်သီးအခြေခံထားသော ဆန်းသစ်သည့် အရသာရှိသော အချိုရည်များ။",
-    specs: ["အရသာညှိနှိုင်းမှု", "Nata de coco ရွေးချယ်စရာ", "စိတ်ကြိုက်တံဆိပ်"],
-    inquiryLabel: "အရသာ brief စတင်ရန်",
-  },
-  {
-    name: "လက်ဖက်ရည်နှင့် အဖျော်ယမကာများ",
-    category: "beverage",
-    image: { src: prodTeaImg, width: 960, height: 537 },
-    desc: "လက်ဖက်ရည်၊ နို့လက်ဖက်ရည်၊ ကော်ဖီနှင့် တခြားသော အဖျော်ယမကာများ။",
-    specs: ["လက်ဖက်ရည်ထုတ်ကုန်", "PET ပုံစံများ", "QC ပံ့ပိုးမှု"],
-    inquiryLabel: "လက်ဖက်ရည်ထုတ်ကုန် ဆွေးနွေးရန်",
-  },
+const beverageProductMedia: ImageAsset[] = [
+  { src: prodEnergyImg, width: 960, height: 480 },
+  { src: prodSoftDrinkImg, width: 960, height: 640 },
+  { src: prodFruitJuiceImg, width: 960, height: 538 },
+  { src: prodElectrolyteImg, width: 960, height: 479 },
+  { src: prodFlavoredImg, width: 960, height: 479 },
+  { src: prodTeaImg, width: 960, height: 537 },
 ];
 
-const upcoming: ProductCardData[] = [
-  {
-    category: "beverage",
-    image: { src: prodDairyImg, width: 960, height: 641 },
-    name: "ပဲနို့နှင့် နို့ထွက်ပစ္စည်းများ",
-    desc: "မကြာမီလာမည့် ပဲနို့နှင့် နို့ထွက်ပစ္စည်း ထုတ်ကုန်များ။",
-    specs: ["ပဲနို့", "UHT အစီအစဉ်", "စတင်ထုတ်လုပ်မှု ဆွေးနွေးမှု"],
-    inquiryLabel: "လာမည့်လိုင်း ဆွေးနွေးရန်",
-    status: "မကြာမီလာမည်",
-  },
+const upcomingProductMedia: ImageAsset[] = [{ src: prodDairyImg, width: 960, height: 641 }];
+
+const packagingProductMedia: Array<ImageAsset | undefined> = [
+  { src: plasticCapImg, width: 960, height: 640 },
+  { src: petBottleImg, width: 960, height: 731 },
+  { src: petPreformImg, width: 960, height: 598 },
+  { src: aluminumCapImg, width: 960, height: 523 },
+  { src: labelImg, width: 960, height: 547 },
+  undefined,
 ];
 
-const packagingProducts: ProductCardData[] = [
-  {
-    name: "ပလတ်စတစ် ပုလင်းအဖုံးများ",
-    category: "packaging",
-    image: { src: plasticCapImg, width: 960, height: 640 },
-    desc: "PET အဖျော်ယမကာ ပုလင်းများအတွက် ပိတ်ဆို့မှုဆိုင်ရာ ဖြေရှင်းချက်များ။",
-    items: ["အဖျော်ယမကာ ပုလင်းအဖုံးများ", "PET ပုလင်းများအတွက် ပိတ်ဆို့မှုဆိုင်ရာ ဖြေရှင်းချက်များ"],
-    specs: ["PET ကိုက်ညီမှု", "အမှတ်တံဆိပ်အရောင်", "Specification ပြန်လည်သုံးသပ်မှု"],
-    inquiryLabel: "အဖုံးများ မေးမြန်းရန်",
-  },
-  {
-    name: "PET ပုလင်းများ",
-    category: "packaging",
-    image: { src: petBottleImg, width: 960, height: 731 },
-    desc: "ထုတ်လုပ်ရန်အသင့်ဖြစ်သော ပုလင်းပုံစံများလိုအပ်သည့် အဖျော်ယမကာအမှတ်တံဆိပ်များအတွက် စိတ်ကြိုက် PET ပုလင်း ထုပ်ပိုးမှု ပံ့ပိုးမှု။",
-    items: ["ရေသန့်ပုလင်းများ", "အပူပေးစနစ်ဖြင့် ပုလင်းသွတ်နိုင်သော ပုလင်းများ", "ကာဗွန်နိတ်အချိုရည်ပုလင်းများ", "စိတ်ကြိုက်ပုံစံဖော်ထားသော PET ထုပ်ပိုးမှုများ"],
-    specs: ["Hot-fill ပုံစံများ", "စိတ်ကြိုက်ပုံစံ", "Neck finish အစီအစဉ်"],
-    inquiryLabel: "ပုလင်းပုံစံ ဆွေးနွေးရန်",
-  },
-  {
-    name: "PET ပုလင်းလောင်းများ",
-    category: "packaging",
-    image: { src: petPreformImg, width: 960, height: 598 },
-    desc: "အဖျော်ယမကာအမျိုးအစားများနှင့် ထုပ်ပိုးမှုအစီအစဉ်များအတွက် ပုလင်းထုတ်လုပ်ရန် PET ပုလင်းလောင်းများ။",
-    items: [
-      "ပုလင်းထုတ်လုပ်ရန်အတွက် PET ပုလင်းလောင်းများ",
-      "Crystallized နှင့် Non-crystallized ပုလင်းလောင်းများ",
-      "CSD (ကာဗွန်နိတ်အချိုရည်) အတွက် ပုလင်းလောင်းများ",
-    ],
-    specs: ["Preform ပံ့ပိုးမှု", "CSD ရွေးချယ်စရာ", "Specification ပြန်လည်သုံးသပ်မှု"],
-    inquiryLabel: "Preform အချက်အလက် မေးမြန်းရန်",
-  },
-  {
-    name: "အလူမီနီယမ် အဖုံးများ",
-    category: "packaging",
-    image: { src: aluminumCapImg, width: 960, height: 523 },
-    desc: "ယုံကြည်စိတ်ချရသော ပိတ်ဆို့မှုလိုအပ်သည့် အဖျော်ယမကာ ထုပ်ပိုးမှုအစီအစဉ်များအတွက် အလူမီနီယမ်အဖုံး ရွေးချယ်စရာများ။",
-    items: ["အလူမီနီယမ် အဖျော်ယမကာ အဖုံးများ", "တံဆိပ်မပျက်သေးကြောင်း သက်သေပြနိုင်သည့် အဖုံးများ"],
-    specs: ["Tamper-evident", "အဖျော်ယမကာ အဖုံးများ", "Specification ပြန်လည်သုံးသပ်မှု"],
-    inquiryLabel: "အလူမီနီယမ်အဖုံး မေးမြန်းရန်",
-  },
-  {
-    name: "တံဆိပ်များ",
-    category: "packaging",
-    image: { src: labelImg, width: 960, height: 547 },
-    desc: "ပုလင်းအမှတ်တံဆိပ်အတွက် တံဆိပ်ဒီဇိုင်း၊ sleeve အစီအစဉ်နှင့် shelf presentation ပံ့ပိုးမှု။",
-    items: ["အပူပေးကျုံ့ကပ်တံဆိပ်များ", "အဖျော်ယမကာ ထုပ်ပိုးမှုဆိုင်ရာ တံဆိပ်များ"],
-    specs: ["Shrink sleeve", "Artwork ပံ့ပိုးမှု", "ပုလင်းနှင့်ကိုက်ညီမှု စစ်ဆေးမှု"],
-    inquiryLabel: "တံဆိပ်များ ဆွေးနွေးရန်",
-  },
-  {
-    name: "စိတ်ကြိုက်ဝန်ဆောင်မှုများ",
-    category: "packaging",
-    desc: "စိတ်ကြိုက် ပုလင်း၊ အဖုံးနှင့် တံဆိပ်စနစ် လိုအပ်သည့် အမှတ်တံဆိပ်များအတွက် OEM ထုပ်ပိုးမှု ဖွံ့ဖြိုးတိုးတက်မှု။",
-    items: ["OEM ထုပ်ပိုးမှုဆိုင်ရာ ဖွံ့ဖြိုးတိုးတက်မှု", "စိတ်ကြိုက် ပုလင်းနှင့် အဖုံး ဒီဇိုင်းဖော်ဆောင်ခြင်း"],
-    specs: ["ပုလင်းဒီဇိုင်း", "အဖုံး / တံဆိပ်စနစ်", "ထုပ်ပိုးမှု brief"],
-    inquiryLabel: "စိတ်ကြိုက် brief စတင်ရန်",
-  },
-];
-
-const quickInquiries = [
-  {
-    category: "beverage" as const,
-    product: "အဖျော်ယမကာ ထုတ်လုပ်မှု",
-    title: "အဖျော်ယမကာ စုံစမ်းမှု",
-    body: "ဖော်မြူလာ၊ ပုလင်းပုံစံ၊ ထုတ်လုပ်မှုပမာဏနှင့် စတင်မည့်အချိန်။",
-    icon: GlassWater,
-  },
-  {
-    category: "packaging" as const,
-    product: "ထုပ်ပိုးမှု ဖြေရှင်းချက်",
-    title: "ထုပ်ပိုးမှု စုံစမ်းမှု",
-    body: "PET ပုလင်းများ၊ ပုလင်းလောင်းများ၊ အဖုံးများ၊ တံဆိပ်များ သို့မဟုတ် စိတ်ကြိုက်ထုပ်ပိုးမှုစနစ်။",
-    icon: Package,
-  },
-];
-
-const englishBeverageProducts: ProductCardData[] = [
-  {
-    name: "Energy Drinks",
-    category: "beverage",
-    image: { src: prodEnergyImg, width: 960, height: 480 },
-    desc: "Manufacturing solutions for high-performance energy beverages with customizable formulations, flavors, and packaging formats.",
-    specs: ["Formula support", "PET bottling", "Quote by volume"],
-    inquiryLabel: "Request quote",
-  },
-  {
-    name: "Soft Drinks",
-    category: "beverage",
-    image: { src: prodSoftDrinkImg, width: 960, height: 640 },
-    desc: "Carbonated and non-carbonated beverage production tailored for local and export market requirements.",
-    specs: ["Still or carbonated", "Packaging review", "Line planning"],
-    inquiryLabel: "Discuss soft drinks",
-  },
-  {
-    name: "Fruit Juices",
-    category: "beverage",
-    image: { src: prodFruitJuiceImg, width: 960, height: 538 },
-    desc: "Production of fruit juice beverages including orange, pineapple, cantaloupe, lychee, and customized formulations.",
-    specs: ["Juice blends", "Label support", "Shelf-life review"],
-    inquiryLabel: "Ask about juices",
-  },
-  {
-    name: "Electrolyte Beverages",
-    category: "beverage",
-    image: { src: prodElectrolyteImg, width: 960, height: 479 },
-    desc: "Functional hydration beverages manufactured with consistent quality and advanced processing systems.",
-    specs: ["Hydration formula", "PET formats", "Batch planning"],
-    inquiryLabel: "Plan electrolyte drink",
-  },
-  {
-    name: "Flavored Drinks",
-    category: "beverage",
-    image: { src: prodFlavoredImg, width: 960, height: 479 },
-    desc: "Innovative flavored beverages with nata de coco and fruit-based variations designed for evolving consumer preferences.",
-    specs: ["Flavor matching", "Nata de coco options", "Custom labels"],
-    inquiryLabel: "Start flavor brief",
-  },
-  {
-    name: "Tea & Functional",
-    category: "beverage",
-    image: { src: prodTeaImg, width: 960, height: 537 },
-    desc: "Tea-based and functional beverages for everyday wellness and performance.",
-    specs: ["Functional concepts", "PET formats", "QC support"],
-    inquiryLabel: "Discuss tea products",
-  },
-];
-
-const englishUpcoming: ProductCardData[] = [
-  {
-    category: "beverage",
-    image: { src: prodDairyImg, width: 960, height: 641 },
-    name: "Dairy Products",
-    desc: "Soy milk and dairy products.",
-    specs: ["Soy milk", "UHT planning", "Launch consultation"],
-    inquiryLabel: "Discuss upcoming line",
-    status: "Coming Soon",
-  },
-];
-
-const englishPackagingProducts: ProductCardData[] = [
-  {
-    name: "Plastic Cap",
-    category: "packaging",
-    image: { src: plasticCapImg, width: 960, height: 640 },
-    desc: "Closure solutions for PET beverage bottles, planned around fit, sealing needs, and brand presentation.",
-    items: ["Beverage bottle caps", "Closure solutions for PET bottles"],
-    specs: ["PET compatibility", "Brand color planning", "Spec review"],
-    inquiryLabel: "Ask about caps",
-  },
-  {
-    name: "PET Bottle",
-    category: "packaging",
-    image: { src: petBottleImg, width: 960, height: 731 },
-    desc: "Custom PET bottle packaging support for beverage brands that need production-ready bottle formats.",
-    items: ["Hot-fill bottles", "Carbonated drink bottles", "Customized PET packaging"],
-    specs: ["Hot-fill formats", "Custom shape review", "Neck finish planning"],
-    inquiryLabel: "Discuss bottle format",
-  },
-  {
-    name: "PET Preform",
-    category: "packaging",
-    image: { src: petPreformImg, width: 960, height: 598 },
-    desc: "PET preform support for bottle manufacturing requirements across drink categories and packaging plans.",
-    items: [
-      "PET preforms for bottle manufacturing",
-      "Crystallized & non-crystallized preforms",
-      "CSD (carbonated soft drink) preforms",
-    ],
-    specs: ["Preform supply", "CSD options", "Spec review"],
-    inquiryLabel: "Request preform info",
-  },
-  {
-    name: "Aluminum Cap",
-    category: "packaging",
-    image: { src: aluminumCapImg, width: 960, height: 523 },
-    desc: "Aluminum closure options for beverage packaging programs that require reliable sealed presentation.",
-    items: ["Aluminum beverage closures", "Tamper-evident caps"],
-    specs: ["Tamper-evident", "Beverage closures", "Spec review"],
-    inquiryLabel: "Ask about closures",
-  },
-  {
-    name: "Label",
-    category: "packaging",
-    image: { src: labelImg, width: 960, height: 547 },
-    desc: "Packaging label support for bottle-ready branding, sleeve planning, and beverage shelf presentation.",
-    items: ["Shrink sleeve labels", "Beverage packaging labels"],
-    specs: ["Shrink sleeves", "Artwork support", "Bottle fit check"],
-    inquiryLabel: "Discuss labels",
-  },
-  {
-    name: "Customized Services",
-    category: "packaging",
-    desc: "OEM packaging development for brands that need a custom bottle, cap, and label system.",
-    items: ["OEM packaging development", "Custom bottle and cap design"],
-    specs: ["Bottle design", "Cap / label system", "Packaging brief"],
-    inquiryLabel: "Start custom brief",
-  },
-];
-
-const englishQuickInquiries = [
-  {
-    category: "beverage" as const,
-    product: "Beverage manufacturing",
-    title: "Beverage inquiry",
-    body: "Formula, bottle format, production volume, and launch timing.",
-    icon: GlassWater,
-  },
-  {
-    category: "packaging" as const,
-    product: "Packaging solution",
-    title: "Packaging inquiry",
-    body: "PET bottles, preforms, caps, labels, or a custom packaging system.",
-    icon: Package,
-  },
-];
-
-const productPageCopy = {
-  en: {
-    tailored: "Tailored Solutions",
-    products: "Products",
-    heroTitle: "A complete beverage portfolio.",
-    heroSubtitle:
-      "From energy and hydration to UHT and canning — the categories we manufacture today, and what's next.",
-    beverages: "Beverages",
-    beverageSub: "Energy · Soft · Tea · Dairy",
-    packaging: "Packaging",
-    packagingSub: "Caps · Bottles · Labels",
-    quote: "Quote",
-    productInquiry: "Product inquiry",
-    briefEyebrow: "Start with your brief",
-    briefTitle: "What are you looking to manufacture?",
-    briefBody: "Choose a path and we will carry the product context into the contact form.",
-    openInquiry: "Open inquiry",
-    beverageTitle: "Beverage OEM Products",
-    comingSoon: "Coming Soon",
-    upcomingTitle: "Upcoming categories",
-    packagingTitle: "Packaging Products",
-    ctaTitle: "Not sure which product fits?",
-    ctaBody:
-      "Tell us what you want to launch and our team will map the right beverage or packaging path.",
-    ctaButton: "Contact us",
-    ariaFor: "for",
-  },
-  my: {
-    tailored: "စိတ်ကြိုက် ဖြေရှင်းချက်များ",
-    products: "ထုတ်ကုန်များ",
-    heroTitle: "အဖျော်ယမကာနှင့် ထုပ်ပိုးမှုဆိုင်ရာ ထုတ်ကုန်အမျိုးအစားများ။",
-    heroSubtitle:
-      "ထုပ်ပိုးမှုဆိုင်ရာ ထုတ်ကုန်များမှ အဖျော်ယမကာ OEM ထုတ်လုပ်မှု ဝန်ဆောင်မှုများအထိ အပြည့်အဝ ပံ့ပိုးပေးပါသည်။",
-    beverages: "အဖျော်ယမကာ",
-    beverageSub: "အားဖြည့် · အချိုရည် · လက်ဖက်ရည် · နို့",
-    packaging: "ထုပ်ပိုးမှု",
-    packagingSub: "အဖုံး · ပုလင်း · တံဆိပ်",
-    quote: "ဈေးနှုန်း",
-    productInquiry: "ထုတ်ကုန် စုံစမ်းမှု",
-    briefEyebrow: "သင့်လိုအပ်ချက်မှ စတင်ပါ",
-    briefTitle: "မည်သည့်ထုတ်ကုန်ကို ထုတ်လုပ်လိုပါသလဲ?",
-    briefBody:
-      "သင့်လိုအပ်ချက်ကို ရွေးချယ်ပါ။ ထုတ်ကုန်အချက်အလက်များကို ဆက်သွယ်ရန်ဖောင်ထဲသို့ ထည့်သွင်းပေးပါမည်။",
-    openInquiry: "စုံစမ်းမှုဖောင် ဖွင့်ရန်",
-    beverageTitle: "အဖျော်ယမကာ OEM ထုတ်ကုန်များ",
-    comingSoon: "မကြာမီလာမည်",
-    upcomingTitle: "မကြာမီလာမည့် ထုတ်ကုန်များ",
-    packagingTitle: "ထုပ်ပိုးမှုဆိုင်ရာ ထုတ်ကုန်များ",
-    ctaTitle: "မည်သည့်ထုတ်ကုန် သင့်တော်မည်ကို မသေချာပါသလား?",
-    ctaBody:
-      "သင်စတင်လိုသည့် ထုတ်ကုန်အကြောင်း ပြောပြပါ။ ကျွန်ုပ်တို့အဖွဲ့က သင့်တော်သော အဖျော်ယမကာ သို့မဟုတ် ထုပ်ပိုးမှုလမ်းကြောင်းကို အကြံပြုပေးပါမည်။",
-    ctaButton: "ဆက်သွယ်ရန်",
-    ariaFor: "အတွက်",
-  },
-} as const;
+const quickInquiryIcons = [GlassWater, Package] as const;
 
 function getInquirySearch(product: Pick<ProductCardData, "category" | "name">) {
   return {
@@ -409,8 +89,8 @@ function ProductInquiryCard({
   product: ProductCardData;
   variant?: "default" | "dashed";
 }) {
-  const { lang } = useLanguage();
-  const copy = productPageCopy[lang];
+  const { content } = useLanguage();
+  const copy = content.products;
 
   return (
     <Link
@@ -446,7 +126,7 @@ function ProductInquiryCard({
               <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-white/20 bg-white/10 backdrop-blur-sm motion-safe:group-hover:scale-110 motion-safe:transition-transform motion-safe:duration-300">
                 <Palette className="h-8 w-8 text-white" />
               </div>
-            <span className="text-sm font-semibold tracking-wide text-white/90">
+              <span className="text-sm font-semibold tracking-wide text-white/90">
                 {copy.tailored}
               </span>
             </div>
@@ -456,7 +136,7 @@ function ProductInquiryCard({
         <div className="flex flex-1 flex-col p-6 md:p-8">
           <div className="mb-3 flex flex-wrap items-center gap-2">
             <span className="rounded-full bg-primary/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-primary">
-              {categoryLabels[lang][product.category]}
+              {copy.categoryLabels[product.category]}
             </span>
             {product.status && (
               <span className="rounded-full bg-accent/15 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-accent-text">
@@ -500,12 +180,24 @@ function ProductInquiryCard({
 }
 
 function Products() {
-  const { lang } = useLanguage();
-  const copy = productPageCopy[lang];
-  const localizedBeverageProducts = lang === "en" ? englishBeverageProducts : beverageProducts;
-  const localizedUpcoming = lang === "en" ? englishUpcoming : upcoming;
-  const localizedPackagingProducts = lang === "en" ? englishPackagingProducts : packagingProducts;
-  const localizedQuickInquiries = lang === "en" ? englishQuickInquiries : quickInquiries;
+  const { content } = useLanguage();
+  const copy = content.products;
+  const localizedBeverageProducts = copy.beverageProducts.map((product, index) => ({
+    ...product,
+    image: beverageProductMedia[index],
+  }));
+  const localizedUpcoming = copy.upcoming.map((product, index) => ({
+    ...product,
+    image: upcomingProductMedia[index],
+  }));
+  const localizedPackagingProducts = copy.packagingProducts.map((product, index) => ({
+    ...product,
+    image: packagingProductMedia[index],
+  }));
+  const localizedQuickInquiries = copy.quickInquiries.map((inquiry, index) => ({
+    ...inquiry,
+    icon: quickInquiryIcons[index],
+  }));
   const [activeNav, setActiveNav] = useState<ProductCategory>(() => {
     if (typeof window !== "undefined" && window.location.hash === "#packaging") {
       return "packaging";
@@ -516,11 +208,7 @@ function Products() {
 
   return (
     <Layout>
-      <PageHero
-        eyebrow={copy.products}
-        title={copy.heroTitle}
-        subtitle={copy.heroSubtitle}
-      />
+      <PageHero eyebrow={copy.products} title={copy.heroTitle} subtitle={copy.heroSubtitle} />
 
       <nav className="sticky top-24 md:top-32 z-40 border-y border-border bg-background/85 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-center gap-3 px-4 py-3 lg:px-8">
@@ -601,12 +289,8 @@ function Products() {
               <div className="mb-2 text-xs font-semibold uppercase tracking-widest text-primary">
                 {copy.briefEyebrow}
               </div>
-              <h2 className="font-display text-2xl font-bold leading-tight">
-                {copy.briefTitle}
-              </h2>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                {copy.briefBody}
-              </p>
+              <h2 className="font-display text-2xl font-bold leading-tight">{copy.briefTitle}</h2>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{copy.briefBody}</p>
             </div>
             <div className="grid gap-3 sm:grid-cols-2">
               {localizedQuickInquiries.map(({ category, product, title, body, icon: Icon }) => (
@@ -659,7 +343,9 @@ function Products() {
             <div className="inline-flex items-center gap-2 rounded-full bg-accent/20 text-primary px-4 py-1.5 text-xs uppercase tracking-widest font-semibold">
               {copy.comingSoon}
             </div>
-            <h2 className="font-display text-3xl md:text-4xl font-bold mt-4">{copy.upcomingTitle}</h2>
+            <h2 className="font-display text-3xl md:text-4xl font-bold mt-4">
+              {copy.upcomingTitle}
+            </h2>
           </div>
           <div className="grid gap-6 max-w-xl mx-auto">
             {localizedUpcoming.map((product) => (
@@ -677,7 +363,9 @@ function Products() {
           <div className="inline-flex items-center gap-2 rounded-full bg-accent/20 text-primary px-4 py-1.5 text-xs uppercase tracking-widest font-semibold">
             {copy.packaging}
           </div>
-          <h2 className="font-display text-3xl md:text-4xl font-bold mt-4">{copy.packagingTitle}</h2>
+          <h2 className="font-display text-3xl md:text-4xl font-bold mt-4">
+            {copy.packagingTitle}
+          </h2>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {localizedPackagingProducts.map((product) => (

@@ -6,16 +6,7 @@ import pdHero1 from "@/assets/pd-hero-1.webp";
 import pdHero2 from "@/assets/pd-hero-2.webp";
 import { CertificatesSlider } from "@/components/CertificatesSlider";
 import { useLanguage } from "@/i18n/LanguageContext";
-import {
-  ArrowLeft,
-  ArrowRight,
-  Package,
-  Boxes,
-  Ruler,
-  ShieldCheck,
-  Beaker,
-  Sparkles,
-} from "lucide-react";
+import { ArrowRight, Package, Boxes, Ruler, ShieldCheck, Beaker, Sparkles } from "lucide-react";
 
 export const Route = createFileRoute("/services/product-development")({
   head: () => ({
@@ -31,151 +22,22 @@ export const Route = createFileRoute("/services/product-development")({
   component: ProductDevelopment,
 });
 
-const packagingTypes = [
-  {
-    code: "PET",
-    title: "PET ပုလင်းများ",
-    body: "၁၉၀ မီလီလီတာ၊ ၂၅၀ မီလီလီတာ၊ ၃၂၀ မီလီလီတာ၊ ၅၀၀ မီလီလီတာ အပါအဝင် အမျိုးမျိုးသော ပုံစံများ။",
-  },
-  {
-    code: "TBA",
-    title: "TBA ထုပ်ပိုးမှု",
-    body: "၁၂၅ မီလီလီတာ၊ ၂၀၀ မီလီလီတာ အပါအဝင် နို့ထွက်နှင့် အပင်အခြေခံအဖျော်ယမကာများအတွက် ထုပ်ပိုးမှု။",
-  },
-];
-
-const formats = [
-  { type: "PET", size: "190 ml" },
-  { type: "PET", size: "250 ml" },
-  { type: "PET", size: "320 ml" },
-  { type: "PET", size: "500 ml" },
-  { type: "TBA", size: "Multiple sizes" },
-];
-
-const pillars = [
-  {
-    icon: Beaker,
-    eyebrow: "01 — ဖော်မြူလာ",
-    title: "ဖော်မြူလာ",
-    body: "အရသာပရိုဖိုင်၊ လုပ်ဆောင်နိုင်သောပါဝင်ပစ္စည်းများနှင့် ထုတ်ကုန်လိုအပ်ချက်များအပေါ် အခြေခံ၍ အရသာတသမတ်တည်းရှိမှု၊ တည်ငြိမ်မှုနှင့် အရည်အသွေးစံနှုန်းများကို သေချာစေရန် စိတ်ကြိုက်အဖျော်ယမကာချက်နည်း တီထွင်ခြင်း။",
-  },
-  {
-    icon: Package,
-    eyebrow: "02 — ထုပ်ပိုးမှု",
-    title: "ထုပ်ပိုးမှု ပုံစံများ",
-    body: "PET၊ TBA နှင့် အခြားထုပ်ပိုးမှုပုံစံများကို ထုတ်ကုန်အမျိုးအစား၊ အရွယ်အစားနှင့် ဈေးကွက်လိုအပ်ချက်အလိုက် ရွေးချယ်ပံ့ပိုးပေးခြင်း။",
-  },
-  {
-    icon: ShieldCheck,
-    eyebrow: "03 — အရည်အသွေး",
-    title: "အရည်အသွေး အာမခံချက်",
-    body: "FDA၊ ဟလာလ် (Halal) နှင့် နိုင်ငံတကာ အစားအသောက်ဘေးကင်းရေး စံနှုန်းများနှင့်အညီ တင်းကျပ်စွာ စစ်ဆေးခြင်း။",
-  },
-];
-
-const englishPackagingTypes = [
-  {
-    code: "PET",
-    title: "PET Bottles",
-    body: "Lightweight, shatterproof, recyclable — ideal for water, juices, and functional drinks.",
-  },
-  {
-    code: "TBA",
-    title: "TBA Packaging",
-    body: "Aseptic Tetra Brik packaging for long shelf-life dairy and plant-based drinks.",
-  },
-];
-
-const englishFormats = [
-  { type: "PET", size: "190 ml" },
-  { type: "PET", size: "250 ml" },
-  { type: "PET", size: "320 ml" },
-  { type: "PET", size: "500 ml" },
-  { type: "TBA", size: "Multiple sizes" },
-];
-
-const englishPillars = [
-  {
-    icon: Beaker,
-    eyebrow: "01 — Formulation",
-    title: "Formulation",
-    body: "Custom beverage formulation tailored to your brand — from recipe development and ingredient sourcing to taste profiling and shelf-life testing.",
-  },
-  {
-    icon: Package,
-    eyebrow: "02 — Packaging",
-    title: "Packaging Solutions",
-    body: "Flexible packaging support including PET bottles, standing pouches, and future glass bottle manufacturing — engineered for shelf appeal and supply-chain efficiency.",
-  },
-  {
-    icon: ShieldCheck,
-    eyebrow: "03 — Quality",
-    title: "Quality Assurance",
-    body: "Strict quality control procedures supported by FDA compliance, Halal certification, and internationally recognized food safety standards.",
-  },
-];
-
-const developmentCopy = {
-  en: {
-    eyebrow: "Product Development",
-    title: "Product",
-    highlight: "Development",
-    subtitle:
-      "From custom formulation to packaging-ready quality assurance — built for brands that want to innovate fast and scale with confidence.",
-    chips: ["Formulation", "Packaging", "Quality assurance"],
-    introTitle: "Formulation, packaging, and quality — all under one roof.",
-    intro1:
-      "QUANTUM LEAP supports your brand from initial formulation concept to finished, shelf-ready product — combining custom recipes with flexible packaging and rigorous quality assurance.",
-    intro2:
-      "Whether you launch with PET bottles or aseptic cartons, our team helps you develop the right formulation, select the right format, and secure the certifications your market demands.",
-    pillarsEyebrow: "Three Pillars",
-    pillarsTitle: "Built for formulation, packaging, and quality",
-    typesEyebrow: "Packaging Types",
-    typesTitle: "Two formats, infinite possibilities",
-    formatsEyebrow: "Available Formats",
-    formatsTitle: "Sizes & SKUs",
-    note: "Custom sizes available on request — talk to our team about your SKU plan.",
-    ctaTitle: "Got a packaging or format challenge?",
-    ctaBody: "From PET bottles to aseptic cartons — let's pick the right format for your launch.",
-    ctaButton: "Talk to our development team",
-  },
-  my: {
-    eyebrow: "ထုတ်ကုန်ဖွံ့ဖြိုးတိုးတက်မှု",
-    title: "ထုတ်ကုန်",
-    highlight: "ဖွံ့ဖြိုးတိုးတက်မှု",
-    subtitle:
-      "ဖော်မြူလာ၊ ထုပ်ပိုးမှု ပုံစံများနှင့် အရည်အသွေး အာမခံချက်များဖြင့် သင့်အမှတ်တံဆိပ်ကို ထုတ်လုပ်ရန်အသင့်ဖြစ်အောင် ပံ့ပိုးပေးပါသည်။",
-    chips: ["ဖော်မြူလာ", "ထုပ်ပိုးမှု", "အရည်အသွေး အာမခံချက်"],
-    introTitle: "ဖော်မြူလာ၊ ထုပ်ပိုးမှုနှင့် အရည်အသွေးကို တစ်နေရာတည်းတွင် ပံ့ပိုးပေးပါသည်။",
-    intro1:
-      "Quantum Leap သည် ဖော်မြူလာသဘောတရားမှစ၍ စျေးကွက်တင်ရန်အသင့်ဖြစ်သော ထုတ်ကုန်အထိ စိတ်ကြိုက်ချက်နည်း၊ ပြောင်းလွယ်ပြင်လွယ် ထုပ်ပိုးမှုနှင့် တင်းကျပ်သော အရည်အသွေးအာမခံချက်များဖြင့် ပံ့ပိုးပေးပါသည်။",
-    intro2:
-      "PET ပုလင်းများ သို့မဟုတ် TBA ထုပ်ပိုးမှုပုံစံများဖြင့် စတင်လိုသည်ဖြစ်စေ သင့်တော်သော ဖော်မြူလာ၊ ထုပ်ပိုးမှုပုံစံနှင့် ဈေးကွက်လိုအပ်သော စံနှုန်းများကို ရွေးချယ်နိုင်ရန် ကျွန်ုပ်တို့အဖွဲ့က ကူညီပေးပါသည်။",
-    pillarsEyebrow: "အဓိက ပံ့ပိုးမှုများ",
-    pillarsTitle: "ဖော်မြူလာ၊ ထုပ်ပိုးမှုနှင့် အရည်အသွေးအတွက် တည်ဆောက်ထားပါသည်",
-    typesEyebrow: "ထုပ်ပိုးမှု ပုံစံများ",
-    typesTitle: "ထုတ်ကုန်လိုအပ်ချက်အလိုက် ပြောင်းလွယ်ပြင်လွယ်ရှိသော ပုံစံများ",
-    formatsEyebrow: "ရရှိနိုင်သော အရွယ်အစားများ",
-    formatsTitle: "အရွယ်အစားနှင့် SKU များ",
-    note: "စိတ်ကြိုက်အရွယ်အစားများအတွက် သင့် SKU အစီအစဉ်ကို ကျွန်ုပ်တို့အဖွဲ့နှင့် ဆွေးနွေးနိုင်ပါသည်။",
-    ctaTitle: "ထုပ်ပိုးမှု သို့မဟုတ် format ဆိုင်ရာ စိန်ခေါ်မှု ရှိပါသလား?",
-    ctaBody:
-      "PET ပုလင်းများမှ TBA ထုပ်ပိုးမှုအထိ သင့်ထုတ်ကုန်စတင်မှုအတွက် သင့်တော်သော ပုံစံကို ရွေးချယ်နိုင်ရန် ဆွေးနွေးကြပါစို့။",
-    ctaButton: "ဖွံ့ဖြိုးတိုးတက်မှုအဖွဲ့နှင့် ဆွေးနွေးရန်",
-  },
-} as const;
-
 const heroSlides = [
   { src: pdHero1, width: 1920, height: 1080 },
   { src: pdHero2, width: 1920, height: 1080 },
 ];
 
+const pillarIcons = [Beaker, Package, ShieldCheck] as const;
+
 function ProductDevelopment() {
-  const { lang } = useLanguage();
-  const copy = developmentCopy[lang];
-  const localizedPillars = lang === "en" ? englishPillars : pillars;
-  const localizedPackagingTypes = lang === "en" ? englishPackagingTypes : packagingTypes;
-  const localizedFormats = lang === "en" ? englishFormats : formats;
+  const { content } = useLanguage();
+  const copy = content.services.development;
+  const localizedPillars = copy.pillars.map((pillar, index) => ({
+    ...pillar,
+    icon: pillarIcons[index],
+  }));
+  const localizedPackagingTypes = copy.packagingTypes;
+  const localizedFormats = copy.formats;
 
   return (
     <Layout>
@@ -298,9 +160,7 @@ function ProductDevelopment() {
               </div>
               <div className="mt-4 flex items-start gap-2 text-xs text-muted-foreground">
                 <Sparkles className="h-4 w-4 text-accent-text flex-shrink-0 mt-0.5" />
-                <span>
-                  {copy.note}
-                </span>
+                <span>{copy.note}</span>
               </div>
             </div>
           </div>

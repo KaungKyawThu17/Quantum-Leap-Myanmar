@@ -63,14 +63,7 @@ type WindowWithIdleCallback = Window & {
 const HERO_VIDEO_DELAY_MS = 700;
 const HERO_VIDEO_IDLE_TIMEOUT_MS = 1500;
 
-const highlights = [
-  { icon: Factory, title: "OEM နှင့် ODM", desc: "အဖျော်ယမကာ ထုတ်လုပ်မှု ဖြေရှင်းချက် အပြည့်အစုံ" },
-  { icon: Boxes, title: "PET နှင့် ဖန်ပုလင်း", desc: "လက်ရှိ PET ထုတ်လုပ်မှုနှင့် နောင်တွင် ဖန်ပုလင်းစွမ်းရည် တိုးချဲ့မှု" },
-  { icon: Milk, title: "UHT တိုးချဲ့မှု", desc: "အဆင့်မြင့် UHT ထုတ်လုပ်မှုစနစ် တိုးချဲ့မှု" },
-  { icon: Gauge, title: "၂၄,၀၀၀ BPH", desc: "တစ်နာရီလျှင် ပုလင်းပေါင်း ၂၄,၀၀၀ အထိ ထုတ်လုပ်နိုင်စွမ်း" },
-  { icon: ShieldCheck, title: "FDA နှင့် Halal", desc: "အသိအမှတ်ပြုထားသော ဘေးကင်းရေးလုပ်ငန်းစဉ်များ" },
-  { icon: Beaker, title: "ပြောင်းလွယ်ပြင်လွယ် ထုပ်ပိုးမှု", desc: "ထုပ်ပိုးမှုပုံစံနှင့် အရွယ်အစားများစွာ ပံ့ပိုးနိုင်မှု" },
-];
+const highlightIcons = [Factory, Boxes, Milk, Gauge, ShieldCheck, Beaker] as const;
 
 type ImageAsset = {
   src: string;
@@ -99,235 +92,24 @@ const trustedBrandLogos = [
   { name: "Puma", image: { src: pumaLogo, width: 6240, height: 4415 } },
 ] as const;
 
-const packagingProducts: Product[] = [
-  { name: "PET ပုလင်းများ", image: { src: petBottleImg, width: 960, height: 731 } },
-  { name: "ပလတ်စတစ် ပုလင်းအဖုံးများ", image: { src: plasticCapImg, width: 960, height: 640 } },
-  { name: "PET ပုလင်းလောင်းများ", image: { src: petPreformImg, width: 960, height: 598 } },
-  { name: "အလူမီနီယမ် အဖုံးများ", image: { src: aluminumCapImg, width: 960, height: 523 } },
-  { name: "တံဆိပ်များ", image: { src: labelImg, width: 960, height: 547 } },
-  { name: "စိတ်ကြိုက်ဝန်ဆောင်မှုများ", cta: true },
+const packagingProductMedia: Array<ImageAsset | undefined> = [
+  { src: petBottleImg, width: 960, height: 731 },
+  { src: plasticCapImg, width: 960, height: 640 },
+  { src: petPreformImg, width: 960, height: 598 },
+  { src: aluminumCapImg, width: 960, height: 523 },
+  { src: labelImg, width: 960, height: 547 },
+  undefined,
 ];
 
-const beverageProducts: Product[] = [
-  { name: "အားဖြည့်နှင့် ဓာတ်ဆားရည်", image: { src: bevElectrolyteImg, width: 960, height: 479 } },
-  { name: "အချိုရည်နှင့် CSD", image: { src: bevSoftDrinkImg, width: 960, height: 640 } },
-  { name: "သစ်သီးဖျော်ရည်နှင့် အရသာပါ အချိုရည်များ", image: { src: bevFlavoredImg, width: 960, height: 479 } },
-  { name: "လက်ဖက်ရည်နှင့် အကျိုးပြု အဖျော်ယမကာများ", image: { src: bevTeaImg, width: 960, height: 537 } },
-  {
-    name: "UHT နို့နှင့် ပဲနို့",
-    image: { src: bevDairyImg, width: 960, height: 641 },
-    badge: "မကြာမီလာမည်",
-  },
+const beverageProductMedia: ImageAsset[] = [
+  { src: bevElectrolyteImg, width: 960, height: 479 },
+  { src: bevSoftDrinkImg, width: 960, height: 640 },
+  { src: bevFlavoredImg, width: 960, height: 479 },
+  { src: bevTeaImg, width: 960, height: 537 },
+  { src: bevDairyImg, width: 960, height: 641 },
 ];
 
-const coreValues = [
-  {
-    icon: Heart,
-    title: "ဝန်ထမ်းကောင်းကျိုး",
-    desc: "ကျွန်ုပ်တို့၏ အောင်မြင်မှု၏ မောင်းနှင်အားအဖြစ် ကျွန်ုပ်တို့၏လူများကို တန်ဖိုးထားပါသည်။ Quantum Leap သည် ဘေးကင်းရေး၊ လေးစားမှု၊ အဖွဲ့လိုက်လုပ်ဆောင်မှုနှင့် ပရော်ဖက်ရှင်နယ်တိုးတက်မှုကို ဦးစားပေးသည့် အပြုသဘောဆောင်သော အလုပ်ခွင်ယဉ်ကျေးမှုကို မြှင့်တင်ပေးပါသည်။",
-  },
-  {
-    icon: Leaf,
-    title: "ပတ်ဝန်းကျင်ဆိုင်ရာ တာဝန်ယူမှု",
-    desc: "ရေရှည်တည်တံ့မှုကို ကျွန်ုပ်တို့၏ လုပ်ငန်းလည်ပတ်မှုများတွင် ပေါင်းစပ်ထားသည်။ ထိရောက်သော အရင်းအမြစ်စီမံခန့်ခွဲမှုနှင့် တာဝန်ယူမှုရှိသော ထုပ်ပိုးမှုဖြေရှင်းချက်များမှတစ်ဆင့် ပတ်ဝန်းကျင်ဆိုင်ရာ သက်ရောက်မှုကို လျှော့ချရန် ထုတ်လုပ်မှုလုပ်ငန်းစဉ်များကို အဆက်မပြတ် တိုးတက်အောင် လုပ်ဆောင်ပါသည်။",
-  },
-  {
-    icon: Globe,
-    title: "လူမှုအသိုင်းအဝိုင်းနှင့် လူမှုရေးဆိုင်ရာ တာဝန်ယူမှု",
-    desc: "Quantum Leap သည် ကျင့်ဝတ်ဆိုင်ရာ စီးပွားရေးလုပ်ဆောင်မှုများကို ထိန်းသိမ်းခြင်း၊ ဒေသခံလူမှုအသိုင်းအဝိုင်းများကို ပံ့ပိုးပေးခြင်းနှင့် ဖောက်သည်များ၊ အကျိုးတူပါဝင်သူများနှင့် ယုံကြည်စိတ်ချရသော မိတ်ဖက်များ ဖန်တီးခြင်းဖြင့် လူ့အဖွဲ့အစည်းအတွက် အဓိပ္ပာယ်ရှိသော ပံ့ပိုးမှုများ တည်ဆောက်ခြင်းကို ယုံကြည်ပါသည်။",
-  },
-  {
-    icon: Lightbulb,
-    title: "ဆန်းသစ်တီထွင်မှုနှင့် ထုပ်ပိုးမှု ဖွံ့ဖြိုးတိုးတက်ရေး",
-    desc: "အဆင့်မြင့် ထုတ်လုပ်မှုစွမ်းရည်များဖြင့် Quantum Leap သည် မတူညီသော အဖျော်ယမကာအမျိုးအစားများနှင့် ပြောင်းလဲနေသော စားသုံးသူဝယ်လိုအားများကို ပံ့ပိုးရန် စိတ်ကြိုက် PET ပုလင်းများ၊ အဖုံးများနှင့် ထုပ်ပိုးမှုဖြေရှင်းချက်များကို တီထွင်ပါသည်။",
-  },
-];
-
-const englishHighlights = [
-  { icon: Factory, title: "OEM & ODM", desc: "End-to-end beverage manufacturing solutions" },
-  { icon: Boxes, title: "PET & Glass", desc: "Current PET, future glass bottling capabilities" },
-  { icon: Milk, title: "UHT Expansion", desc: "Advanced UHT production line coming soon" },
-  { icon: Gauge, title: "24,000 BPH", desc: "Industry-leading hourly production capacity" },
-  { icon: ShieldCheck, title: "FDA & Halal", desc: "Internationally certified safe operations" },
-  { icon: Beaker, title: "Flexible Formats", desc: "Multiple packaging sizes and types" },
-];
-
-const englishPackagingProducts: Product[] = [
-  { name: "PET Bottle", image: { src: petBottleImg, width: 960, height: 731 } },
-  { name: "Plastic Cap", image: { src: plasticCapImg, width: 960, height: 640 } },
-  { name: "PET Preform", image: { src: petPreformImg, width: 960, height: 598 } },
-  { name: "Aluminum Cap", image: { src: aluminumCapImg, width: 960, height: 523 } },
-  { name: "Label", image: { src: labelImg, width: 960, height: 547 } },
-  { name: "Customized Services", cta: true },
-];
-
-const englishBeverageProducts: Product[] = [
-  { name: "Energy & Electrolyte", image: { src: bevElectrolyteImg, width: 960, height: 479 } },
-  { name: "Soft & Carbonated", image: { src: bevSoftDrinkImg, width: 960, height: 640 } },
-  { name: "Juice & Flavored", image: { src: bevFlavoredImg, width: 960, height: 479 } },
-  { name: "Tea & Functional", image: { src: bevTeaImg, width: 960, height: 537 } },
-  {
-    name: "Dairy & Soy Milk",
-    image: { src: bevDairyImg, width: 960, height: 641 },
-    badge: "Coming Soon",
-  },
-];
-
-const englishCoreValues = [
-  {
-    icon: Heart,
-    title: "Employee Well-Being",
-    desc: "We value our people as the driving force behind our success. QUANTUM LEAP promotes a positive workplace culture that prioritizes safety, respect, teamwork, and professional growth.",
-  },
-  {
-    icon: Leaf,
-    title: "Environmental Responsibility",
-    desc: "Sustainability is integrated into our operations. We continuously improve our manufacturing processes to reduce environmental impact through efficient resource management and responsible packaging solutions.",
-  },
-  {
-    icon: Globe,
-    title: "Community & Social Responsibility",
-    desc: "QUANTUM LEAP believes in building meaningful contributions to society by maintaining ethical business practices, supporting local communities, and creating trusted partnerships with customers and stakeholders.",
-  },
-  {
-    icon: Lightbulb,
-    title: "Innovation & Packaging Development",
-    desc: "With advanced manufacturing capabilities, QUANTUM LEAP develops customized PET bottles, closures, and packaging solutions designed to support diverse beverage categories and evolving consumer demands.",
-  },
-];
-
-const homeText = {
-  en: {
-    customTitle: "Need something custom?",
-    customBody: "Bespoke bottles, caps & labels engineered to your brand.",
-    customCta: "Let's talk",
-    eyebrow: "Now serving global beverage brands",
-    heroPrefix: "Myanmar's Next Generation",
-    heroHighlight: "OEM Beverage",
-    heroSuffix: "Partner",
-    heroBody:
-      "QUANTUM LEAP is a Myanmar-based OEM beverage manufacturer specializing in PET bottling, beverage formulation, and scalable production solutions for local and international brands.",
-    quote: "Request a Quotation",
-    exploreProducts: "Explore Products",
-    proof1: "FDA & Halal Certified",
-    proof2: "24,000 BPH Capacity",
-    proof3: "10-Acre Facility",
-    stats: [
-      { value: "10", suffix: "acre", label: "Integrated facility" },
-      { value: "24K", suffix: "BPH", label: "Production capacity" },
-      { value: "5+", suffix: "brands", label: "Produced for partners" },
-      { value: "3", suffix: "certs", label: "FDA · Halal · ISO" },
-    ],
-    brandStrip: "Trusted by leading beverage brands",
-    introEyebrow: "Who We Are",
-    introTitleBefore: "An",
-    introTitleHighlight: "integrated facility",
-    introTitleAfter: "built for the world's beverage brands.",
-    introBody:
-      "Located on a 10-acre industrial campus in Yangon Industrial Park, QUANTUM LEAP operates a fully integrated OEM beverage manufacturing facility. Our factory combines modern production technology, experienced operational management, and scalable infrastructure to deliver high-quality beverages across multiple categories.",
-    introBullets: [
-      "Modern, automated production technology",
-      "Experienced beverage operations team",
-      "Scalable infrastructure for any brand size",
-    ],
-    learn: "Learn about us",
-    campus: "10-Acre Campus",
-    highlightsEyebrow: "Key Highlights",
-    highlightsTitle: "Capabilities at a glance",
-    productEyebrow: "Product Categories",
-    productTitle: "Packaging and beverages under one roof.",
-    productBody:
-      "From PET bottles and caps to finished beverages — we supply the complete manufacturing and packaging ecosystem your brand needs.",
-    packagingTab: "Packaging",
-    packagingSub: "Caps · Bottles · Labels",
-    beverageTab: "Beverages",
-    beverageSub: "Energy · Soft · Tea · Dairy",
-    viewAll: "View all products",
-    valuesEyebrow: "Our Core Values",
-    valuesTitle: "What drives everything we do",
-    whyEyebrow: "Why Choose Us",
-    whyTitleBefore: "Myanmar's premier",
-    whyTitleHighlight: "OEM partner",
-    whyBody:
-      "QUANTUM LEAP is strategically positioned to become Myanmar's premier OEM beverage manufacturing partner. Our modernized facility, scalable production systems, and investment in advanced manufacturing technologies allow us to support both emerging and established beverage brands with efficiency, consistency, and reliability.",
-    whyBullets: [
-      "Modernized facility with 24,000 BPH capacity",
-      "Scalable production systems for any brand size",
-      "Advanced manufacturing technologies",
-      "FDA & Halal certified operations",
-      "End-to-end OEM & ODM solutions",
-    ],
-    ctaTitle: "Start your beverage brand with QUANTUM LEAP.",
-    ctaBody:
-      "Contact our OEM team today to discuss your beverage manufacturing requirements — we'll guide you from formula to finished product.",
-    ctaButton: "Talk to our team",
-  },
-  my: {
-    customTitle: "စိတ်ကြိုက်ဝန်ဆောင်မှု လိုအပ်ပါသလား?",
-    customBody: "သင့်အမှတ်တံဆိပ်အတွက် ပုလင်း၊ အဖုံးနှင့် တံဆိပ်များကို စိတ်ကြိုက် ဖန်တီးပေးပါသည်။",
-    customCta: "ဆွေးနွေးရန်",
-    eyebrow: "ပြည်တွင်းပြည်ပ အဖျော်ယမကာ အမှတ်တံဆိပ်များအတွက်",
-    heroPrefix: "မြန်မာနိုင်ငံ၏ မျိုးဆက်သစ်",
-    heroHighlight: "OEM အဖျော်ယမကာ",
-    heroSuffix: "ထုတ်လုပ်မှု မိတ်ဖက်",
-    heroBody:
-      "Quantum Leap သည် မြန်မာနိုင်ငံအခြေစိုက် OEM အဖျော်ယမကာ ထုတ်လုပ်သူဖြစ်ပြီး PET ပုလင်းသွတ်ခြင်း၊ အဖျော်ယမကာ ဖော်စပ်ခြင်းနှင့် ပြည်တွင်းပြည်ပ အဖျော်ယမကာ အမှတ်တံဆိပ်များအတွက် စကေးချဲ့ထုတ်လုပ်နိုင်သော ဖြေရှင်းချက်များကို အထူးပြု လုပ်ဆောင်ပေးနေပါသည်။",
-    quote: "ဈေးနှုန်း မေးမြန်းရန်",
-    exploreProducts: "ထုတ်ကုန်များ ကြည့်ရန်",
-    proof1: "FDA နှင့် Halal အသိအမှတ်ပြု",
-    proof2: "၂၄,၀၀၀ BPH ထုတ်လုပ်နိုင်စွမ်း",
-    proof3: "၁၀ ဧက စက်မှုဝန်း",
-    stats: [
-      { value: "၁၀", suffix: "ဧက", label: "စက်မှုဝန်း" },
-      { value: "၂၄K", suffix: "BPH", label: "ထုတ်လုပ်နိုင်စွမ်း" },
-      { value: "၅+", suffix: "brands", label: "မိတ်ဖက်အမှတ်တံဆိပ်များ" },
-      { value: "၃", suffix: "certs", label: "FDA · Halal · ISO" },
-    ],
-    brandStrip: "ဦးဆောင် အဖျော်ယမကာ အမှတ်တံဆိပ်များ၏ ယုံကြည်မှု",
-    introEyebrow: "ကျွန်ုပ်တို့အကြောင်း",
-    introTitleBefore: "ပြည်တွင်းနှင့် နိုင်ငံတကာ အမှတ်တံဆိပ်များအတွက် တည်ဆောက်ထားသော",
-    introTitleHighlight: "အဆင့်မြင့် OEM စက်ရုံ",
-    introTitleAfter: "။",
-    introBody:
-      "ကျွန်ုပ်တို့ Quantum Leap သည် ရန်ကုန်စက်မှုဇုန်ရှိ ၁၀ ဧက ကျယ်ဝန်းသော စက်မှုဝန်းအတွင်း တည်ရှိပြီး၊ ပြည်တွင်းနှင့် နိုင်ငံတကာ အဖျော်ယမကာ အမှတ်တံဆိပ်များကို ပံ့ပိုးပေးနိုင်ရန် အဆင့်မြင့် OEM စက်ရုံအဖြစ် လည်ပတ်နေပါသည်။ ကျွန်ုပ်တို့၏ စက်ရုံသည် ခေတ်မီထုတ်လုပ်မှု နည်းပညာ၊ အတွေ့အကြုံရှိသော စီမံခန့်ခွဲမှုနှင့် အကြီးစား အခြေခံအဆောက်အအုံများ ပေါင်းစပ်ကာ အရည်အသွေးမြင့် ထုတ်ကုန်များကို အမျိုးအစားအလိုက် ထုတ်လုပ်ပေးနေပါသည်။",
-    introBullets: [
-      "ခေတ်မီ အလိုအလျောက် ထုတ်လုပ်မှု နည်းပညာ",
-      "အတွေ့အကြုံရှိသော အဖျော်ယမကာ လုပ်ငန်းအဖွဲ့",
-      "အမှတ်တံဆိပ်အရွယ်အစားအလိုက် စကေးချဲ့နိုင်သော အခြေခံအဆောက်အအုံ",
-    ],
-    learn: "ကျွန်ုပ်တို့အကြောင်း လေ့လာရန်",
-    campus: "၁၀ ဧက စက်မှုဝန်း",
-    highlightsEyebrow: "အဓိက ထူးခြားချက်များ",
-    highlightsTitle: "စွမ်းဆောင်ရည်များ အကျဉ်းချုပ်",
-    productEyebrow: "ထုတ်ကုန်အမျိုးအစားများ",
-    productTitle: "ထုပ်ပိုးမှုနှင့် အဖျော်ယမကာများကို တစ်နေရာတည်းတွင် ပံ့ပိုးပေးပါသည်။",
-    productBody:
-      "PET ပုလင်းများ၊ အဖုံးများမှ စ၍ အသင့်သောက် အဖျော်ယမကာများအထိ သင့်အမှတ်တံဆိပ်အတွက် လိုအပ်သော ထုတ်လုပ်မှုနှင့် ထုပ်ပိုးမှုစနစ်ကို အပြည့်အဝ ပံ့ပိုးပေးပါသည်။",
-    packagingTab: "ထုပ်ပိုးမှု",
-    packagingSub: "အဖုံး · ပုလင်း · တံဆိပ်",
-    beverageTab: "အဖျော်ယမကာ",
-    beverageSub: "အားဖြည့် · အချိုရည် · လက်ဖက်ရည် · နို့",
-    viewAll: "ထုတ်ကုန်အားလုံး ကြည့်ရန်",
-    valuesEyebrow: "Quantum Leap ကတိကဝတ်",
-    valuesTitle: "ကျွန်ုပ်တို့၏ လုပ်ဆောင်ချက်များ",
-    whyEyebrow: "ကျွန်ုပ်တို့ကို ရွေးချယ်သင့်သည့် အကြောင်းအရင်း",
-    whyTitleBefore: "မြန်မာနိုင်ငံ၏ ထိပ်တန်း",
-    whyTitleHighlight: "OEM မိတ်ဖက်",
-    whyBody:
-      "Quantum Leap သည် မြန်မာနိုင်ငံ၏ ထိပ်တန်း OEM အဖျော်ယမကာ ထုတ်လုပ်မှုမိတ်ဖက်ဖြစ်လာရန် မဟာဗျူဟာကျကျ အနေအထားတွင် ရှိနေသည်။ ကျွန်ုပ်တို့၏ ခေတ်မီစက်ရုံ၊ တိုးချဲ့နိုင်သော ထုတ်လုပ်မှုစနစ်များနှင့် အဆင့်မြင့်ထုတ်လုပ်မှုနည်းပညာများတွင် ရင်းနှီးမြှုပ်နှံမှုများက ပေါ်ထွက်လာသောနှင့် တည်ထောင်ပြီးသား အဖျော်ယမကာအမှတ်တံဆိပ်နှစ်မျိုးလုံးကို ထိရောက်မှု၊ တသမတ်တည်းရှိမှုနှင့် ယုံကြည်စိတ်ချရမှုဖြင့် ပံ့ပိုးနိုင်စေပါသည်။",
-    whyBullets: [
-      "တစ်နာရီလျှင် ပုလင်း ၂၄,၀၀၀ ထုတ်လုပ်နိုင်သော ခေတ်မီစက်ရုံ",
-      "အမှတ်တံဆိပ်အရွယ်အစားအလိုက် စကေးချဲ့နိုင်သော ထုတ်လုပ်မှုစနစ်များ",
-      "အဆင့်မြင့် ထုတ်လုပ်မှု နည်းပညာများ",
-      "FDA နှင့် Halal အသိအမှတ်ပြု လုပ်ငန်းစဉ်များ",
-      "အစအဆုံး OEM နှင့် ODM ဖြေရှင်းချက်များ",
-    ],
-    ctaTitle: "Quantum Leap ဖြင့် သင့်ရဲ့အဖျော်ယမကာအမှတ်တံဆိပ်ကို စတင်လိုက်ပါ",
-    ctaBody:
-      "သင့်ရဲ့အဖျော်ယမကာထုတ်လုပ်မှုလိုအပ်ချက်တွေကို ဆွေးနွေးဖို့ ဒီနေ့ပဲ ကျွန်ုပ်တို့ရဲ့ OEM အဖွဲ့ကို ဆက်သွယ်လိုက်ပါ",
-    ctaButton: "ကျွန်ုပ်တို့အဖွဲ့နှင့် ဆွေးနွေးရန်",
-  },
-} as const;
+const coreValueIcons = [Heart, Leaf, Globe, Lightbulb] as const;
 
 const preloadedProductImages = new Set<string>();
 
@@ -385,8 +167,8 @@ function useDeferredHeroVideo() {
 
 function ProductCard({ product }: { product: Product }) {
   const { name, image, cta, badge } = product;
-  const { lang } = useLanguage();
-  const copy = homeText[lang];
+  const { content } = useLanguage();
+  const copy = content.home;
 
   if (cta) {
     return (
@@ -394,12 +176,10 @@ function ProductCard({ product }: { product: Product }) {
         to="/contact"
         className="focus-ring group rounded-2xl border border-border bg-card overflow-hidden hover:border-primary/40 hover:shadow-glow transition-[border-color,box-shadow] duration-200"
       >
-          <div className="relative w-full aspect-[4/5] md:aspect-[4/5] overflow-hidden bg-gradient-brand flex flex-col items-center justify-center text-white text-center px-6">
-            <Sparkles className="h-10 w-10 mb-3 opacity-90" />
+        <div className="relative w-full aspect-[4/5] md:aspect-[4/5] overflow-hidden bg-gradient-brand flex flex-col items-center justify-center text-white text-center px-6">
+          <Sparkles className="h-10 w-10 mb-3 opacity-90" />
           <div className="font-display text-lg font-bold mb-1">{copy.customTitle}</div>
-          <p className="text-sm text-white/85 leading-snug max-w-[14rem] mb-4">
-            {copy.customBody}
-          </p>
+          <p className="text-sm text-white/85 leading-snug max-w-[14rem] mb-4">{copy.customBody}</p>
           <span className="inline-flex items-center gap-1.5 rounded-full bg-white text-foreground text-xs font-semibold px-3.5 py-1.5">
             {copy.customCta} <ArrowRight className="h-3.5 w-3.5" />
           </span>
@@ -444,12 +224,24 @@ function ProductCard({ product }: { product: Product }) {
 }
 
 function Home() {
-  const { lang } = useLanguage();
-  const copy = homeText[lang];
-  const localizedHighlights = lang === "en" ? englishHighlights : highlights;
-  const localizedPackagingProducts = lang === "en" ? englishPackagingProducts : packagingProducts;
-  const localizedBeverageProducts = lang === "en" ? englishBeverageProducts : beverageProducts;
-  const localizedCoreValues = lang === "en" ? englishCoreValues : coreValues;
+  const { content } = useLanguage();
+  const copy = content.home;
+  const localizedHighlights = copy.highlights.map((highlight, index) => ({
+    ...highlight,
+    icon: highlightIcons[index],
+  }));
+  const localizedPackagingProducts = copy.packagingProducts.map((product, index) => ({
+    ...product,
+    image: packagingProductMedia[index],
+  }));
+  const localizedBeverageProducts = copy.beverageProducts.map((product, index) => ({
+    ...product,
+    image: beverageProductMedia[index],
+  }));
+  const localizedCoreValues = copy.coreValues.map((value, index) => ({
+    ...value,
+    icon: coreValueIcons[index],
+  }));
   const [category, setCategory] = useState<"packaging" | "beverage">("packaging");
   const shouldLoadHeroVideo = useDeferredHeroVideo();
   return (
@@ -585,7 +377,8 @@ function Home() {
               {copy.introEyebrow}
             </div>
             <h2 className="font-display text-3xl md:text-5xl font-bold mb-6 leading-tight">
-              {copy.introTitleBefore} <span className="text-gradient">{copy.introTitleHighlight}</span>{" "}
+              {copy.introTitleBefore}{" "}
+              <span className="text-gradient">{copy.introTitleHighlight}</span>{" "}
               {copy.introTitleAfter}
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-6">{copy.introBody}</p>
@@ -728,7 +521,10 @@ function Home() {
         {/* Product cards */}
         <div className="relative motion-safe:animate-fade-in" key={category}>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {(category === "packaging" ? localizedPackagingProducts : localizedBeverageProducts).map((p) => (
+            {(category === "packaging"
+              ? localizedPackagingProducts
+              : localizedBeverageProducts
+            ).map((p) => (
               <ProductCard key={p.name} product={p} />
             ))}
           </div>

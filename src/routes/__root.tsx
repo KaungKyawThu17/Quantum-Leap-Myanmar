@@ -21,31 +21,6 @@ const siteDescription =
   "QUANTUM LEAP is a Myanmar-based OEM and ODM beverage manufacturer offering PET bottling, beverage formulation, and scale-up production solutions.";
 const socialImageUrl = siteUrl ? new URL(socialImage, siteUrl).toString() : socialImage;
 
-const documentTitles = {
-  en: {
-    "/": "QUANTUM LEAP — Myanmar's Next Generation OEM Beverage Partner",
-    "/about": "About QUANTUM LEAP — Beverage Manufacturing",
-    "/products": "Products — QUANTUM LEAP",
-    "/faq": "FAQ — QUANTUM LEAP",
-    "/contact": "Contact — QUANTUM LEAP",
-    "/services/oem-manufacturing": "OEM and ODM Manufacturing — QUANTUM LEAP",
-    "/services/production-capabilities": "Production Capabilities — QUANTUM LEAP",
-    "/services/product-development": "Product Development — QUANTUM LEAP",
-    "/services/factory-facilities": "Factory & Facilities — QUANTUM LEAP",
-  },
-  my: {
-    "/": "QUANTUM LEAP — မြန်မာနိုင်ငံ၏ မျိုးဆက်သစ် OEM အဖျော်ယမကာ မိတ်ဖက်",
-    "/about": "ကျွန်ုပ်တို့အကြောင်း — QUANTUM LEAP Beverage Manufacturing",
-    "/products": "ထုတ်ကုန်များ — QUANTUM LEAP",
-    "/faq": "အမေးများသော မေးခွန်းများ — QUANTUM LEAP",
-    "/contact": "ဆက်သွယ်ရန် — QUANTUM LEAP",
-    "/services/oem-manufacturing": "OEM နှင့် ODM ထုတ်လုပ်မှု — QUANTUM LEAP",
-    "/services/production-capabilities": "ထုတ်လုပ်မှု စွမ်းဆောင်ရည်များ — QUANTUM LEAP",
-    "/services/product-development": "ထုတ်ကုန် ဖွံ့ဖြိုးတိုးတက်မှု — QUANTUM LEAP",
-    "/services/factory-facilities": "စက်ရုံနှင့် အခြေခံအဆောက်အအုံများ — QUANTUM LEAP",
-  },
-} as const;
-
 function getCanonicalUrl(pathname = "/") {
   if (!siteUrl) return undefined;
 
@@ -184,16 +159,15 @@ function RootComponent() {
 }
 
 function DocumentLanguageSync() {
-  const { lang } = useLanguage();
+  const { lang, content } = useLanguage();
   const location = useLocation();
 
   useEffect(() => {
     document.documentElement.lang = lang === "my" ? "my" : "en";
     const pathname = location.pathname.replace(/\/$/, "") || "/";
-    document.title =
-      documentTitles[lang][pathname as keyof (typeof documentTitles)[typeof lang]] ??
-      documentTitles[lang]["/"];
-  }, [lang, location.pathname]);
+    const titles = content.common.documentTitles;
+    document.title = titles[pathname as keyof typeof titles] ?? titles["/"];
+  }, [content.common.documentTitles, lang, location.pathname]);
 
   return null;
 }

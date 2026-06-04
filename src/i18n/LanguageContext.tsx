@@ -1,10 +1,10 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
-import { translations, type Lang, type TranslationKey } from "./translations";
+import { i18nContent, type Lang, type LocalizedContent } from "./translations";
 
 type Ctx = {
   lang: Lang;
   setLang: (l: Lang) => void;
-  t: (key: TranslationKey) => string;
+  content: LocalizedContent;
 };
 
 const LanguageContext = createContext<Ctx | undefined>(undefined);
@@ -30,10 +30,12 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     }
   };
 
-  const t = (key: TranslationKey) => translations[lang][key] ?? translations.en[key] ?? key;
+  const content = i18nContent[lang];
 
   return (
-    <LanguageContext.Provider value={{ lang, setLang, t }}>{children}</LanguageContext.Provider>
+    <LanguageContext.Provider value={{ lang, setLang, content }}>
+      {children}
+    </LanguageContext.Provider>
   );
 }
 

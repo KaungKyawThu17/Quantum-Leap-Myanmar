@@ -5,6 +5,8 @@ import welcomeImg from "@/assets/optimized/welcome-feature.jpg";
 import factoryHero1 from "@/assets/factory-hero-1.webp";
 import factoryHero2 from "@/assets/factory-hero-2.webp";
 import factoryHero3 from "@/assets/factory-hero-3.webp";
+import freezerRoomImg from "@/assets/optimized/freezer-room-card.webp";
+import coolRoomImg from "@/assets/optimized/cool-room-card.webp";
 import productionBlowingImg from "@/assets/optimized/production-tunnel-cooling-card.jpg";
 import productionFillingCapacityImg from "@/assets/optimized/production-filling-capacity-card.jpg";
 import productionMonoblockFillingImg from "@/assets/optimized/production-monoblock-filling-card.jpg";
@@ -18,7 +20,6 @@ import utilityGeneratorImg from "@/assets/optimized/utility-generator-card.jpg";
 import utilityTransformersImg from "@/assets/optimized/utility-transformers-card.jpg";
 import { CertificatesSlider } from "@/components/CertificatesSlider";
 import { useLanguage } from "@/i18n/LanguageContext";
-import type { LucideIcon } from "lucide-react";
 import {
   ArrowRight,
   Wind,
@@ -50,236 +51,66 @@ export const Route = createFileRoute("/services/factory-facilities")({
   component: FactoryFacilities,
 });
 
-const stats = [
-  { icon: MapPin, value: "၁၀", label: "ဧက စက်မှုဝန်း" },
-  { icon: Gauge, value: "၂၆K", label: "ပုလင်းမှုတ်စက် / နာရီ" },
-  { icon: Snowflake, value: "၅၈t", label: "အအေးခန်း သိုလှောင်နိုင်စွမ်း" },
-];
-
 const heroSlides = [
   { src: factoryHero1, width: 1483, height: 834 },
   { src: factoryHero2, width: 1483, height: 834 },
   { src: factoryHero3, width: 1408, height: 792 },
 ];
 
-type FacilityItem = {
-  icon: LucideIcon;
-  label: string;
-  detail: string;
-  image?: string;
-  imageAlt?: string;
-};
+const facilityStatIcons = [MapPin, Gauge, Snowflake] as const;
 
-type FacilityGroup = {
-  title: string;
-  eyebrow: string;
-  icon: LucideIcon;
-  items: FacilityItem[];
-};
-
-const groups: FacilityGroup[] = [
+const facilityGroupAssets = [
   {
-    title: "ထုတ်လုပ်မှု စက်ကိရိယာများ",
-    eyebrow: "01 — ထုတ်လုပ်မှု",
     icon: Building2,
     items: [
-      {
-        icon: Wind,
-        label: "ပုလင်းမှုတ်စက်",
-        detail: "တစ်နာရီလျှင် ပုလင်း ၂၆,၀၀၀",
-        image: productionBlowingImg,
-        imageAlt: "PET ပုလင်းမှုတ်စက်",
-      },
-      {
-        icon: Droplets,
-        label: "ပုလင်းသွတ်စက်",
-        detail: "တစ်နာရီလျှင် ပုလင်း ၂၄,၀၀၀",
-        image: productionFillingCapacityImg,
-        imageAlt: "မြန်နှုန်းမြင့် အဖျော်ယမကာ ပုလင်းသွတ်လိုင်း",
-      },
-      {
-        icon: Gauge,
-        label: "Monoblock Filling System",
-        detail: "ဆေးကြောခြင်း၊ ဖြည့်ခြင်း၊ အဖုံးပိတ်ခြင်း ပေါင်းစပ်စနစ်",
-        image: productionMonoblockFillingImg,
-        imageAlt: "Monoblock rinse fill cap system",
-      },
-      {
-        icon: Snowflake,
-        label: "Tunnel Cooling System",
-        detail: "ဖြည့်ပြီးနောက် အပူချိန်ထိန်းချုပ်မှု",
-        image: productionTunnelCoolingImg,
-        imageAlt: "Tunnel cooling system",
-      },
-      {
-        icon: Tag,
-        label: "အလိုအလျောက် တံဆိပ်ကပ်စက်",
-        detail: "မြန်နှုန်းမြင့် တံဆိပ်ကပ်စနစ်",
-        image: productionAutoLabellingImg,
-        imageAlt: "အလိုအလျောက် တံဆိပ်ကပ်စက်",
-      },
-      {
-        icon: PackageOpen,
-        label: "Shrink Wrapping နှင့် Packing",
-        detail: "နောက်ဆုံးထုပ်ပိုးမှုစနစ်",
-        image: productionWrappingImg,
-        imageAlt: "Shrink wrapping နှင့် packing စက်ကိရိယာ",
-      },
+      { icon: Wind, image: productionBlowingImg },
+      { icon: Droplets, image: productionFillingCapacityImg },
+      { icon: Gauge, image: productionMonoblockFillingImg },
+      { icon: Snowflake, image: productionTunnelCoolingImg },
+      { icon: Tag, image: productionAutoLabellingImg },
+      { icon: PackageOpen, image: productionWrappingImg },
     ],
   },
   {
-    title: "အထောက်အကူပြု စနစ်များ",
-    eyebrow: "02 — Utilities",
     icon: Zap,
     items: [
-      {
-        icon: Zap,
-        label: "၂၅၀၀ KVA ထရန်စဖော်မာ",
-        detail: "တည်ငြိမ်သော လျှပ်စစ်အခြေခံအဆောက်အအုံ",
-        image: utilityTransformersImg,
-        imageAlt: "၂၅၀၀ KVA ထရန်စဖော်မာ စနစ်",
-      },
-      {
-        icon: Fuel,
-        label: "CAT ဂျင်နရေတာများ",
-        detail: "အရေးပေါ် လျှပ်စစ်ပံ့ပိုးမှု",
-        image: utilityGeneratorImg,
-        imageAlt: "CAT ဂျင်နရေတာ စနစ်",
-      },
-      {
-        icon: Wind,
-        label: "Air Compressors",
-        detail: "ဖိအားမြင့် pneumatic ပံ့ပိုးမှု",
-        image: utilityAirCompressorImg,
-        imageAlt: "Air compressor အထောက်အကူပြု စနစ်",
-      },
-      {
-        icon: Fuel,
-        label: "ဒီဇယ်ဘွိုင်လာ စနစ်များ",
-        detail: "ထုတ်လုပ်မှုအတွက် steam ထုတ်လုပ်မှု",
-        image: utilityBoilerImg,
-        imageAlt: "ဒီဇယ်ဘွိုင်လာ စနစ်",
-      },
-      {
-        icon: Recycle,
-        label: "ရေဆိုးသန့်စင်ခြင်း",
-        detail: "စက်မှုလုပ်ငန်းသုံး ရေဆိုးသန့်စင်ခြင်းနှင့် ပတ်ဝန်းကျင်သန့်စင်ခြင်းစနစ်",
-        image: utilityWastewaterImg,
-        imageAlt: "ရေဆိုးသန့်စင်ခြင်း စနစ်",
-      },
+      { icon: Zap, image: utilityTransformersImg },
+      { icon: Fuel, image: utilityGeneratorImg },
+      { icon: Wind, image: utilityAirCompressorImg },
+      { icon: Fuel, image: utilityBoilerImg },
+      { icon: Recycle, image: utilityWastewaterImg },
     ],
   },
   {
-    title: "အအေးခန်း သိုလှောင်ရုံ",
-    eyebrow: "03 — Cold Chain",
     icon: Snowflake,
     items: [
-      { icon: Snowflake, label: "အေးခဲသိုလှောင်မှု", detail: "၃၉ တန် သိုလှောင်နိုင်စွမ်း" },
-      { icon: Snowflake, label: "အအေးခန်း", detail: "၁၉ တန် သိုလှောင်နိုင်စွမ်း" },
+      { icon: Snowflake, image: freezerRoomImg },
+      { icon: Snowflake, image: coolRoomImg },
     ],
   },
-];
+] as const;
 
-const englishStats = [
-  { icon: MapPin, value: "10", label: "Acre integrated campus" },
-  { icon: Gauge, value: "26K", label: "Bottles/hr blowing capacity" },
-  { icon: Snowflake, value: "58t", label: "Cold storage capacity" },
-];
-
-const englishGroups: FacilityGroup[] = [
-  {
-    title: "Production Equipment",
-    eyebrow: "01 — Production",
-    icon: Building2,
-    items: [
-      { icon: Wind, label: "Blowing Machine", detail: "26,000 bottles / hour", image: productionBlowingImg, imageAlt: "PET bottle blowing machine" },
-      { icon: Droplets, label: "Filling Capacity", detail: "24,000 bottles / hour", image: productionFillingCapacityImg, imageAlt: "High-speed beverage filling line" },
-      { icon: Gauge, label: "Monoblock Filling System", detail: "Integrated rinse-fill-cap", image: productionMonoblockFillingImg, imageAlt: "Monoblock rinse fill cap system" },
-      { icon: Snowflake, label: "Tunnel Cooling System", detail: "Post-fill thermal control", image: productionTunnelCoolingImg, imageAlt: "Tunnel cooling system" },
-      { icon: Tag, label: "Automatic Labeling", detail: "High-speed label application", image: productionAutoLabellingImg, imageAlt: "Automatic labeling machine" },
-      { icon: PackageOpen, label: "Shrink Wrapping & Packing", detail: "End-of-line packaging", image: productionWrappingImg, imageAlt: "Shrink wrapping and packing equipment" },
-    ],
-  },
-  {
-    title: "Utility Systems",
-    eyebrow: "02 — Utilities",
-    icon: Zap,
-    items: [
-      { icon: Zap, label: "2500 KVA Transformers", detail: "Stable power infrastructure", image: utilityTransformersImg, imageAlt: "Outdoor 2500 KVA transformer utility system" },
-      { icon: Fuel, label: "CAT Generators", detail: "Continuous backup power", image: utilityGeneratorImg, imageAlt: "CAT generator backup power system" },
-      { icon: Wind, label: "Air Compressors", detail: "High-pressure pneumatic supply", image: utilityAirCompressorImg, imageAlt: "Factory air compressor utility system" },
-      { icon: Fuel, label: "Diesel Boiler Systems", detail: "Process steam generation", image: utilityBoilerImg, imageAlt: "Diesel boiler system for process steam generation" },
-      { icon: Recycle, label: "Wastewater Treatment", detail: "Industrial wastewater purification and environmental treatment system", image: utilityWastewaterImg, imageAlt: "Industrial wastewater treatment utility system" },
-    ],
-  },
-  {
-    title: "Cold Storage",
-    eyebrow: "03 — Cold Chain",
-    icon: Snowflake,
-    items: [
-      { icon: Snowflake, label: "Frozen Storage", detail: "39 tons capacity" },
-      { icon: Snowflake, label: "Chill Room", detail: "19 tons capacity" },
-    ],
-  },
-];
-
-const facilityCopy = {
-  en: {
-    eyebrow: "Factory & Facilities",
-    title: "Factory",
-    highlight: "& Facilities",
-    subtitle:
-      "A 10-acre integrated campus engineered for large-scale beverage production — from blowing to bottling, cold chain to warehouse.",
-    introTitle: "Inside our integrated manufacturing campus.",
-    intro1:
-      "Our 10-acre facility brings every stage of beverage production under one roof — from preform blowing and high-speed filling to cold storage and outbound logistics.",
-    intro2:
-      "The site is designed for resilience: redundant utilities, dedicated warehousing, and modular floor space ready to scale with your brand.",
-    storageEyebrow: "04 — Storage",
-    warehouseTitle: "Warehouse Facilities",
-    warehouseBody:
-      "Dedicated raw material, packaging, and spare parts storage areas designed to support efficient production flow and inventory management.",
-    warehouseItems: [
-      { icon: Warehouse, label: "Raw Material" },
-      { icon: PackageOpen, label: "Packaging" },
-      { icon: Ruler, label: "Spare Parts" },
-    ],
-    ctaTitle: "Want a tour of the campus?",
-    ctaBody: "Book a visit or request a virtual walkthrough of our 10-acre facility.",
-    ctaButton: "Schedule a facility tour",
-  },
-  my: {
-    eyebrow: "စက်ရုံနှင့် အခြေခံအဆောက်အအုံများ",
-    title: "စက်ရုံနှင့်",
-    highlight: "အခြေခံအဆောက်အအုံများ",
-    subtitle:
-      "ပုလင်းမှုတ်ခြင်းမှ ပုလင်းသွတ်ခြင်း၊ အအေးခန်းမှ ကုန်လှောင်ရုံအထိ အကြီးစား အဖျော်ယမကာထုတ်လုပ်မှုအတွက် တည်ဆောက်ထားသော ၁၀ ဧက စက်မှုဝန်း။",
-    introTitle: "ကျွန်ုပ်တို့၏ ပေါင်းစည်းထားသော ထုတ်လုပ်ရေး စက်မှုဝန်း။",
-    intro1:
-      "ကျွန်ုပ်တို့၏ ၁၀ ဧက စက်ရုံသည် preform blowing၊ မြန်နှုန်းမြင့် filling၊ အအေးခန်းသိုလှောင်မှုနှင့် ထောက်ပံ့ပို့ဆောင်ရေးအထိ အဖျော်ယမကာထုတ်လုပ်မှု အဆင့်တိုင်းကို တစ်နေရာတည်းတွင် ပေါင်းစည်းထားပါသည်။",
-    intro2:
-      "အထောက်အကူပြုစနစ်များ၊ သီးသန့်ကုန်လှောင်ရုံများနှင့် စကေးချဲ့နိုင်သော ထုတ်လုပ်ရေးနေရာများဖြင့် သင့်အမှတ်တံဆိပ်ကို ယုံကြည်စိတ်ချစွာ ပံ့ပိုးနိုင်ရန် ဒီဇိုင်းထုတ်ထားပါသည်။",
-    storageEyebrow: "04 — သိုလှောင်ရုံ",
-    warehouseTitle: "ကုန်လှောင်ရုံ",
-    warehouseBody:
-      "ကုန်ကြမ်းနှင့် ထုပ်ပိုးပစ္စည်းများအတွက် သီးသန့်နေရာများ၊ spare parts သိုလှောင်ရုံများဖြင့် ထုတ်လုပ်မှုစီးဆင်းမှုနှင့် inventory စီမံခန့်ခွဲမှုကို ထိရောက်စွာ ပံ့ပိုးပေးပါသည်။",
-    warehouseItems: [
-      { icon: Warehouse, label: "ကုန်ကြမ်း" },
-      { icon: PackageOpen, label: "ထုပ်ပိုးပစ္စည်း" },
-      { icon: Ruler, label: "Spare Parts" },
-    ],
-    ctaTitle: "စက်မှုဝန်းကို လေ့လာလိုပါသလား?",
-    ctaBody:
-      "ကျွန်ုပ်တို့၏ ၁၀ ဧက စက်ရုံသို့ လာရောက်လည်ပတ်ရန် သို့မဟုတ် virtual walkthrough တောင်းဆိုရန် ဆက်သွယ်နိုင်ပါသည်။",
-    ctaButton: "စက်ရုံလည်ပတ်ရန် စီစဉ်ပါ",
-  },
-} as const;
+const warehouseIcons = [Warehouse, PackageOpen, Ruler] as const;
 
 function FactoryFacilities() {
-  const { lang } = useLanguage();
-  const copy = facilityCopy[lang];
-  const localizedStats = lang === "en" ? englishStats : stats;
-  const localizedGroups = lang === "en" ? englishGroups : groups;
+  const { content } = useLanguage();
+  const copy = content.services.facilities;
+  const localizedStats = copy.stats.map((stat, index) => ({
+    ...stat,
+    icon: facilityStatIcons[index],
+  }));
+  const localizedGroups = copy.groups.map((group, groupIndex) => {
+    const groupAssets = facilityGroupAssets[groupIndex];
+
+    return {
+      ...group,
+      icon: groupAssets.icon,
+      items: group.items.map((item, itemIndex) => ({
+        ...item,
+        ...groupAssets.items[itemIndex],
+      })),
+    };
+  });
 
   return (
     <Layout>
@@ -407,30 +238,41 @@ function FactoryFacilities() {
 
       {/* WAREHOUSE — feature row */}
       <section className="py-20 md:py-24 mx-auto max-w-7xl px-4 lg:px-8">
-        <div className="relative grid lg:grid-cols-2 gap-10 items-center bg-card border border-border rounded-lg p-8 md:p-12 overflow-hidden">
+        <div className="relative grid min-h-[430px] items-center overflow-hidden rounded-lg border border-border bg-foreground p-8 text-white shadow-soft md:p-12 lg:grid-cols-2 lg:gap-10">
+          <img
+            src={factoryHero2}
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full object-cover"
+            loading="lazy"
+            decoding="async"
+            width={1483}
+            height={834}
+            sizes="(min-width: 1280px) 1216px, calc(100vw - 2rem)"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/88 via-black/68 to-black/35" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-black/25" />
           <div className="relative">
-            <div className="text-[10px] font-bold uppercase tracking-widest text-accent-text mb-3">
+            <div className="text-[10px] font-bold uppercase tracking-widest text-accent mb-3">
               {copy.storageEyebrow}
             </div>
-            <h3 className="font-display text-3xl md:text-4xl font-extrabold text-foreground mb-4">
+            <h3 className="font-display text-3xl md:text-4xl font-extrabold text-white mb-4">
               {copy.warehouseTitle}
             </h3>
-            <p className="text-muted-foreground leading-relaxed text-lg">
-              {copy.warehouseBody}
-            </p>
+            <p className="text-white/80 leading-relaxed text-lg">{copy.warehouseBody}</p>
           </div>
           <div className="relative grid grid-cols-3 gap-4">
-            {copy.warehouseItems.map((w) => {
-              const Icon = w.icon;
+            {copy.warehouseItems.map((label, index) => {
+              const Icon = warehouseIcons[index];
               return (
                 <div
-                  key={w.label}
-                  className="rounded-2xl bg-muted/60 border border-border p-5 text-center"
+                  key={label}
+                  className="rounded-2xl border border-white/15 bg-white/12 p-5 text-center shadow-soft backdrop-blur-md"
                 >
                   <div className="inline-flex items-center justify-center h-12 w-12 rounded-xl bg-gradient-brand text-white mb-3">
                     <Icon className="h-6 w-6" />
                   </div>
-                  <div className="font-semibold text-sm text-foreground">{w.label}</div>
+                  <div className="font-semibold text-sm text-white">{label}</div>
                 </div>
               );
             })}

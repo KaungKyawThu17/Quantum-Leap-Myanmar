@@ -4,12 +4,14 @@ export function PageHero({
   eyebrow,
   title,
   subtitle,
+  backgroundSrc,
   videoSrc,
   posterSrc,
 }: {
   eyebrow: string;
   title: string;
   subtitle?: string;
+  backgroundSrc?: string;
   videoSrc?: string;
   posterSrc?: string;
 }) {
@@ -17,6 +19,17 @@ export function PageHero({
 
   return (
     <section className="relative overflow-hidden bg-gradient-hero text-white">
+      {backgroundSrc && (
+        <img
+          src={backgroundSrc}
+          alt=""
+          aria-hidden
+          className="absolute inset-0 h-full w-full object-cover"
+          loading="eager"
+          decoding="async"
+          fetchPriority="high"
+        />
+      )}
       {videoSrc && prefersReducedMotion && posterSrc && (
         <img
           src={posterSrc}

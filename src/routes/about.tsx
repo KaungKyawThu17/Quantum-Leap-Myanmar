@@ -1,8 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
 import { PageHero } from "@/components/PageHero";
+import aboutHeroImg from "@/assets/optimized/about-hero.webp";
 import factoryImg from "@/assets/optimized/warehouse-feature.jpg";
 import boardDirectorImg from "@/assets/alvin.webp";
+import teamAlvinImg from "@/assets/optimized/team-alvin-cutout.webp";
+import teamMrGoiImg from "@/assets/optimized/team-mr-goi-cutout.webp";
+import teamUZawZawImg from "@/assets/optimized/team-u-zaw-zaw-cutout.webp";
 import { Target, Eye, Quote } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 
@@ -22,14 +26,23 @@ export const Route = createFileRoute("/about")({
 
 const team = [
   {
+    image: teamAlvinImg,
+    imageWidth: 510,
+    imageHeight: 720,
     en: { name: "Ko Alvin Aung Zin", role: "Managing Director" },
     my: { name: "ကိုအယ်လ်ဗင်အောင်ဇင်", role: "စီမံခန့်ခွဲမှု ဒါရိုက်တာ" },
   },
   {
+    image: teamMrGoiImg,
+    imageWidth: 392,
+    imageHeight: 720,
     en: { name: "Mr Goi Mui Yong", role: "Factory Director" },
     my: { name: "Mr Goi Mui Yong", role: "စက်ရုံ ဒါရိုက်တာ" },
   },
   {
+    image: teamUZawZawImg,
+    imageWidth: 374,
+    imageHeight: 720,
     en: { name: "U Zaw Zaw", role: "Plant Manager" },
     my: { name: "ဦးဇော်ဇော်", role: "စက်ရုံ မန်နေဂျာ" },
   },
@@ -62,8 +75,7 @@ const aboutCopy = {
     ],
     boardEyebrow: "Message from the Board",
     boardTitle: "A welcome from our Board of Directors",
-    boardBody:
-      `Welcome to our OEM Beverage company.
+    boardBody: `Welcome to our OEM Beverage company.
 
 At Quantum Leap Co. Ltd, we are driven by a strong commitment to quality, innovation, and long-term sustainable growth. We strive to produce high-quality beverages that meet international standards while serving the evolving needs of consumers across diverse markets.
 
@@ -115,6 +127,7 @@ We sincerely thank all our customers, partners, and stakeholders for being part 
 function About() {
   const { lang } = useLanguage();
   const copy = aboutCopy[lang];
+  const boardParagraphs = copy.boardBody.split(/\n\s*\n/);
 
   return (
     <Layout>
@@ -122,6 +135,7 @@ function About() {
         eyebrow={copy.eyebrow}
         title={copy.heroTitle}
         subtitle={copy.heroSubtitle}
+        backgroundSrc={aboutHeroImg}
       />
 
       <section className="py-20 mx-auto max-w-7xl px-4 lg:px-8">
@@ -164,25 +178,27 @@ function About() {
         </div>
       </section>
 
-      <section className="py-20 mx-auto max-w-7xl px-4 lg:px-8">
+      <section className="py-14 mx-auto max-w-7xl px-4 md:py-20 lg:px-8">
         <div className="text-xs uppercase tracking-widest text-primary font-semibold mb-3 text-center">
           {copy.boardEyebrow}
         </div>
-        <h2 className="font-display text-3xl md:text-4xl font-bold text-center mb-10">
+        <h2 className="font-display text-3xl md:text-4xl font-bold text-center mb-8 md:mb-10">
           {copy.boardTitle}
         </h2>
-        <div className="grid md:grid-cols-[1fr_auto] gap-10 items-center rounded-3xl bg-gradient-brand text-white p-8 md:p-12 shadow-glow">
+        <div className="grid md:grid-cols-[1fr_auto] gap-8 md:gap-10 items-center rounded-3xl bg-gradient-brand text-white p-6 sm:p-8 md:p-12 shadow-glow">
           <div>
-            <Quote className="h-12 w-12 text-white/40 mb-6" />
-            <div className="space-y-5 text-white/90 leading-relaxed">
-              <p>{copy.boardBody}</p>
+            <Quote className="h-9 w-9 md:h-12 md:w-12 text-white/40 mb-4 md:mb-6" />
+            <div className="space-y-4 text-sm leading-7 text-white/90 md:space-y-5 md:text-base md:leading-relaxed">
+              {boardParagraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
             </div>
           </div>
           <div className="flex flex-col items-center md:items-start">
             <img
               src={boardDirectorImg}
               alt={copy.directorAlt}
-              className="w-64 md:w-72 lg:w-80 aspect-[4/5] object-cover rounded-2xl shadow-soft border-4 border-white/20"
+              className="w-52 sm:w-60 md:w-72 lg:w-80 aspect-[4/5] object-cover rounded-2xl shadow-soft border-4 border-white/20"
               loading="lazy"
               decoding="async"
               width={739}
@@ -208,20 +224,25 @@ function About() {
           {team.map((member) => {
             const m = member[lang];
             return (
-            <div
-              key={m.name}
-              className="rounded-3xl bg-card border border-border p-8 text-center hover:shadow-glow transition-shadow duration-200"
-            >
-              <div className="mx-auto h-24 w-24 rounded-full bg-gradient-brand flex items-center justify-center text-white font-display text-3xl font-bold mb-5">
-                {m.name
-                  .split(" ")
-                  .map((p) => p[0])
-                  .slice(0, 2)
-                  .join("")}
+              <div
+                key={m.name}
+                className="rounded-3xl bg-card border border-border p-8 pt-6 text-center"
+              >
+                <div className="mx-auto mb-6 flex h-60 w-full items-end justify-center overflow-visible sm:h-64">
+                  <img
+                    src={member.image}
+                    alt={`${m.name}, ${m.role}`}
+                    className="h-full w-auto max-w-full object-contain drop-shadow-[0_18px_24px_rgba(15,23,42,0.22)]"
+                    loading="lazy"
+                    decoding="async"
+                    width={member.imageWidth}
+                    height={member.imageHeight}
+                    sizes="(min-width: 768px) 16rem, 14rem"
+                  />
+                </div>
+                <div className="font-display text-xl font-bold">{m.name}</div>
+                <div className="text-sm text-muted-foreground mt-1">{m.role}</div>
               </div>
-              <div className="font-display text-xl font-bold">{m.name}</div>
-              <div className="text-sm text-muted-foreground mt-1">{m.role}</div>
-            </div>
             );
           })}
         </div>

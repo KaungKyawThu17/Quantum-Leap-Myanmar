@@ -13,13 +13,12 @@ import { LanguageProvider, useLanguage } from "@/i18n/LanguageContext";
 
 import appCss from "../styles.css?url";
 import logo from "@/assets/quantum-leap-logo.png";
-import socialImage from "@/assets/hero-factory.jpg";
 
 const siteUrl = import.meta.env.VITE_SITE_URL?.trim();
 const siteTitle = "QUANTUM LEAP — Myanmar OEM and ODM Beverage Manufacturing";
 const siteDescription =
   "QUANTUM LEAP is a Myanmar-based OEM and ODM beverage manufacturer offering PET bottling, beverage formulation, and scale-up production solutions.";
-const socialImageUrl = siteUrl ? new URL(socialImage, siteUrl).toString() : socialImage;
+const socialImageUrl = siteUrl ? new URL(logo, siteUrl).toString() : logo;
 
 function getCanonicalUrl(pathname = "/") {
   if (!siteUrl) return undefined;
@@ -104,12 +103,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         { property: "og:site_name", content: "QUANTUM LEAP" },
         { property: "og:locale", content: "en_US" },
         { property: "og:image", content: socialImageUrl },
-        { property: "og:image:alt", content: "QUANTUM LEAP beverage manufacturing factory" },
+        { property: "og:image:alt", content: "QUANTUM LEAP OEM beverage manufacturing factory" },
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: siteTitle },
         { name: "twitter:description", content: siteDescription },
         { name: "twitter:image", content: socialImageUrl },
-        { name: "twitter:image:alt", content: "QUANTUM LEAP beverage manufacturing factory" },
+        { name: "twitter:image:alt", content: "QUANTUM LEAP OEM beverage manufacturing factory" },
       ],
       links: [
         { rel: "stylesheet", href: appCss },

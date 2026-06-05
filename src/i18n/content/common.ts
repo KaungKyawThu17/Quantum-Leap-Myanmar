@@ -8,7 +8,6 @@ export const commonContent = {
       services: "Services",
       faq: "FAQ",
       contact: "Contact",
-      quote: "Get a Quotation",
       openMenu: "Open menu",
       closeMenu: "Close menu",
       serviceLinks: [
@@ -67,7 +66,6 @@ export const commonContent = {
       services: "ဝန်ဆောင်မှု",
       faq: "FAQ",
       contact: "ဆက်သွယ်ရန်",
-      quote: "ဈေးနှုန်းမေးရန်",
       openMenu: "မီနူးဖွင့်ရန်",
       closeMenu: "မီနူးပိတ်ရန်",
       serviceLinks: [

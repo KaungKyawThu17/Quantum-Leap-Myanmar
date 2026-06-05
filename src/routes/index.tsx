@@ -7,7 +7,6 @@ import splashImg from "@/assets/product-splash.jpg";
 import plasticCapImg from "@/assets/optimized/pkg-plastic-cap-card.jpg";
 import petBottleImg from "@/assets/optimized/pkg-pet-bottle-card.jpg";
 import petPreformImg from "@/assets/optimized/pkg-pet-preform-card.jpg";
-import aluminumCapImg from "@/assets/optimized/pkg-aluminum-cap-card.jpg";
 import labelImg from "@/assets/optimized/pkg-label-card.jpg";
 import bevElectrolyteImg from "@/assets/optimized/prod-electrolyte-card.jpg";
 import bevSoftDrinkImg from "@/assets/optimized/prod-soft-drink-card.jpg";
@@ -96,7 +95,6 @@ const packagingProductMedia: Array<ImageAsset | undefined> = [
   { src: petBottleImg, width: 960, height: 731 },
   { src: plasticCapImg, width: 960, height: 640 },
   { src: petPreformImg, width: 960, height: 598 },
-  { src: aluminumCapImg, width: 960, height: 523 },
   { src: labelImg, width: 960, height: 547 },
   undefined,
 ];
@@ -303,11 +301,14 @@ function Home() {
               >
                 {copy.exploreProducts}
               </Link>
+              <Link
+                to="/services/oem-manufacturing"
+                className="focus-ring inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-7 py-3.5 font-semibold text-white hover:bg-white/20 transition-colors duration-200"
+              >
+                {copy.exploreServices}
+              </Link>
             </div>
             <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-white/80">
-              <span className="inline-flex items-center gap-1.5">
-                <ShieldCheck className="h-4 w-4 text-accent" /> {copy.proof1}
-              </span>
               <span className="inline-flex items-center gap-1.5">
                 <Gauge className="h-4 w-4 text-accent" /> {copy.proof2}
               </span>
@@ -536,12 +537,6 @@ function Home() {
             className="focus-ring inline-flex items-center gap-2 rounded-full bg-foreground text-background px-7 py-3.5 font-semibold hover:bg-primary transition-colors duration-200"
           >
             {copy.viewAll} <ArrowRight className="h-4 w-4" />
-          </Link>
-          <Link
-            to="/contact"
-            className="focus-ring inline-flex items-center gap-2 rounded-full border border-border px-7 py-3.5 font-semibold text-foreground hover:bg-muted/60 transition-colors duration-200"
-          >
-            {copy.quote}
           </Link>
         </div>
       </section>

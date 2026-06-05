@@ -17,7 +17,7 @@ export const contactContent = {
         lines: ["A next-generation OEM & ODM beverage manufacturer based in Yangon."],
       },
       visit: {
-        title: "Visit our factory",
+        title: "Location",
         lines: [
           "No.351–352, No.3 High Road,",
           "R-11 Mingalardon Garden City,",

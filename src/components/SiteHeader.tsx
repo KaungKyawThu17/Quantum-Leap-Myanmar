@@ -96,12 +96,6 @@ export function SiteHeader() {
 
         <div className="hidden md:flex items-center gap-3">
           <LanguageToggle />
-          <Link
-            to="/contact"
-            className="focus-ring inline-flex min-h-11 items-center justify-center rounded-full bg-accent px-4 py-2.5 text-sm font-semibold text-accent-foreground shadow-soft hover:brightness-110 transition-[filter] duration-200 whitespace-nowrap"
-          >
-            {copy.quote}
-          </Link>
         </div>
 
         <button

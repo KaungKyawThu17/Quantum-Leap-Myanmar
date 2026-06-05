@@ -7,7 +7,6 @@ import { ArrowRight, GlassWater, Package, Palette } from "lucide-react";
 import plasticCapImg from "@/assets/optimized/pkg-plastic-cap-card.jpg";
 import petBottleImg from "@/assets/optimized/pkg-pet-bottle-card.jpg";
 import petPreformImg from "@/assets/optimized/pkg-pet-preform-card.jpg";
-import aluminumCapImg from "@/assets/optimized/pkg-aluminum-cap-card.jpg";
 import labelImg from "@/assets/optimized/pkg-label-card.jpg";
 import prodElectrolyteImg from "@/assets/optimized/prod-electrolyte-card.jpg";
 import prodFlavoredImg from "@/assets/optimized/prod-flavored-card.jpg";
@@ -68,7 +67,6 @@ const packagingProductMedia: Array<ImageAsset | undefined> = [
   { src: plasticCapImg, width: 960, height: 640 },
   { src: petBottleImg, width: 960, height: 731 },
   { src: petPreformImg, width: 960, height: 598 },
-  { src: aluminumCapImg, width: 960, height: 523 },
   { src: labelImg, width: 960, height: 547 },
   undefined,
 ];

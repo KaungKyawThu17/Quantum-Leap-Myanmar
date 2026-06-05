@@ -118,14 +118,6 @@ export const productsContent = {
         inquiryLabel: "Request preform info",
       },
       {
-        name: "Aluminum Cap",
-        category: "packaging",
-        desc: "Aluminum closure options for beverage packaging programs that require reliable sealed presentation.",
-        items: ["Aluminum beverage closures", "Tamper-evident caps"],
-        specs: ["Tamper-evident", "Beverage closures", "Spec review"],
-        inquiryLabel: "Ask about closures",
-      },
-      {
         name: "Label",
         category: "packaging",
         desc: "Packaging label support for bottle-ready branding, sleeve planning, and beverage shelf presentation.",
@@ -274,17 +266,6 @@ export const productsContent = {
         ],
         specs: ["Preform ပံ့ပိုးမှု", "CSD ရွေးချယ်စရာ", "Specification ပြန်လည်သုံးသပ်မှု"],
         inquiryLabel: "Preform အချက်အလက် မေးမြန်းရန်",
-      },
-      {
-        name: "အလူမီနီယမ် အဖုံးများ",
-        category: "packaging",
-        desc: "ယုံကြည်စိတ်ချရသော ပိတ်ဆို့မှုလိုအပ်သည့် အဖျော်ယမကာ ထုပ်ပိုးမှုအစီအစဉ်များအတွက် အလူမီနီယမ်အဖုံး ရွေးချယ်စရာများ။",
-        items: [
-          "အလူမီနီယမ် အဖျော်ယမကာ အဖုံးများ",
-          "တံဆိပ်မပျက်သေးကြောင်း သက်သေပြနိုင်သည့် အဖုံးများ",
-        ],
-        specs: ["Tamper-evident", "အဖျော်ယမကာ အဖုံးများ", "Specification ပြန်လည်သုံးသပ်မှု"],
-        inquiryLabel: "အလူမီနီယမ်အဖုံး မေးမြန်းရန်",
       },
       {
         name: "တံဆိပ်များ",

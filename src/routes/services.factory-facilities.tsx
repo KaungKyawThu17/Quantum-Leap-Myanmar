@@ -44,7 +44,7 @@ export const Route = createFileRoute("/services/factory-facilities")({
       {
         name: "description",
         content:
-          "A 6-acre industrial campus with production equipment, utility systems, cold storage, and warehouse facilities.",
+          "A 10-acre industrial campus with production equipment, utility systems, cold storage, and warehouse facilities.",
       },
     ],
   }),

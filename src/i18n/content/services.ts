@@ -97,7 +97,7 @@ export const servicesContent = {
       ctaTitle: "Need a production partner that scales with you?",
       ctaBody:
         "From small batch trials to full-volume export production — we've built the lines for it.",
-      ctaButton: "Talk to our Business Development Team",
+      ctaButton: "Talk to our team",
     },
     development: {
       eyebrow: "Product Development",
@@ -163,15 +163,15 @@ export const servicesContent = {
       title: "Factory",
       highlight: "& Facilities",
       subtitle:
-        "A 6-acre integrated campus engineered for large-scale beverage production — from blowing to bottling, cold chain to warehouse.",
+        "A 10-acre integrated campus engineered for large-scale beverage production — from blowing to bottling, cold chain to warehouse.",
       stats: [
-        { value: "6", label: "Acre integrated campus" },
+        { value: "10", label: "Acre integrated campus" },
         { value: "26K", label: "Bottles/hr blowing capacity" },
         { value: "58t", label: "Cold storage capacity" },
       ],
       introTitle: "Inside our integrated manufacturing campus.",
       intro1:
-        "Our 6-acre facility brings every stage of beverage production under one roof — from preform blowing and high-speed filling to cold storage and outbound logistics.",
+        "Our 10-acre facility brings every stage of beverage production under one roof — from preform blowing and high-speed filling to cold storage and outbound logistics.",
       intro2:
         "The site is designed for resilience: redundant utilities, dedicated warehousing, and modular floor space ready to scale with your brand.",
       groups: [
@@ -257,7 +257,7 @@ export const servicesContent = {
         "Dedicated raw material, packaging, and spare parts storage areas designed to support efficient production flow and inventory management.",
       warehouseItems: ["Raw Material", "Packaging", "Spare Parts"],
       ctaTitle: "Want a tour of the campus?",
-      ctaBody: "Book a visit or request a virtual walkthrough of our 6-acre facility.",
+      ctaBody: "Book a visit or request a virtual walkthrough of our 10-acre facility.",
       ctaButton: "Schedule a facility tour",
     },
   },
@@ -360,7 +360,7 @@ export const servicesContent = {
       ctaTitle: "သင့်အမှတ်တံဆိပ်နှင့်အတူ စကေးချဲ့နိုင်သော ထုတ်လုပ်မှုမိတ်ဖက် လိုအပ်ပါသလား?",
       ctaBody:
         "စမ်းသပ်ထုတ်လုပ်မှုမှ အပြည့်အဝ ပြည်ပပို့ကုန် ထုတ်လုပ်မှုအထိ ပံ့ပိုးနိုင်သော လိုင်းများကို တည်ဆောက်ထားပါသည်။",
-      ctaButton: "ထုတ်လုပ်မှုအဖွဲ့နှင့် ဆွေးနွေးရန်",
+      ctaButton: "ကျွန်ုပ်တို့အဖွဲ့နှင့် ဆွေးနွေးရန်",
     },
     development: {
       eyebrow: "ထုတ်ကုန်ဖွံ့ဖြိုးတိုးတက်မှု",
@@ -427,15 +427,15 @@ export const servicesContent = {
       title: "စက်ရုံနှင့်",
       highlight: "အခြေခံအဆောက်အအုံများ",
       subtitle:
-        "ပုလင်းမှုတ်ခြင်းမှ ပုလင်းသွတ်ခြင်း၊ အအေးခန်းမှ ကုန်လှောင်ရုံအထိ အကြီးစား အဖျော်ယမကာထုတ်လုပ်မှုအတွက် တည်ဆောက်ထားသော ၆ ဧက စက်မှုဝန်း။",
+        "ပုလင်းမှုတ်ခြင်းမှ ပုလင်းသွတ်ခြင်း၊ အအေးခန်းမှ ကုန်လှောင်ရုံအထိ အကြီးစား အဖျော်ယမကာထုတ်လုပ်မှုအတွက် တည်ဆောက်ထားသော ၁၀ ဧက စက်မှုဝန်း။",
       stats: [
-        { value: "၆", label: "ဧက စက်မှုဝန်း" },
+        { value: "၁၀", label: "ဧက စက်မှုဝန်း" },
         { value: "၂၆K", label: "ပုလင်းမှုတ်စက် / နာရီ" },
         { value: "၅၈t", label: "အအေးခန်း သိုလှောင်နိုင်စွမ်း" },
       ],
       introTitle: "ကျွန်ုပ်တို့၏ ပေါင်းစည်းထားသော ထုတ်လုပ်ရေး စက်မှုဝန်း။",
       intro1:
-        "ကျွန်ုပ်တို့၏ ၆ ဧက စက်ရုံသည် preform blowing၊ မြန်နှုန်းမြင့် filling၊ အအေးခန်းသိုလှောင်မှုနှင့် ထောက်ပံ့ပို့ဆောင်ရေးအထိ အဖျော်ယမကာထုတ်လုပ်မှု အဆင့်တိုင်းကို တစ်နေရာတည်းတွင် ပေါင်းစည်းထားပါသည်။",
+        "ကျွန်ုပ်တို့၏ ၁၀ ဧက စက်ရုံသည် preform blowing၊ မြန်နှုန်းမြင့် filling၊ အအေးခန်းသိုလှောင်မှုနှင့် ထောက်ပံ့ပို့ဆောင်ရေးအထိ အဖျော်ယမကာထုတ်လုပ်မှု အဆင့်တိုင်းကို တစ်နေရာတည်းတွင် ပေါင်းစည်းထားပါသည်။",
       intro2:
         "အထောက်အကူပြုစနစ်များ၊ သီးသန့်ကုန်လှောင်ရုံများနှင့် စကေးချဲ့နိုင်သော ထုတ်လုပ်ရေးနေရာများဖြင့် သင့်အမှတ်တံဆိပ်ကို ယုံကြည်စိတ်ချစွာ ပံ့ပိုးနိုင်ရန် ဒီဇိုင်းထုတ်ထားပါသည်။",
       groups: [
@@ -522,7 +522,7 @@ export const servicesContent = {
       warehouseItems: ["ကုန်ကြမ်း", "ထုပ်ပိုးပစ္စည်း", "Spare Parts"],
       ctaTitle: "စက်မှုဝန်းကို လေ့လာလိုပါသလား?",
       ctaBody:
-        "ကျွန်ုပ်တို့၏ ၆ ဧက စက်ရုံသို့ လာရောက်လည်ပတ်ရန် သို့မဟုတ် virtual walkthrough တောင်းဆိုရန် ဆက်သွယ်နိုင်ပါသည်။",
+        "ကျွန်ုပ်တို့၏ ၁၀ ဧက စက်ရုံသို့ လာရောက်လည်ပတ်ရန် သို့မဟုတ် virtual walkthrough တောင်းဆိုရန် ဆက်သွယ်နိုင်ပါသည်။",
       ctaButton: "စက်ရုံလည်ပတ်ရန် စီစဉ်ပါ",
     },
   },

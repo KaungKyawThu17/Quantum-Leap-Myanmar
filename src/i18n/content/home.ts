@@ -13,9 +13,9 @@ export const homeContent = {
     exploreProducts: "Explore Products",
     exploreServices: "Explore Services",
     proof2: "24,000 BPH Capacity",
-    proof3: "6-Acre Facility",
+    proof3: "10-Acre Facility",
     stats: [
-      { value: "6", suffix: "acre", label: "Integrated facility" },
+      { value: "10", suffix: "acre", label: "Integrated facility" },
       { value: "24K", suffix: "BPH", label: "Production capacity" },
       { value: "5+", suffix: "brands", label: "Produced for partners" },
       { value: "3", suffix: "certs", label: "FDA · Halal · ISO" },
@@ -26,14 +26,14 @@ export const homeContent = {
     introTitleHighlight: "integrated facility",
     introTitleAfter: "built for the world's beverage brands.",
     introBody:
-      "Located on a 6-acre industrial campus in Yangon Industrial Park, QUANTUM LEAP operates a fully integrated OEM beverage manufacturing facility. Our factory combines modern production technology, experienced operational management, and scalable infrastructure to deliver high-quality beverages across multiple categories.",
+      "Located on a 10-acre industrial campus in Yangon Industrial Park, QUANTUM LEAP operates a fully integrated OEM beverage manufacturing facility. Our factory combines modern production technology, experienced operational management, and scalable infrastructure to deliver high-quality beverages across multiple categories.",
     introBullets: [
       "Modern, automated production technology",
       "Experienced beverage operations team",
       "Scalable infrastructure for any brand size",
     ],
     learn: "Learn about us",
-    campus: "6-Acre Campus",
+    campus: "10-Acre Campus",
     highlightsEyebrow: "Key Highlights",
     highlightsTitle: "Capabilities at a glance",
     highlights: [
@@ -118,9 +118,9 @@ export const homeContent = {
     exploreProducts: "ထုတ်ကုန်များ ကြည့်ရန်",
     exploreServices: "ဝန်ဆောင်မှုများ ကြည့်ရန်",
     proof2: "၂၄,၀၀၀ BPH ထုတ်လုပ်နိုင်စွမ်း",
-    proof3: "၆ ဧက စက်မှုဝန်း",
+    proof3: "၁၀ ဧက စက်မှုဝန်း",
     stats: [
-      { value: "၆", suffix: "ဧက", label: "စက်မှုဝန်း" },
+      { value: "၁၀", suffix: "ဧက", label: "စက်မှုဝန်း" },
       { value: "၂၄K", suffix: "BPH", label: "ထုတ်လုပ်နိုင်စွမ်း" },
       { value: "၅+", suffix: "brands", label: "မိတ်ဖက်အမှတ်တံဆိပ်များ" },
       { value: "၃", suffix: "certs", label: "FDA · Halal · ISO" },
@@ -131,14 +131,14 @@ export const homeContent = {
     introTitleHighlight: "အဆင့်မြင့် OEM စက်ရုံ",
     introTitleAfter: "။",
     introBody:
-      "ကျွန်ုပ်တို့ Quantum Leap သည် ရန်ကုန်စက်မှုဇုန်ရှိ ၆ ဧက ကျယ်ဝန်းသော စက်မှုဝန်းအတွင်း တည်ရှိပြီး၊ ပြည်တွင်းနှင့် နိုင်ငံတကာ အဖျော်ယမကာ အမှတ်တံဆိပ်များကို ပံ့ပိုးပေးနိုင်ရန် အဆင့်မြင့် OEM စက်ရုံအဖြစ် လည်ပတ်နေပါသည်။ ကျွန်ုပ်တို့၏ စက်ရုံသည် ခေတ်မီထုတ်လုပ်မှု နည်းပညာ၊ အတွေ့အကြုံရှိသော စီမံခန့်ခွဲမှုနှင့် အကြီးစား အခြေခံအဆောက်အအုံများ ပေါင်းစပ်ကာ အရည်အသွေးမြင့် ထုတ်ကုန်များကို အမျိုးအစားအလိုက် ထုတ်လုပ်ပေးနေပါသည်။",
+      "ကျွန်ုပ်တို့ Quantum Leap သည် ရန်ကုန်စက်မှုဇုန်ရှိ ၁၀ ဧက ကျယ်ဝန်းသော စက်မှုဝန်းအတွင်း တည်ရှိပြီး၊ ပြည်တွင်းနှင့် နိုင်ငံတကာ အဖျော်ယမကာ အမှတ်တံဆိပ်များကို ပံ့ပိုးပေးနိုင်ရန် အဆင့်မြင့် OEM စက်ရုံအဖြစ် လည်ပတ်နေပါသည်။ ကျွန်ုပ်တို့၏ စက်ရုံသည် ခေတ်မီထုတ်လုပ်မှု နည်းပညာ၊ အတွေ့အကြုံရှိသော စီမံခန့်ခွဲမှုနှင့် အကြီးစား အခြေခံအဆောက်အအုံများ ပေါင်းစပ်ကာ အရည်အသွေးမြင့် ထုတ်ကုန်များကို အမျိုးအစားအလိုက် ထုတ်လုပ်ပေးနေပါသည်။",
     introBullets: [
       "ခေတ်မီ အလိုအလျောက် ထုတ်လုပ်မှု နည်းပညာ",
       "အတွေ့အကြုံရှိသော အဖျော်ယမကာ လုပ်ငန်းအဖွဲ့",
       "အမှတ်တံဆိပ်အရွယ်အစားအလိုက် စကေးချဲ့နိုင်သော အခြေခံအဆောက်အအုံ",
     ],
     learn: "ကျွန်ုပ်တို့အကြောင်း လေ့လာရန်",
-    campus: "၆ ဧက စက်မှုဝန်း",
+    campus: "၁၀ ဧက စက်မှုဝန်း",
     highlightsEyebrow: "အဓိက ထူးခြားချက်များ",
     highlightsTitle: "စွမ်းဆောင်ရည်များ အကျဉ်းချုပ်",
     highlights: [

@@ -12,7 +12,7 @@ import bevElectrolyteImg from "@/assets/optimized/prod-electrolyte-card.jpg";
 import bevSoftDrinkImg from "@/assets/optimized/prod-soft-drink-card.jpg";
 import bevFlavoredImg from "@/assets/optimized/prod-flavored-card.jpg";
 import bevTeaImg from "@/assets/optimized/prod-tea-card.jpg";
-import bevDairyImg from "@/assets/optimized/prod-dairy-card.jpg";
+import bevDairyImg from "@/UHT Products.webp";
 import welcomeImg from "@/assets/optimized/welcome-feature.jpg";
 import sevenGoLogo from "@/assets/7go.webp";
 import isoPlusLogo from "@/assets/ISO PLUS.webp";
@@ -106,7 +106,7 @@ const beverageProductMedia: ImageAsset[] = [
   { src: bevSoftDrinkImg, width: 960, height: 640 },
   { src: bevFlavoredImg, width: 960, height: 479 },
   { src: bevTeaImg, width: 960, height: 537 },
-  { src: bevDairyImg, width: 960, height: 641 },
+  { src: bevDairyImg, width: 1448, height: 1086 },
 ];
 
 const coreValueIcons = [Heart, Leaf, Globe, Lightbulb] as const;

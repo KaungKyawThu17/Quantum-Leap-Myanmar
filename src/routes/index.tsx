@@ -18,6 +18,7 @@ import sevenGoLogo from "@/assets/7go.webp";
 import isoPlusLogo from "@/assets/ISO PLUS.webp";
 import burmaClubLogo from "@/assets/burmaclub.webp";
 import pumaLogo from "@/assets/puma.webp";
+import spiderLogo from "@/spider.webp";
 import { useEffect, useState } from "react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import {
@@ -89,6 +90,7 @@ const trustedBrandLogos = [
   { name: "ISO Plus", image: { src: isoPlusLogo, width: 1600, height: 1049 } },
   { name: "Burma Club", image: { src: burmaClubLogo, width: 2484, height: 1758 } },
   { name: "Puma", image: { src: pumaLogo, width: 6240, height: 4415 } },
+  { name: "Spider", image: { src: spiderLogo, width: 1600, height: 1600 } },
 ] as const;
 
 const packagingProductMedia: Array<ImageAsset | undefined> = [

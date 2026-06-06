@@ -4,6 +4,8 @@ import { ServiceMediaHero } from "@/components/ServiceMediaHero";
 import welcomeImg from "@/assets/optimized/welcome-feature.jpg";
 import pdHero1 from "@/assets/pd-hero-1.webp";
 import pdHero2 from "@/assets/pd-hero-2.webp";
+import petDesignImg from "@/PET Design.webp";
+import tbaDesignImg from "@/TBA Design.webp";
 import { CertificatesSlider } from "@/components/CertificatesSlider";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { ArrowRight, Package, Boxes, Ruler, ShieldCheck, Beaker, Sparkles } from "lucide-react";
@@ -28,6 +30,10 @@ const heroSlides = [
 ];
 
 const pillarIcons = [Beaker, Package, ShieldCheck] as const;
+const packagingTypeMedia = [
+  { src: petDesignImg, width: 1448, height: 1086 },
+  { src: tbaDesignImg, width: 1448, height: 1086 },
+] as const;
 
 function ProductDevelopment() {
   const { content } = useLanguage();
@@ -36,7 +42,10 @@ function ProductDevelopment() {
     ...pillar,
     icon: pillarIcons[index],
   }));
-  const localizedPackagingTypes = copy.packagingTypes;
+  const localizedPackagingTypes = copy.packagingTypes.map((type, index) => ({
+    ...type,
+    image: packagingTypeMedia[index],
+  }));
   const localizedFormats = copy.formats;
 
   return (
@@ -95,7 +104,9 @@ function ProductDevelopment() {
                     <h3 className="font-display text-xl font-bold text-foreground mb-3">
                       {p.title}
                     </h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">{p.body}</p>
+                    <p className="whitespace-pre-line text-sm leading-relaxed text-muted-foreground">
+                      {p.body}
+                    </p>
                   </div>
                 </div>
               );
@@ -115,16 +126,28 @@ function ProductDevelopment() {
             <h2 className="font-display text-3xl md:text-4xl font-extrabold text-foreground mb-8">
               {copy.typesTitle}
             </h2>
-            <div className="space-y-4">
+            <div className="grid gap-4 sm:grid-cols-2">
               {localizedPackagingTypes.map((t) => (
                 <div
                   key={t.code}
-                  className="group flex gap-5 rounded-2xl border border-border bg-card p-5 md:p-6 hover:border-primary/40 hover:shadow-glow transition-[border-color,box-shadow] duration-200"
+                  className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card transition-[border-color,box-shadow,transform] duration-200 hover:border-primary/40 hover:shadow-glow motion-safe:hover:-translate-y-0.5"
                 >
-                  <div className="flex-shrink-0 flex items-center justify-center h-16 w-16 md:h-20 md:w-20 rounded-xl bg-gradient-brand text-white font-display font-extrabold text-lg md:text-xl motion-safe:group-hover:scale-105 motion-safe:transition-transform motion-safe:duration-200">
-                    {t.code}
+                  <div className="aspect-[4/3] overflow-hidden bg-white">
+                    <img
+                      src={t.image.src}
+                      alt={`${t.title} available formats`}
+                      className="h-full w-full object-contain motion-safe:transition-transform motion-safe:duration-500 motion-safe:group-hover:scale-[1.02]"
+                      loading="lazy"
+                      decoding="async"
+                      width={t.image.width}
+                      height={t.image.height}
+                      sizes="(min-width: 1024px) 340px, (min-width: 640px) calc(50vw - 2rem), calc(100vw - 2rem)"
+                    />
                   </div>
-                  <div>
+                  <div className="flex flex-1 flex-col p-5 md:p-6">
+                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-brand font-display text-base font-extrabold text-white">
+                      {t.code}
+                    </div>
                     <h3 className="font-display text-lg font-bold text-foreground mb-1">
                       {t.title}
                     </h3>
@@ -148,13 +171,15 @@ function ProductDevelopment() {
                 {localizedFormats.map((f, i) => (
                   <div
                     key={i}
-                    className={`flex items-center justify-between px-5 py-4 ${i !== 0 ? "border-t border-border" : ""}`}
+                    className={`flex items-center justify-between gap-4 px-5 py-4 ${i !== 0 ? "border-t border-border" : ""}`}
                   >
-                    <div className="flex items-center gap-3">
+                    <div className="flex shrink-0 items-center gap-3">
                       <Boxes className="h-4 w-4 text-primary" />
                       <span className="font-semibold text-foreground">{f.type}</span>
                     </div>
-                    <span className="text-sm text-muted-foreground">{f.size}</span>
+                    <span className="min-w-0 text-right text-sm leading-relaxed text-muted-foreground">
+                      {f.size}
+                    </span>
                   </div>
                 ))}
               </div>

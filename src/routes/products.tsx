@@ -8,13 +8,13 @@ import plasticCapImg from "@/assets/optimized/pkg-plastic-cap-card.jpg";
 import petBottleImg from "@/assets/optimized/pkg-pet-bottle-card.jpg";
 import petPreformImg from "@/assets/optimized/pkg-pet-preform-card.jpg";
 import labelImg from "@/assets/optimized/pkg-label-card.jpg";
-import prodElectrolyteImg from "@/assets/optimized/prod-electrolyte-card.jpg";
-import prodFlavoredImg from "@/assets/optimized/prod-flavored-card.jpg";
-import prodSoftDrinkImg from "@/assets/optimized/prod-soft-drink-card.jpg";
-import prodTeaImg from "@/assets/optimized/prod-tea-card.jpg";
-import prodFruitJuiceImg from "@/assets/optimized/prod-fruit-juice-card.jpg";
-import prodEnergyImg from "@/assets/optimized/prod-energy-card.jpg";
-import prodDairyImg from "@/assets/optimized/prod-dairy-card.jpg";
+import prodEnergyImg from "@/Energy Drinks.webp";
+import prodSoftDrinkImg from "@/Carbonated Soft Drinks.webp";
+import prodFruitJuiceImg from "@/Fruit Drinks.webp";
+import prodElectrolyteImg from "@/Electrolyte Drinks.webp";
+import prodFlavoredImg from "@/Flavored Drinks.webp";
+import prodTeaImg from "@/Tea & Functional Beverages.webp";
+import prodDairyImg from "@/UHT Products.webp";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 export const Route = createFileRoute("/products")({
@@ -53,15 +53,15 @@ const gridImageSizes =
   "(min-width: 1280px) 405px, (min-width: 1024px) calc((100vw - 8rem) / 3), (min-width: 768px) calc((100vw - 5rem) / 2), calc(100vw - 2rem)";
 
 const beverageProductMedia: ImageAsset[] = [
-  { src: prodEnergyImg, width: 960, height: 480 },
-  { src: prodSoftDrinkImg, width: 960, height: 640 },
-  { src: prodFruitJuiceImg, width: 960, height: 538 },
-  { src: prodElectrolyteImg, width: 960, height: 479 },
-  { src: prodFlavoredImg, width: 960, height: 479 },
-  { src: prodTeaImg, width: 960, height: 537 },
+  { src: prodEnergyImg, width: 1448, height: 1086 },
+  { src: prodFruitJuiceImg, width: 1448, height: 1086 },
+  { src: prodElectrolyteImg, width: 1448, height: 1086 },
+  { src: prodFlavoredImg, width: 1448, height: 1086 },
+  { src: prodTeaImg, width: 1448, height: 1086 },
+  { src: prodDairyImg, width: 1448, height: 1086 },
 ];
 
-const upcomingProductMedia: ImageAsset[] = [{ src: prodDairyImg, width: 960, height: 641 }];
+const upcomingProductMedia: ImageAsset[] = [{ src: prodSoftDrinkImg, width: 1448, height: 1086 }];
 
 const packagingProductMedia: Array<ImageAsset | undefined> = [
   { src: plasticCapImg, width: 960, height: 640 },
@@ -101,7 +101,11 @@ function ProductInquiryCard({
     >
       <article className="flex h-full flex-col">
         {product.image ? (
-          <div className="relative h-48 w-full overflow-hidden bg-muted">
+          <div
+            className={`relative w-full overflow-hidden bg-muted ${
+              product.category === "beverage" ? "aspect-[4/3]" : "h-48"
+            }`}
+          >
             <img
               src={product.image.src}
               alt={product.name}
@@ -112,11 +116,6 @@ function ProductInquiryCard({
               height={product.image.height}
               sizes={gridImageSizes}
             />
-            {product.status && (
-              <span className="absolute left-4 top-4 rounded-full bg-accent px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-accent-foreground shadow-sm">
-                {product.status}
-              </span>
-            )}
           </div>
         ) : (
           <div className="relative flex h-48 w-full items-center justify-center overflow-hidden bg-gradient-brand">
@@ -145,16 +144,18 @@ function ProductInquiryCard({
           <h3 className="font-display text-2xl font-bold mb-3">{product.name}</h3>
           <p className="text-muted-foreground leading-relaxed">{product.desc}</p>
 
-          <div className="mt-5 flex flex-wrap gap-2">
-            {product.specs.map((spec) => (
-              <span
-                key={spec}
-                className="rounded-md bg-muted px-2.5 py-1 text-xs font-medium text-foreground/80"
-              >
-                {spec}
-              </span>
-            ))}
-          </div>
+          {product.specs.length > 0 && (
+            <div className="mt-5 flex flex-wrap gap-2">
+              {product.specs.map((spec) => (
+                <span
+                  key={spec}
+                  className="rounded-md bg-muted px-2.5 py-1 text-xs font-medium text-foreground/80"
+                >
+                  {spec}
+                </span>
+              ))}
+            </div>
+          )}
 
           {product.items && (
             <ul className="mt-5 space-y-2">
@@ -167,10 +168,12 @@ function ProductInquiryCard({
             </ul>
           )}
 
-          <span className="mt-6 inline-flex min-h-11 items-center gap-2 self-start rounded-full bg-foreground px-5 py-2.5 text-sm font-semibold text-background transition-colors duration-200 group-hover:bg-primary">
-            {product.inquiryLabel}
-            <ArrowRight className="h-4 w-4 motion-safe:transition-transform motion-safe:duration-200 motion-safe:group-hover:translate-x-1" />
-          </span>
+          <div className="mt-auto pt-6">
+            <span className="inline-flex min-h-11 items-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-sm font-semibold text-background transition-colors duration-200 group-hover:bg-primary">
+              {product.inquiryLabel}
+              <ArrowRight className="h-4 w-4 motion-safe:transition-transform motion-safe:duration-200 motion-safe:group-hover:translate-x-1" />
+            </span>
+          </div>
         </div>
       </article>
     </Link>
@@ -291,28 +294,30 @@ function Products() {
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{copy.briefBody}</p>
             </div>
             <div className="grid gap-3 sm:grid-cols-2">
-              {localizedQuickInquiries.map(({ category, product, title, body, icon: Icon }) => (
-                <Link
-                  key={category}
-                  to="/contact"
-                  search={{ category, product }}
-                  className="focus-ring group flex min-h-32 items-start gap-4 rounded-2xl border border-border bg-card p-4 transition-[border-color,box-shadow] duration-200 hover:border-primary/40 hover:shadow-soft"
-                >
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-brand text-white">
-                    <Icon className="h-5 w-5" />
-                  </span>
-                  <span>
-                    <span className="block font-display text-lg font-bold">{title}</span>
-                    <span className="mt-1 block text-sm leading-relaxed text-muted-foreground">
-                      {body}
+              {localizedQuickInquiries.map(
+                ({ category, product, title, body, cta, icon: Icon }) => (
+                  <Link
+                    key={category}
+                    to="/contact"
+                    search={{ category, product }}
+                    className="focus-ring group flex h-full min-h-32 items-start gap-4 rounded-2xl border border-border bg-card p-4 transition-[border-color,box-shadow] duration-200 hover:border-primary/40 hover:shadow-soft"
+                  >
+                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-brand text-white">
+                      <Icon className="h-5 w-5" />
                     </span>
-                    <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
-                      {copy.openInquiry}
-                      <ArrowRight className="h-4 w-4 motion-safe:transition-transform motion-safe:duration-200 motion-safe:group-hover:translate-x-1" />
+                    <span className="flex min-w-0 flex-1 flex-col self-stretch">
+                      <span className="block font-display text-lg font-bold">{title}</span>
+                      <span className="mt-1 block text-sm leading-relaxed text-muted-foreground">
+                        {body}
+                      </span>
+                      <span className="mt-auto inline-flex items-center gap-1.5 pt-3 text-sm font-semibold text-primary">
+                        {cta}
+                        <ArrowRight className="h-4 w-4 motion-safe:transition-transform motion-safe:duration-200 motion-safe:group-hover:translate-x-1" />
+                      </span>
                     </span>
-                  </span>
-                </Link>
-              ))}
+                  </Link>
+                ),
+              )}
             </div>
           </div>
         </div>

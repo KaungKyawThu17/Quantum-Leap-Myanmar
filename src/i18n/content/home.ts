@@ -45,9 +45,9 @@ export const homeContent = {
       { title: "Flexible Formats", desc: "Multiple packaging sizes and types" },
     ],
     productEyebrow: "Product Categories",
-    productTitle: "Packaging and beverages under one roof.",
+    productTitle: "A complete beverage and packaging solution",
     productBody:
-      "From PET bottles and caps to finished beverages — we supply the complete manufacturing and packaging ecosystem your brand needs.",
+      "From beverage formulation and production to packaging coordination including PET bottles, caps, labeling, and finished products we provide an integrated OEM solution through our manufacturing and supplier network to support your brand from concept to market.",
     packagingTab: "Packaging",
     packagingSub: "Caps · Bottles · Labels",
     beverageTab: "Beverages",

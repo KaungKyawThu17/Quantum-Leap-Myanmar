@@ -2,15 +2,14 @@ export const aboutContent = {
   en: {
     eyebrow: "About Us",
     heroTitle: "Building Myanmar's premier beverage manufacturing platform.",
-    heroSubtitle:
-      "From Kaung Htet Myanmar Manufacturing to QUANTUM LEAP — a new chapter of scale, technology, and global ambition.",
+    heroSubtitle: "A new chapter of scale, technology, and global ambition.",
     imageAlt: "Factory",
     overviewEyebrow: "Company Overview",
     overviewTitle: "A next-generation beverage manufacturer.",
     overview1:
-      "QUANTUM LEAP is focused on OEM and ODM beverage production. Formerly operating as Kaung Htet Myanmar Manufacturing, the facility previously produced recognized beverage brands such as Pokka Orange and Sponsor Energy.",
+      "Welcome to QUANTUM LEAP, an industry-leading OEM and ODM partner for advanced beverage production. Since expanding our facility infrastructure in 2025, we have significantly boosted our production capacity to meet the demands of major market players.",
     overview2:
-      "Following acquisition in 2025, QUANTUM LEAP has expanded operations to support products including 7go, Spider, ISO Plus, and Burma Club Whisky.",
+      "Today, our state-of-the-art operations proudly power a wide range of recognized products, including Puma, 7go, Spider, ISO Plus, and Burma Club Whisky, offering end-to-end manufacturing solutions tailored for brand growth.",
     cards: [
       {
         id: "vision",
@@ -48,15 +47,14 @@ We sincerely thank all our customers, partners, and stakeholders for being part 
   my: {
     eyebrow: "ကျွန်ုပ်တို့အကြောင်း",
     heroTitle: "မြန်မာနိုင်ငံ၏ ထိပ်တန်း အဖျော်ယမကာ ထုတ်လုပ်ရေး ပလက်ဖောင်းကို တည်ဆောက်နေပါသည်။",
-    heroSubtitle:
-      "Kaung Htet Myanmar Manufacturing မှ QUANTUM LEAP သို့ ပြောင်းလဲလာသော စကေး၊ နည်းပညာနှင့် နိုင်ငံတကာ မျှော်မှန်းချက်များ၏ အခန်းသစ်။",
+    heroSubtitle: "စကေး၊ နည်းပညာနှင့် နိုင်ငံတကာ မျှော်မှန်းချက်များ၏ အခန်းသစ်။",
     imageAlt: "စက်ရုံ",
     overviewEyebrow: "ကုမ္ပဏီ အကျဉ်းချုပ်",
     overviewTitle: "မျိုးဆက်သစ် အဖျော်ယမကာ ထုတ်လုပ်ရေး ကုမ္ပဏီ။",
     overview1:
-      "Quantum Leap သည် OEM နှင့် ODM အဖျော်ယမကာ ထုတ်လုပ်မှုအပေါ် အဓိကထားသည့် မျိုးဆက်သစ် အဖျော်ယမကာ ထုတ်လုပ်ရေး ကုမ္ပဏီတစ်ခု ဖြစ်ပါသည်။ ယခင်က Kaung Htet Myanmar Manufacturing အမည်ဖြင့် လုပ်ကိုင်ခဲ့စဉ်က Pokka Orange နှင့် Sponsor အားဖြည့်အချိုရည် ကဲ့သို့သော လူသိများသည့် အမှတ်တံဆိပ်များကို ထုတ်လုပ်ခဲ့ပါသည်။",
+      "QUANTUM LEAP မှ ကြိုဆိုပါသည်။ ကျွန်ုပ်တို့သည် အဆင့်မြင့် အဖျော်ယမကာ ထုတ်လုပ်မှုအတွက် လုပ်ငန်းဦးဆောင် OEM နှင့် ODM မိတ်ဖက်တစ်ခု ဖြစ်ပါသည်။ ၂၀၂၅ ခုနှစ်တွင် စက်ရုံအခြေခံအဆောက်အအုံများကို တိုးချဲ့ပြီးနောက် အဓိကဈေးကွက် လုပ်ငန်းများ၏ လိုအပ်ချက်များကို ဖြည့်ဆည်းနိုင်ရန် ထုတ်လုပ်မှုစွမ်းရည်ကို သိသိသာသာ မြှင့်တင်ခဲ့ပါသည်။",
     overview2:
-      "၂၀၂၅ ခုနှစ်တွင် လုပ်ငန်းလွှဲပြောင်းရယူပြီးနောက် Quantum Leap သည် လက်ရှိ 7go, Spider, ISO Plus နှင့် Burma Club Whisky အစရှိသည့် ထုတ်ကုန်များကို တာဝန်ယူပြီး ထုတ်လုပ်မှုများကို တိုးချဲ့နိုင်ရန် စီစဉ်နေပါသည်။",
+      "ယနေ့တွင် ကျွန်ုပ်တို့၏ ခေတ်မီထုတ်လုပ်မှုစနစ်များဖြင့် Puma၊ 7go၊ Spider၊ ISO Plus နှင့် Burma Club Whisky အပါအဝင် လူသိများသော ထုတ်ကုန်များစွာကို ထုတ်လုပ်ပေးနေပြီး အမှတ်တံဆိပ်များ တိုးတက်ရန် လိုအပ်သော အစမှအဆုံး ထုတ်လုပ်မှုဖြေရှင်းချက်များကို ပံ့ပိုးပေးနေပါသည်။",
     cards: [
       {
         id: "vision",

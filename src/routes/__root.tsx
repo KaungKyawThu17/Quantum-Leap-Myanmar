@@ -19,6 +19,19 @@ const siteTitle = "QUANTUM LEAP — Myanmar OEM and ODM Beverage Manufacturing";
 const siteDescription =
   "QUANTUM LEAP is a Myanmar-based OEM and ODM beverage manufacturer offering PET bottling, beverage formulation, and scale-up production solutions.";
 const socialImageUrl = siteUrl ? new URL(logo, siteUrl).toString() : logo;
+const preloadErrorRecoveryScript = `
+window.addEventListener("vite:preloadError", function (event) {
+  var key = "ql-preload-reload";
+  var now = Date.now();
+  var lastReload = Number(sessionStorage.getItem(key) || 0);
+
+  if (now - lastReload > 10000) {
+    event.preventDefault();
+    sessionStorage.setItem(key, String(now));
+    window.location.reload();
+  }
+});
+`;
 
 function getCanonicalUrl(pathname = "/") {
   if (!siteUrl) return undefined;
@@ -138,6 +151,7 @@ function RootShell({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         {children}
+        <script dangerouslySetInnerHTML={{ __html: preloadErrorRecoveryScript }} />
         <Scripts />
       </body>
     </html>

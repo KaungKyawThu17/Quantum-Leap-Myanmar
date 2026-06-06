@@ -8,13 +8,13 @@ import plasticCapImg from "@/assets/optimized/pkg-plastic-cap-card.jpg";
 import petBottleImg from "@/assets/optimized/pkg-pet-bottle-card.jpg";
 import petPreformImg from "@/assets/optimized/pkg-pet-preform-card.jpg";
 import labelImg from "@/assets/optimized/pkg-label-card.jpg";
-import prodEnergyImg from "@/Energy Drinks.webp";
-import prodSoftDrinkImg from "@/Carbonated Soft Drinks.webp";
-import prodFruitJuiceImg from "@/Fruit Drinks.webp";
-import prodElectrolyteImg from "@/Electrolyte Drinks.webp";
-import prodFlavoredImg from "@/Flavored Drinks.webp";
-import prodTeaImg from "@/Tea & Functional Beverages.webp";
-import prodDairyImg from "@/UHT Products.webp";
+import prodEnergyImg from "@/energy-drinks.webp";
+import prodSoftDrinkImg from "@/carbonated-soft-drinks.webp";
+import prodFruitJuiceImg from "@/fruit-drinks.webp";
+import prodElectrolyteImg from "@/electrolyte-drinks.webp";
+import prodFlavoredImg from "@/flavored-drinks.webp";
+import prodTeaImg from "@/tea-functional-beverages.webp";
+import prodDairyImg from "@/uht-products.webp";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 export const Route = createFileRoute("/products")({

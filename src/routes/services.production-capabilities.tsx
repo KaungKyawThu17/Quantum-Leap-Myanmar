@@ -14,7 +14,6 @@ import {
   Layers,
   PackageOpen,
   Thermometer,
-  Sparkles,
   Package,
   Gauge,
   Clock,
@@ -45,19 +44,11 @@ type ImageAsset = {
 };
 
 const productionStatIcons = [Gauge, Factory, Clock] as const;
-const productionLineIcons = [
-  Droplets,
-  Layers,
-  PackageOpen,
-  Thermometer,
-  Sparkles,
-  Package,
-] as const;
+const productionLineIcons = [Droplets, Layers, PackageOpen, Thermometer, Package] as const;
 const productionLineMedia: Array<ImageAsset | undefined> = [
   { src: petLineImg, width: 3840, height: 2160, alt: "PET bottling production line" },
   { src: dualLineImg, width: 6597, height: 4398, alt: "Dual PET bottling production line" },
   { src: pouchLineImg, width: 3840, height: 2160, alt: "Standing pouch production line" },
-  undefined,
   undefined,
   undefined,
 ];

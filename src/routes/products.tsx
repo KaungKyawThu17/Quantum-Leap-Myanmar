@@ -10,7 +10,6 @@ import petPreformImg from "@/assets/optimized/pkg-pet-preform-card.jpg";
 import labelImg from "@/assets/optimized/pkg-label-card.jpg";
 import prodEnergyImg from "@/energy-drinks.webp";
 import prodSoftDrinkImg from "@/carbonated-soft-drinks.webp";
-import prodFruitJuiceImg from "@/fruit-drinks.webp";
 import prodElectrolyteImg from "@/electrolyte-drinks.webp";
 import prodFlavoredImg from "@/flavored-drinks.webp";
 import prodTeaImg from "@/tea-functional-beverages.webp";
@@ -44,7 +43,6 @@ type ProductCardData = {
   image?: ImageAsset;
   desc: string;
   specs: string[];
-  inquiryLabel: string;
   status?: string;
   items?: string[];
 };
@@ -54,7 +52,6 @@ const gridImageSizes =
 
 const beverageProductMedia: ImageAsset[] = [
   { src: prodEnergyImg, width: 1448, height: 1086 },
-  { src: prodFruitJuiceImg, width: 1448, height: 1086 },
   { src: prodElectrolyteImg, width: 1448, height: 1086 },
   { src: prodFlavoredImg, width: 1448, height: 1086 },
   { src: prodTeaImg, width: 1448, height: 1086 },
@@ -71,14 +68,7 @@ const packagingProductMedia: Array<ImageAsset | undefined> = [
   undefined,
 ];
 
-const quickInquiryIcons = [GlassWater, Package] as const;
-
-function getInquirySearch(product: Pick<ProductCardData, "category" | "name">) {
-  return {
-    category: product.category,
-    product: product.name,
-  };
-}
+const quickInquiryIcons = [GlassWater] as const;
 
 function ProductInquiryCard({
   product,
@@ -91,92 +81,80 @@ function ProductInquiryCard({
   const copy = content.products;
 
   return (
-    <Link
-      to="/contact"
-      search={getInquirySearch(product)}
-      aria-label={`${product.inquiryLabel} ${copy.ariaFor} ${product.name}`}
-      className={`focus-ring group flex h-full flex-col overflow-hidden rounded-3xl border bg-card transition-[border-color,box-shadow,transform] duration-200 hover:border-primary/40 hover:shadow-glow motion-safe:hover:-translate-y-0.5 ${
+    <article
+      className={`group flex h-full flex-col overflow-hidden rounded-3xl border bg-card shadow-soft transition-[border-color,box-shadow,transform] duration-200 hover:border-primary/40 hover:shadow-glow motion-safe:hover:-translate-y-0.5 ${
         variant === "dashed" ? "border-dashed border-primary/30" : "border-border"
       }`}
     >
-      <article className="flex h-full flex-col">
-        {product.image ? (
-          <div
-            className={`relative w-full overflow-hidden bg-muted ${
-              product.category === "beverage" ? "aspect-[4/3]" : "h-48"
-            }`}
-          >
-            <img
-              src={product.image.src}
-              alt={product.name}
-              className="h-full w-full object-cover motion-safe:group-hover:scale-105 motion-safe:transition-transform motion-safe:duration-500"
-              loading="lazy"
-              decoding="async"
-              width={product.image.width}
-              height={product.image.height}
-              sizes={gridImageSizes}
-            />
-          </div>
-        ) : (
-          <div className="relative flex h-48 w-full items-center justify-center overflow-hidden bg-gradient-brand">
-            <div className="relative z-10 flex flex-col items-center gap-3">
-              <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-white/20 bg-white/10 backdrop-blur-sm motion-safe:group-hover:scale-110 motion-safe:transition-transform motion-safe:duration-300">
-                <Palette className="h-8 w-8 text-white" />
-              </div>
-              <span className="text-sm font-semibold tracking-wide text-white/90">
-                {copy.tailored}
-              </span>
+      {product.image ? (
+        <div
+          className={`relative w-full overflow-hidden bg-muted ${
+            product.category === "beverage" ? "aspect-[4/3]" : "h-48"
+          }`}
+        >
+          <img
+            src={product.image.src}
+            alt={product.name}
+            className="h-full w-full object-cover motion-safe:transition-transform motion-safe:duration-500 motion-safe:group-hover:scale-105"
+            loading="lazy"
+            decoding="async"
+            width={product.image.width}
+            height={product.image.height}
+            sizes={gridImageSizes}
+          />
+        </div>
+      ) : (
+        <div className="relative flex h-48 w-full items-center justify-center overflow-hidden bg-gradient-brand">
+          <div className="relative z-10 flex flex-col items-center gap-3">
+            <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-white/20 bg-white/10 backdrop-blur-sm motion-safe:transition-transform motion-safe:duration-300 motion-safe:group-hover:scale-110">
+              <Palette className="h-8 w-8 text-white" />
             </div>
-          </div>
-        )}
-
-        <div className="flex flex-1 flex-col p-6 md:p-8">
-          <div className="mb-3 flex flex-wrap items-center gap-2">
-            <span className="rounded-full bg-primary/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-primary">
-              {copy.categoryLabels[product.category]}
-            </span>
-            {product.status && (
-              <span className="rounded-full bg-accent/15 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-accent-text">
-                {product.status}
-              </span>
-            )}
-          </div>
-          <h3 className="font-display text-2xl font-bold mb-3">{product.name}</h3>
-          <p className="text-muted-foreground leading-relaxed">{product.desc}</p>
-
-          {product.specs.length > 0 && (
-            <div className="mt-5 flex flex-wrap gap-2">
-              {product.specs.map((spec) => (
-                <span
-                  key={spec}
-                  className="rounded-md bg-muted px-2.5 py-1 text-xs font-medium text-foreground/80"
-                >
-                  {spec}
-                </span>
-              ))}
-            </div>
-          )}
-
-          {product.items && (
-            <ul className="mt-5 space-y-2">
-              {product.items.map((item) => (
-                <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          )}
-
-          <div className="mt-auto pt-6">
-            <span className="inline-flex min-h-11 items-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-sm font-semibold text-background transition-colors duration-200 group-hover:bg-primary">
-              {product.inquiryLabel}
-              <ArrowRight className="h-4 w-4 motion-safe:transition-transform motion-safe:duration-200 motion-safe:group-hover:translate-x-1" />
+            <span className="text-sm font-semibold tracking-wide text-white/90">
+              {copy.tailored}
             </span>
           </div>
         </div>
-      </article>
-    </Link>
+      )}
+
+      <div className="flex flex-1 flex-col p-6 md:p-8">
+        <div className="mb-3 flex flex-wrap items-center gap-2">
+          <span className="rounded-full bg-primary/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-primary">
+            {copy.categoryLabels[product.category]}
+          </span>
+          {product.status && (
+            <span className="rounded-full bg-accent/15 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-accent-text">
+              {product.status}
+            </span>
+          )}
+        </div>
+        <h3 className="font-display text-2xl font-bold mb-3">{product.name}</h3>
+        <p className="text-muted-foreground leading-relaxed">{product.desc}</p>
+
+        {product.specs.length > 0 && (
+          <div className="mt-5 flex flex-wrap gap-2">
+            {product.specs.map((spec) => (
+              <span
+                key={spec}
+                className="rounded-md bg-muted px-2.5 py-1 text-xs font-medium text-foreground/80"
+              >
+                {spec}
+              </span>
+            ))}
+          </div>
+        )}
+
+        {product.items && (
+          <ul className="mt-5 space-y-2">
+            {product.items.map((item) => (
+              <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                {item}
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+    </article>
   );
 }
 
@@ -275,7 +253,6 @@ function Products() {
           </div>
           <Link
             to="/contact"
-            search={{ category: "beverage", product: copy.productInquiry }}
             className="focus-ring hidden min-h-11 items-center rounded-full bg-foreground px-4 py-2 text-sm font-semibold text-background transition-colors duration-200 hover:bg-primary sm:inline-flex md:hidden"
           >
             {copy.quote}
@@ -293,31 +270,25 @@ function Products() {
               <h2 className="font-display text-2xl font-bold leading-tight">{copy.briefTitle}</h2>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{copy.briefBody}</p>
             </div>
-            <div className="grid gap-3 sm:grid-cols-2">
-              {localizedQuickInquiries.map(
-                ({ category, product, title, body, cta, icon: Icon }) => (
-                  <Link
-                    key={category}
-                    to="/contact"
-                    search={{ category, product }}
-                    className="focus-ring group flex h-full min-h-32 items-start gap-4 rounded-2xl border border-border bg-card p-4 transition-[border-color,box-shadow] duration-200 hover:border-primary/40 hover:shadow-soft"
-                  >
-                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-brand text-white">
-                      <Icon className="h-5 w-5" />
+            <div className="grid gap-3">
+              {localizedQuickInquiries.map(({ category, title, body, icon: Icon }) => (
+                <Link
+                  key={category}
+                  to="/contact"
+                  className="focus-ring group flex h-full min-h-32 items-start gap-4 rounded-2xl border border-border bg-card p-4 transition-[border-color,box-shadow,transform] duration-200 hover:border-primary/40 hover:shadow-soft motion-safe:hover:-translate-y-0.5"
+                >
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-brand text-white motion-safe:transition-transform motion-safe:duration-200 motion-safe:group-hover:scale-105">
+                    <Icon className="h-5 w-5" />
+                  </span>
+                  <span className="flex min-w-0 flex-1 flex-col self-stretch">
+                    <span className="block font-display text-lg font-bold">{title}</span>
+                    <span className="mt-1 block text-sm leading-relaxed text-muted-foreground">
+                      {body}
                     </span>
-                    <span className="flex min-w-0 flex-1 flex-col self-stretch">
-                      <span className="block font-display text-lg font-bold">{title}</span>
-                      <span className="mt-1 block text-sm leading-relaxed text-muted-foreground">
-                        {body}
-                      </span>
-                      <span className="mt-auto inline-flex items-center gap-1.5 pt-3 text-sm font-semibold text-primary">
-                        {cta}
-                        <ArrowRight className="h-4 w-4 motion-safe:transition-transform motion-safe:duration-200 motion-safe:group-hover:translate-x-1" />
-                      </span>
-                    </span>
-                  </Link>
-                ),
-              )}
+                  </span>
+                  <ArrowRight className="mt-1 h-4 w-4 shrink-0 text-primary motion-safe:transition-transform motion-safe:duration-200 motion-safe:group-hover:translate-x-1" />
+                </Link>
+              ))}
             </div>
           </div>
         </div>

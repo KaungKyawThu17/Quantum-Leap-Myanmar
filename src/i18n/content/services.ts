@@ -28,7 +28,7 @@ export const servicesContent = {
         "Multiple high-throughput lines built for flexibility and scale — engineered to support your brand at every volume.",
       stats: [
         { value: "24,000", label: "Max bottles per hour", suffix: "BPH" },
-        { value: "6", label: "Production lines", suffix: "Lines" },
+        { value: "5", label: "Production lines", suffix: "Lines" },
         { value: "24/7", label: "Operational capacity", suffix: "Uptime" },
       ],
       introTitle: "Built for flexibility. Engineered for scale.",
@@ -74,15 +74,6 @@ export const servicesContent = {
           body: "Advanced UHT beverage processing engineered for dairy and plant-based beverage products.",
           highlights: ["Long shelf life", "Aseptic process", "Dairy + plant"],
           status: "active",
-        },
-        {
-          name: "CSD",
-          tag: "Coming Soon",
-          capacity: "Soon",
-          unit: "expansion phase",
-          body: "Expansion into high-speed carbonated soft drink systems for large-scale beverage production.",
-          highlights: ["Carbonation", "Multiple flavors", "High-speed"],
-          status: "soon",
         },
         {
           name: "Canning Line",
@@ -147,7 +138,6 @@ export const servicesContent = {
       formatsEyebrow: "Available Formats",
       formatsTitle: "Sizes & SKUs",
       formats: [
-        { type: "PET", size: "190 ml" },
         { type: "PET", size: "250 ml" },
         { type: "PET", size: "320 ml" },
         { type: "PET", size: "500 ml" },
@@ -167,7 +157,6 @@ export const servicesContent = {
       stats: [
         { value: "10", label: "Acre integrated campus" },
         { value: "26K", label: "Bottles/hr blowing capacity" },
-        { value: "58t", label: "Cold storage capacity" },
       ],
       introTitle: "Inside our integrated manufacturing campus.",
       intro1:
@@ -244,7 +233,7 @@ export const servicesContent = {
         },
         {
           title: "Cold Storage",
-          eyebrow: "03 — Cold Chain",
+          eyebrow: "03 — Temperature Control",
           items: [
             { label: "Frozen Storage", detail: "39 tons capacity" },
             { label: "Chill Room", detail: "19 tons capacity" },
@@ -256,9 +245,10 @@ export const servicesContent = {
       warehouseBody:
         "Dedicated raw material, packaging, and spare parts storage areas designed to support efficient production flow and inventory management.",
       warehouseItems: ["Raw Material", "Packaging", "Spare Parts"],
-      ctaTitle: "Want a tour of the campus?",
-      ctaBody: "Book a visit or request a virtual walkthrough of our 10-acre facility.",
-      ctaButton: "Schedule a facility tour",
+      ctaTitle: "Need to understand our facility capabilities?",
+      ctaBody:
+        "Talk with our team about production areas, utility systems, storage capacity, and operational support for your beverage project.",
+      ctaButton: "Talk to our team",
     },
   },
   my: {
@@ -291,7 +281,7 @@ export const servicesContent = {
         "ပြောင်းလွယ်ပြင်လွယ်နှင့် စကေးချဲ့နိုင်မှုအတွက် တည်ဆောက်ထားသော မြန်နှုန်းမြင့် ထုတ်လုပ်မှုလိုင်းများ။",
       stats: [
         { value: "၂၄,၀၀၀", label: "အများဆုံး ပုလင်း / နာရီ", suffix: "BPH" },
-        { value: "၆", label: "ထုတ်လုပ်မှုလိုင်းများ", suffix: "Lines" },
+        { value: "၅", label: "ထုတ်လုပ်မှုလိုင်းများ", suffix: "Lines" },
         { value: "၂၄/၇", label: "လုပ်ငန်းလည်ပတ်နိုင်စွမ်း", suffix: "Uptime" },
       ],
       introTitle: "ပြောင်းလွယ်ပြင်လွယ်ရှိပြီး စကေးချဲ့နိုင်ရန် တည်ဆောက်ထားပါသည်။",
@@ -337,15 +327,6 @@ export const servicesContent = {
           body: "နို့ထွက်ပစ္စည်းနှင့် အခြားအဖျော်ရည်များအတွက် အဆင့်မြင့် UHT စနစ်။",
           highlights: ["သက်တမ်းရှည်", "Aseptic process", "နို့ထွက် + အပင်အခြေခံ"],
           status: "active",
-        },
-        {
-          name: "CSD",
-          tag: "မကြာမီလာမည်",
-          capacity: "မကြာမီ",
-          unit: "တိုးချဲ့မှုအဆင့်",
-          body: "အကြီးစား အဖျော်ယမကာထုတ်လုပ်မှုအတွက် မြန်နှုန်းမြင့် ကာဗွန်နိတ်အချိုရည် စနစ်များသို့ တိုးချဲ့နေပါသည်။",
-          highlights: ["ကာဗွန်နိတ်", "အရသာမျိုးစုံ", "မြန်နှုန်းမြင့်"],
-          status: "soon",
         },
         {
           name: "ဘူးထုတ်လုပ်မှုလိုင်း",
@@ -410,7 +391,6 @@ export const servicesContent = {
       formatsEyebrow: "ရရှိနိုင်သော အရွယ်အစားများ",
       formatsTitle: "အရွယ်အစားနှင့် SKU များ",
       formats: [
-        { type: "PET", size: "190 ml" },
         { type: "PET", size: "250 ml" },
         { type: "PET", size: "320 ml" },
         { type: "PET", size: "500 ml" },
@@ -431,7 +411,6 @@ export const servicesContent = {
       stats: [
         { value: "၁၀", label: "ဧက စက်မှုဝန်း" },
         { value: "၂၆K", label: "ပုလင်းမှုတ်စက် / နာရီ" },
-        { value: "၅၈t", label: "အအေးခန်း သိုလှောင်နိုင်စွမ်း" },
       ],
       introTitle: "ကျွန်ုပ်တို့၏ ပေါင်းစည်းထားသော ထုတ်လုပ်ရေး စက်မှုဝန်း။",
       intro1:
@@ -508,7 +487,7 @@ export const servicesContent = {
         },
         {
           title: "အအေးခန်း သိုလှောင်ရုံ",
-          eyebrow: "03 — Cold Chain",
+          eyebrow: "03 — အပူချိန်ထိန်းချုပ်မှု",
           items: [
             { label: "အေးခဲသိုလှောင်မှု", detail: "၃၉ တန် သိုလှောင်နိုင်စွမ်း" },
             { label: "အအေးခန်း", detail: "၁၉ တန် သိုလှောင်နိုင်စွမ်း" },
@@ -520,10 +499,10 @@ export const servicesContent = {
       warehouseBody:
         "ကုန်ကြမ်းနှင့် ထုပ်ပိုးပစ္စည်းများအတွက် သီးသန့်နေရာများ၊ spare parts သိုလှောင်ရုံများဖြင့် ထုတ်လုပ်မှုစီးဆင်းမှုနှင့် inventory စီမံခန့်ခွဲမှုကို ထိရောက်စွာ ပံ့ပိုးပေးပါသည်။",
       warehouseItems: ["ကုန်ကြမ်း", "ထုပ်ပိုးပစ္စည်း", "Spare Parts"],
-      ctaTitle: "စက်မှုဝန်းကို လေ့လာလိုပါသလား?",
+      ctaTitle: "ကျွန်ုပ်တို့၏ စက်ရုံစွမ်းဆောင်ရည်များကို သိလိုပါသလား?",
       ctaBody:
-        "ကျွန်ုပ်တို့၏ ၁၀ ဧက စက်ရုံသို့ လာရောက်လည်ပတ်ရန် သို့မဟုတ် virtual walkthrough တောင်းဆိုရန် ဆက်သွယ်နိုင်ပါသည်။",
-      ctaButton: "စက်ရုံလည်ပတ်ရန် စီစဉ်ပါ",
+        "သင့်အဖျော်ယမကာစီမံကိန်းအတွက် ထုတ်လုပ်ရေးနေရာများ၊ အထောက်အကူပြုစနစ်များ၊ သိုလှောင်နိုင်စွမ်းနှင့် လုပ်ငန်းလည်ပတ်မှုပံ့ပိုးမှုများအကြောင်း ကျွန်ုပ်တို့အဖွဲ့နှင့် ဆွေးနွေးနိုင်ပါသည်။",
+      ctaButton: "ကျွန်ုပ်တို့အဖွဲ့နှင့် ဆွေးနွေးရန်",
     },
   },
 } as const;

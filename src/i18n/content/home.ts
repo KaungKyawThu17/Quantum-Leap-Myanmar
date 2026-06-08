@@ -9,7 +9,7 @@ export const homeContent = {
     heroSuffix: "Partner",
     heroBody:
       "QUANTUM LEAP is a Myanmar-based OEM beverage manufacturer specializing in PET bottling, beverage formulation, and scalable production solutions for local and international brands.",
-    quote: "Request a Quotation",
+    quote: "Talk to us",
     exploreProducts: "Explore Products",
     exploreServices: "Explore Services",
     proof2: "24,000 BPH Capacity",
@@ -84,7 +84,7 @@ export const homeContent = {
       },
       {
         title: "Innovation & Packaging Development",
-        desc: "With advanced manufacturing capabilities, QUANTUM LEAP develops customized PET bottles, closures, and packaging solutions designed to support diverse beverage categories and evolving consumer demands.",
+        desc: "We assist clients in designing and coordinating PET bottle concepts, closure compatibility, and packaging structures that are technically suitable for beverage production, filling systems, and supply chain efficiency across diverse beverage categories.",
       },
     ],
     whyEyebrow: "Why Choose Us",
@@ -97,7 +97,7 @@ export const homeContent = {
       "Scalable production systems for any brand size",
       "Advanced manufacturing technologies",
       "FDA & Halal certified operations",
-      "End-to-end OEM & ODM solutions",
+      "End-to-end OEM beverage solution combining product formulation, packaging coordination, and production execution",
     ],
     ctaTitle: "Start your beverage brand with QUANTUM LEAP.",
     ctaBody:

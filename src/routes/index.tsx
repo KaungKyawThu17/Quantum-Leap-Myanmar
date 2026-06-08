@@ -8,11 +8,11 @@ import plasticCapImg from "@/assets/optimized/pkg-plastic-cap-card.jpg";
 import petBottleImg from "@/assets/optimized/pkg-pet-bottle-card.jpg";
 import petPreformImg from "@/assets/optimized/pkg-pet-preform-card.jpg";
 import labelImg from "@/assets/optimized/pkg-label-card.jpg";
-import bevElectrolyteImg from "@/assets/optimized/prod-electrolyte-card.jpg";
-import bevSoftDrinkImg from "@/assets/optimized/prod-soft-drink-card.jpg";
-import bevFlavoredImg from "@/assets/optimized/prod-flavored-card.jpg";
-import bevTeaImg from "@/assets/optimized/prod-tea-card.jpg";
-import bevDairyImg from "@/uht-products.webp";
+import prodEnergyImg from "@/energy-drinks.webp";
+import prodSoftDrinkImg from "@/carbonated-soft-drinks.webp";
+import prodFruitJuiceImg from "@/fruit-drinks.webp";
+import prodTeaImg from "@/tea-functional-beverages.webp";
+import prodDairyImg from "@/uht-products.webp";
 import welcomeImg from "@/assets/optimized/welcome-feature.jpg";
 import sevenGoLogo from "@/assets/7go.webp";
 import isoPlusLogo from "@/assets/iso-plus.webp";
@@ -102,11 +102,11 @@ const packagingProductMedia: Array<ImageAsset | undefined> = [
 ];
 
 const beverageProductMedia: ImageAsset[] = [
-  { src: bevElectrolyteImg, width: 960, height: 479 },
-  { src: bevSoftDrinkImg, width: 960, height: 640 },
-  { src: bevFlavoredImg, width: 960, height: 479 },
-  { src: bevTeaImg, width: 960, height: 537 },
-  { src: bevDairyImg, width: 1448, height: 1086 },
+  { src: prodEnergyImg, width: 1448, height: 1086 },
+  { src: prodSoftDrinkImg, width: 1448, height: 1086 },
+  { src: prodFruitJuiceImg, width: 1448, height: 1086 },
+  { src: prodTeaImg, width: 1448, height: 1086 },
+  { src: prodDairyImg, width: 1448, height: 1086 },
 ];
 
 const coreValueIcons = [Heart, Leaf, Globe, Lightbulb] as const;
@@ -242,7 +242,7 @@ function Home() {
     ...value,
     icon: coreValueIcons[index],
   }));
-  const [category, setCategory] = useState<"packaging" | "beverage">("packaging");
+  const [category, setCategory] = useState<"packaging" | "beverage">("beverage");
   const shouldLoadHeroVideo = useDeferredHeroVideo();
   return (
     <Layout>
@@ -466,18 +466,18 @@ function Home() {
             {(
               [
                 {
-                  key: "packaging",
-                  label: copy.packagingTab,
-                  sub: copy.packagingSub,
-                  icon: Package,
-                  count: localizedPackagingProducts.length,
-                },
-                {
                   key: "beverage",
                   label: copy.beverageTab,
                   sub: copy.beverageSub,
                   icon: GlassWater,
                   count: localizedBeverageProducts.length,
+                },
+                {
+                  key: "packaging",
+                  label: copy.packagingTab,
+                  sub: copy.packagingSub,
+                  icon: Package,
+                  count: localizedPackagingProducts.length,
                 },
               ] as const
             ).map(({ key, label, sub, icon: Icon, count }) => {
@@ -524,12 +524,11 @@ function Home() {
         {/* Product cards */}
         <div className="relative motion-safe:animate-fade-in" key={category}>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {(category === "packaging"
-              ? localizedPackagingProducts
-              : localizedBeverageProducts
-            ).map((p) => (
-              <ProductCard key={p.name} product={p} />
-            ))}
+            {(category === "beverage" ? localizedBeverageProducts : localizedPackagingProducts).map(
+              (p) => (
+                <ProductCard key={p.name} product={p} />
+              ),
+            )}
           </div>
         </div>
 

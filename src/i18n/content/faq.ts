@@ -6,7 +6,7 @@ export const faqContent = {
     items: [
       {
         q: "What beverage categories can QUANTUM LEAP manufacture?",
-        a: "We manufacture energy drinks, juices, flavored beverages, electrolyte drinks, soft drinks, and upcoming UHT, CSD and Canning products.",
+        a: "We manufacture energy drinks, juices, flavored beverages, electrolyte drinks, soft drinks, and upcoming UHT and Canning products.",
       },
       {
         q: "Do you provide OEM and ODM beverage services?",
@@ -15,6 +15,10 @@ export const faqContent = {
       {
         q: "What packaging formats are available?",
         a: "PET bottles, standing pouches, and future glass bottle packaging options are available.",
+      },
+      {
+        q: "Do you provide packaging solutions for beverage products?",
+        a: "Yes, we provide end-to-end packaging solution coordination including PET bottle development, cap and closure sourcing, labeling, and packaging system compatibility planning through our integrated supplier network to support complete beverage production requirements.",
       },
       {
         q: "Can QUANTUM LEAP support export production?",
@@ -29,7 +33,7 @@ export const faqContent = {
     items: [
       {
         q: "ဘယ်လို အဖျော်ယမကာ အမျိုးအစားတွေကို ထုတ်လုပ်ပေးသလဲ?",
-        a: "ကျွန်ုပ်တို့သည် အားဖြည့်အချိုရည်များ၊ ဖျော်ရည်များ၊ အနံ့အရသာပါဝင်သော အချိုရည်များ၊ ဓာတ်ဆားရည်များ၊ အချိုရည်များ (Soft Drinks) နှင့် မကြာမီလာမည့် UHT၊ CSD နှင့် စည်သွပ်ဗူး (Canning) ထုတ်ကုန်များကို ထုတ်လုပ်ပါသည်။",
+        a: "ကျွန်ုပ်တို့သည် အားဖြည့်အချိုရည်များ၊ ဖျော်ရည်များ၊ အနံ့အရသာပါဝင်သော အချိုရည်များ၊ ဓာတ်ဆားရည်များ၊ အချိုရည်များ (Soft Drinks) နှင့် မကြာမီလာမည့် UHT နှင့် စည်သွပ်ဗူး (Canning) ထုတ်ကုန်များကို ထုတ်လုပ်ပါသည်။",
       },
       {
         q: "OEM နဲ့ ODM ဝန်ဆောင်မှု နှစ်မျိုးလုံး ပေးသလား?",
@@ -38,6 +42,10 @@ export const faqContent = {
       {
         q: "မည်သည့် ထုပ်ပိုးမှုပုံစံများကို ရရှိနိုင်ပါလဲ?",
         a: "PET ပုလင်းများ၊ အိတ်သွတ်စနစ် (Standing Pouches) နှင့် မကြာမီအချိန်တွင် ဖန်ပုလင်း ထုပ်ပိုးမှုပုံစံများကို ရရှိနိုင်ရန် ကြိုးစားနေပါသည်။",
+      },
+      {
+        q: "အဖျော်ယမကာထုတ်ကုန်များအတွက် ထုပ်ပိုးမှုဖြေရှင်းချက်များကို ပံ့ပိုးပေးပါသလား?",
+        a: "ဟုတ်ကဲ့။ အဖျော်ယမကာထုတ်လုပ်မှုလိုအပ်ချက်များကို အပြည့်အဝ ပံ့ပိုးနိုင်ရန် ကျွန်ုပ်တို့၏ ပေါင်းစည်းထားသော supplier network မှတစ်ဆင့် PET ပုလင်းဖွံ့ဖြိုးတိုးတက်မှု၊ အဖုံးနှင့် closure sourcing၊ တံဆိပ်ကပ်ခြင်းနှင့် packaging system compatibility planning အပါအဝင် end-to-end ထုပ်ပိုးမှုဖြေရှင်းချက် coordination ကို ပံ့ပိုးပေးပါသည်။",
       },
       {
         q: "Quantum Leap အနေဖြင့် ပြည်ပပို့ကုန် ထုတ်လုပ်မှုကို ပံ့ပိုးပေးနိုင်ပါသလား?",

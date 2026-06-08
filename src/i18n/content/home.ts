@@ -37,7 +37,7 @@ export const homeContent = {
     highlightsEyebrow: "Key Highlights",
     highlightsTitle: "Capabilities at a glance",
     highlights: [
-      { title: "OEM & ODM", desc: "End-to-end beverage manufacturing solutions" },
+      { title: "OEM", desc: "End-to-end beverage manufacturing solutions" },
       { title: "PET & Glass", desc: "Current PET, future glass bottling capabilities" },
       { title: "UHT Expansion", desc: "Advanced UHT production line coming soon" },
       { title: "24,000 BPH", desc: "Industry-leading hourly production capacity" },
@@ -142,7 +142,7 @@ export const homeContent = {
     highlightsEyebrow: "အဓိက ထူးခြားချက်များ",
     highlightsTitle: "စွမ်းဆောင်ရည်များ အကျဉ်းချုပ်",
     highlights: [
-      { title: "OEM နှင့် ODM", desc: "အဖျော်ယမကာ ထုတ်လုပ်မှု ဖြေရှင်းချက် အပြည့်အစုံ" },
+      { title: "OEM", desc: "အဖျော်ယမကာ ထုတ်လုပ်မှု ဖြေရှင်းချက် အပြည့်အစုံ" },
       {
         title: "PET နှင့် ဖန်ပုလင်း",
         desc: "လက်ရှိ PET ထုတ်လုပ်မှုနှင့် နောင်တွင် ဖန်ပုလင်းစွမ်းရည် တိုးချဲ့မှု",
@@ -208,7 +208,7 @@ export const homeContent = {
       "အမှတ်တံဆိပ်အရွယ်အစားအလိုက် စကေးချဲ့နိုင်သော ထုတ်လုပ်မှုစနစ်များ",
       "အဆင့်မြင့် ထုတ်လုပ်မှု နည်းပညာများ",
       "FDA နှင့် Halal အသိအမှတ်ပြု လုပ်ငန်းစဉ်များ",
-      "အစအဆုံး OEM နှင့် ODM ဖြေရှင်းချက်များ",
+      "အစအဆုံး OEM ဖြေရှင်းချက်များ",
     ],
     ctaTitle: "Quantum Leap ဖြင့် သင့်ရဲ့အဖျော်ယမကာအမှတ်တံဆိပ်ကို စတင်လိုက်ပါ",
     ctaBody:

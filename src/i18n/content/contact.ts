@@ -2,19 +2,18 @@ export const contactContent = {
   en: {
     meta: {
       title: "Contact Us — QUANTUM LEAP",
-      description:
-        "Get in touch with our OEM and ODM beverage manufacturing team in Yangon, Myanmar.",
+      description: "Get in touch with our OEM beverage manufacturing team in Yangon, Myanmar.",
     },
     hero: {
       eyebrow: "Contact",
       title: "Let's build your next beverage brand.",
       subtitle:
-        "For OEM and ODM beverage partnerships and manufacturing enquiries, contact our business development team.",
+        "For OEM beverage partnerships and manufacturing enquiries, contact our business development team.",
     },
     cards: {
       company: {
         title: "QUANTUM LEAP Co., Ltd.",
-        lines: ["A next-generation OEM & ODM beverage manufacturer based in Yangon."],
+        lines: ["A next-generation OEM beverage manufacturer based in Yangon."],
       },
       visit: {
         title: "Location",
@@ -50,9 +49,11 @@ export const contactContent = {
       sending: "Sending...",
     },
     services: {
-      oem: "OEM and ODM Manufacturing",
-      odm: "ODM Solutions",
+      general: "General Inquiry",
+      oem: "OEM Manufacturing",
+      development: "Product Development",
       production: "Production Capabilities",
+      career: "Career",
       other: "Other",
     },
     inquiry: {
@@ -73,7 +74,7 @@ export const contactContent = {
   my: {
     meta: {
       title: "ဆက်သွယ်ရန် — QUANTUM LEAP",
-      description: "ရန်ကုန်အခြေစိုက် OEM နှင့် ODM အဖျော်ယမကာ ထုတ်လုပ်ရေးအဖွဲ့နှင့် ဆက်သွယ်ပါ။",
+      description: "ရန်ကုန်အခြေစိုက် OEM အဖျော်ယမကာ ထုတ်လုပ်ရေးအဖွဲ့နှင့် ဆက်သွယ်ပါ။",
     },
     hero: {
       eyebrow: "ဆက်သွယ်ရန်",
@@ -84,7 +85,7 @@ export const contactContent = {
     cards: {
       company: {
         title: "QUANTUM LEAP အချိုရည် ထုတ်လုပ်ရေး",
-        lines: ["ရန်ကုန်အခြေစိုက် မျိုးဆက်သစ် OEM နှင့် ODM အဖျော်ယမကာ ထုတ်လုပ်သူ။"],
+        lines: ["ရန်ကုန်အခြေစိုက် မျိုးဆက်သစ် OEM အဖျော်ယမကာ ထုတ်လုပ်သူ။"],
       },
       visit: {
         title: "လိပ်စာ",
@@ -121,9 +122,11 @@ export const contactContent = {
       sending: "ပေးပို့နေသည်...",
     },
     services: {
-      oem: "OEM နှင့် ODM ထုတ်လုပ်မှု",
-      odm: "ODM ဖြေရှင်းချက်များ",
+      general: "အထွေထွေ စုံစမ်းမှု",
+      oem: "OEM ထုတ်လုပ်မှု",
+      development: "ထုတ်ကုန် ဖွံ့ဖြိုးတိုးတက်မှု",
       production: "ထုတ်လုပ်မှု စွမ်းရည်",
+      career: "အလုပ်အကိုင် အခွင့်အလမ်း",
       other: "အခြား",
     },
     inquiry: {

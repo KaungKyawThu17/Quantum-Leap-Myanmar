@@ -11,7 +11,7 @@ export const Route = createFileRoute("/faq")({
       { title: "FAQ — QUANTUM LEAP" },
       {
         name: "description",
-        content: "Frequently asked questions about OEM and ODM beverage manufacturing services.",
+        content: "Frequently asked questions about OEM beverage manufacturing services.",
       },
     ],
   }),

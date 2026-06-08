@@ -5,7 +5,7 @@ import heroVideo from "@/assets/hero-video-cropped.mp4";
 import factoryImg from "@/assets/optimized/warehouse-feature.jpg";
 import splashImg from "@/assets/product-splash.jpg";
 import plasticCapImg from "@/assets/optimized/pkg-plastic-cap-card.jpg";
-import petBottleImg from "@/assets/optimized/pkg-pet-bottle-card.jpg";
+import petBottleImg from "@/assets/pkg-pet-bottle.webp";
 import petPreformImg from "@/assets/optimized/pkg-pet-preform-card.jpg";
 import labelImg from "@/assets/optimized/pkg-label-card.jpg";
 import prodEnergyImg from "@/energy-drinks.webp";
@@ -15,7 +15,7 @@ import prodTeaImg from "@/tea-functional-beverages.webp";
 import prodDairyImg from "@/uht-products.webp";
 import welcomeImg from "@/assets/optimized/welcome-feature.jpg";
 import sevenGoLogo from "@/assets/7go.webp";
-import isoPlusLogo from "@/assets/iso-plus.webp";
+import isoPlusLogo from "@/assets/iso_plus.webp";
 import burmaClubLogo from "@/assets/burmaclub.webp";
 import pumaLogo from "@/assets/puma.webp";
 import spiderLogo from "@/spider.webp";
@@ -47,7 +47,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Myanmar-based OEM and ODM beverage manufacturing with PET bottling, up to 24,000 bottles per hour, and FDA and Halal certified operations.",
+          "Myanmar-based OEM beverage manufacturing with PET bottling, up to 24,000 bottles per hour, and FDA and Halal certified operations.",
       },
     ],
     links: [{ rel: "preload", as: "image", href: heroPosterImg }],
@@ -87,14 +87,14 @@ const productCardSizes = [
 
 const trustedBrandLogos = [
   { name: "7go", image: { src: sevenGoLogo, width: 225, height: 225 } },
-  { name: "ISO Plus", image: { src: isoPlusLogo, width: 1600, height: 1049 } },
+  { name: "ISO +", image: { src: isoPlusLogo, width: 1080, height: 1350 } },
   { name: "Burma Club", image: { src: burmaClubLogo, width: 2484, height: 1758 } },
   { name: "Puma", image: { src: pumaLogo, width: 6240, height: 4415 } },
   { name: "Spider", image: { src: spiderLogo, width: 1600, height: 1600 } },
 ] as const;
 
 const packagingProductMedia: Array<ImageAsset | undefined> = [
-  { src: petBottleImg, width: 960, height: 731 },
+  { src: petBottleImg, width: 1920, height: 1463 },
   { src: plasticCapImg, width: 960, height: 640 },
   { src: petPreformImg, width: 960, height: 598 },
   { src: labelImg, width: 960, height: 547 },

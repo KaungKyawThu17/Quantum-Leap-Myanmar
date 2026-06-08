@@ -9,8 +9,8 @@ export const faqContent = {
         a: "We manufacture energy drinks, juices, flavored beverages, electrolyte drinks, soft drinks, and upcoming UHT and Canning products.",
       },
       {
-        q: "Do you provide OEM and ODM beverage services?",
-        a: "Yes. We provide both OEM and ODM beverage manufacturing solutions tailored to client requirements.",
+        q: "Do you provide OEM beverage services?",
+        a: "Yes, we provide end-to-end OEM beverage manufacturing services including product formulation, production execution, packaging coordination, quality control, and final delivery.",
       },
       {
         q: "What packaging formats are available?",
@@ -36,8 +36,8 @@ export const faqContent = {
         a: "ကျွန်ုပ်တို့သည် အားဖြည့်အချိုရည်များ၊ ဖျော်ရည်များ၊ အနံ့အရသာပါဝင်သော အချိုရည်များ၊ ဓာတ်ဆားရည်များ၊ အချိုရည်များ (Soft Drinks) နှင့် မကြာမီလာမည့် UHT နှင့် စည်သွပ်ဗူး (Canning) ထုတ်ကုန်များကို ထုတ်လုပ်ပါသည်။",
       },
       {
-        q: "OEM နဲ့ ODM ဝန်ဆောင်မှု နှစ်မျိုးလုံး ပေးသလား?",
-        a: "ဟုတ်ကဲ့၊ ပေးပါသည်။ ဖောက်သည်လိုအပ်ချက်နှင့်အညီ OEM နှင့် ODM အဖျော်ယမကာ ထုတ်လုပ်မှု ဖြေရှင်းချက်များကို ပံ့ပိုးပေးပါသည်။",
+        q: "OEM ဝန်ဆောင်မှု ပေးသလား?",
+        a: "ဟုတ်ကဲ့၊ ပေးပါသည်။ ဖောက်သည်လိုအပ်ချက်နှင့်အညီ OEM အဖျော်ယမကာ ထုတ်လုပ်မှု ဖြေရှင်းချက်များကို ပံ့ပိုးပေးပါသည်။",
       },
       {
         q: "မည်သည့် ထုပ်ပိုးမှုပုံစံများကို ရရှိနိုင်ပါလဲ?",

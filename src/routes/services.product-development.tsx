@@ -4,7 +4,7 @@ import { ServiceMediaHero } from "@/components/ServiceMediaHero";
 import welcomeImg from "@/assets/optimized/welcome-feature.jpg";
 import pdHero1 from "@/assets/pd-hero-1.webp";
 import pdHero2 from "@/assets/pd-hero-2.webp";
-import petDesignImg from "@/pet-design.webp";
+import petDesignImg from "@/assets/PET_Design.webp";
 import tbaDesignImg from "@/tba-design.webp";
 import { CertificatesSlider } from "@/components/CertificatesSlider";
 import { useLanguage } from "@/i18n/LanguageContext";
@@ -31,7 +31,7 @@ const heroSlides = [
 
 const pillarIcons = [Beaker, Package, ShieldCheck] as const;
 const packagingTypeMedia = [
-  { src: petDesignImg, width: 1448, height: 1086 },
+  { src: petDesignImg, width: 1103, height: 1084 },
   { src: tbaDesignImg, width: 1448, height: 1086 },
 ] as const;
 

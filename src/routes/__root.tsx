@@ -15,9 +15,9 @@ import appCss from "../styles.css?url";
 import logo from "@/assets/quantum-leap-logo.png";
 
 const siteUrl = import.meta.env.VITE_SITE_URL?.trim();
-const siteTitle = "QUANTUM LEAP — Myanmar OEM and ODM Beverage Manufacturing";
+const siteTitle = "QUANTUM LEAP — Myanmar OEM Beverage Manufacturing";
 const siteDescription =
-  "QUANTUM LEAP is a Myanmar-based OEM and ODM beverage manufacturer offering PET bottling, beverage formulation, and scale-up production solutions.";
+  "QUANTUM LEAP is a Myanmar-based OEM beverage manufacturer offering PET bottling, beverage formulation, and scale-up production solutions.";
 const socialImageUrl = siteUrl ? new URL(logo, siteUrl).toString() : logo;
 const preloadErrorRecoveryScript = `
 window.addEventListener("vite:preloadError", function (event) {

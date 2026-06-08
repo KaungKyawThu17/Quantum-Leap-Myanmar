@@ -7,9 +7,9 @@ export const aboutContent = {
     overviewEyebrow: "Company Overview",
     overviewTitle: "A next-generation beverage manufacturer.",
     overview1:
-      "Welcome to QUANTUM LEAP, an industry-leading OEM and ODM partner for advanced beverage production. Since expanding our facility infrastructure in 2025, we have significantly boosted our production capacity to meet the demands of major market players.",
+      "Welcome to QUANTUM LEAP, an industry-leading OEM partner for advanced beverage production. Since expanding our facility infrastructure in 2025, we have significantly boosted our production capacity to meet the demands of major market players.",
     overview2:
-      "Today, our state-of-the-art operations proudly power a wide range of recognized products, including Puma, 7go, Spider, ISO Plus, and Burma Club Whisky, offering end-to-end manufacturing solutions tailored for brand growth.",
+      "Today, our state-of-the-art operations proudly power a wide range of recognized products, including Puma, 7go, Spider, ISO +, and Burma Club Whisky, offering end-to-end manufacturing solutions tailored for brand growth.",
     cards: [
       {
         id: "vision",
@@ -52,9 +52,9 @@ We sincerely thank all our customers, partners, and stakeholders for being part 
     overviewEyebrow: "ကုမ္ပဏီ အကျဉ်းချုပ်",
     overviewTitle: "မျိုးဆက်သစ် အဖျော်ယမကာ ထုတ်လုပ်ရေး ကုမ္ပဏီ။",
     overview1:
-      "QUANTUM LEAP မှ ကြိုဆိုပါသည်။ ကျွန်ုပ်တို့သည် အဆင့်မြင့် အဖျော်ယမကာ ထုတ်လုပ်မှုအတွက် လုပ်ငန်းဦးဆောင် OEM နှင့် ODM မိတ်ဖက်တစ်ခု ဖြစ်ပါသည်။ ၂၀၂၅ ခုနှစ်တွင် စက်ရုံအခြေခံအဆောက်အအုံများကို တိုးချဲ့ပြီးနောက် အဓိကဈေးကွက် လုပ်ငန်းများ၏ လိုအပ်ချက်များကို ဖြည့်ဆည်းနိုင်ရန် ထုတ်လုပ်မှုစွမ်းရည်ကို သိသိသာသာ မြှင့်တင်ခဲ့ပါသည်။",
+      "QUANTUM LEAP မှ ကြိုဆိုပါသည်။ ကျွန်ုပ်တို့သည် အဆင့်မြင့် အဖျော်ယမကာ ထုတ်လုပ်မှုအတွက် လုပ်ငန်းဦးဆောင် OEM မိတ်ဖက်တစ်ခု ဖြစ်ပါသည်။ ၂၀၂၅ ခုနှစ်တွင် စက်ရုံအခြေခံအဆောက်အအုံများကို တိုးချဲ့ပြီးနောက် အဓိကဈေးကွက် လုပ်ငန်းများ၏ လိုအပ်ချက်များကို ဖြည့်ဆည်းနိုင်ရန် ထုတ်လုပ်မှုစွမ်းရည်ကို သိသိသာသာ မြှင့်တင်ခဲ့ပါသည်။",
     overview2:
-      "ယနေ့တွင် ကျွန်ုပ်တို့၏ ခေတ်မီထုတ်လုပ်မှုစနစ်များဖြင့် Puma၊ 7go၊ Spider၊ ISO Plus နှင့် Burma Club Whisky အပါအဝင် လူသိများသော ထုတ်ကုန်များစွာကို ထုတ်လုပ်ပေးနေပြီး အမှတ်တံဆိပ်များ တိုးတက်ရန် လိုအပ်သော အစမှအဆုံး ထုတ်လုပ်မှုဖြေရှင်းချက်များကို ပံ့ပိုးပေးနေပါသည်။",
+      "ယနေ့တွင် ကျွန်ုပ်တို့၏ ခေတ်မီထုတ်လုပ်မှုစနစ်များဖြင့် Puma၊ 7go၊ Spider၊ ISO + နှင့် Burma Club Whisky အပါအဝင် လူသိများသော ထုတ်ကုန်များစွာကို ထုတ်လုပ်ပေးနေပြီး အမှတ်တံဆိပ်များ တိုးတက်ရန် လိုအပ်သော အစမှအဆုံး ထုတ်လုပ်မှုဖြေရှင်းချက်များကို ပံ့ပိုးပေးနေပါသည်။",
     cards: [
       {
         id: "vision",

@@ -68,6 +68,8 @@ export const productsContent = {
       },
     ],
     packagingTitle: "Packaging Products",
+    packagingBody:
+      "One stop OEM beverage packaging solutions coordinated through trusted partners, covering PET bottles, closures, labeling, and beverage packaging system requirements.",
     packagingProducts: [
       {
         name: "Plastic Cap",
@@ -200,6 +202,8 @@ export const productsContent = {
       },
     ],
     packagingTitle: "ထုပ်ပိုးမှုဆိုင်ရာ ထုတ်ကုန်များ",
+    packagingBody:
+      "ယုံကြည်စိတ်ချရသော မိတ်ဖက်များမှတစ်ဆင့် PET ပုလင်းများ၊ အဖုံးနှင့် closure များ၊ တံဆိပ်ကပ်ခြင်းနှင့် အဖျော်ယမကာထုပ်ပိုးမှုစနစ်လိုအပ်ချက်များကို ပံ့ပိုးညှိနှိုင်းပေးသော တစ်နေရာတည်း OEM အဖျော်ယမကာထုပ်ပိုးမှု ဖြေရှင်းချက်များ။",
     packagingProducts: [
       {
         name: "ပလတ်စတစ် ပုလင်းအဖုံးများ",

@@ -5,7 +5,7 @@ import welcomeImg from "@/assets/optimized/welcome-feature.jpg";
 import { PageHero } from "@/components/PageHero";
 import { ArrowRight, GlassWater, Package, Palette } from "lucide-react";
 import plasticCapImg from "@/assets/optimized/pkg-plastic-cap-card.jpg";
-import petBottleImg from "@/assets/optimized/pkg-pet-bottle-card.jpg";
+import petBottleImg from "@/assets/pkg-pet-bottle.webp";
 import petPreformImg from "@/assets/optimized/pkg-pet-preform-card.jpg";
 import labelImg from "@/assets/optimized/pkg-label-card.jpg";
 import prodEnergyImg from "@/energy-drinks.webp";
@@ -62,7 +62,7 @@ const upcomingProductMedia: ImageAsset[] = [{ src: prodSoftDrinkImg, width: 1448
 
 const packagingProductMedia: Array<ImageAsset | undefined> = [
   { src: plasticCapImg, width: 960, height: 640 },
-  { src: petBottleImg, width: 960, height: 731 },
+  { src: petBottleImg, width: 1920, height: 1463 },
   { src: petPreformImg, width: 960, height: 598 },
   { src: labelImg, width: 960, height: 547 },
   undefined,
@@ -340,6 +340,9 @@ function Products() {
           <h2 className="font-display text-3xl md:text-4xl font-bold mt-4">
             {copy.packagingTitle}
           </h2>
+          <p className="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground md:text-lg">
+            {copy.packagingBody}
+          </p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {localizedPackagingProducts.map((product) => (

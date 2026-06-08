@@ -17,7 +17,7 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "QUANTUM LEAP is a next-generation beverage manufacturing company focused on OEM and ODM beverage production.",
+          "QUANTUM LEAP is a next-generation beverage manufacturing company focused on OEM beverage production.",
       },
     ],
   }),

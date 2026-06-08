@@ -1,22 +1,22 @@
 export const servicesContent = {
   en: {
     oem: {
-      heroEyebrow: "OEM and ODM Manufacturing",
-      heroTitle: "OEM and ODM",
+      heroEyebrow: "OEM Manufacturing",
+      heroTitle: "OEM",
       heroHighlight: "Manufacturing",
       heroSubtitle:
         "From concept to mass production, we provide the infrastructure and expertise to scale your beverage brand globally.",
-      introTitle: "Your Trusted OEM and ODM Partner for Ready to Drink Beverages",
+      introTitle: "Your Trusted OEM Partner for Ready to Drink Beverages",
       introParagraphs: [
-        "Quantum Leap provides comprehensive OEM and ODM beverage manufacturing solutions designed to support brands at every stage of product development.",
-        "Whether you have an existing product concept or require a fully customized beverage solution, our experienced team offers expertise in formulation development, packaging design, quality assurance, and large-scale manufacturing. Through our OEM service, we manufacture products according to your brand requirements and specifications, while our ODM service enables businesses to develop new beverage concepts from the ground up, including recipe creation, packaging development, product testing, and commercialization.",
+        "Quantum Leap provides comprehensive OEM beverage manufacturing solutions designed to support brands at every stage of product development.",
+        "Whether you have an existing product concept or require a fully customized beverage solution, our experienced team offers expertise in formulation development, packaging design, quality assurance, and large-scale manufacturing. Through our OEM service, we manufacture products according to your brand requirements and specifications while supporting new beverage concepts from recipe creation through packaging development and product testing.",
         "With integrated production capabilities and strict quality control standards, Quantum Leap helps brands bring innovative, high-quality beverages to market efficiently and successfully.",
       ],
       ctaTitle: "Ready to discuss your project?",
       ctaBody: "Our team will guide you from initial enquiry to scaled production.",
       ctaButton: "Contact our team",
       videoLabel: "Inside QUANTUM LEAP production",
-      videoTitle: "See our OEM and ODM manufacturing in action",
+      videoTitle: "See our OEM manufacturing in action",
       videoBody:
         "Take a closer look at the people, production areas, and process discipline behind QUANTUM LEAP beverage manufacturing.",
     },
@@ -253,23 +253,23 @@ export const servicesContent = {
   },
   my: {
     oem: {
-      heroEyebrow: "OEM နှင့် ODM ထုတ်လုပ်မှု",
-      heroTitle: "OEM နှင့် ODM",
+      heroEyebrow: "OEM ထုတ်လုပ်မှု",
+      heroTitle: "OEM",
       heroHighlight: "ထုတ်လုပ်မှု",
       heroSubtitle:
         "ထုတ်ကုန်သဘောတရားမှ အစုလိုက်အပြုံလိုက်ထုတ်လုပ်မှုအထိ သင့်အဖျော်ယမကာအမှတ်တံဆိပ်ကို စကေးချဲ့နိုင်ရန် လိုအပ်သော အခြေခံအဆောက်အအုံနှင့် ကျွမ်းကျင်မှုများကို ပံ့ပိုးပေးပါသည်။",
-      introTitle: "အသင့်သောက် အဖျော်ယမကာများအတွက် သင့်ယုံကြည်စိတ်ချရသော OEM နှင့် ODM မိတ်ဖက်",
+      introTitle: "အသင့်သောက် အဖျော်ယမကာများအတွက် သင့်ယုံကြည်စိတ်ချရသော OEM မိတ်ဖက်",
       introParagraphs: [
-        "Quantum Leap သည် ထုတ်ကုန်ဖွံ့ဖြိုးတိုးတက်မှု၏ အဆင့်တိုင်းတွင် အမှတ်တံဆိပ်များကို ပံ့ပိုးရန် ဒီဇိုင်းထုတ်ထားသော ပြည့်စုံသော OEM နှင့် ODM အဖျော်ယမကာ ထုတ်လုပ်ရေး ဖြေရှင်းချက်များကို ပေးဆောင်ပါသည်။",
+        "Quantum Leap သည် ထုတ်ကုန်ဖွံ့ဖြိုးတိုးတက်မှု၏ အဆင့်တိုင်းတွင် အမှတ်တံဆိပ်များကို ပံ့ပိုးရန် ဒီဇိုင်းထုတ်ထားသော ပြည့်စုံသော OEM အဖျော်ယမကာ ထုတ်လုပ်ရေး ဖြေရှင်းချက်များကို ပေးဆောင်ပါသည်။",
         "သင်သည် ရှိပြီးသား ထုတ်ကုန် အယူအဆတစ်ခုရှိသည်ဖြစ်စေ သို့မဟုတ် အပြည့်အဝ စိတ်ကြိုက်ပြင်ဆင်ထားသော အဖျော်ယမကာ ဖြေရှင်းချက်တစ်ခု လိုအပ်သည်ဖြစ်စေ ကျွန်ုပ်တို့၏ အတွေ့အကြုံရှိအဖွဲ့သည် ဖော်မြူလာ ဖွံ့ဖြိုးတိုးတက်မှု၊ ထုပ်ပိုးမှုဒီဇိုင်း၊ အရည်အသွေး အာမခံချက်နှင့် ကြီးမားသော ထုတ်လုပ်မှုတို့တွင် ကျွမ်းကျင်မှုကို ပေးဆောင်ပါသည်။",
-        "ကျွန်ုပ်တို့၏ OEM ဝန်ဆောင်မှုမှတစ်ဆင့်၊ ကျွန်ုပ်တို့သည် သင်၏ အမှတ်တံဆိပ် လိုအပ်ချက်များနှင့် သတ်မှတ်ချက်များအရ ထုတ်ကုန်များကို ထုတ်လုပ်ပြီး ကျွန်ုပ်တို့၏ ODM ဝန်ဆောင်မှုသည် စီးပွားရေးလုပ်ငန်းများအား ချက်ပြုတ်နည်း ဖန်တီးခြင်း၊ ထုပ်ပိုးမှု ဖွံ့ဖြိုးတိုးတက်မှု၊ ထုတ်ကုန် စမ်းသပ်ခြင်းနှင့် စီးပွားဖြစ် ရောင်းဝယ်ခြင်း အပါအဝင် အခြေခံမှစတင်၍ အဖျော်ယမကာ အယူအဆအသစ်များကို တီထွင်နိုင်စေပါသည်။",
+        "ကျွန်ုပ်တို့၏ OEM ဝန်ဆောင်မှုမှတစ်ဆင့်၊ ကျွန်ုပ်တို့သည် သင်၏ အမှတ်တံဆိပ် လိုအပ်ချက်များနှင့် သတ်မှတ်ချက်များအရ ထုတ်ကုန်များကို ထုတ်လုပ်ပြီး အဖျော်ယမကာ အယူအဆအသစ်များအတွက် ချက်ပြုတ်နည်း ဖန်တီးခြင်း၊ ထုပ်ပိုးမှု ဖွံ့ဖြိုးတိုးတက်မှုနှင့် ထုတ်ကုန် စမ်းသပ်ခြင်းတို့ကိုလည်း ပံ့ပိုးပေးပါသည်။",
         "Quantum Leap သည် ပေါင်းစပ်ထုတ်လုပ်မှုစွမ်းရည်များနှင့် တင်းကျပ်သော အရည်အသွေးထိန်းချုပ်မှုစံနှုန်းများဖြင့် အမှတ်တံဆိပ်များအား ဆန်းသစ်တီထွင်ပြီး အရည်အသွေးမြင့် အဖျော်ယမကာများကို ဈေးကွက်သို့ ထိရောက်စွာနှင့် အောင်မြင်စွာ ယူဆောင်လာရန် ကူညီပေးနိုင်ပါသည်။",
       ],
       ctaTitle: "သင့်စီမံကိန်းကို ဆွေးနွေးရန် အသင့်ဖြစ်ပါသလား?",
       ctaBody: "စတင်စုံစမ်းမှုမှ စကေးချဲ့ထုတ်လုပ်မှုအထိ ကျွန်ုပ်တို့အဖွဲ့က လမ်းညွှန်ပေးပါမည်။",
       ctaButton: "ကျွန်ုပ်တို့အဖွဲ့ကို ဆက်သွယ်ရန်",
       videoLabel: "QUANTUM LEAP ထုတ်လုပ်ရေးအတွင်းပိုင်း",
-      videoTitle: "ကျွန်ုပ်တို့၏ OEM နှင့် ODM ထုတ်လုပ်မှုကို ဗီဒီယိုဖြင့် ကြည့်ရှုပါ",
+      videoTitle: "ကျွန်ုပ်တို့၏ OEM ထုတ်လုပ်မှုကို ဗီဒီယိုဖြင့် ကြည့်ရှုပါ",
       videoBody:
         "QUANTUM LEAP အဖျော်ယမကာထုတ်လုပ်မှုနောက်ကွယ်ရှိ အဖွဲ့၊ ထုတ်လုပ်ရေးနေရာများနှင့် လုပ်ငန်းစဉ်များကို ပိုမိုနီးကပ်စွာ လေ့လာနိုင်ပါသည်။",
     },
@@ -286,7 +286,7 @@ export const servicesContent = {
       ],
       introTitle: "ပြောင်းလွယ်ပြင်လွယ်ရှိပြီး စကေးချဲ့နိုင်ရန် တည်ဆောက်ထားပါသည်။",
       intro1:
-        "Quantum Leap သည် ထုတ်ကုန်အကြံဉာဏ်မှသည် အလုံးစုံ ထုတ်လုပ်မှုအထိ အပြည့်အဝ OEM နှင့် ODM အဖျော်ယမကာ ထုတ်လုပ်မှု ဖြေရှင်းချက်များကို ပေးဆောင်ပါသည်။",
+        "Quantum Leap သည် ထုတ်ကုန်အကြံဉာဏ်မှသည် အလုံးစုံ ထုတ်လုပ်မှုအထိ အပြည့်အဝ OEM အဖျော်ယမကာ ထုတ်လုပ်မှု ဖြေရှင်းချက်များကို ပေးဆောင်ပါသည်။",
       intro2:
         "PET ပုလင်းသွတ်ခြင်းမှ UHT စနစ်အထိ အမျိုးအစား၊ ပမာဏနှင့် ထုပ်ပိုးမှုပုံစံအလိုက် အဖျော်ယမကာအမှတ်တံဆိပ်များကို ပံ့ပိုးနိုင်ရန် ထုတ်လုပ်မှုစနစ်များကို အဆက်မပြတ် တိုးချဲ့နေပါသည်။",
       linesEyebrow: "ကျွန်ုပ်တို့၏ ထုတ်လုပ်မှုလိုင်းများ",

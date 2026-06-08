@@ -87,8 +87,11 @@ function validateMessage(message: ContactMessage) {
 function chooseRecipient(message: ContactMessage, env: unknown) {
   const generalEmail = getEnvValue(env, "CONTACT_GENERAL_EMAIL") ?? GENERAL_INQUIRIES_EMAIL;
   const quotationsEmail = getEnvValue(env, "CONTACT_QUOTATIONS_EMAIL") ?? QUOTATIONS_EMAIL;
+  const generalRecipientServices = new Set(["general inquiry", "career", "other"]);
 
-  return message.serviceInterest.toLowerCase() === "other" ? generalEmail : quotationsEmail;
+  return generalRecipientServices.has(message.serviceInterest.toLowerCase())
+    ? generalEmail
+    : quotationsEmail;
 }
 
 function buildSubject(message: ContactMessage) {

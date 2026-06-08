@@ -36,10 +36,10 @@ import { ArrowRight, PlayCircle } from "lucide-react";
 export const Route = createFileRoute("/services/oem-manufacturing")({
   head: () => ({
     meta: [
-      { title: "OEM and ODM Manufacturing — QUANTUM LEAP" },
+      { title: "OEM Manufacturing — QUANTUM LEAP" },
       {
         name: "description",
-        content: "A trusted OEM and ODM manufacturing partner for ready-to-drink beverages.",
+        content: "A trusted OEM manufacturing partner for ready-to-drink beverages.",
       },
     ],
   }),

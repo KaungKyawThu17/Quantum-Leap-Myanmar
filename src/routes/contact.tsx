@@ -24,9 +24,11 @@ const generalInquiriesEmail = "info@quantumleap-mm.com";
 const quotationsEmail = "cs@quantumleap-mm.com";
 
 const serviceValues = {
-  oem: "OEM and ODM Manufacturing",
-  odm: "ODM Solutions",
+  general: "General Inquiry",
+  oem: "OEM Manufacturing",
+  development: "Product Development",
   production: "Production Capabilities",
+  career: "Career",
   other: "Other",
 } as const;
 
@@ -51,8 +53,7 @@ export const Route = createFileRoute("/contact")({
       { title: "Contact Us — QUANTUM LEAP" },
       {
         name: "description",
-        content:
-          "Get in touch with our OEM and ODM beverage manufacturing team in Yangon, Myanmar.",
+        content: "Get in touch with our OEM beverage manufacturing team in Yangon, Myanmar.",
       },
     ],
   }),
@@ -217,9 +218,11 @@ function Contact() {
                   defaultValue={serviceValues.oem}
                   className="focus-ring w-full rounded-xl border border-input bg-background px-4 py-3 text-sm"
                 >
+                  <option value={serviceValues.general}>{copy.services.general}</option>
                   <option value={serviceValues.oem}>{copy.services.oem}</option>
-                  <option value={serviceValues.odm}>{copy.services.odm}</option>
+                  <option value={serviceValues.development}>{copy.services.development}</option>
                   <option value={serviceValues.production}>{copy.services.production}</option>
+                  <option value={serviceValues.career}>{copy.services.career}</option>
                   <option value={serviceValues.other}>{copy.services.other}</option>
                 </select>
               </Field>

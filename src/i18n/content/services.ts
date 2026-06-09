@@ -153,10 +153,11 @@ export const servicesContent = {
       title: "Factory",
       highlight: "& Facilities",
       subtitle:
-        "A 10-acre integrated campus engineered for large-scale beverage production — from blowing to bottling, cold chain to warehouse.",
+        "A 10-acre integrated campus engineered for large-scale beverage production — from blowing and bottling to warehouse operations.",
       stats: [
         { value: "10", label: "Acre integrated campus" },
         { value: "26K", label: "Bottles/hr blowing capacity" },
+        { value: "58t", label: "Cold storage capacity" },
       ],
       introTitle: "Inside our integrated manufacturing campus.",
       intro1:
@@ -411,6 +412,7 @@ export const servicesContent = {
       stats: [
         { value: "၁၀", label: "ဧက စက်မှုဝန်း" },
         { value: "၂၆K", label: "ပုလင်းမှုတ်စက် / နာရီ" },
+        { value: "၅၈t", label: "အအေးခန်း သိုလှောင်နိုင်စွမ်း" },
       ],
       introTitle: "ကျွန်ုပ်တို့၏ ပေါင်းစည်းထားသော ထုတ်လုပ်ရေး စက်မှုဝန်း။",
       intro1:

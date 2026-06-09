@@ -57,7 +57,7 @@ const heroSlides = [
   { src: factoryHero3, width: 1408, height: 792 },
 ];
 
-const facilityStatIcons = [MapPin, Gauge] as const;
+const facilityStatIcons = [MapPin, Gauge, Snowflake] as const;
 
 const facilityGroupAssets = [
   {
@@ -124,7 +124,7 @@ function FactoryFacilities() {
 
       {/* STATS STRIP */}
       <section className="relative -mt-12 z-20 mx-auto max-w-6xl px-4 lg:px-8">
-        <div className="grid sm:grid-cols-2 gap-4 md:gap-6">
+        <div className="grid sm:grid-cols-3 gap-4 md:gap-6">
           {localizedStats.map((s) => {
             const Icon = s.icon;
             return (

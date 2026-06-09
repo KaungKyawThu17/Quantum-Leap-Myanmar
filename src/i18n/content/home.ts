@@ -62,7 +62,7 @@ export const homeContent = {
     beverageProducts: [
       { name: "Energy & Electrolyte" },
       { name: "Soft & Carbonated" },
-      { name: "Juice & Flavored" },
+      { name: "Fruit-Flavored" },
       { name: "Tea & Functional" },
       { name: "Dairy & Soy Milk", badge: "Available in Q4 2026" },
     ],
@@ -83,7 +83,7 @@ export const homeContent = {
         desc: "QUANTUM LEAP believes in building meaningful contributions to society by maintaining ethical business practices, supporting local communities, and creating trusted partnerships with customers and stakeholders.",
       },
       {
-        title: "Innovation & Packaging Development",
+        title: "Innovation & Packaging Solutions",
         desc: "We assist clients in designing and coordinating PET bottle concepts, closure compatibility, and packaging structures that are technically suitable for beverage production, filling systems, and supply chain efficiency across diverse beverage categories.",
       },
     ],
@@ -194,7 +194,7 @@ export const homeContent = {
         desc: "Quantum Leap သည် ကျင့်ဝတ်ဆိုင်ရာ စီးပွားရေးလုပ်ဆောင်မှုများကို ထိန်းသိမ်းခြင်း၊ ဒေသခံလူမှုအသိုင်းအဝိုင်းများကို ပံ့ပိုးပေးခြင်းနှင့် ဖောက်သည်များ၊ အကျိုးတူပါဝင်သူများနှင့် ယုံကြည်စိတ်ချရသော မိတ်ဖက်များ ဖန်တီးခြင်းဖြင့် လူ့အဖွဲ့အစည်းအတွက် အဓိပ္ပာယ်ရှိသော ပံ့ပိုးမှုများ တည်ဆောက်ခြင်းကို ယုံကြည်ပါသည်။",
       },
       {
-        title: "ဆန်းသစ်တီထွင်မှုနှင့် ထုပ်ပိုးမှု ဖွံ့ဖြိုးတိုးတက်ရေး",
+        title: "ဆန်းသစ်တီထွင်မှုနှင့် ထုပ်ပိုးမှု ဖြေရှင်းချက်များ",
         desc: "အဆင့်မြင့် ထုတ်လုပ်မှုစွမ်းရည်များဖြင့် Quantum Leap သည် မတူညီသော အဖျော်ယမကာအမျိုးအစားများနှင့် ပြောင်းလဲနေသော စားသုံးသူဝယ်လိုအားများကို ပံ့ပိုးရန် စိတ်ကြိုက် PET ပုလင်းများ၊ အဖုံးများနှင့် ထုပ်ပိုးမှုဖြေရှင်းချက်များကို တီထွင်ပါသည်။",
       },
     ],

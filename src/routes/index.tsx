@@ -87,7 +87,7 @@ const productCardSizes = [
 
 const trustedBrandLogos = [
   { name: "7go", image: { src: sevenGoLogo, width: 225, height: 225 } },
-  { name: "ISO +", image: { src: isoPlusLogo, width: 1080, height: 1350 } },
+  { name: "ISO +", image: { src: isoPlusLogo, width: 900, height: 900 } },
   { name: "Burma Club", image: { src: burmaClubLogo, width: 2484, height: 1758 } },
   { name: "Puma", image: { src: pumaLogo, width: 6240, height: 4415 } },
   { name: "Spider", image: { src: spiderLogo, width: 1600, height: 1600 } },

@@ -10,7 +10,7 @@ import petPreformImg from "@/assets/optimized/pkg-pet-preform-card.jpg";
 import labelImg from "@/assets/optimized/pkg-label-card.jpg";
 import prodEnergyImg from "@/energy-drinks.webp";
 import prodSoftDrinkImg from "@/carbonated-soft-drinks.webp";
-import prodFruitJuiceImg from "@/fruit-drinks.webp";
+import prodFlavoredImg from "@/flavored-drinks.webp";
 import prodTeaImg from "@/tea-functional-beverages.webp";
 import prodDairyImg from "@/uht-products.webp";
 import welcomeImg from "@/assets/optimized/welcome-feature.jpg";
@@ -104,7 +104,7 @@ const packagingProductMedia: Array<ImageAsset | undefined> = [
 const beverageProductMedia: ImageAsset[] = [
   { src: prodEnergyImg, width: 1448, height: 1086 },
   { src: prodSoftDrinkImg, width: 1448, height: 1086 },
-  { src: prodFruitJuiceImg, width: 1448, height: 1086 },
+  { src: prodFlavoredImg, width: 1448, height: 1086 },
   { src: prodTeaImg, width: 1448, height: 1086 },
   { src: prodDairyImg, width: 1448, height: 1086 },
 ];

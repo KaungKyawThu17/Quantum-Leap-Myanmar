@@ -41,7 +41,7 @@ ln -sfn "$release_dir" "$app_root/current.next"
 mv -Tf "$app_root/current.next" "$app_root/current"
 sudo systemctl restart quantumleap-myanmar.service
 
-if ! curl --fail --silent --show-error --retry 10 --retry-delay 1 \
+if ! curl --fail --silent --show-error --retry 10 --retry-delay 1 --retry-connrefused \
   --header "Host: quantumleap-myanmar.com" \
   http://127.0.0.1:3000/ >/dev/null; then
   if [[ -n "$previous" ]]; then

@@ -2,15 +2,41 @@ export const servicesContent = {
   en: {
     oem: {
       heroEyebrow: "OEM Manufacturing",
-      heroTitle: "OEM",
+      heroTitle: "OEM Beverage",
       heroHighlight: "Manufacturing",
       heroSubtitle:
         "From concept to mass production, we provide the infrastructure and expertise to scale your beverage brand globally.",
-      introTitle: "Your Trusted OEM Partner for Ready to Drink Beverages",
+      introTitle: "OEM Beverage Manufacturing for Ready-to-Drink Brands",
       introParagraphs: [
         "Quantum Leap provides comprehensive OEM beverage manufacturing solutions designed to support brands at every stage of product development.",
         "Whether you have an existing product concept or require a fully customized beverage solution, our experienced team offers expertise in formulation development, packaging design, quality assurance, and large-scale manufacturing. Through our OEM service, we manufacture products according to your brand requirements and specifications while supporting new beverage concepts from recipe creation through packaging development and product testing.",
         "With integrated production capabilities and strict quality control standards, Quantum Leap helps brands bring innovative, high-quality beverages to market efficiently and successfully.",
+      ],
+      capabilitiesEyebrow: "End-to-End OEM Services",
+      capabilitiesTitle: "What our OEM beverage manufacturing service includes",
+      capabilitiesBody:
+        "Build your beverage with one manufacturing partner for formulation, packaging coordination, scalable production, and quality assurance.",
+      capabilities: [
+        {
+          title: "Beverage Formulation",
+          body: "Recipe development, ingredient guidance, sensory profiling, and production-ready formula support.",
+          linkLabel: "Explore product development",
+        },
+        {
+          title: "Packaging Coordination",
+          body: "PET bottle, closure, label, and packaging compatibility planning for your target market.",
+          linkLabel: "Explore beverage products",
+        },
+        {
+          title: "Scalable Production",
+          body: "Flexible production lines with capacity up to 24,000 bottles per hour for growing brands.",
+          linkLabel: "View production capabilities",
+        },
+        {
+          title: "Quality & Compliance",
+          body: "Documented quality controls supported by FDA, Halal, and ISO 22000 certifications.",
+          linkLabel: "View factory and facilities",
+        },
       ],
       ctaTitle: "Ready to discuss your project?",
       ctaBody: "Our team will guide you from initial enquiry to scaled production.",
@@ -255,7 +281,7 @@ export const servicesContent = {
   my: {
     oem: {
       heroEyebrow: "OEM ထုတ်လုပ်မှု",
-      heroTitle: "OEM",
+      heroTitle: "OEM အဖျော်ယမကာ",
       heroHighlight: "ထုတ်လုပ်မှု",
       heroSubtitle:
         "ထုတ်ကုန်သဘောတရားမှ အစုလိုက်အပြုံလိုက်ထုတ်လုပ်မှုအထိ သင့်အဖျော်ယမကာအမှတ်တံဆိပ်ကို စကေးချဲ့နိုင်ရန် လိုအပ်သော အခြေခံအဆောက်အအုံနှင့် ကျွမ်းကျင်မှုများကို ပံ့ပိုးပေးပါသည်။",
@@ -265,6 +291,32 @@ export const servicesContent = {
         "သင်သည် ရှိပြီးသား ထုတ်ကုန် အယူအဆတစ်ခုရှိသည်ဖြစ်စေ သို့မဟုတ် အပြည့်အဝ စိတ်ကြိုက်ပြင်ဆင်ထားသော အဖျော်ယမကာ ဖြေရှင်းချက်တစ်ခု လိုအပ်သည်ဖြစ်စေ ကျွန်ုပ်တို့၏ အတွေ့အကြုံရှိအဖွဲ့သည် ဖော်မြူလာ ဖွံ့ဖြိုးတိုးတက်မှု၊ ထုပ်ပိုးမှုဒီဇိုင်း၊ အရည်အသွေး အာမခံချက်နှင့် ကြီးမားသော ထုတ်လုပ်မှုတို့တွင် ကျွမ်းကျင်မှုကို ပေးဆောင်ပါသည်။",
         "ကျွန်ုပ်တို့၏ OEM ဝန်ဆောင်မှုမှတစ်ဆင့်၊ ကျွန်ုပ်တို့သည် သင်၏ အမှတ်တံဆိပ် လိုအပ်ချက်များနှင့် သတ်မှတ်ချက်များအရ ထုတ်ကုန်များကို ထုတ်လုပ်ပြီး အဖျော်ယမကာ အယူအဆအသစ်များအတွက် ချက်ပြုတ်နည်း ဖန်တီးခြင်း၊ ထုပ်ပိုးမှု ဖွံ့ဖြိုးတိုးတက်မှုနှင့် ထုတ်ကုန် စမ်းသပ်ခြင်းတို့ကိုလည်း ပံ့ပိုးပေးပါသည်။",
         "Quantum Leap သည် ပေါင်းစပ်ထုတ်လုပ်မှုစွမ်းရည်များနှင့် တင်းကျပ်သော အရည်အသွေးထိန်းချုပ်မှုစံနှုန်းများဖြင့် အမှတ်တံဆိပ်များအား ဆန်းသစ်တီထွင်ပြီး အရည်အသွေးမြင့် အဖျော်ယမကာများကို ဈေးကွက်သို့ ထိရောက်စွာနှင့် အောင်မြင်စွာ ယူဆောင်လာရန် ကူညီပေးနိုင်ပါသည်။",
+      ],
+      capabilitiesEyebrow: "အစမှအဆုံး OEM ဝန်ဆောင်မှုများ",
+      capabilitiesTitle: "ကျွန်ုပ်တို့၏ OEM အဖျော်ယမကာ ထုတ်လုပ်မှုဝန်ဆောင်မှုများ",
+      capabilitiesBody:
+        "ဖော်မြူလာ၊ ထုပ်ပိုးမှု၊ စကေးချဲ့ထုတ်လုပ်မှုနှင့် အရည်အသွေးအာမခံချက်များကို ထုတ်လုပ်မှုမိတ်ဖက်တစ်ဦးတည်းဖြင့် ပံ့ပိုးပေးပါသည်။",
+      capabilities: [
+        {
+          title: "အဖျော်ယမကာ ဖော်မြူလာ",
+          body: "ချက်နည်းဖွံ့ဖြိုးမှု၊ ပါဝင်ပစ္စည်းလမ်းညွှန်မှု၊ အရသာစမ်းသပ်မှုနှင့် ထုတ်လုပ်ရန်အသင့် ဖော်မြူလာများ။",
+          linkLabel: "ထုတ်ကုန်ဖွံ့ဖြိုးမှု ကြည့်ရန်",
+        },
+        {
+          title: "ထုပ်ပိုးမှု ပံ့ပိုးခြင်း",
+          body: "PET ပုလင်း၊ အဖုံး၊ တံဆိပ်နှင့် ဈေးကွက်လိုအပ်ချက်အလိုက် ထုပ်ပိုးမှုစနစ် စီစဉ်ပေးခြင်း။",
+          linkLabel: "အဖျော်ယမကာ ထုတ်ကုန်များ ကြည့်ရန်",
+        },
+        {
+          title: "စကေးချဲ့ ထုတ်လုပ်မှု",
+          body: "တစ်နာရီလျှင် ပုလင်း ၂၄,၀၀၀ အထိ ထုတ်လုပ်နိုင်သော ပြောင်းလွယ်ပြင်လွယ်ရှိသည့် ထုတ်လုပ်မှုလိုင်းများ။",
+          linkLabel: "ထုတ်လုပ်မှုစွမ်းရည် ကြည့်ရန်",
+        },
+        {
+          title: "အရည်အသွေးနှင့် စံနှုန်းများ",
+          body: "FDA၊ Halal နှင့် ISO 22000 အသိအမှတ်ပြုမှုများဖြင့် ပံ့ပိုးထားသော အရည်အသွေးထိန်းချုပ်မှု။",
+          linkLabel: "စက်ရုံနှင့် အဆောက်အအုံများ ကြည့်ရန်",
+        },
       ],
       ctaTitle: "သင့်စီမံကိန်းကို ဆွေးနွေးရန် အသင့်ဖြစ်ပါသလား?",
       ctaBody: "စတင်စုံစမ်းမှုမှ စကေးချဲ့ထုတ်လုပ်မှုအထိ ကျွန်ုပ်တို့အဖွဲ့က လမ်းညွှန်ပေးပါမည်။",

@@ -51,7 +51,7 @@ export const commonContent = {
       "/products": "Products — QUANTUM LEAP",
       "/faq": "FAQ — QUANTUM LEAP",
       "/contact": "Contact — QUANTUM LEAP",
-      "/services/oem-manufacturing": "OEM Manufacturing — QUANTUM LEAP",
+      "/services/oem-manufacturing": "OEM Beverage Manufacturing in Myanmar | QUANTUM LEAP",
       "/services/production-capabilities": "Production Capabilities — QUANTUM LEAP",
       "/services/product-development": "Product Development — QUANTUM LEAP",
       "/services/factory-facilities": "Factory & Facilities — QUANTUM LEAP",

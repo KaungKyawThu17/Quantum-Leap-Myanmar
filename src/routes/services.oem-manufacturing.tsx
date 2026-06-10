@@ -3,43 +3,71 @@ import { Layout } from "@/components/Layout";
 import { ServiceMediaHero } from "@/components/ServiceMediaHero";
 import welcomeImg from "@/assets/optimized/welcome-feature.jpg";
 import qlFullVideo from "@/assets/QL_FullVideo.mp4";
-import oemStep01ConsultationImg from "@/assets/oem-step-01-consultation.webp";
-import oemStep02PreformImg from "@/assets/oem-step-02-preform.webp";
-import oemStep03BlowingImg from "@/assets/oem-step-03-blowing.webp";
-import oemStep04WaterImg from "@/assets/oem-step-04-water.webp";
-import oemStep05RawMaterialImg from "@/assets/oem-step-05-rawmaterial.webp";
-import oemStep06MixingImg from "@/assets/oem-step-06-mixing.webp";
-import oemStep07UhtImg from "@/assets/oem-step-07-uht.webp";
-import oemStep08FillingImg from "@/assets/oem-step-08-filling.webp";
-import oemStep09LabellingImg from "@/assets/oem-step-09-labelling.webp";
-import oemStep10QualityImg from "@/assets/oem-step-10-quality.webp";
-import oemStep11StorageImg from "@/assets/oem-step-11-storage.webp";
-import oemStep12DistributionImg from "@/assets/oem-step-12-distribution.webp";
-import oemCostingQuotationImg from "@/assets/oem-costing-quotation.webp";
-import oemResearchFormulaImg from "@/assets/oem-research-formula.webp";
-import oemPackagingBottleImg from "@/assets/oem-packaging-bottle.webp";
-import oemProductTestingImg from "@/assets/oem-product-testing.webp";
-import oemMassProductionImg from "@/assets/oem-mass-production.webp";
-import oemRegulatoryImg from "@/assets/oem-regulatory.webp";
-import oemPackagingDeliveryImg from "@/assets/oem-packaging-delivery.webp";
-import odmProductSelectionImg from "@/assets/odm-product-selection.webp";
-import odmBrandSelectImg from "@/assets/odm-brand-select.webp";
-import odmSampleConfirmImg from "@/assets/odm-sample-confirm.webp";
-import odmCostingImg from "@/assets/odm-costing.webp";
-import odmMassProductionImg from "@/assets/odm-mass-production.webp";
-import odmRegulatoryImg from "@/assets/odm-regulatory.webp";
-import odmDeliveryImg from "@/assets/odm-delivery.webp";
+import oemStep01ConsultationImg from "@/assets/optimized/oem-step-01-consultation-card.jpg";
+import oemStep06MixingImg from "@/assets/optimized/oem-step-06-mixing-card.jpg";
+import oemStep08FillingImg from "@/assets/optimized/oem-step-08-filling-card.jpg";
+import oemStep10QualityImg from "@/assets/optimized/oem-step-10-quality-card.jpg";
 import { CertificatesSlider } from "@/components/CertificatesSlider";
 import { useLanguage } from "@/i18n/LanguageContext";
-import { ArrowRight, PlayCircle } from "lucide-react";
+import { absoluteUrl, serializeJsonLd, SITE_URL } from "@/lib/seo";
+import { ArrowRight, Beaker, Gauge, Package, PlayCircle, ShieldCheck } from "lucide-react";
 
 export const Route = createFileRoute("/services/oem-manufacturing")({
   head: () => ({
     meta: [
-      { title: "OEM Manufacturing — QUANTUM LEAP" },
+      { title: "OEM Beverage Manufacturing in Myanmar | QUANTUM LEAP" },
       {
         name: "description",
-        content: "A trusted OEM manufacturing partner for ready-to-drink beverages.",
+        content:
+          "OEM beverage manufacturing in Myanmar for ready-to-drink brands. Formulation, PET bottling, quality control and scalable production up to 24,000 bottles/hour.",
+      },
+      { property: "og:title", content: "OEM Beverage Manufacturing in Myanmar | QUANTUM LEAP" },
+      {
+        property: "og:description",
+        content:
+          "Formulation, PET bottling, quality control, and scalable OEM beverage production for local and international brands.",
+      },
+      { property: "og:image", content: absoluteUrl(oemStep01ConsultationImg) },
+      { property: "og:image:width", content: "960" },
+      { property: "og:image:height", content: "540" },
+      { name: "twitter:title", content: "OEM Beverage Manufacturing in Myanmar | QUANTUM LEAP" },
+      {
+        name: "twitter:description",
+        content:
+          "Formulation, PET bottling, quality control, and scalable OEM beverage production for local and international brands.",
+      },
+      { name: "twitter:image", content: absoluteUrl(oemStep01ConsultationImg) },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: serializeJsonLd({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "@id": `${SITE_URL}/services/oem-manufacturing#service`,
+          name: "OEM Beverage Manufacturing",
+          serviceType: "OEM beverage manufacturing",
+          description:
+            "End-to-end OEM beverage manufacturing covering formulation, packaging coordination, PET bottling, quality control, and scalable production.",
+          url: absoluteUrl("/services/oem-manufacturing"),
+          image: absoluteUrl(oemStep01ConsultationImg),
+          provider: { "@id": `${SITE_URL}/#organization` },
+          areaServed: ["Myanmar", "International"],
+          hasOfferCatalog: {
+            "@type": "OfferCatalog",
+            name: "OEM Beverage Manufacturing Services",
+            itemListElement: [
+              "Beverage formulation",
+              "Packaging coordination",
+              "PET bottling",
+              "Quality assurance",
+              "Scalable beverage production",
+            ].map((name) => ({
+              "@type": "Offer",
+              itemOffered: { "@type": "Service", name },
+            })),
+          },
+        }),
       },
     ],
   }),
@@ -47,32 +75,17 @@ export const Route = createFileRoute("/services/oem-manufacturing")({
 });
 
 const heroSlides = [
-  { src: oemStep01ConsultationImg, width: 1920, height: 1080 },
-  { src: oemStep02PreformImg, width: 1920, height: 1080 },
-  { src: oemStep03BlowingImg, width: 1483, height: 834 },
-  { src: oemStep04WaterImg, width: 1270, height: 714 },
-  { src: oemStep05RawMaterialImg, width: 1920, height: 1080 },
-  { src: oemStep06MixingImg, width: 1337, height: 752 },
-  { src: oemStep07UhtImg, width: 1408, height: 792 },
-  { src: oemStep08FillingImg, width: 1270, height: 714 },
-  { src: oemStep09LabellingImg, width: 1645, height: 925 },
-  { src: oemStep10QualityImg, width: 1408, height: 792 },
-  { src: oemStep11StorageImg, width: 1483, height: 834 },
-  { src: oemStep12DistributionImg, width: 1920, height: 1080 },
-  { src: oemResearchFormulaImg, width: 1920, height: 1080 },
-  { src: oemPackagingBottleImg, width: 1920, height: 1080 },
-  { src: oemProductTestingImg, width: 1920, height: 1080 },
-  { src: oemCostingQuotationImg, width: 1920, height: 1080 },
-  { src: oemMassProductionImg, width: 1408, height: 792 },
-  { src: oemRegulatoryImg, width: 1920, height: 1080 },
-  { src: oemPackagingDeliveryImg, width: 1920, height: 1080 },
-  { src: odmProductSelectionImg, width: 1408, height: 792 },
-  { src: odmBrandSelectImg, width: 1920, height: 1080 },
-  { src: odmSampleConfirmImg, width: 1408, height: 792 },
-  { src: odmCostingImg, width: 1920, height: 1080 },
-  { src: odmMassProductionImg, width: 1920, height: 1080 },
-  { src: odmRegulatoryImg, width: 1920, height: 1080 },
-  { src: odmDeliveryImg, width: 1920, height: 1080 },
+  { src: oemStep01ConsultationImg, width: 960, height: 540 },
+  { src: oemStep06MixingImg, width: 960, height: 540 },
+  { src: oemStep08FillingImg, width: 960, height: 539 },
+  { src: oemStep10QualityImg, width: 960, height: 540 },
+] as const;
+
+const capabilityCards = [
+  { icon: Beaker, to: "/services/product-development" },
+  { icon: Package, to: "/products" },
+  { icon: Gauge, to: "/services/production-capabilities" },
+  { icon: ShieldCheck, to: "/services/factory-facilities" },
 ] as const;
 
 function OemManufacturing() {
@@ -104,6 +117,51 @@ function OemManufacturing() {
         </div>
       </section>
 
+      <section className="bg-muted/40 px-4 py-16 md:py-24 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="mx-auto mb-12 max-w-3xl text-center">
+            <p className="text-xs font-bold uppercase tracking-widest text-primary">
+              {copy.capabilitiesEyebrow}
+            </p>
+            <h2 className="mt-3 font-display text-3xl font-bold leading-tight text-foreground md:text-5xl">
+              {copy.capabilitiesTitle}
+            </h2>
+            <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
+              {copy.capabilitiesBody}
+            </p>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-2">
+            {copy.capabilities.map((capability, index) => {
+              const card = capabilityCards[index] ?? capabilityCards[0];
+              const Icon = card.icon;
+
+              return (
+                <article
+                  key={capability.title}
+                  className="rounded-3xl border border-border bg-card p-7 shadow-soft"
+                >
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                    <Icon className="h-6 w-6" aria-hidden="true" />
+                  </div>
+                  <h3 className="mt-5 font-display text-xl font-bold text-foreground">
+                    {capability.title}
+                  </h3>
+                  <p className="mt-3 leading-relaxed text-muted-foreground">{capability.body}</p>
+                  <Link
+                    to={card.to}
+                    className="focus-ring mt-5 inline-flex items-center gap-2 rounded-md font-semibold text-primary hover:text-primary/80"
+                  >
+                    {capability.linkLabel}
+                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  </Link>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* MANUFACTURING VIDEO */}
       <section className="bg-muted/35 px-4 py-16 md:py-24 lg:px-8">
         <div className="mx-auto max-w-7xl">
@@ -128,7 +186,7 @@ function OemManufacturing() {
                     className="aspect-video w-full bg-black object-cover"
                     controls
                     playsInline
-                    preload="metadata"
+                    preload="none"
                     poster={welcomeImg}
                     aria-label={copy.videoLabel}
                   >

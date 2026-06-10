@@ -10,15 +10,35 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { LanguageProvider, useLanguage } from "@/i18n/LanguageContext";
+import { SITE_URL, absoluteUrl, serializeJsonLd } from "@/lib/seo";
 
 import appCss from "../styles.css?url";
 import logo from "@/assets/quantum-leap-logo.png";
+import socialImage from "@/assets/optimized/welcome-feature.jpg";
 
-const siteUrl = import.meta.env.VITE_SITE_URL?.trim();
 const siteTitle = "QUANTUM LEAP — Myanmar OEM Beverage Manufacturing";
 const siteDescription =
   "QUANTUM LEAP is a Myanmar-based OEM beverage manufacturer offering PET bottling, beverage formulation, and scale-up production solutions.";
-const socialImageUrl = siteUrl ? new URL(logo, siteUrl).toString() : logo;
+const logoUrl = absoluteUrl(logo);
+const socialImageUrl = absoluteUrl(socialImage);
+const organizationJsonLd = serializeJsonLd({
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": `${SITE_URL}/#organization`,
+  name: "QUANTUM LEAP Beverage Manufacturing Co. Ltd.",
+  alternateName: "QUANTUM LEAP",
+  url: SITE_URL,
+  logo: logoUrl,
+  description: siteDescription,
+  email: ["info@quantumleap-mm.com", "cs@quantumleap-mm.com"],
+  telephone: ["+959424548350", "+959424548351"],
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "No. 351-352, No. 3 High Road, R-11 Mingalardon Garden City",
+    addressLocality: "Yangon",
+    addressCountry: "MM",
+  },
+});
 const preloadErrorRecoveryScript = `
 window.addEventListener("vite:preloadError", function (event) {
   var key = "ql-preload-reload";
@@ -34,9 +54,7 @@ window.addEventListener("vite:preloadError", function (event) {
 `;
 
 function getCanonicalUrl(pathname = "/") {
-  if (!siteUrl) return undefined;
-
-  return new URL(pathname, siteUrl).toString();
+  return absoluteUrl(pathname);
 }
 
 function NotFoundComponent() {
@@ -116,6 +134,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         { property: "og:site_name", content: "QUANTUM LEAP" },
         { property: "og:locale", content: "en_US" },
         { property: "og:image", content: socialImageUrl },
+        { property: "og:image:width", content: "1280" },
+        { property: "og:image:height", content: "720" },
         { property: "og:image:alt", content: "QUANTUM LEAP OEM beverage manufacturing factory" },
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: siteTitle },
@@ -125,7 +145,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       ],
       links: [
         { rel: "stylesheet", href: appCss },
-        ...(canonicalUrl ? [{ rel: "canonical", href: canonicalUrl }] : []),
+        { rel: "canonical", href: canonicalUrl },
         { rel: "preconnect", href: "https://fonts.googleapis.com" },
         { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
         {
@@ -135,6 +155,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         { rel: "preload", as: "image", href: logo },
         { rel: "icon", href: logo },
       ],
+      scripts: [{ type: "application/ld+json", children: organizationJsonLd }],
     };
   },
   shellComponent: RootShell,

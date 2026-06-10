@@ -1,6 +1,0 @@
-# Copy to .dev.vars for local Cloudflare Worker development.
-# Store RESEND_API_KEY as a deployment secret in production.
-RESEND_API_KEY=re_your_api_key_here
-CONTACT_FROM_EMAIL="QUANTUM LEAP Website <cs@quantumleap-mm.com>"
-CONTACT_GENERAL_EMAIL=info@quantumleap-mm.com
-CONTACT_QUOTATIONS_EMAIL=cs@quantumleap-mm.com

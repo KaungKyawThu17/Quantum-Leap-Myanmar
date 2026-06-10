@@ -45,6 +45,8 @@ export const contactContent = {
       phone: "Phone",
       service: "Service interest",
       message: "Message",
+      security: "Security check",
+      securityError: "The security check could not be completed. Please refresh and try again.",
       submit: "Send Message",
       sending: "Sending...",
     },
@@ -118,6 +120,9 @@ export const contactContent = {
       phone: "ဖုန်းနံပါတ်",
       service: "စိတ်ဝင်စားသော ဝန်ဆောင်မှု",
       message: "သတင်းစကား",
+      security: "လုံခြုံရေး စစ်ဆေးမှု",
+      securityError:
+        "လုံခြုံရေး စစ်ဆေးမှု မပြီးမြောက်နိုင်ပါ။ စာမျက်နှာကို ပြန်ဖွင့်ပြီး ထပ်မံကြိုးစားပါ။",
       submit: "ပေးပို့မည်",
       sending: "ပေးပို့နေသည်...",
     },

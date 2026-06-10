@@ -18,6 +18,7 @@ import { Route as ServicesProductionCapabilitiesRouteImport } from './routes/ser
 import { Route as ServicesProductDevelopmentRouteImport } from './routes/services.product-development'
 import { Route as ServicesOemManufacturingRouteImport } from './routes/services.oem-manufacturing'
 import { Route as ServicesFactoryFacilitiesRouteImport } from './routes/services.factory-facilities'
+import { Route as ApiContactRouteImport } from './routes/api.contact'
 
 const ProductsRoute = ProductsRouteImport.update({
   id: '/products',
@@ -68,6 +69,11 @@ const ServicesFactoryFacilitiesRoute =
     path: '/services/factory-facilities',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ApiContactRoute = ApiContactRouteImport.update({
+  id: '/api/contact',
+  path: '/api/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -75,6 +81,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
   '/products': typeof ProductsRoute
+  '/api/contact': typeof ApiContactRoute
   '/services/factory-facilities': typeof ServicesFactoryFacilitiesRoute
   '/services/oem-manufacturing': typeof ServicesOemManufacturingRoute
   '/services/product-development': typeof ServicesProductDevelopmentRoute
@@ -86,6 +93,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
   '/products': typeof ProductsRoute
+  '/api/contact': typeof ApiContactRoute
   '/services/factory-facilities': typeof ServicesFactoryFacilitiesRoute
   '/services/oem-manufacturing': typeof ServicesOemManufacturingRoute
   '/services/product-development': typeof ServicesProductDevelopmentRoute
@@ -98,6 +106,7 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
   '/products': typeof ProductsRoute
+  '/api/contact': typeof ApiContactRoute
   '/services/factory-facilities': typeof ServicesFactoryFacilitiesRoute
   '/services/oem-manufacturing': typeof ServicesOemManufacturingRoute
   '/services/product-development': typeof ServicesProductDevelopmentRoute
@@ -111,6 +120,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/faq'
     | '/products'
+    | '/api/contact'
     | '/services/factory-facilities'
     | '/services/oem-manufacturing'
     | '/services/product-development'
@@ -122,6 +132,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/faq'
     | '/products'
+    | '/api/contact'
     | '/services/factory-facilities'
     | '/services/oem-manufacturing'
     | '/services/product-development'
@@ -133,6 +144,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/faq'
     | '/products'
+    | '/api/contact'
     | '/services/factory-facilities'
     | '/services/oem-manufacturing'
     | '/services/product-development'
@@ -145,6 +157,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   FaqRoute: typeof FaqRoute
   ProductsRoute: typeof ProductsRoute
+  ApiContactRoute: typeof ApiContactRoute
   ServicesFactoryFacilitiesRoute: typeof ServicesFactoryFacilitiesRoute
   ServicesOemManufacturingRoute: typeof ServicesOemManufacturingRoute
   ServicesProductDevelopmentRoute: typeof ServicesProductDevelopmentRoute
@@ -216,6 +229,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesFactoryFacilitiesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/contact': {
+      id: '/api/contact'
+      path: '/api/contact'
+      fullPath: '/api/contact'
+      preLoaderRoute: typeof ApiContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -225,6 +245,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   FaqRoute: FaqRoute,
   ProductsRoute: ProductsRoute,
+  ApiContactRoute: ApiContactRoute,
   ServicesFactoryFacilitiesRoute: ServicesFactoryFacilitiesRoute,
   ServicesOemManufacturingRoute: ServicesOemManufacturingRoute,
   ServicesProductDevelopmentRoute: ServicesProductDevelopmentRoute,

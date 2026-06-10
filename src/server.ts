@@ -1,6 +1,5 @@
 import "./lib/error-capture";
 
-import { handleContactRequest } from "./lib/contact-mail";
 import { consumeLastCapturedError } from "./lib/error-capture";
 import { renderErrorPage } from "./lib/error-page";
 
@@ -70,9 +69,6 @@ async function normalizeCatastrophicSsrResponse(response: Response): Promise<Res
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
     try {
-      const contactResponse = await handleContactRequest(request, env);
-      if (contactResponse) return contactResponse;
-
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);
       return await normalizeCatastrophicSsrResponse(response);

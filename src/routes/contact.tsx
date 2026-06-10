@@ -1,8 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
 import { PageHero } from "@/components/PageHero";
+import { TurnstileWidget } from "@/components/TurnstileWidget";
 import { MapPin, Phone, Mail, Building2 } from "lucide-react";
-import { useState, type FormEvent } from "react";
+import { useCallback, useState, type FormEvent } from "react";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 type InquiryCategory = "beverage" | "packaging";
@@ -22,6 +23,9 @@ type ContactSearch = {
 
 const generalInquiriesEmail = "info@quantumleap-mm.com";
 const quotationsEmail = "cs@quantumleap-mm.com";
+const turnstileSiteKey =
+  import.meta.env.VITE_TURNSTILE_SITE_KEY?.trim() ||
+  (import.meta.env.DEV ? "1x00000000000000000000AA" : "");
 
 const serviceValues = {
   general: "General Inquiry",
@@ -62,6 +66,8 @@ export const Route = createFileRoute("/contact")({
 
 function Contact() {
   const [submitStatus, setSubmitStatus] = useState<SubmitStatus>("idle");
+  const [turnstileToken, setTurnstileToken] = useState("");
+  const [turnstileResetKey, setTurnstileResetKey] = useState(0);
   const search = Route.useSearch();
   const { content } = useLanguage();
   const copy = content.contact;
@@ -73,16 +79,24 @@ function Contact() {
     : undefined;
   const sent = submitStatus === "sent";
   const submitting = submitStatus === "submitting";
+  const handleTurnstileToken = useCallback((token: string) => {
+    setTurnstileToken(token);
+  }, []);
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    if (!turnstileToken) return;
+
     setSubmitStatus("submitting");
 
     try {
+      const formData = new FormData(event.currentTarget);
+      formData.set("cf-turnstile-response", turnstileToken);
+
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { accept: "application/json" },
-        body: new FormData(event.currentTarget),
+        body: formData,
       });
 
       if (!response.ok) {
@@ -94,6 +108,8 @@ function Contact() {
     } catch (error) {
       console.error(error);
       setSubmitStatus("error");
+      setTurnstileToken("");
+      setTurnstileResetKey((key) => key + 1);
     }
   };
 
@@ -175,6 +191,15 @@ function Contact() {
               )}
               <input type="hidden" name="inquiry_product" value={search.product ?? ""} />
               <input type="hidden" name="inquiry_category" value={search.category ?? ""} />
+              <div
+                className="absolute left-[-10000px] top-auto h-px w-px overflow-hidden"
+                aria-hidden="true"
+              >
+                <label>
+                  Website
+                  <input name="website" tabIndex={-1} autoComplete="off" />
+                </label>
+              </div>
               <div className="grid md:grid-cols-2 gap-4">
                 <Field label={copy.form.name}>
                   <input
@@ -236,9 +261,20 @@ function Contact() {
                   className="focus-ring w-full rounded-xl border border-input bg-background px-4 py-3 text-sm resize-none"
                 />
               </Field>
+              <div>
+                <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+                  {copy.form.security}
+                </p>
+                <TurnstileWidget
+                  key={turnstileResetKey}
+                  siteKey={turnstileSiteKey}
+                  errorMessage={copy.form.securityError}
+                  onTokenChange={handleTurnstileToken}
+                />
+              </div>
               <button
                 type="submit"
-                disabled={submitting}
+                disabled={submitting || !turnstileToken}
                 className="focus-ring mt-2 rounded-full bg-gradient-brand text-white px-7 py-3.5 font-semibold shadow-glow motion-safe:hover:scale-[1.02] transition-transform duration-200 disabled:cursor-not-allowed disabled:opacity-60 disabled:motion-safe:hover:scale-100"
               >
                 {submitting ? copy.form.sending : copy.form.submit}

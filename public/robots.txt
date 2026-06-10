@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://quantumleap-mm.com/sitemap.xml
+Sitemap: https://quantumleap-myanmar.com/sitemap.xml

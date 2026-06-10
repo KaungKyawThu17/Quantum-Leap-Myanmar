@@ -4,7 +4,7 @@ Audit date: June 10, 2026
 
 Primary keyword: **OEM Beverage Manufacturing**
 
-Target page: `https://quantumleap-mm.com/services/oem-manufacturing`
+Target page: `https://quantumleap-myanmar.com/services/oem-manufacturing`
 
 ## Executive Summary
 
@@ -14,7 +14,7 @@ on-page improvements in this change.
 
 The main blocker is not keyword usage. It is availability and deployment:
 
-1. `quantumleap-mm.com` resolved to `13.215.27.175`, but HTTP and HTTPS requests timed out during
+1. The previous `quantumleap-mm.com` deployment timed out during
    this audit.
 2. The linked `factory-bloom-hub.vercel.app` hostname returned `DEPLOYMENT_NOT_FOUND`.
 3. `npm run build:vercel` fails because the SPA build expects an `index.html` that does not exist.
@@ -68,7 +68,7 @@ Required checks after deployment:
 ### Priority 2: Google Search Console
 
 - Verify the canonical domain in Google Search Console
-- Submit `https://quantumleap-mm.com/sitemap.xml`
+- Submit `https://quantumleap-myanmar.com/sitemap.xml`
 - Request indexing for the OEM manufacturing page
 - Check Page Indexing, Core Web Vitals, HTTPS, and Manual Actions reports
 - Track impressions, clicks, CTR, and average position for:

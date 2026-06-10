@@ -1,0 +1,35 @@
+[Unit]
+Description=Quantum Leap Myanmar TanStack Start application
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=deploy
+Group=deploy
+WorkingDirectory=/var/www/quantumleap-myanmar/current
+EnvironmentFile=/etc/quantumleap-myanmar.env
+Environment=NODE_ENV=production
+Environment=HOST=127.0.0.1
+Environment=PORT=3000
+Environment=NODE_OPTIONS=--max-old-space-size=384
+ExecStart=/usr/bin/node /var/www/quantumleap-myanmar/current/server/index.mjs
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=20
+KillSignal=SIGTERM
+
+NoNewPrivileges=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectSystem=full
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+LockPersonality=true
+MemoryMax=512M
+
+[Install]
+WantedBy=multi-user.target

@@ -1,9 +1,15 @@
 const GENERAL_INQUIRIES_EMAIL = "info@quantumleap-mm.com";
 const QUOTATIONS_EMAIL = "cs@quantumleap-mm.com";
-const DEFAULT_FROM_EMAIL = `QUANTUM LEAP Website <${QUOTATIONS_EMAIL}>`;
+const DEFAULT_FROM_EMAIL = "QUANTUM LEAP Website <website@send.quantumleap-myanmar.com>";
+const PRODUCTION_HOSTNAMES = ["quantumleap-myanmar.com", "www.quantumleap-myanmar.com"];
+const PRODUCTION_ORIGINS = PRODUCTION_HOSTNAMES.map((hostname) => `https://${hostname}`);
 
 type ContactEnv = {
   RESEND_API_KEY?: string;
+  TURNSTILE_SECRET_KEY?: string;
+  TURNSTILE_ALLOWED_HOSTNAMES?: string;
+  TURNSTILE_EXPECTED_ACTION?: string;
+  CONTACT_ALLOWED_ORIGINS?: string;
   CONTACT_FROM_EMAIL?: string;
   CONTACT_GENERAL_EMAIL?: string;
   CONTACT_QUOTATIONS_EMAIL?: string;
@@ -20,12 +26,17 @@ type ContactMessage = {
   inquiryCategory: string;
 };
 
-function jsonResponse(body: Record<string, unknown>, status = 200) {
+function jsonResponse(
+  body: Record<string, unknown>,
+  status = 200,
+  additionalHeaders?: HeadersInit,
+) {
   return new Response(JSON.stringify(body), {
     status,
     headers: {
       "content-type": "application/json; charset=utf-8",
       "cache-control": "no-store",
+      ...additionalHeaders,
     },
   });
 }
@@ -36,9 +47,15 @@ function getEnvValue(env: unknown, key: keyof ContactEnv) {
     if (typeof value === "string" && value.trim()) return value.trim();
   }
 
-  const processEnv = globalThis.process?.env as Record<string, string | undefined> | undefined;
-  const value = processEnv?.[key];
+  const value = process.env[key];
   return typeof value === "string" && value.trim() ? value.trim() : undefined;
+}
+
+function getCsvEnvValue(env: unknown, key: keyof ContactEnv, fallback: string[]) {
+  return (getEnvValue(env, key) ?? fallback.join(","))
+    .split(",")
+    .map((value) => value.trim())
+    .filter(Boolean);
 }
 
 function cleanText(value: FormDataEntryValue | null, maxLength: number) {
@@ -82,6 +99,72 @@ function validateMessage(message: ContactMessage) {
   if (!message.email || !isValidEmail(message.email)) return "A valid email is required.";
   if (!message.message) return "Message is required.";
   return undefined;
+}
+
+async function verifyTurnstile(formData: FormData, request: Request, env: unknown) {
+  const secret = getEnvValue(env, "TURNSTILE_SECRET_KEY");
+  if (!secret) {
+    console.error("TURNSTILE_SECRET_KEY is not configured.");
+    return "unavailable";
+  }
+
+  const token = cleanText(formData.get("cf-turnstile-response"), 2048);
+  if (!token) return "invalid";
+
+  const body = new URLSearchParams({
+    secret,
+    response: token,
+  });
+  const remoteIp = request.headers.get("x-real-ip") ?? request.headers.get("cf-connecting-ip");
+  if (remoteIp) body.set("remoteip", remoteIp);
+
+  try {
+    const response = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+      method: "POST",
+      headers: { "content-type": "application/x-www-form-urlencoded" },
+      body,
+    });
+
+    if (!response.ok) {
+      console.error(`Turnstile verification failed with status ${response.status}.`);
+      return "unavailable";
+    }
+
+    const result = (await response.json()) as {
+      success?: boolean;
+      hostname?: string;
+      action?: string;
+      "error-codes"?: string[];
+    };
+
+    if (!result.success) {
+      console.warn("Turnstile rejected a contact submission.", result["error-codes"]);
+      return "invalid";
+    }
+
+    const production = process.env.NODE_ENV === "production";
+    const allowedHostnames = getCsvEnvValue(
+      env,
+      "TURNSTILE_ALLOWED_HOSTNAMES",
+      production ? PRODUCTION_HOSTNAMES : ["localhost", "127.0.0.1"],
+    );
+    if (!result.hostname || !allowedHostnames.includes(result.hostname)) {
+      console.warn("Turnstile returned an unexpected hostname.", result.hostname);
+      return "invalid";
+    }
+
+    const expectedAction =
+      getEnvValue(env, "TURNSTILE_EXPECTED_ACTION") ?? (production ? "contact" : undefined);
+    if (expectedAction && result.action !== expectedAction) {
+      console.warn("Turnstile returned an unexpected action.", result.action);
+      return "invalid";
+    }
+
+    return "valid";
+  } catch (error) {
+    console.error("Turnstile verification failed.", error);
+    return "unavailable";
+  }
 }
 
 function chooseRecipient(message: ContactMessage, env: unknown) {
@@ -189,17 +272,44 @@ async function sendWithResend(message: ContactMessage, env: unknown) {
 
 export async function handleContactRequest(request: Request, env: unknown) {
   const url = new URL(request.url);
-  if (url.pathname !== "/api/contact") return undefined;
-
-  if (request.method === "OPTIONS") {
-    return new Response(null, { status: 204 });
-  }
 
   if (request.method !== "POST") {
     return jsonResponse({ ok: false, error: "Method not allowed." }, 405);
   }
 
-  const formData = await request.formData();
+  const origin = request.headers.get("origin");
+  const production = process.env.NODE_ENV === "production";
+  const allowedOrigins = new Set(
+    getCsvEnvValue(env, "CONTACT_ALLOWED_ORIGINS", production ? PRODUCTION_ORIGINS : [url.origin]),
+  );
+  if (origin && !allowedOrigins.has(origin)) {
+    return jsonResponse({ ok: false, error: "Invalid request origin." }, 403);
+  }
+
+  const contentLength = Number(request.headers.get("content-length") ?? 0);
+  if (contentLength > 64 * 1024) {
+    return jsonResponse({ ok: false, error: "Request is too large." }, 413);
+  }
+
+  let formData: FormData;
+  try {
+    formData = await request.formData();
+  } catch {
+    return jsonResponse({ ok: false, error: "Invalid form data." }, 400);
+  }
+
+  if (cleanText(formData.get("website"), 200)) {
+    return jsonResponse({ ok: true });
+  }
+
+  const turnstileResult = await verifyTurnstile(formData, request, env);
+  if (turnstileResult === "unavailable") {
+    return jsonResponse({ ok: false, error: "Security verification is unavailable." }, 503);
+  }
+  if (turnstileResult !== "valid") {
+    return jsonResponse({ ok: false, error: "Security verification failed." }, 400);
+  }
+
   const message = buildMessage(formData);
   const validationError = validateMessage(message);
 

@@ -87,10 +87,11 @@ function Contact() {
     event.preventDefault();
     if (!turnstileToken) return;
 
+    const form = event.currentTarget;
     setSubmitStatus("submitting");
 
     try {
-      const formData = new FormData(event.currentTarget);
+      const formData = new FormData(form);
       formData.set("cf-turnstile-response", turnstileToken);
 
       const response = await fetch("/api/contact", {
@@ -104,7 +105,7 @@ function Contact() {
       }
 
       setSubmitStatus("sent");
-      event.currentTarget.reset();
+      form.reset();
     } catch (error) {
       console.error(error);
       setSubmitStatus("error");

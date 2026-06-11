@@ -15,7 +15,11 @@ dist-ssr
 .tanstack/**
 .nitro
 *.local
+.env
+.env.*
+!.env.example
 .env.production.local
+deploy/production.env
 
 # Wrangler / Cloudflare
 .wrangler/
@@ -33,6 +37,7 @@ dist-ssr
 *.sw?
 .vercel
 .lovable/
+.playwright-mcp/
 
 # Lovable/GitHub sync cannot accept files over 100 MB.
 quantum-leap.mp4
